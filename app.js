@@ -81,7 +81,7 @@
       id,
       title,
       subtitle,
-      questionIds,
+      questionIds: shuffle(questionIds),
       currentIndex: 0,
       answers: {},
       drafts: {},

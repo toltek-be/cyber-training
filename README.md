@@ -31,6 +31,19 @@ Aucune installation complexe n'est requise. L'application est composée de fichi
 - `questions.js` : Base de données des questions et thèmes.
 - `styles.css` : Design "Neubrutalism" et mise en page responsive.
 
+## 🔄 Résumé des améliorations du mélange aléatoire
+
+| Élément | Avant | Après |
+| :--- | :--- | :--- |
+| **Ordre des questions** | ❌ Toujours le même | ✅ Mélangé par quiz |
+| **Ordre des réponses** | ❌ Toujours le même | ✅ Aléatoire pour chaque question |
+| **Ordre matching (droite)** | ❌ Juste inversé | ✅ Aléatoire pour chaque question |
+| **Ordre initial "remise en ordre"** | ❌ Toujours inversé | ✅ Complètement mélangé |
+
+## 🚀 TODO - Nice to Have
+
+- **API serveur obligatoire** : Pour éviter la lecture en direct de `questions.js` et mieux protéger les contenus des quiz.
+
 ## 📝 Licence
 
 Projet développé par Celio Miceli pour la formation CyberCitizen. 
