@@ -33,4 +33,4 @@ Aucune installation complexe n'est requise. L'application est composée de fichi
 
 ## 📝 Licence
 
-Projet développé pour la formation CyberCitizen.
+Projet développé par Celio Miceli pour la formation CyberCitizen. 
