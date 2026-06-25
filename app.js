@@ -326,7 +326,6 @@
   }
 
   function renderTfQuestion(q, locked, value) {
-    const answer = getAnswer(q);
     const statementMap = new Map(q.statements.map(s => [s.id, s]));
     const order = ui.quiz.shuffled[q.id] || q.statements.map(s => s.id);
 
@@ -352,9 +351,9 @@
 
   function renderFillTemplate(q, locked, value) {
     const blankMap = new Map(q.blanks.map(b => [b.id, b]));
-    const parts = q.template.split(/(\{\{[^}]+\}\})/g);
+    const parts = q.template.split(/({{[^}]+}})/g);
     const html = parts.map(part => {
-      const match = part.match(/^\{\{([^}]+)\}\}$/);
+      const match = part.match(/^{{([^}]+)}}$/);
       if (!match) return safe(part);
       const id = match[1];
       const blank = blankMap.get(id);
@@ -368,10 +367,6 @@
       </select>`;
     }).join('');
     return `<div class="fill-text">${html}</div>`;
-  }
-
-  function rightItemsFor(q) {
-    return q.pairs.map(p => ({ id: p.rightId, label: p.right })).reverse();
   }
 
   function renderMatching(q, locked, value) {
@@ -529,7 +524,7 @@
         <section class="quiz-main">
           <div class="progress-card nb-card">
             <div class="progress-meta"><span>${done} question(s) terminée(s)</span><span>${percent} %</span></div>
-            <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="${total}" aria-valuenow="${done}"><div class="progress-fill" style="width:${percent}%"></div></div>
+            <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="${total}" aria-valuenow="${done}"><div class="progress-fill" style="width: ${percent}%"></div></div>
           </div>
 
           <article class="question-card nb-card">
@@ -698,7 +693,7 @@
       if (!ids.length) return '';
       const ok = ids.filter(qid => ui.quiz.answers[qid]?.status === 'correct').length;
       const p = Math.round((ok / ids.length) * 100);
-      return `<div class="theme-result nb-card"><strong>${safe(theme.emoji)} ${safe(theme.name)}</strong><span>${ok}/${ids.length} · ${p}%</span><div class="theme-result__bar"><div class="theme-result__fill" style="width:${p}%"></div></div></div>`;
+      return `<div class="theme-result nb-card"><strong>${safe(theme.emoji)} ${safe(theme.name)}</strong><span>${ok}/${ids.length} · ${p}%</span><div class="theme-result__bar"><div class="theme-result__fill" style="width: ${p}%"></div></div></div>`;
     }).join('');
 
     const filteredIds = ui.quiz.questionIds.filter(id => {
@@ -708,7 +703,7 @@
       return status === ui.reviewFilter;
     });
 
-    const reviewItems = filteredIds.map((id, index) => {
+    const reviewItems = filteredIds.map((id) => {
       const q = QUESTION_BY_ID.get(id);
       const answer = ui.quiz.answers[id];
       const originalIndex = ui.quiz.questionIds.indexOf(id) + 1;
@@ -933,23 +928,25 @@
       ui.modal = null;
       render(true);
     }
-    if (action === 'previous' && ui.quiz.currentIndex > 0) {
+    if (action === 'previous' && ui.quiz && ui.quiz.currentIndex > 0) {
       ui.quiz.currentIndex -= 1;
       ui.activeMatchLeft = null;
       saveQuiz();
       render(true);
     }
-    if (action === 'next' && ui.quiz.currentIndex < ui.quiz.questionIds.length - 1) {
+    if (action === 'next' && ui.quiz && ui.quiz.currentIndex < ui.quiz.questionIds.length - 1) {
       ui.quiz.currentIndex += 1;
       ui.activeMatchLeft = null;
       saveQuiz();
       render(true);
     }
     if (action === 'go-question') {
-      ui.quiz.currentIndex = Number(button.dataset.index);
-      ui.activeMatchLeft = null;
-      saveQuiz();
-      render(true);
+      if (ui.quiz) {
+        ui.quiz.currentIndex = Number(button.dataset.index);
+        ui.activeMatchLeft = null;
+        saveQuiz();
+        render(true);
+      }
     }
     if (action === 'validate') validateCurrent();
     if (action === 'skip') skipCurrent();
@@ -983,7 +980,10 @@
       render();
     }
     if (action === 'confirm-resume') {
-      resumeQuiz(ui.modal.existing);
+      const modal = ui.modal;
+      if (modal?.type === 'resume' && modal.existing) {
+        resumeQuiz(modal.existing);
+      }
     }
     if (action === 'confirm-restart-launch') {
       const modal = ui.modal;
@@ -1003,12 +1003,14 @@
       render(true);
     }
     if (action === 'retry-errors') {
-      const ids = ui.quiz.questionIds.filter(id => ui.quiz.answers[id]?.status !== 'correct');
-      const id = `retry-${Date.now()}`;
-      ui.quiz = createQuiz(id, `Révision des ${ids.length} erreur(s)`, ids, 'Questions incorrectes ou passées');
-      ui.view = 'quiz';
-      saveQuiz();
-      render(true);
+      if (ui.quiz) {
+        const ids = ui.quiz.questionIds.filter(id => ui.quiz.answers[id]?.status !== 'correct');
+        const id = `retry-${Date.now()}`;
+        ui.quiz = createQuiz(id, `Révision des ${ids.length} erreur(s)`, ids, 'Questions incorrectes ou passées');
+        ui.view = 'quiz';
+        saveQuiz();
+        render(true);
+      }
     }
     if (action === 'filter-review') {
       ui.reviewFilter = button.dataset.filter;
