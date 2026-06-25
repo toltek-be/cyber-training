@@ -85,11 +85,21 @@
       currentIndex: 0,
       answers: {},
       drafts: {},
+      shuffled: {},
       streak: 0,
       startedAt: Date.now(),
       updatedAt: Date.now(),
       completedAt: null,
     };
+  }
+
+  function shuffle(array) {
+    const arr = [...array];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
   }
 
   function launchQuiz(id, title, questionIds, subtitle = '') {
@@ -252,10 +262,30 @@
   }
 
   function getDraft(q) {
+    if (!ui.quiz.shuffled[q.id]) {
+      if (q.type === 'single' || q.type === 'multiple') {
+        ui.quiz.shuffled[q.id] = shuffle(q.options.map(o => o.id));
+      } else if (q.type === 'tf-grid') {
+        ui.quiz.shuffled[q.id] = shuffle(q.statements.map(s => s.id));
+      } else if (q.type === 'matching') {
+        ui.quiz.shuffled[q.id] = {
+          left: shuffle(q.pairs.map(p => p.leftId)),
+          right: shuffle(q.pairs.map(p => p.rightId)),
+        };
+      } else if (q.type === 'order') {
+        ui.quiz.shuffled[q.id] = shuffle(q.items.map(it => it[0]));
+      } else if (q.type === 'fill') {
+        ui.quiz.shuffled[q.id] = {};
+        q.blanks.forEach(b => {
+          ui.quiz.shuffled[q.id][b.id] = shuffle(b.choices);
+        });
+      }
+    }
+
     if (!ui.quiz.drafts[q.id]) {
       if (q.type === 'multiple') ui.quiz.drafts[q.id] = [];
       if (q.type === 'tf-grid' || q.type === 'fill' || q.type === 'matching') ui.quiz.drafts[q.id] = {};
-      if (q.type === 'order') ui.quiz.drafts[q.id] = q.correctOrder.slice().reverse();
+      if (q.type === 'order') ui.quiz.drafts[q.id] = [...ui.quiz.shuffled[q.id]];
     }
     return ui.quiz.drafts[q.id];
   }
@@ -272,7 +302,11 @@
     const selected = q.type === 'multiple' ? new Set(value || []) : new Set(value ? [value] : []);
     const correct = new Set(Array.isArray(q.correct) ? q.correct : [q.correct]);
     const inputType = q.type === 'multiple' ? 'checkbox' : 'radio';
-    return `<div class="options">${q.options.map(opt => {
+    const optionMap = new Map(q.options.map(opt => [opt.id, opt]));
+    const order = ui.quiz.shuffled[q.id] || q.options.map(o => o.id);
+
+    return `<div class="options">${order.map(id => {
+      const opt = optionMap.get(id);
       const isSelected = selected.has(opt.id);
       const isCorrect = correct.has(opt.id);
       const classes = ['option'];
@@ -293,11 +327,15 @@
 
   function renderTfQuestion(q, locked, value) {
     const answer = getAnswer(q);
+    const statementMap = new Map(q.statements.map(s => [s.id, s]));
+    const order = ui.quiz.shuffled[q.id] || q.statements.map(s => s.id);
+
     return `
       <div class="table-scroll">
         <table class="tf-table">
           <thead><tr><th>Affirmation</th><th>Vrai</th><th>Faux</th></tr></thead>
-          <tbody>${q.statements.map(s => {
+          <tbody>${order.map(id => {
+            const s = statementMap.get(id);
             const chosen = value?.[s.id];
             const rowCorrect = locked && chosen === s.correct;
             const rowWrong = locked && chosen !== undefined && chosen !== s.correct;
@@ -322,9 +360,11 @@
       const blank = blankMap.get(id);
       const chosen = value?.[id] || '';
       const cls = locked ? (chosen === blank.correct ? 'is-correct' : 'is-wrong') : '';
+      const shuffledChoices = ui.quiz.shuffled[q.id]?.[id] || blank.choices;
+
       return `<select class="fill-select ${cls}" data-question-input="fill" data-blank="${safe(id)}" ${locked ? 'disabled' : ''} aria-label="Mot à sélectionner">
         <option value="">Choisir…</option>
-        ${blank.choices.map(choice => `<option value="${safe(choice)}" ${chosen === choice ? 'selected' : ''}>${safe(choice)}</option>`).join('')}
+        ${shuffledChoices.map(choice => `<option value="${safe(choice)}" ${chosen === choice ? 'selected' : ''}>${safe(choice)}</option>`).join('')}
       </select>`;
     }).join('');
     return `<div class="fill-text">${html}</div>`;
@@ -335,7 +375,11 @@
   }
 
   function renderMatching(q, locked, value) {
-    const rightItems = rightItemsFor(q);
+    const leftOrder = ui.quiz.shuffled[q.id]?.left || q.pairs.map(p => p.leftId);
+    const rightOrder = ui.quiz.shuffled[q.id]?.right || q.pairs.map(p => p.rightId);
+    const leftMap = new Map(q.pairs.map(p => [p.leftId, p]));
+    const rightMap = new Map(q.pairs.map(p => [p.rightId, p.right]));
+
     const correctnessByLeft = {};
     q.pairs.forEach(p => {
       if (locked) correctnessByLeft[p.leftId] = value?.[p.leftId] === p.rightId;
@@ -344,7 +388,8 @@
       <div class="match-board" data-match-board="${safe(q.id)}">
         <svg class="match-lines" aria-hidden="true"></svg>
         <div class="match-column">
-          ${q.pairs.map(p => {
+          ${leftOrder.map(lId => {
+            const p = leftMap.get(lId);
             const linked = Boolean(value?.[p.leftId]);
             const active = ui.activeMatchLeft === p.leftId;
             const resultClass = locked ? (correctnessByLeft[p.leftId] ? 'is-correct' : 'is-wrong') : '';
@@ -352,9 +397,10 @@
           }).join('')}
         </div>
         <div class="match-column">
-          ${rightItems.map(r => {
-            const linked = Object.values(value || {}).includes(r.id);
-            return `<button type="button" class="match-item ${linked ? 'is-linked' : ''}" data-side="right" data-match-right="${safe(r.id)}" ${locked ? 'disabled' : ''}>${safe(r.label)}</button>`;
+          ${rightOrder.map(rId => {
+            const rLabel = rightMap.get(rId);
+            const linked = Object.values(value || {}).includes(rId);
+            return `<button type="button" class="match-item ${linked ? 'is-linked' : ''}" data-side="right" data-match-right="${safe(rId)}" ${locked ? 'disabled' : ''}>${safe(rLabel)}</button>`;
           }).join('')}
         </div>
       </div>
