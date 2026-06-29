@@ -19,7 +19,7 @@
     {
       id: 'revision-express',
       title: 'Révision express',
-      description: 'Une session courte de questions tirées au hasard dans toute la banque.',
+      description: 'Une session courte de questions aléatoires dans l’ensemble des données.',
       button: 'Lancer 20 questions',
       kind: 'random',
       count: 20,

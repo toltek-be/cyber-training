@@ -26,9 +26,10 @@ Aucune installation complexe n'est requise. L'application est composée de fichi
 
 ## 📂 Structure du projet
 
-- `index.html` : Structure de l'application et conteneurs UI.
+- `index.html` : Structure de l'application et conteneurs UI (gère le versioning des ressources).
 - `app.js` : Logique de l'application (moteur de quiz, gestion d'état, rendu dynamique).
-- `questions.js` : Base de données des questions et thèmes.
+- `questions.js` : Base de données principale des questions et thèmes.
+- `extra-content.js` : Extensions et questions additionnelles.
 - `styles.css` : Design "Neubrutalism" et mise en page responsive.
 
 ## 🔄 Résumé des améliorations du mélange aléatoire
@@ -40,9 +41,15 @@ Aucune installation complexe n'est requise. L'application est composée de fichi
 | **Ordre matching (droite)** | ❌ Juste inversé | ✅ Aléatoire pour chaque question |
 | **Ordre initial "remise en ordre"** | ❌ Toujours inversé | ✅ Complètement mélangé |
 
+## ⚙️ Maintenance & Encodage
+
+- **Encodage** : Tous les fichiers doivent être enregistrés en **UTF-8 sans BOM**.
+- **Versioning** : Pour forcer la mise à jour des scripts chez les utilisateurs, le paramètre `?v=YYYY-MM-DD-X` est utilisé dans `index.html`.
+
 ## 🚀 TODO - Nice to Have
 
 - **API serveur obligatoire** : Pour éviter la lecture en direct de `questions.js` et mieux protéger les contenus des quiz.
+- **Optimisation mobile** : Améliorer les interactions "drag and drop" sur tactile.
 
 ## 📝 Licence
 
