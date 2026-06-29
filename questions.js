@@ -1,6 +1,6 @@
 window.CYBER_TRAINING_DATA = {
   "version": 1,
-  "appName": "Cyber Training",
+  "appName": "Tosa Cyber Training",
   "themes": {
     "web": {
       "name": "Web, navigation et notions de base",

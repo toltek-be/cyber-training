@@ -11,6 +11,7 @@
   const toastRegion = document.getElementById('toast-region');
   const confettiLayer = document.getElementById('confetti-layer');
   const STORAGE_PREFIX = 'cyberTraining:v1:quiz:';
+  const ACTIVE_QUESTIONS = DATA.questions.filter(q => q.active !== false);
   const QUESTION_BY_ID = new Map(DATA.questions.map(q => [q.id, q]));
 
   const ui = {
@@ -19,14 +20,15 @@
     modal: null,
     activeMatchLeft: null,
     reviewFilter: 'errors',
+    synthesisId: null,
   };
 
   const safe = (value) => String(value ?? '')
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#039;');
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
 
   function quizKey(id) {
     return `${STORAGE_PREFIX}${id}`;
@@ -68,12 +70,9 @@
   }
 
   function resetAllProgress() {
-    [...Array(localStorage.length)].forEach((_, index) => {
-      const key = localStorage.key(index);
-      if (key?.startsWith(STORAGE_PREFIX)) localStorage.removeItem(key);
-    });
-    // The previous loop can skip keys after deletion, so make a second safe pass.
-    Object.keys(localStorage).filter(k => k.startsWith(STORAGE_PREFIX)).forEach(k => localStorage.removeItem(k));
+    Object.keys(localStorage)
+        .filter(k => k.startsWith(STORAGE_PREFIX))
+        .forEach(k => localStorage.removeItem(k));
   }
 
   function createQuiz(id, title, questionIds, subtitle = '') {
@@ -157,7 +156,43 @@
   }
 
   function themeQuestionIds(themeId) {
-    return DATA.questions.filter(q => q.theme === themeId).map(q => q.id);
+    return ACTIVE_QUESTIONS.filter(q => q.theme === themeId).map(q => q.id);
+  }
+
+  function activeQuestionIds() {
+    return ACTIVE_QUESTIONS.map(q => q.id);
+  }
+
+  function questionsByTypes(types) {
+    return ACTIVE_QUESTIONS.filter(q => types.includes(q.type)).map(q => q.id);
+  }
+
+  function isScenarioQuestion(q) {
+    return Boolean(q.scenario)
+        || /^(vous|un|une|après|des collègues|dans|avant de|sur un)/i.test(q.prompt || '')
+        || ['order', 'matching'].includes(q.type);
+  }
+
+  function selectBalancedQuestions({ count, certificationFirst = false, scenarioOnly = false } = {}) {
+    const source = ACTIVE_QUESTIONS.filter(q => {
+      if (scenarioOnly && !q.scenario) return false;
+      return true;
+    });
+    const byTheme = Object.keys(DATA.themes).map(themeId => {
+      const items = source.filter(q => q.theme === themeId);
+      const primary = certificationFirst ? items.filter(q => q.certification) : [];
+      const secondary = items.filter(q => !primary.includes(q));
+      return shuffle([...shuffle(primary), ...shuffle(secondary)]);
+    });
+    const picked = [];
+    let cursor = 0;
+    while (picked.length < count && byTheme.some(list => list.length)) {
+      const bucket = byTheme[cursor % byTheme.length];
+      const q = bucket.shift();
+      if (q && !picked.includes(q.id)) picked.push(q.id);
+      cursor += 1;
+    }
+    return picked;
   }
 
   function completedCount(quiz = ui.quiz) {
@@ -188,12 +223,49 @@
     })[type] || 'Question';
   }
 
+  function modeCount(mode) {
+    if (mode.kind === 'all') return ACTIVE_QUESTIONS.length;
+    if (mode.kind === 'balanced') return Math.min(mode.count, ACTIVE_QUESTIONS.length);
+    if (mode.kind === 'random') return Math.min(mode.count, ACTIVE_QUESTIONS.length);
+    if (mode.kind === 'scenario') return Math.min(mode.count, ACTIVE_QUESTIONS.filter(isScenarioQuestion).length);
+    return 0;
+  }
+
+  function modeQuestionIds(mode) {
+    if (mode.kind === 'all') return activeQuestionIds();
+    if (mode.kind === 'balanced') return selectBalancedQuestions({ count: mode.count, certificationFirst: true });
+    if (mode.kind === 'random') return shuffle(activeQuestionIds()).slice(0, mode.count);
+    if (mode.kind === 'scenario') {
+      const ids = ACTIVE_QUESTIONS.filter(isScenarioQuestion).map(q => q.id);
+      return shuffle(ids).slice(0, mode.count);
+    }
+    return [];
+  }
+
   function homeMarkup() {
     const saved = listSavedQuizzes();
     const incomplete = saved.find(q => !q.completedAt && completedCount(q) < q.questionIds.length);
     const generalSaved = readQuiz('general');
     const generalCompleted = generalSaved ? completedCount(generalSaved) : 0;
-    const totalCertification = DATA.questions.filter(q => q.certification).length;
+    const totalCertification = ACTIVE_QUESTIONS.filter(q => q.certification).length;
+
+    const modeCards = (DATA.testModes || []).map(mode => {
+      const existing = readQuiz(mode.id);
+      const count = modeCount(mode);
+      const done = existing ? completedCount(existing) : 0;
+      const buttonText = existing && !existing.completedAt ? `Reprendre (${done}/${existing.questionIds.length})` : mode.button;
+      return `
+        <article class="mode-card nb-card accent-${safe(mode.accent || 'yellow')}">
+          <div class="theme-card__icon" aria-hidden="true">${safe(mode.emoji || '★')}</div>
+          <h3>${safe(mode.title)}</h3>
+          <p>${safe(mode.description)}</p>
+          <div class="action-card__meta">
+            <span class="badge">${count} questions</span>
+            <span class="badge">${safe(mode.meta || 'Aléatoire sauvegardé')}</span>
+          </div>
+          <button class="btn" data-action="start-mode" data-mode="${safe(mode.id)}">${safe(buttonText)}</button>
+        </article>`;
+    }).join('');
 
     const themeCards = Object.entries(DATA.themes).map(([id, theme]) => {
       const ids = themeQuestionIds(id);
@@ -205,6 +277,7 @@
           <div class="theme-card__icon" aria-hidden="true">${safe(theme.emoji)}</div>
           <h3>${safe(theme.name)}</h3>
           <p>${safe(theme.description)}</p>
+          <button class="btn btn--ghost btn--small" data-action="open-synthesis-theme" data-theme="${safe(id)}">Lire la synthèse</button>
           <button class="btn" data-action="start-theme" data-theme="${safe(id)}">${safe(buttonText)}</button>
         </article>`;
     }).join('');
@@ -215,7 +288,7 @@
         <h1>Cyber<br>Training</h1>
         <p>Un grand quiz complet et des entraînements par thème. Les corrections apparaissent immédiatement et chaque erreur devient une mini-fiche de révision.</p>
         <div class="hero__stats">
-          <span class="stat-pill">${DATA.questions.length} questions</span>
+          <span class="stat-pill">${ACTIVE_QUESTIONS.length} questions</span>
           <span class="stat-pill">${Object.keys(DATA.themes).length} thèmes</span>
           <span class="stat-pill">${totalCertification} questions style certification</span>
         </div>
@@ -226,9 +299,9 @@
           <h2>Le grand test</h2>
           <p>Toutes les questions, tous les thèmes, toutes les questions inspirées des captures de certification. La progression est sauvegardée automatiquement sur cet appareil.</p>
           <div class="action-card__meta">
-            <span class="badge">${DATA.questions.length} questions</span>
+            <span class="badge">${ACTIVE_QUESTIONS.length} questions</span>
             <span class="badge">Correction directe</span>
-            ${generalCompleted ? `<span class="badge">Progression : ${generalCompleted}/${DATA.questions.length}</span>` : ''}
+            ${generalCompleted ? `<span class="badge">Progression : ${generalCompleted}/${ACTIVE_QUESTIONS.length}</span>` : ''}
           </div>
           <button class="btn btn--dark" data-action="start-general">${generalSaved && !generalSaved.completedAt ? 'Reprendre le grand test' : 'Commencer le grand test'}</button>
         </article>
@@ -237,13 +310,28 @@
           <article class="action-card action-card--continue nb-card">
             <h3>Continuer</h3>
             <p><strong>${safe(incomplete.title)}</strong><br>${completedCount(incomplete)} question(s) terminée(s) sur ${incomplete.questionIds.length}.</p>
-            <button class="btn" data-action="resume-latest" data-id="${safe(incomplete.id)}">Reprendre là où j’en étais</button>
+            <button class="btn" data-action="resume-latest" data-id="${safe(incomplete.id)}">Reprendre là où j'en étais</button>
           </article>` : `
           <article class="action-card nb-card nb-card--soft">
             <h3>Progression locale</h3>
             <p>Aucun compte et aucune donnée envoyée : les réponses restent uniquement dans le navigateur.</p>
             <span class="badge">100 % local</span>
           </article>`}
+      </section>
+
+      <div class="section-title">
+        <div><h2>Modes de test</h2></div>
+        <p>Des formats courts ou proches de l'esprit TOSA, avec un ordre conservé pendant toute la tentative.</p>
+      </div>
+      <section class="mode-grid">${modeCards}</section>
+
+      <section class="synthesis-callout nb-card">
+        <div>
+          <span class="badge">Cours</span>
+          <h2>Synthèses de cours</h2>
+          <p>Réviser les notions clés, les pièges fréquents et les bons réflexes avant de passer aux quiz.</p>
+        </div>
+        <button class="btn btn--dark" data-action="syntheses">Ouvrir les synthèses</button>
       </section>
 
       <div class="section-title">
@@ -264,20 +352,20 @@
   function getDraft(q) {
     if (!ui.quiz.shuffled[q.id]) {
       if (q.type === 'single' || q.type === 'multiple') {
-        ui.quiz.shuffled[q.id] = shuffle(q.options.map(o => o.id));
+        ui.quiz.shuffled[q.id] = q.shuffleOptions === false ? q.options.map(o => o.id) : shuffle(q.options.map(o => o.id));
       } else if (q.type === 'tf-grid') {
-        ui.quiz.shuffled[q.id] = shuffle(q.statements.map(s => s.id));
+        ui.quiz.shuffled[q.id] = q.shuffleStatements === false ? q.statements.map(s => s.id) : shuffle(q.statements.map(s => s.id));
       } else if (q.type === 'matching') {
         ui.quiz.shuffled[q.id] = {
-          left: shuffle(q.pairs.map(p => p.leftId)),
-          right: shuffle(q.pairs.map(p => p.rightId)),
+          left: q.shuffleLeft === false ? q.pairs.map(p => p.leftId) : shuffle(q.pairs.map(p => p.leftId)),
+          right: q.shuffleRight === false ? q.pairs.map(p => p.rightId) : shuffle(q.pairs.map(p => p.rightId)),
         };
       } else if (q.type === 'order') {
-        ui.quiz.shuffled[q.id] = shuffle(q.items.map(it => it[0]));
+        ui.quiz.shuffled[q.id] = q.shuffleItems === false ? q.items.map(it => it[0]) : shuffle(q.items.map(it => it[0]));
       } else if (q.type === 'fill') {
         ui.quiz.shuffled[q.id] = {};
         q.blanks.forEach(b => {
-          ui.quiz.shuffled[q.id][b.id] = shuffle(b.choices);
+          ui.quiz.shuffled[q.id][b.id] = b.shuffleChoices === false ? [...b.choices] : shuffle(b.choices);
         });
       }
     }
@@ -334,17 +422,17 @@
         <table class="tf-table">
           <thead><tr><th>Affirmation</th><th>Vrai</th><th>Faux</th></tr></thead>
           <tbody>${order.map(id => {
-            const s = statementMap.get(id);
-            const chosen = value?.[s.id];
-            const rowCorrect = locked && chosen === s.correct;
-            const rowWrong = locked && chosen !== undefined && chosen !== s.correct;
-            return `
+      const s = statementMap.get(id);
+      const chosen = value?.[s.id];
+      const rowCorrect = locked && chosen === s.correct;
+      const rowWrong = locked && chosen !== undefined && chosen !== s.correct;
+      return `
               <tr class="${rowCorrect ? 'is-correct' : rowWrong ? 'is-wrong' : ''}">
                 <td>${safe(s.text)} ${locked ? `<strong>${s.correct ? '— Vrai' : '— Faux'}</strong>` : ''}</td>
                 <td><input aria-label="Vrai" type="radio" name="tf-${safe(s.id)}" value="true" ${chosen === true ? 'checked' : ''} ${locked ? 'disabled' : ''} data-question-input="tf" data-statement="${safe(s.id)}"></td>
                 <td><input aria-label="Faux" type="radio" name="tf-${safe(s.id)}" value="false" ${chosen === false ? 'checked' : ''} ${locked ? 'disabled' : ''} data-question-input="tf" data-statement="${safe(s.id)}"></td>
               </tr>`;
-          }).join('')}</tbody>
+    }).join('')}</tbody>
         </table>
       </div>`;
   }
@@ -362,7 +450,7 @@
       const shuffledChoices = ui.quiz.shuffled[q.id]?.[id] || blank.choices;
 
       return `<select class="fill-select ${cls}" data-question-input="fill" data-blank="${safe(id)}" ${locked ? 'disabled' : ''} aria-label="Mot à sélectionner">
-        <option value="">Choisir…</option>
+        <option value="">Choisir...</option>
         ${shuffledChoices.map(choice => `<option value="${safe(choice)}" ${chosen === choice ? 'selected' : ''}>${safe(choice)}</option>`).join('')}
       </select>`;
     }).join('');
@@ -384,22 +472,22 @@
         <svg class="match-lines" aria-hidden="true"></svg>
         <div class="match-column">
           ${leftOrder.map(lId => {
-            const p = leftMap.get(lId);
-            const linked = Boolean(value?.[p.leftId]);
-            const active = ui.activeMatchLeft === p.leftId;
-            const resultClass = locked ? (correctnessByLeft[p.leftId] ? 'is-correct' : 'is-wrong') : '';
-            return `<button type="button" class="match-item ${active ? 'is-active' : ''} ${linked ? 'is-linked' : ''} ${resultClass}" data-side="left" data-match-left="${safe(p.leftId)}" ${locked ? 'disabled' : ''}>${safe(p.left)}</button>`;
-          }).join('')}
+      const p = leftMap.get(lId);
+      const linked = Boolean(value?.[p.leftId]);
+      const active = ui.activeMatchLeft === p.leftId;
+      const resultClass = locked ? (correctnessByLeft[p.leftId] ? 'is-correct' : 'is-wrong') : '';
+      return `<button type="button" class="match-item ${active ? 'is-active' : ''} ${linked ? 'is-linked' : ''} ${resultClass}" data-side="left" data-match-left="${safe(p.leftId)}" ${locked ? 'disabled' : ''}>${safe(p.left)}</button>`;
+    }).join('')}
         </div>
         <div class="match-column">
           ${rightOrder.map(rId => {
-            const rLabel = rightMap.get(rId);
-            const linked = Object.values(value || {}).includes(rId);
-            return `<button type="button" class="match-item ${linked ? 'is-linked' : ''}" data-side="right" data-match-right="${safe(rId)}" ${locked ? 'disabled' : ''}>${safe(rLabel)}</button>`;
-          }).join('')}
+      const rLabel = rightMap.get(rId);
+      const linked = Object.values(value || {}).includes(rId);
+      return `<button type="button" class="match-item ${linked ? 'is-linked' : ''}" data-side="right" data-match-right="${safe(rId)}" ${locked ? 'disabled' : ''}>${safe(rLabel)}</button>`;
+    }).join('')}
         </div>
       </div>
-      ${!locked ? '<p><strong>Mode d’emploi :</strong> cliquez sur un élément à gauche, puis sur sa description à droite.</p>' : ''}`;
+      ${!locked ? `<p><strong>Mode d'emploi :</strong> cliquez sur un élément à gauche, puis sur sa description à droite.</p>` : ''}`;
   }
 
   function renderOrder(q, locked, value) {
@@ -440,6 +528,18 @@
   }
 
   function feedbackDetails(q, value) {
+    if (q.type === 'multiple') {
+      const selected = new Set(value || []);
+      const correct = new Set(q.correct || []);
+      const optionMap = new Map(q.options.map(o => [o.id, o.label]));
+      const selectedCorrect = [...correct].filter(id => selected.has(id));
+      const missed = [...correct].filter(id => !selected.has(id));
+      const wrong = [...selected].filter(id => !correct.has(id));
+      return `
+        <div class="feedback-row"><strong>Bonnes réponses sélectionnées</strong><br>${selectedCorrect.length ? selectedCorrect.map(id => safe(optionMap.get(id))).join('<br>') : 'Aucune'}</div>
+        <div class="feedback-row"><strong>Bonnes réponses oubliées</strong><br>${missed.length ? missed.map(id => safe(optionMap.get(id))).join('<br>') : 'Aucune'}</div>
+        <div class="feedback-row"><strong>Mauvaises réponses sélectionnées</strong><br>${wrong.length ? wrong.map(id => safe(optionMap.get(id))).join('<br>') : 'Aucune'}</div>`;
+    }
     if (q.type === 'tf-grid') {
       return q.statements.map(s => {
         const chosen = value?.[s.id];
@@ -473,10 +573,10 @@
     if (!answer) return '';
     const cls = answer.status === 'correct' ? 'feedback--correct' : answer.status === 'skipped' ? 'feedback--skipped' : 'feedback--wrong';
     const title = answer.status === 'correct'
-      ? ['Bien joué !', 'Pare-feu mental activé !', 'Bonne réponse !'][Math.abs(hashCode(q.id)) % 3]
-      : answer.status === 'skipped'
-        ? 'Langue donnée au chat'
-        : ['Pas tout à fait…', 'Le piège était bien caché.', 'À retenir pour la prochaine fois !'][Math.abs(hashCode(q.id)) % 3];
+        ? ['Bien joué !', 'Pare-feu mental activé !', 'Bonne réponse !'][Math.abs(hashCode(q.id)) % 3]
+        : answer.status === 'skipped'
+            ? 'Langue donnée au chat'
+            : ['Pas tout à fait...', 'Le piège était bien caché.', 'À retenir pour la prochaine fois !'][Math.abs(hashCode(q.id)) % 3];
     return `
       <section class="feedback ${cls}" aria-live="polite">
         <h3>${safe(title)}</h3>
@@ -559,7 +659,7 @@
 
         <aside class="quiz-sidebar">
           <div class="nav-card nb-card">
-            <h3>Vue d’ensemble</h3>
+            <h3>Vue d'ensemble</h3>
             <p>Cliquez sur un numéro pour accéder directement à la question.</p>
             <div class="question-grid">${navButtons}</div>
             <div class="nav-legend">
@@ -623,7 +723,7 @@
       showToast(ui.quiz.streak >= 3 ? `🔥 Série de ${ui.quiz.streak} bonnes réponses !` : 'Bonne réponse !');
       if (ui.quiz.streak > 0 && ui.quiz.streak % 5 === 0) launchConfetti(35);
     } else {
-      showToast('Correction affichée : prends le temps de lire l’explication.');
+      showToast("Correction affichée : prends le temps de lire l'explication.");
     }
     renderPreserveScroll();
   }
@@ -658,9 +758,9 @@
 
   function scoreMessage(pct) {
     if (pct >= 90) return 'Le cybercriminel a quitté la conversation.';
-    if (pct >= 75) return 'Très solide : quelques révisions ciblées et c’est carré.';
+    if (pct >= 75) return "Très solide : quelques révisions ciblées et c'est carré.";
     if (pct >= 60) return 'Bonne base. Les erreurs ci-dessous vont faire gagner les derniers points.';
-    if (pct >= 40) return 'Ça progresse : refais d’abord les thèmes les plus faibles.';
+    if (pct >= 40) return "Ça progresse : refais d'abord les thèmes les plus faibles.";
     return 'Pas de panique : le récapitulatif est justement là pour transformer les erreurs en réflexes.';
   }
 
@@ -728,7 +828,8 @@
         <div class="results-score">${pct}%</div>
         <p><strong>${safe(ui.quiz.title)}</strong> · ${total} questions terminées.</p>
         <div class="btn-row">
-          <button class="btn btn--dark" data-action="home">Retour à l’accueil</button>
+          <button class="btn btn--dark" data-action="home">Retour à l'accueil</button>
+          <button class="btn" data-action="syntheses">Revenir aux synthèses</button>
           <button class="btn" data-action="restart-finished">Refaire tout le quiz</button>
           ${retryIds.length ? `<button class="btn btn--pink" data-action="retry-errors">Refaire mes ${retryIds.length} erreur(s)</button>` : ''}
         </div>
@@ -752,6 +853,76 @@
       <p class="footer-note">Les résultats restent enregistrés uniquement dans ce navigateur.</p>`;
   }
 
+  function synthesisById(id) {
+    return (DATA.syntheses || []).find(s => s.id === id) || null;
+  }
+
+  function synthesisForTheme(themeId) {
+    return (DATA.syntheses || []).find(s => (s.themeIds || []).includes(themeId)) || (DATA.syntheses || [])[0] || null;
+  }
+
+  function synthesesIndexMarkup() {
+    const cards = (DATA.syntheses || []).map((chapter, index) => `
+      <article class="synthesis-card nb-card">
+        <span class="badge">Chapitre ${index + 1}</span>
+        <h3>${safe(chapter.title)}</h3>
+        <p>${safe(chapter.intro)}</p>
+        <button class="btn" data-action="open-synthesis" data-synthesis="${safe(chapter.id)}">Lire</button>
+      </article>
+    `).join('');
+
+    return `
+      <header class="topbar">
+        <button class="btn btn--small" data-action="home">← Accueil</button>
+        <div class="topbar__title"><strong>Synthèses de cours</strong><span>Réviser avant les tests</span></div>
+        <button class="btn btn--small" data-action="start-general">Grand test</button>
+      </header>
+      <section class="hero nb-card hero--compact">
+        <span class="hero__eyebrow">Cours CyberCitizen</span>
+        <h1>Synthèses</h1>
+        <p>Des rappels courts, structurés et orientés bons réflexes. Chaque chapitre renvoie vers un quiz lié.</p>
+      </section>
+      <section class="synthesis-grid">${cards}</section>`;
+  }
+
+  function synthesisDetailMarkup() {
+    const chapters = DATA.syntheses || [];
+    const chapter = synthesisById(ui.synthesisId) || chapters[0];
+    if (!chapter) return '<div class="nb-card empty-state"><h2>Aucune synthèse disponible</h2><button class="btn" data-action="home">Accueil</button></div>';
+    const index = chapters.findIndex(s => s.id === chapter.id);
+    const quizTheme = (chapter.themeIds || [])[0];
+    const sectionList = (title, items) => items?.length ? `
+      <section class="lesson-section">
+        <h2>${safe(title)}</h2>
+        <ul>${items.map(item => `<li>${safe(item)}</li>`).join('')}</ul>
+      </section>` : '';
+
+    return `
+      <header class="topbar">
+        <button class="btn btn--small" data-action="syntheses">← Index</button>
+        <div class="topbar__title"><strong>${safe(chapter.title)}</strong><span>Chapitre ${index + 1} / ${chapters.length}</span></div>
+        <button class="btn btn--small" data-action="home">Accueil</button>
+      </header>
+      <article class="lesson nb-card">
+        <span class="badge">Synthèse</span>
+        <h1>${safe(chapter.title)}</h1>
+        <p class="lesson-lead">${safe(chapter.intro)}</p>
+        ${sectionList('Définitions principales', chapter.definitions)}
+        ${sectionList('Notions importantes', chapter.keyPoints)}
+        ${sectionList('Bonnes pratiques', chapter.goodPractices)}
+        ${sectionList('Erreurs fréquentes', chapter.commonMistakes)}
+        ${chapter.scenario ? `<section class="lesson-section lesson-scenario"><h2>Situation concrète</h2><p>${safe(chapter.scenario)}</p></section>` : ''}
+        ${chapter.remember ? `<aside class="lesson-box lesson-box--remember"><strong>À retenir</strong><p>${safe(chapter.remember)}</p></aside>` : ''}
+        ${chapter.trap ? `<aside class="lesson-box lesson-box--trap"><strong>Attention au piège</strong><p>${safe(chapter.trap)}</p></aside>` : ''}
+        ${sectionList('Vocabulaire', chapter.vocabulary)}
+        <div class="btn-row lesson-actions">
+          ${index > 0 ? `<button class="btn" data-action="open-synthesis" data-synthesis="${safe(chapters[index - 1].id)}">← Chapitre précédent</button>` : ''}
+          ${quizTheme ? `<button class="btn btn--dark" data-action="start-theme" data-theme="${safe(quizTheme)}">Tester mes connaissances</button>` : ''}
+          ${index < chapters.length - 1 ? `<button class="btn btn--yellow" data-action="open-synthesis" data-synthesis="${safe(chapters[index + 1].id)}">Chapitre suivant →</button>` : ''}
+        </div>
+      </article>`;
+  }
+
   function modalMarkup() {
     if (!ui.modal) return '';
     if (ui.modal.type === 'resume') {
@@ -772,7 +943,18 @@
   }
 
   function render(scrollTop = false) {
-    app.innerHTML = (ui.view === 'home' ? homeMarkup() : ui.view === 'quiz' ? quizMarkup() : resultsMarkup()) + modalMarkup();
+    const viewMarkup = ui.view === 'home'
+        ? homeMarkup()
+        : ui.view === 'quiz'
+            ? quizMarkup()
+            : ui.view === 'results'
+                ? resultsMarkup()
+                : ui.view === 'syntheses'
+                    ? synthesesIndexMarkup()
+                    : ui.view === 'synthesis'
+                        ? synthesisDetailMarkup()
+                        : homeMarkup();
+    app.innerHTML = viewMarkup + modalMarkup();
     attachDynamicEvents();
     if (ui.view === 'quiz' && currentQuestion()?.type === 'matching') requestAnimationFrame(drawMatchLines);
     if (scrollTop) window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -813,7 +995,7 @@
     }
     if (target.dataset.matchRight) {
       if (!ui.activeMatchLeft) {
-        showToast('Choisis d’abord un élément dans la colonne de gauche.');
+        showToast("Choisis d'abord un élément dans la colonne de gauche.");
         return;
       }
       const rightId = target.dataset.matchRight;
@@ -909,6 +1091,40 @@
     const button = event.target.closest('[data-action]');
     if (!button) return;
     const action = button.dataset.action;
+
+    if (action === 'start-general') {
+      launchQuiz('general', 'Grand test Cyber Training', activeQuestionIds(), 'Tous les thèmes');
+      return;
+    }
+    if (action === 'start-mode') {
+      const mode = (DATA.testModes || []).find(item => item.id === button.dataset.mode);
+      if (mode) launchQuiz(mode.id, mode.title, modeQuestionIds(mode), mode.description);
+      return;
+    }
+    if (action === 'syntheses') {
+      ui.view = 'syntheses';
+      ui.quiz = null;
+      ui.modal = null;
+      render(true);
+      return;
+    }
+    if (action === 'open-synthesis') {
+      ui.synthesisId = button.dataset.synthesis;
+      ui.view = 'synthesis';
+      ui.quiz = null;
+      render(true);
+      return;
+    }
+    if (action === 'open-synthesis-theme') {
+      const chapter = synthesisForTheme(button.dataset.theme);
+      if (chapter) {
+        ui.synthesisId = chapter.id;
+        ui.view = 'synthesis';
+        ui.quiz = null;
+        render(true);
+      }
+      return;
+    }
 
     if (action === 'start-general') {
       launchQuiz('general', 'Grand test Cyber Training', DATA.questions.map(q => q.id), 'Tous les thèmes');
