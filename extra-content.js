@@ -291,13 +291,28 @@
       subtheme: 'bases',
       difficulty: 'facile',
       type: 'tf-grid',
-      prompt: 'Indiquez si chaque exemple concerne surtout la confidentialité, l’intégrité ou la disponibilité.',
+      prompt: 'Pour chaque affirmation, indiquez si le pilier de sécurité de l’information identifié est correct.',
       statements: [
         { id: 's1', text: 'Un fichier confidentiel est consulté par une personne non autorisée.', correct: true, explanation: 'C’est une atteinte à la confidentialité.' },
         { id: 's2', text: 'Une facture est modifiée sans autorisation.', correct: true, explanation: 'C’est une atteinte à l’intégrité.' },
         { id: 's3', text: 'Un service est indisponible pendant une attaque.', correct: true, explanation: 'C’est une atteinte à la disponibilité.' }
       ],
       explanation: 'Les trois affirmations décrivent bien un pilier de la sécurité de l’information.',
+      visual: '🔺',
+      certification: false
+    },
+    {
+      id: 'web-cia-matching',
+      theme: 'web',
+      subtheme: 'bases',
+      difficulty: 'facile',
+      prompt: 'Reliez chaque exemple au pilier de la sécurité de l’information le plus concerné.',
+      type: 'matching',
+      pairs: [
+        { leftId: 'conf', left: 'Un fichier confidentiel est consulté par une personne non autorisée', rightId: 'confidentialite', right: 'Confidentialité' },
+        { leftId: 'integ', left: 'Une facture est modifiée sans autorisation', rightId: 'integrite', right: 'Intégrité' },
+        { leftId: 'dispo', left: 'Un service est indisponible pendant une attaque', rightId: 'disponibilite', right: 'Disponibilité' }
+      ],
       visual: '🔺',
       certification: false
     },
@@ -310,12 +325,12 @@
       prompt: 'Dans l’adresse https://login.microsoft.com.security-check.example.net, quel est le domaine réellement contrôlé par le titulaire principal ?',
       options: [
         { id: 'a', label: 'microsoft.com' },
-        { id: 'b', label: 'security-check.example.net' },
+        { id: 'b', label: 'example.net' },
         { id: 'c', label: 'login.microsoft.com' },
         { id: 'd', label: 'https' }
       ],
       correct: 'b',
-      explanation: 'Le domaine principal est juste avant l’extension effective: example.net, avec le sous-domaine security-check. Les mots placés avant peuvent être choisis pour tromper.',
+      explanation: 'Le domaine principal est juste avant l’extension effective : example.net, avec le sous-domaine security-check. Les mots placés avant (login.microsoft.com.security-check) peuvent être choisis pour tromper l’utilisateur en imitant un site de confiance.',
       visual: '🔗',
       certification: true
     },
