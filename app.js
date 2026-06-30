@@ -487,7 +487,7 @@
     }).join('')}
         </div>
       </div>
-      ${!locked ? `<p><strong>Mode d'emploi :</strong> cliquez sur un élément à gauche, puis sur sa description à droite.</p>` : ''}`;
+      ${!locked ? `<p><strong>Mode d'emploi :</strong> Cliquez sur un élément à gauche, puis sur sa description à droite. Recliquez pour modifier ou annuler une liaison.</p>` : ''}`;
   }
 
   function renderOrder(q, locked, value) {
@@ -989,7 +989,11 @@
     if (!q || q.type !== 'matching' || getAnswer(q)) return;
     const draft = getDraft(q);
     if (target.dataset.matchLeft) {
-      ui.activeMatchLeft = target.dataset.matchLeft;
+      if (ui.activeMatchLeft === target.dataset.matchLeft) {
+        ui.activeMatchLeft = null;
+      } else {
+        ui.activeMatchLeft = target.dataset.matchLeft;
+      }
       renderPreserveScroll();
       return;
     }
@@ -999,10 +1003,18 @@
         return;
       }
       const rightId = target.dataset.matchRight;
-      Object.keys(draft).forEach(leftId => {
-        if (draft[leftId] === rightId) delete draft[leftId];
-      });
-      draft[ui.activeMatchLeft] = rightId;
+      
+      // Si déjà lié à cet élément précis, on supprime la liaison (toggle)
+      if (draft[ui.activeMatchLeft] === rightId) {
+        delete draft[ui.activeMatchLeft];
+      } else {
+        // Sinon, on lie (en déliant d'abord cet élément de droite s'il était ailleurs)
+        Object.keys(draft).forEach(leftId => {
+          if (draft[leftId] === rightId) delete draft[leftId];
+        });
+        draft[ui.activeMatchLeft] = rightId;
+      }
+      
       ui.activeMatchLeft = null;
       saveQuiz();
       renderPreserveScroll();

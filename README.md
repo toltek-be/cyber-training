@@ -16,6 +16,7 @@ Une application web de quiz interactive pour s'entraîner à la cybersécurité 
 - **Progression Persistante** : Sauvegarde automatique de l'avancement dans le navigateur (LocalStorage).
 - **Zéro Data** : Fonctionne entièrement côté client, aucune donnée personnelle n'est collectée ou envoyée à un serveur.
 - **Expérience Dynamique** : Mélange aléatoire des réponses à chaque session pour éviter le par cœur visuel.
+- **Ergonomie Matching** : Possibilité de modifier ou d'annuler une liaison dans les questions de type "Éléments à relier" par simple clic.
 
 ## 🛠 Installation
 
@@ -45,6 +46,7 @@ Aucune installation complexe n'est requise. L'application est composée de fichi
 
 - **Encodage** : Tous les fichiers doivent être enregistrés en **UTF-8 sans BOM**.
 - **Versioning** : Pour forcer la mise à jour des scripts chez les utilisateurs, le paramètre `?v=YYYY-MM-DD-X` est utilisé dans `index.html`.
+- **Scripts de réparation** : En cas de corruption des caractères (mojibake), des scripts Python ont été utilisés pour restaurer l'intégrité des accents.
 
 ## 🚀 TODO - Nice to Have
 
