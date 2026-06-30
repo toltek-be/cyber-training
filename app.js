@@ -465,7 +465,7 @@
 
     const correctnessByLeft = {};
     q.pairs.forEach(p => {
-      if (locked) correctnessByLeft[p.leftId] = value?.[p.leftId] === p.rightId;
+      if (locked) correctnessByLeft[p.leftId] = value?.[p.leftId] === p.rightId || rightMap.get(value?.[p.leftId]) === p.right;
     });
     return `
       <div class="match-board" data-match-board="${safe(q.id)}">
@@ -487,7 +487,7 @@
     }).join('')}
         </div>
       </div>
-      ${!locked ? `<p><strong>Mode d'emploi :</strong> Cliquez sur un élément à gauche, puis sur sa description à droite. Recliquez pour modifier ou annuler une liaison.</p>` : ''}`;
+      <p><strong>Mode d'emploi :</strong> Cliquez sur un élément à gauche, puis sur sa description à droite. Recliquez pour modifier ou annuler une liaison.</p>`;
   }
 
   function renderOrder(q, locked, value) {
@@ -558,7 +558,7 @@
       return q.pairs.map(p => {
         const chosenId = value?.[p.leftId];
         const chosen = chosenId ? rightMap.get(chosenId) : 'Aucune réponse';
-        const ok = chosenId === p.rightId;
+        const ok = chosenId === p.rightId || rightMap.get(chosenId) === p.right;
         return `<div class="feedback-row"><strong>${ok ? '✓' : '✕'} ${safe(p.left)}</strong><br>Votre liaison : ${safe(chosen)}<br>Bonne liaison : ${safe(p.right)}</div>`;
       }).join('');
     }
@@ -682,7 +682,17 @@
     if (q.type === 'multiple') return Array.isArray(draft) && draft.length > 0;
     if (q.type === 'tf-grid') return q.statements.every(s => typeof draft?.[s.id] === 'boolean');
     if (q.type === 'fill') return q.blanks.every(b => Boolean(draft?.[b.id]));
-    if (q.type === 'matching') return q.pairs.every(p => Boolean(draft?.[p.leftId])) && new Set(Object.values(draft)).size === q.pairs.length;
+    if (q.type === 'matching') {
+      const rightMap = new Map(q.pairs.map(p => [p.rightId, p.right]));
+      const pairsComplete = q.pairs.every(p => Boolean(draft?.[p.leftId]));
+      if (!pairsComplete) return false;
+      
+      const chosenRights = Object.values(draft);
+      const chosenLabels = new Set(chosenRights.map(id => rightMap.get(id)));
+      const requiredLabels = new Set(q.pairs.map(p => p.right));
+      
+      return chosenLabels.size === requiredLabels.size;
+    }
     if (q.type === 'order') return Array.isArray(draft) && draft.length === q.items.length;
     return false;
   }
@@ -698,7 +708,16 @@
     if (q.type === 'multiple') return equalSets(value || [], q.correct || []);
     if (q.type === 'tf-grid') return q.statements.every(s => value?.[s.id] === s.correct);
     if (q.type === 'fill') return q.blanks.every(b => value?.[b.id] === b.correct);
-    if (q.type === 'matching') return q.pairs.every(p => value?.[p.leftId] === p.rightId);
+    if (q.type === 'matching') {
+      const rightMap = new Map(q.pairs.map(p => [p.rightId, p.right]));
+      return q.pairs.every(p => {
+        const chosenRightId = value?.[p.leftId];
+        if (!chosenRightId) return false;
+        if (chosenRightId === p.rightId) return true;
+        // Si l'ID est différent mais que le texte affiché est exactement le même, on accepte
+        return rightMap.get(chosenRightId) === p.right;
+      });
+    }
     if (q.type === 'order') return q.correctOrder.every((id, i) => value?.[i] === id);
     return false;
   }

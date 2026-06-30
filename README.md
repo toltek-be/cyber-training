@@ -16,7 +16,8 @@ Une application web de quiz interactive pour s'entraîner à la cybersécurité 
 - **Progression Persistante** : Sauvegarde automatique de l'avancement dans le navigateur (LocalStorage).
 - **Zéro Data** : Fonctionne entièrement côté client, aucune donnée personnelle n'est collectée ou envoyée à un serveur.
 - **Expérience Dynamique** : Mélange aléatoire des réponses à chaque session pour éviter le par cœur visuel.
-- **Ergonomie Matching** : Possibilité de modifier ou d'annuler une liaison dans les questions de type "Éléments à relier" par simple clic.
+- **Ergonomie Matching** : Gestion intelligente des doublons (plusieurs réponses à droite peuvent avoir le même libellé) et possibilité de modifier ou d'annuler une liaison par simple clic.
+- **Support des Questions d'Examen** : Adaptations spécifiques pour les questions complexes du TOSA (catégorisations RGPD, etc.).
 
 ## 🛠 Installation
 
@@ -41,6 +42,7 @@ Aucune installation complexe n'est requise. L'application est composée de fichi
 | **Ordre des réponses** | ❌ Toujours le même | ✅ Aléatoire pour chaque question |
 | **Ordre matching (droite)** | ❌ Juste inversé | ✅ Aléatoire pour chaque question |
 | **Ordre initial "remise en ordre"** | ❌ Toujours inversé | ✅ Complètement mélangé |
+| **Doublons en matching** | ❌ Identifiants uniques stricts | ✅ Validation par libellé textuel |
 
 ## ⚙️ Maintenance & Encodage
 
