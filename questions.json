@@ -1,4 +1,4 @@
-window.CYBER_TRAINING_DATA = {
+{
   "version": 1,
   "appName": "Tosa Cyber Training",
   "themes": {
@@ -2671,6 +2671,2050 @@ window.CYBER_TRAINING_DATA = {
       "visual": "🧽",
       "certification": false,
       "title": null
+    },
+    {
+      "id": "web-risk-triad",
+      "theme": "web",
+      "subtheme": "bases",
+      "difficulty": "facile",
+      "type": "matching",
+      "prompt": "Reliez chaque notion de base à sa définition.",
+      "pairs": [
+        {
+          "leftId": "menace",
+          "left": "Menace",
+          "rightId": "cause",
+          "right": "Cause possible d’un événement indésirable"
+        },
+        {
+          "leftId": "vuln",
+          "left": "Vulnérabilité",
+          "rightId": "weakness",
+          "right": "Faiblesse exploitable"
+        },
+        {
+          "leftId": "risk",
+          "left": "Risque",
+          "rightId": "combo",
+          "right": "Probabilité et impact d’un événement"
+        },
+        {
+          "leftId": "incident",
+          "left": "Incident",
+          "rightId": "event",
+          "right": "Événement réel ou suspect affectant la sécurité"
+        }
+      ],
+      "explanation": "Ces notions structurent l’analyse de sécurité: une menace exploite une vulnérabilité, ce qui crée un risque, puis parfois un incident.",
+      "visual": "🧩",
+      "certification": true
+    },
+    {
+      "id": "web-cia-grid",
+      "theme": "web",
+      "subtheme": "bases",
+      "difficulty": "facile",
+      "type": "tf-grid",
+      "prompt": "Indiquez si chaque exemple concerne surtout la confidentialité, l’intégrité ou la disponibilité.",
+      "statements": [
+        {
+          "id": "s1",
+          "text": "Un fichier confidentiel est consulté par une personne non autorisée.",
+          "correct": true,
+          "explanation": "C’est une atteinte à la confidentialité."
+        },
+        {
+          "id": "s2",
+          "text": "Une facture est modifiée sans autorisation.",
+          "correct": true,
+          "explanation": "C’est une atteinte à l’intégrité."
+        },
+        {
+          "id": "s3",
+          "text": "Un service est indisponible pendant une attaque.",
+          "correct": true,
+          "explanation": "C’est une atteinte à la disponibilité."
+        }
+      ],
+      "explanation": "Les trois affirmations décrivent bien un pilier de la sécurité de l’information.",
+      "visual": "🔺",
+      "certification": false
+    },
+    {
+      "id": "web-cia-matching",
+      "theme": "web",
+      "subtheme": "bases",
+      "difficulty": "facile",
+      "prompt": "Reliez chaque exemple au pilier de la sécurité de l’information le plus concerné.",
+      "type": "matching",
+      "pairs": [
+        {
+          "leftId": "conf",
+          "left": "Un fichier confidentiel est consulté par une personne non autorisée",
+          "rightId": "confidentialite",
+          "right": "Confidentialité"
+        },
+        {
+          "leftId": "integ",
+          "left": "Une facture est modifiée sans autorisation",
+          "rightId": "integrite",
+          "right": "Intégrité"
+        },
+        {
+          "leftId": "dispo",
+          "left": "Un service est indisponible pendant une attaque",
+          "rightId": "disponibilite",
+          "right": "Disponibilité"
+        }
+      ],
+      "explanation": "La confidentialité empêche les accès non autorisés, l’intégrité garantit que les données ne sont pas altérées sans autorisation, et la disponibilité assure l’accès aux services quand c’est nécessaire.",
+      "visual": "🔺",
+      "certification": false
+    },
+    {
+      "id": "web-url-subdomain",
+      "theme": "web",
+      "subtheme": "navigation",
+      "difficulty": "moyen",
+      "type": "single",
+      "prompt": "Dans l’adresse https://login.microsoft.com.security-check.example.net, quel est le domaine réellement contrôlé par le titulaire principal ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "microsoft.com"
+        },
+        {
+          "id": "b",
+          "label": "security-check.example.net"
+        },
+        {
+          "id": "c",
+          "label": "login.microsoft.com"
+        },
+        {
+          "id": "d",
+          "label": "https"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Le domaine principal est juste avant l’extension effective: example.net, avec le sous-domaine security-check. Les mots placés avant peuvent être choisis pour tromper.",
+      "visual": "🔗",
+      "certification": true
+    },
+    {
+      "id": "web-cert-limits",
+      "theme": "web",
+      "subtheme": "certificat",
+      "difficulty": "moyen",
+      "type": "multiple",
+      "prompt": "Que peut-on raisonnablement déduire d’un certificat HTTPS valide ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "La connexion avec ce site est chiffrée."
+        },
+        {
+          "id": "b",
+          "label": "Le certificat a été émis par une autorité de certification reconnue par le navigateur."
+        },
+        {
+          "id": "c",
+          "label": "Le site est forcément honnête."
+        },
+        {
+          "id": "d",
+          "label": "Le domaine affiché doit tout de même être vérifié."
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "d"
+      ],
+      "explanation": "HTTPS protège le transport et s’appuie sur une autorité de certification, mais un fraudeur peut aussi obtenir un certificat pour son propre domaine.",
+      "visual": "📜",
+      "certification": true
+    },
+    {
+      "id": "web-cookie-types",
+      "theme": "web",
+      "subtheme": "cookies",
+      "difficulty": "facile",
+      "type": "matching",
+      "prompt": "Reliez chaque type de cookie à son usage typique.",
+      "pairs": [
+        {
+          "leftId": "session",
+          "left": "Cookie de session",
+          "rightId": "login",
+          "right": "Maintenir une connexion pendant la visite"
+        },
+        {
+          "leftId": "pref",
+          "left": "Cookie de préférence",
+          "rightId": "settings",
+          "right": "Mémoriser une langue ou un choix d’affichage"
+        },
+        {
+          "leftId": "ad",
+          "left": "Cookie publicitaire",
+          "rightId": "tracking",
+          "right": "Contribuer au suivi ou au ciblage publicitaire"
+        }
+      ],
+      "explanation": "Les cookies ont des usages variés: certains sont nécessaires au fonctionnement, d’autres relèvent du confort ou du suivi.",
+      "visual": "🍪",
+      "certification": false
+    },
+    {
+      "id": "phishing-vishing",
+      "theme": "phishing",
+      "subtheme": "vishing",
+      "difficulty": "facile",
+      "type": "single",
+      "prompt": "Un appel prétend venir du support informatique et vous demande votre code MFA. De quel type d’attaque s’agit-il principalement ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Vishing"
+        },
+        {
+          "id": "b",
+          "label": "Sauvegarde hors ligne"
+        },
+        {
+          "id": "c",
+          "label": "Chiffrement du disque"
+        },
+        {
+          "id": "d",
+          "label": "Mise à jour corrective"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Le vishing est une forme d’ingénierie sociale par téléphone. Un support légitime ne doit pas demander un code MFA.",
+      "visual": "☎️",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "phishing-email-alerts",
+      "theme": "phishing",
+      "subtheme": "email",
+      "difficulty": "facile",
+      "type": "multiple",
+      "prompt": "Quels éléments doivent vous alerter dans un email de sécurité de compte ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Une menace de suppression dans quelques minutes."
+        },
+        {
+          "id": "b",
+          "label": "Un lien dont le domaine ne correspond pas au service officiel."
+        },
+        {
+          "id": "c",
+          "label": "Une demande de mot de passe ou de code."
+        },
+        {
+          "id": "d",
+          "label": "La présence d’une formule de politesse."
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "L’urgence, le domaine incohérent et la demande de secret sont des signaux forts. La politesse ne prouve ni fraude ni légitimité.",
+      "visual": "🚨",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "phishing-iban-order",
+      "theme": "phishing",
+      "subtheme": "fraude",
+      "difficulty": "moyen",
+      "type": "order",
+      "prompt": "Remettez dans l’ordre une réaction prudente à un changement d’IBAN reçu par email.",
+      "items": [
+        [
+          "hold",
+          "Suspendre le paiement ou la modification automatique"
+        ],
+        [
+          "verify",
+          "Vérifier par un canal connu et indépendant"
+        ],
+        [
+          "record",
+          "Conserver l’email et les informations utiles"
+        ],
+        [
+          "apply",
+          "Appliquer le changement seulement après validation interne"
+        ]
+      ],
+      "correctOrder": [
+        "hold",
+        "verify",
+        "record",
+        "apply"
+      ],
+      "explanation": "On évite d’abord le paiement risqué, puis on vérifie et on documente. La modification ne vient qu’après validation conforme à la procédure.",
+      "visual": "🏦",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "phishing-qr-scenario",
+      "theme": "phishing",
+      "subtheme": "quishing",
+      "difficulty": "moyen",
+      "type": "single",
+      "prompt": "Un QR code collé sur une borne de paiement redirige vers une page demandant vos identifiants bancaires. Quel réflexe est le meilleur ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Saisir les identifiants si la page affiche un cadenas."
+        },
+        {
+          "id": "b",
+          "label": "Fermer la page et utiliser l’application ou le site officiel ouvert soi-même."
+        },
+        {
+          "id": "c",
+          "label": "Scanner une deuxième fois pour confirmer."
+        },
+        {
+          "id": "d",
+          "label": "Envoyer le QR code à tous ses contacts."
+        }
+      ],
+      "correct": "b",
+      "explanation": "Un QR code masque l’adresse jusqu’au scan. Il faut privilégier un canal officiel et signaler l’anomalie si le contexte est professionnel ou public.",
+      "visual": "▦",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "phishing-faux-support",
+      "theme": "phishing",
+      "subtheme": "faux support",
+      "difficulty": "moyen",
+      "type": "multiple",
+      "prompt": "Un faux support vous pousse à installer un outil de contrôle à distance. Quelles actions sont correctes ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Refuser de communiquer le code de prise en main."
+        },
+        {
+          "id": "b",
+          "label": "Vérifier l’identité via le canal officiel de support."
+        },
+        {
+          "id": "c",
+          "label": "Installer l’outil pour gagner du temps."
+        },
+        {
+          "id": "d",
+          "label": "Signaler la tentative."
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "d"
+      ],
+      "explanation": "Le contrôle à distance donne un accès direct à l’appareil. Il doit être utilisé seulement dans un cadre vérifié et autorisé.",
+      "visual": "🖥️",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "password-passphrase",
+      "theme": "passwords",
+      "subtheme": "robustesse",
+      "difficulty": "facile",
+      "type": "single",
+      "prompt": "Quel exemple illustre le mieux une phrase de passe robuste pour un usage personnel ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "SoleilTableTrain!42 très longue et unique"
+        },
+        {
+          "id": "b",
+          "label": "Azerty123"
+        },
+        {
+          "id": "c",
+          "label": "Le prénom de son enfant"
+        },
+        {
+          "id": "d",
+          "label": "Le même mot de passe que sa messagerie"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Une phrase longue, unique et difficile à deviner est préférable. Les informations personnelles et la réutilisation augmentent le risque.",
+      "visual": "🔑",
+      "certification": false
+    },
+    {
+      "id": "password-mfa-prompt",
+      "theme": "passwords",
+      "subtheme": "mfa",
+      "difficulty": "moyen",
+      "type": "single",
+      "prompt": "Vous recevez une notification MFA alors que vous n’essayez pas de vous connecter. Que faire ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Valider pour faire disparaître la notification."
+        },
+        {
+          "id": "b",
+          "label": "Refuser, changer le mot de passe depuis un canal fiable et signaler."
+        },
+        {
+          "id": "c",
+          "label": "Ignorer définitivement sans autre action."
+        },
+        {
+          "id": "d",
+          "label": "Envoyer le code à un collègue."
+        }
+      ],
+      "correct": "b",
+      "explanation": "Une demande MFA non initiée peut indiquer qu’un mot de passe est connu. Il faut refuser et sécuriser le compte.",
+      "visual": "📲",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "password-manager-roles",
+      "theme": "passwords",
+      "subtheme": "gestionnaire",
+      "difficulty": "facile",
+      "type": "tf-grid",
+      "prompt": "Indiquez si chaque affirmation sur un gestionnaire de mots de passe est vraie ou fausse.",
+      "statements": [
+        {
+          "id": "s1",
+          "text": "Il peut générer des mots de passe uniques.",
+          "correct": true,
+          "explanation": "C’est l’un de ses rôles principaux."
+        },
+        {
+          "id": "s2",
+          "text": "Il supprime le besoin d’un mot de passe maître robuste.",
+          "correct": false,
+          "explanation": "Le mot de passe maître reste critique."
+        },
+        {
+          "id": "s3",
+          "text": "Il peut réduire la réutilisation des mots de passe.",
+          "correct": true,
+          "explanation": "Il évite de devoir mémoriser chaque secret."
+        },
+        {
+          "id": "s4",
+          "text": "Il autorise à partager ses mots de passe par email.",
+          "correct": false,
+          "explanation": "Le partage doit être encadré par des fonctions sûres ou évité."
+        }
+      ],
+      "explanation": "Un gestionnaire est utile, mais il doit lui-même être bien protégé.",
+      "visual": "🗄️",
+      "certification": true
+    },
+    {
+      "id": "password-leak-order",
+      "theme": "passwords",
+      "subtheme": "fuite",
+      "difficulty": "moyen",
+      "type": "order",
+      "prompt": "Après confirmation qu’un mot de passe réutilisé a fuité, classez les actions prioritaires.",
+      "items": [
+        [
+          "critical",
+          "Changer en priorité les comptes sensibles concernés"
+        ],
+        [
+          "unique",
+          "Remplacer par des mots de passe uniques"
+        ],
+        [
+          "mfa",
+          "Activer ou vérifier la MFA"
+        ],
+        [
+          "sessions",
+          "Fermer les sessions inconnues"
+        ]
+      ],
+      "correctOrder": [
+        "critical",
+        "unique",
+        "mfa",
+        "sessions"
+      ],
+      "explanation": "Les comptes sensibles doivent être protégés immédiatement. La MFA et la fermeture de sessions réduisent le maintien d’accès.",
+      "visual": "🧯",
+      "certification": false,
+      "scenario": true
+    },
+    {
+      "id": "password-recovery-codes",
+      "theme": "passwords",
+      "subtheme": "mfa",
+      "difficulty": "facile",
+      "type": "single",
+      "prompt": "À quoi servent les codes de récupération MFA ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "À récupérer l’accès si le second facteur principal est perdu."
+        },
+        {
+          "id": "b",
+          "label": "À remplacer définitivement le mot de passe."
+        },
+        {
+          "id": "c",
+          "label": "À être envoyés au support par chat."
+        },
+        {
+          "id": "d",
+          "label": "À rendre le compte public."
+        }
+      ],
+      "correct": "a",
+      "explanation": "Les codes de récupération sont des secours sensibles. Ils doivent être conservés dans un endroit sûr et ne jamais être communiqués.",
+      "visual": "🧾",
+      "certification": false
+    },
+    {
+      "id": "devices-windows-version",
+      "theme": "devices",
+      "subtheme": "système",
+      "difficulty": "facile",
+      "type": "single",
+      "prompt": "Pourquoi connaître la version de Windows et l’architecture 32/64 bits peut-il être utile ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Pour vérifier la compatibilité des logiciels et des correctifs."
+        },
+        {
+          "id": "b",
+          "label": "Pour rendre l’appareil anonyme."
+        },
+        {
+          "id": "c",
+          "label": "Pour désactiver automatiquement les malwares."
+        },
+        {
+          "id": "d",
+          "label": "Pour remplacer la sauvegarde."
+        }
+      ],
+      "correct": "a",
+      "explanation": "La version et l’architecture aident à installer les bons logiciels, pilotes et mises à jour de sécurité.",
+      "visual": "🪟",
+      "certification": true
+    },
+    {
+      "id": "devices-lost-phone",
+      "theme": "devices",
+      "subtheme": "perte",
+      "difficulty": "moyen",
+      "type": "multiple",
+      "prompt": "Vous perdez un téléphone professionnel. Quelles actions sont pertinentes ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Prévenir rapidement le service compétent."
+        },
+        {
+          "id": "b",
+          "label": "Déclencher localisation ou effacement à distance selon la procédure."
+        },
+        {
+          "id": "c",
+          "label": "Attendre plusieurs jours pour voir s’il réapparaît."
+        },
+        {
+          "id": "d",
+          "label": "Changer les accès exposés si nécessaire."
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "d"
+      ],
+      "explanation": "Le signalement rapide permet de bloquer l’appareil, limiter l’accès aux données et évaluer l’impact.",
+      "visual": "📱",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "devices-mdm-limits",
+      "theme": "devices",
+      "subtheme": "mdm",
+      "difficulty": "moyen",
+      "type": "tf-grid",
+      "prompt": "Indiquez si chaque affirmation sur le MDM est vraie ou fausse.",
+      "statements": [
+        {
+          "id": "s1",
+          "text": "Il peut imposer des règles de sécurité sur un téléphone professionnel.",
+          "correct": true,
+          "explanation": "C’est un usage courant."
+        },
+        {
+          "id": "s2",
+          "text": "Il autorise automatiquement l’employeur à activer la caméra sans limite.",
+          "correct": false,
+          "explanation": "Les usages doivent respecter le cadre légal et interne."
+        },
+        {
+          "id": "s3",
+          "text": "Il peut aider à effacer des données professionnelles à distance.",
+          "correct": true,
+          "explanation": "C’est utile en cas de perte ou départ."
+        },
+        {
+          "id": "s4",
+          "text": "Il remplace totalement la vigilance de l’utilisateur.",
+          "correct": false,
+          "explanation": "Les comportements restent déterminants."
+        }
+      ],
+      "explanation": "Le MDM est un outil d’administration et de protection, pas un passe-droit illimité.",
+      "visual": "📋",
+      "certification": true
+    },
+    {
+      "id": "devices-usb-found",
+      "theme": "devices",
+      "subtheme": "usb",
+      "difficulty": "facile",
+      "type": "single",
+      "prompt": "Vous trouvez une clé USB sur le parking de l’entreprise. Quel réflexe est le plus sûr ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "La brancher pour identifier son propriétaire."
+        },
+        {
+          "id": "b",
+          "label": "La remettre selon la procédure interne sans la connecter."
+        },
+        {
+          "id": "c",
+          "label": "La formater sur votre poste."
+        },
+        {
+          "id": "d",
+          "label": "Copier son contenu dans le cloud."
+        }
+      ],
+      "correct": "b",
+      "explanation": "Une clé trouvée peut être piégée. Elle ne doit pas être branchée sur un poste de travail ordinaire.",
+      "visual": "💾",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "devices-lock-screen",
+      "theme": "devices",
+      "subtheme": "poste",
+      "difficulty": "facile",
+      "type": "single",
+      "prompt": "Pourquoi verrouiller son écran en quittant son poste ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Pour empêcher un accès physique non autorisé pendant l’absence."
+        },
+        {
+          "id": "b",
+          "label": "Pour chiffrer automatiquement Internet."
+        },
+        {
+          "id": "c",
+          "label": "Pour supprimer les fichiers temporaires."
+        },
+        {
+          "id": "d",
+          "label": "Pour désactiver les mises à jour."
+        }
+      ],
+      "correct": "a",
+      "explanation": "Le verrouillage limite les actions possibles par une personne présente physiquement: lecture, envoi d’emails, copie de fichiers ou modification.",
+      "visual": "🔒",
+      "certification": false
+    },
+    {
+      "id": "malware-ransomware-signs",
+      "theme": "malware",
+      "subtheme": "ransomware",
+      "difficulty": "facile",
+      "type": "multiple",
+      "prompt": "Quels signes peuvent évoquer un rançongiciel ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Des fichiers deviennent illisibles ou changent d’extension."
+        },
+        {
+          "id": "b",
+          "label": "Un message demande une rançon."
+        },
+        {
+          "id": "c",
+          "label": "Le fond d’écran ou des notes expliquent un chiffrement."
+        },
+        {
+          "id": "d",
+          "label": "Le clavier est plus propre que d’habitude."
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "Un ransomware cherche souvent à rendre les fichiers inaccessibles puis à exercer une pression. Il faut isoler et signaler rapidement.",
+      "visual": "🧨",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "malware-types-match",
+      "theme": "malware",
+      "subtheme": "familles",
+      "difficulty": "facile",
+      "type": "matching",
+      "prompt": "Reliez chaque logiciel malveillant à son comportement principal.",
+      "pairs": [
+        {
+          "leftId": "keylogger",
+          "left": "Keylogger",
+          "rightId": "keys",
+          "right": "Capture les frappes clavier"
+        },
+        {
+          "leftId": "spyware",
+          "left": "Spyware",
+          "rightId": "spy",
+          "right": "Espionne l’activité ou les données"
+        },
+        {
+          "leftId": "worm",
+          "left": "Ver",
+          "rightId": "spread",
+          "right": "Se propage souvent automatiquement"
+        },
+        {
+          "leftId": "adware",
+          "left": "Adware",
+          "rightId": "ads",
+          "right": "Affiche ou injecte de la publicité"
+        }
+      ],
+      "explanation": "Les familles décrivent un comportement dominant; un malware réel peut combiner plusieurs fonctions.",
+      "visual": "🧬",
+      "certification": true
+    },
+    {
+      "id": "malware-macro",
+      "theme": "malware",
+      "subtheme": "documents",
+      "difficulty": "moyen",
+      "type": "single",
+      "prompt": "Un document Office inattendu demande d’activer les macros pour afficher une facture. Que faire ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Activer les macros pour lire le document."
+        },
+        {
+          "id": "b",
+          "label": "Ne pas activer, vérifier le contexte et signaler si nécessaire."
+        },
+        {
+          "id": "c",
+          "label": "Désactiver l’antivirus avant ouverture."
+        },
+        {
+          "id": "d",
+          "label": "Renvoyer le fichier à toute l’équipe."
+        }
+      ],
+      "correct": "b",
+      "explanation": "Les macros peuvent exécuter du code. Une demande inattendue d’activation est un signal d’alerte classique.",
+      "visual": "📄",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "malware-remote-tool",
+      "theme": "malware",
+      "subtheme": "prise en main",
+      "difficulty": "moyen",
+      "type": "tf-grid",
+      "prompt": "Indiquez si chaque affirmation sur les outils de prise en main à distance est vraie ou fausse.",
+      "statements": [
+        {
+          "id": "s1",
+          "text": "Ils peuvent être légitimes dans un cadre support validé.",
+          "correct": true,
+          "explanation": "Le contexte et l’autorisation font la différence."
+        },
+        {
+          "id": "s2",
+          "text": "Ils sont toujours malveillants.",
+          "correct": false,
+          "explanation": "Ce sont des outils dual-use."
+        },
+        {
+          "id": "s3",
+          "text": "Un attaquant peut les détourner pour contrôler un poste.",
+          "correct": true,
+          "explanation": "C’est une technique fréquente de faux support."
+        },
+        {
+          "id": "s4",
+          "text": "Communiquer le code de session ne présente aucun risque.",
+          "correct": false,
+          "explanation": "Le code peut donner accès à l’appareil."
+        }
+      ],
+      "explanation": "Un outil légitime devient dangereux lorsqu’il est installé ou partagé avec une personne non vérifiée.",
+      "visual": "🕹️",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "malware-isolate-order",
+      "theme": "malware",
+      "subtheme": "incident",
+      "difficulty": "moyen",
+      "type": "order",
+      "prompt": "Classez les premières actions raisonnables face à un poste fortement suspect.",
+      "items": [
+        [
+          "stop",
+          "Arrêter les manipulations non indispensables"
+        ],
+        [
+          "isolate",
+          "Isoler du réseau selon la consigne"
+        ],
+        [
+          "report",
+          "Prévenir le support ou l’équipe sécurité"
+        ],
+        [
+          "note",
+          "Noter l’heure et les symptômes observés"
+        ]
+      ],
+      "correctOrder": [
+        "stop",
+        "isolate",
+        "report",
+        "note"
+      ],
+      "explanation": "Il faut limiter la propagation, obtenir de l’aide et conserver des informations utiles. Les consignes internes peuvent préciser l’ordre exact.",
+      "visual": "🧯",
+      "certification": false,
+      "scenario": true
+    },
+    {
+      "id": "data-personal-sensitive",
+      "theme": "data",
+      "subtheme": "rgpd",
+      "difficulty": "facile",
+      "type": "matching",
+      "prompt": "Reliez chaque exemple à la catégorie RGPD la plus adaptée.",
+      "pairs": [
+        {
+          "leftId": "email",
+          "left": "Adresse email nominative",
+          "rightId": "personal",
+          "right": "Donnée personnelle"
+        },
+        {
+          "leftId": "health",
+          "left": "Diagnostic médical",
+          "rightId": "sensitive",
+          "right": "Donnée sensible"
+        },
+        {
+          "leftId": "anon",
+          "left": "Statistique réellement anonymisée",
+          "rightId": "notpersonal",
+          "right": "Pas une donnée personnelle si la réidentification est empêchée"
+        },
+        {
+          "leftId": "photo",
+          "left": "Photo reconnaissable",
+          "rightId": "image",
+          "right": "Donnée personnelle"
+        }
+      ],
+      "explanation": "Une donnée est personnelle dès qu’elle permet d’identifier directement ou indirectement une personne.",
+      "visual": "🪪",
+      "certification": true
+    },
+    {
+      "id": "data-minimisation-form",
+      "theme": "data",
+      "subtheme": "minimisation",
+      "difficulty": "facile",
+      "type": "single",
+      "prompt": "Un formulaire pour recevoir une brochure demande le numéro national et la situation médicale. Quel principe est le plus en cause ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Minimisation des données"
+        },
+        {
+          "id": "b",
+          "label": "Disponibilité du service"
+        },
+        {
+          "id": "c",
+          "label": "Typosquatting"
+        },
+        {
+          "id": "d",
+          "label": "Authentification forte"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Les données demandées doivent être nécessaires à la finalité. Ici, ces informations semblent excessives pour l’envoi d’une brochure.",
+      "visual": "📋",
+      "certification": true
+    },
+    {
+      "id": "data-ai-redaction",
+      "theme": "data",
+      "subtheme": "ia",
+      "difficulty": "moyen",
+      "type": "multiple",
+      "prompt": "Avant de coller une réclamation client dans un outil d’IA, quelles précautions sont pertinentes ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Supprimer les noms, emails et numéros de commande inutiles."
+        },
+        {
+          "id": "b",
+          "label": "Utiliser uniquement un outil autorisé par l’organisation."
+        },
+        {
+          "id": "c",
+          "label": "Copier les identifiants pour que l’IA comprenne mieux."
+        },
+        {
+          "id": "d",
+          "label": "Relire humainement la réponse générée."
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "d"
+      ],
+      "explanation": "La minimisation, l’outil autorisé et la vérification humaine réduisent le risque de fuite ou d’erreur.",
+      "visual": "🤖",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "data-breach-order",
+      "theme": "data",
+      "subtheme": "violation",
+      "difficulty": "moyen",
+      "type": "order",
+      "prompt": "Classez les actions après découverte d’un fichier client public sur Internet.",
+      "items": [
+        [
+          "limit",
+          "Limiter l’exposition sans détruire les traces"
+        ],
+        [
+          "inform",
+          "Prévenir les responsables internes compétents"
+        ],
+        [
+          "assess",
+          "Évaluer les données, personnes et risques concernés"
+        ],
+        [
+          "document",
+          "Documenter les décisions et notifications éventuelles"
+        ]
+      ],
+      "correctOrder": [
+        "limit",
+        "inform",
+        "assess",
+        "document"
+      ],
+      "explanation": "La limitation immédiate réduit le risque, puis l’organisation évalue et documente l’incident pour décider des suites.",
+      "visual": "📣",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "data-right-erasure",
+      "theme": "data",
+      "subtheme": "droits",
+      "difficulty": "moyen",
+      "type": "tf-grid",
+      "prompt": "Indiquez si chaque affirmation sur le droit à l’effacement est vraie ou fausse.",
+      "statements": [
+        {
+          "id": "s1",
+          "text": "Il peut s’appliquer dans certains cas.",
+          "correct": true,
+          "explanation": "Le RGPD prévoit ce droit."
+        },
+        {
+          "id": "s2",
+          "text": "Il impose toujours tout effacer immédiatement.",
+          "correct": false,
+          "explanation": "Des obligations légales ou intérêts légitimes peuvent limiter ce droit."
+        },
+        {
+          "id": "s3",
+          "text": "L’organisation doit répondre et expliquer sa décision.",
+          "correct": true,
+          "explanation": "Une réponse claire est attendue."
+        },
+        {
+          "id": "s4",
+          "text": "Il ne concerne jamais les données numériques.",
+          "correct": false,
+          "explanation": "Il concerne bien les traitements de données personnelles."
+        }
+      ],
+      "explanation": "Les droits des personnes sont importants mais doivent être analysés selon le contexte.",
+      "visual": "🧽",
+      "certification": false
+    },
+    {
+      "id": "data-work-cloud-personal-file",
+      "theme": "data",
+      "subtheme": "rgpd-travail",
+      "difficulty": "moyen",
+      "type": "single",
+      "prompt": "Un manager voit dans le cloud de l’entreprise un dossier clairement nommé “Personnel” appartenant à un travailleur. Peut-il l’ouvrir librement parce que l’espace cloud appartient à l’entreprise ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Oui, tout ce qui est dans le cloud de l’entreprise peut être lu librement."
+        },
+        {
+          "id": "b",
+          "label": "Non, il faut une finalité légitime, une nécessité réelle, une information préalable et une procédure proportionnée."
+        },
+        {
+          "id": "c",
+          "label": "Oui, mais uniquement si le fichier est récent."
+        },
+        {
+          "id": "d",
+          "label": "Non, un fichier personnel est toujours totalement inaccessible, même en cas d’incident grave."
+        }
+      ],
+      "correct": "b",
+      "explanation": "La propriété de l’outil ne donne pas un droit illimité de lecture. Un contrôle doit être justifié, proportionné, annoncé et encadré. Un contenu clairement personnel doit être protégé autant que possible, sauf situation exceptionnelle et procédure adaptée.",
+      "visual": "☁️",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "data-work-monitoring-principles",
+      "theme": "data",
+      "subtheme": "rgpd-travail",
+      "difficulty": "moyen",
+      "type": "multiple",
+      "prompt": "Quels principes doivent encadrer une surveillance des outils professionnels par l’employeur ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Une finalité précise et légitime."
+        },
+        {
+          "id": "b",
+          "label": "Une surveillance proportionnée au risque ou à l’objectif."
+        },
+        {
+          "id": "c",
+          "label": "Une information claire et préalable des travailleurs."
+        },
+        {
+          "id": "d",
+          "label": "La possibilité de tout surveiller sans limite parce que l’employeur paie les outils."
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "Le contrôle au travail doit respecter les principes RGPD: finalité, proportionnalité, transparence, minimisation et sécurité. Le fait que l’outil soit professionnel ne supprime pas toute vie privée.",
+      "visual": "📋",
+      "certification": true
+    },
+    {
+      "id": "data-work-email-control",
+      "theme": "data",
+      "subtheme": "rgpd-travail",
+      "difficulty": "moyen",
+      "type": "tf-grid",
+      "prompt": "Indiquez si chaque affirmation sur la messagerie professionnelle est vraie ou fausse.",
+      "statements": [
+        {
+          "id": "s1",
+          "text": "L’employeur peut prévoir des règles d’usage de la messagerie professionnelle.",
+          "correct": true,
+          "explanation": "Une politique ICT ou un règlement peut encadrer l’usage de la messagerie."
+        },
+        {
+          "id": "s2",
+          "text": "L’employeur peut lire tous les emails personnels par curiosité ou confort managérial.",
+          "correct": false,
+          "explanation": "Un accès au contenu doit être justifié, proportionné et encadré."
+        },
+        {
+          "id": "s3",
+          "text": "Une boîte fonctionnelle ou partagée peut réduire la dépendance à la boîte individuelle d’un travailleur absent.",
+          "correct": true,
+          "explanation": "C’est une bonne pratique de continuité qui limite les accès intrusifs."
+        },
+        {
+          "id": "s4",
+          "text": "Le travailleur ne garde aucune vie privée dès qu’il utilise une adresse professionnelle.",
+          "correct": false,
+          "explanation": "La vie privée ne disparaît pas au travail."
+        }
+      ],
+      "explanation": "La messagerie professionnelle peut être encadrée, mais le contenu personnel ou individualisé reste sensible. Les règles doivent être connues et les accès limités.",
+      "visual": "✉️",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "data-work-geolocation",
+      "theme": "data",
+      "subtheme": "rgpd-travail",
+      "difficulty": "moyen",
+      "type": "multiple",
+      "prompt": "Une entreprise équipe ses véhicules professionnels d’un système de géolocalisation. Quelles précautions sont pertinentes ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Informer clairement les travailleurs sur l’objectif, les données collectées et la durée de conservation."
+        },
+        {
+          "id": "b",
+          "label": "Limiter la géolocalisation à des finalités légitimes, comme sécurité, organisation des tournées ou protection du véhicule."
+        },
+        {
+          "id": "c",
+          "label": "Prévoir une désactivation ou une protection hors temps de travail si le véhicule peut être utilisé à titre privé."
+        },
+        {
+          "id": "d",
+          "label": "Suivre en permanence tous les déplacements privés sans information, car le véhicule appartient à l’entreprise."
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "La géolocalisation est très intrusive. Elle doit être justifiée, proportionnée, transparente et limitée. Un suivi permanent de la vie privée serait disproportionné.",
+      "visual": "📍",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "data-work-telework-surveillance",
+      "theme": "data",
+      "subtheme": "rgpd-travail",
+      "difficulty": "moyen",
+      "type": "single",
+      "prompt": "En télétravail, une entreprise veut activer en continu la webcam et prendre des captures d’écran automatiques toutes les minutes. Quelle analyse est la plus correcte ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "C’est automatiquement autorisé car le travail est payé."
+        },
+        {
+          "id": "b",
+          "label": "C’est très intrusif et doit être évité sauf justification exceptionnelle, information claire et proportionnalité stricte."
+        },
+        {
+          "id": "c",
+          "label": "C’est autorisé si les images ne sont pas jolies."
+        },
+        {
+          "id": "d",
+          "label": "C’est obligatoire pour tout télétravail."
+        }
+      ],
+      "correct": "b",
+      "explanation": "Le télétravail ne transforme pas le domicile en espace de surveillance permanente. Les contrôles doivent rester nécessaires, proportionnés et transparents, avec des alternatives moins intrusives quand elles existent.",
+      "visual": "🏠",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "data-work-gsm-mdm",
+      "theme": "data",
+      "subtheme": "rgpd-travail",
+      "difficulty": "moyen",
+      "type": "tf-grid",
+      "prompt": "Indiquez si chaque affirmation sur un GSM professionnel est vraie ou fausse.",
+      "statements": [
+        {
+          "id": "s1",
+          "text": "L’entreprise peut appliquer certaines règles de sécurité sur un GSM professionnel.",
+          "correct": true,
+          "explanation": "Par exemple via MDM, code de verrouillage, applications autorisées ou effacement professionnel à distance."
+        },
+        {
+          "id": "s2",
+          "text": "L’entreprise peut lire sans limite toutes les conversations privées présentes sur le téléphone.",
+          "correct": false,
+          "explanation": "Les communications privées restent protégées; tout contrôle doit être justifié et proportionné."
+        },
+        {
+          "id": "s3",
+          "text": "Les règles d’usage personnel doivent être clarifiées autant que possible.",
+          "correct": true,
+          "explanation": "L’ambiguïté augmente les conflits et les risques."
+        },
+        {
+          "id": "s4",
+          "text": "Un téléphone professionnel ne peut jamais contenir de donnée personnelle.",
+          "correct": false,
+          "explanation": "Il peut contenir des données de travailleurs, contacts, clients ou traces d’usage."
+        }
+      ],
+      "explanation": "Un GSM professionnel reste un outil de travail administrable, mais les données personnelles et privées doivent être traitées avec prudence.",
+      "visual": "📱",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "data-work-control-order",
+      "theme": "data",
+      "subtheme": "rgpd-travail",
+      "difficulty": "moyen",
+      "type": "order",
+      "prompt": "Classez les étapes raisonnables avant de mettre en place un contrôle des usages Internet au travail.",
+      "items": [
+        [
+          "purpose",
+          "Définir la finalité précise du contrôle"
+        ],
+        [
+          "necessity",
+          "Vérifier la nécessité et chercher une solution moins intrusive"
+        ],
+        [
+          "inform",
+          "Informer clairement les travailleurs et documenter les règles"
+        ],
+        [
+          "limit",
+          "Limiter les accès, la durée de conservation et l’individualisation"
+        ]
+      ],
+      "correctOrder": [
+        "purpose",
+        "necessity",
+        "inform",
+        "limit"
+      ],
+      "explanation": "Le contrôle doit partir d’un objectif légitime, puis être limité à ce qui est nécessaire. L’information préalable et les limites techniques/organisationnelles sont essentielles.",
+      "visual": "🪜",
+      "certification": true
+    },
+    {
+      "id": "data-work-employee-good-practice",
+      "theme": "data",
+      "subtheme": "rgpd-travail",
+      "difficulty": "facile",
+      "type": "multiple",
+      "prompt": "Comme travailleur, quels réflexes limitent les problèmes de vie privée dans les outils professionnels ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Éviter de stocker des documents privés sensibles dans le cloud de l’entreprise."
+        },
+        {
+          "id": "b",
+          "label": "Lire la politique ICT ou les règles internes."
+        },
+        {
+          "id": "c",
+          "label": "Séparer autant que possible fichiers personnels et professionnels."
+        },
+        {
+          "id": "d",
+          "label": "Mettre ses documents médicaux dans un dossier partagé avec toute l’équipe."
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "Le travailleur garde une vie privée, mais il doit aussi éviter les mélanges risqués. Les outils professionnels sont administrés, sauvegardés et parfois contrôlés selon des règles.",
+      "visual": "🧭",
+      "certification": false,
+      "scenario": true
+    },
+    {
+      "id": "data-work-personal-folder-trap",
+      "theme": "data",
+      "subtheme": "rgpd-travail",
+      "difficulty": "moyen",
+      "type": "single",
+      "prompt": "Quelle phrase résume le mieux la situation d’un fichier personnel stocké dans un outil professionnel ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Il est toujours totalement privé et l’entreprise ne peut jamais intervenir."
+        },
+        {
+          "id": "b",
+          "label": "Il est toujours public pour l’employeur."
+        },
+        {
+          "id": "c",
+          "label": "Il reste protégé, mais l’entreprise peut devoir intervenir dans certains cas justifiés et encadrés."
+        },
+        {
+          "id": "d",
+          "label": "Il cesse d’être une donnée personnelle."
+        }
+      ],
+      "correct": "c",
+      "explanation": "C’est la nuance importante: l’outil professionnel ne supprime pas toute vie privée, mais il n’offre pas non plus une confidentialité absolue dans toutes les situations.",
+      "visual": "⚖️",
+      "certification": true
+    },
+    {
+      "id": "data-work-logs",
+      "theme": "data",
+      "subtheme": "rgpd-travail",
+      "difficulty": "facile",
+      "type": "single",
+      "prompt": "Pourquoi les journaux de connexion ou historiques d’accès d’un outil professionnel sont-ils concernés par le RGPD ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Parce qu’ils peuvent permettre d’identifier un travailleur et son activité."
+        },
+        {
+          "id": "b",
+          "label": "Parce qu’ils ne contiennent jamais aucune information."
+        },
+        {
+          "id": "c",
+          "label": "Parce qu’ils remplacent une sauvegarde."
+        },
+        {
+          "id": "d",
+          "label": "Parce qu’ils sont toujours anonymes."
+        }
+      ],
+      "correct": "a",
+      "explanation": "Un log qui indique quel compte a accédé à quel service, à quelle heure ou depuis quel appareil peut être une donnée personnelle.",
+      "visual": "📊",
+      "certification": false
+    },
+    {
+      "id": "network-vpn-limits",
+      "theme": "network",
+      "subtheme": "vpn",
+      "difficulty": "facile",
+      "type": "multiple",
+      "prompt": "Quelles affirmations sur un VPN d’entreprise sont correctes ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Il peut sécuriser l’accès à des ressources internes."
+        },
+        {
+          "id": "b",
+          "label": "Il remplace les mots de passe et la MFA."
+        },
+        {
+          "id": "c",
+          "label": "Il peut chiffrer le tunnel entre l’appareil et l’organisation."
+        },
+        {
+          "id": "d",
+          "label": "Il n’empêche pas de cliquer sur un phishing."
+        }
+      ],
+      "correct": [
+        "a",
+        "c",
+        "d"
+      ],
+      "explanation": "Le VPN protège l’accès réseau, mais il ne corrige pas les mauvais réflexes ni les comptes faibles.",
+      "visual": "🛡️",
+      "certification": true
+    },
+    {
+      "id": "network-proxy-firewall-match",
+      "theme": "network",
+      "subtheme": "outils",
+      "difficulty": "facile",
+      "type": "matching",
+      "prompt": "Reliez chaque outil à son rôle principal.",
+      "pairs": [
+        {
+          "leftId": "vpn",
+          "left": "VPN",
+          "rightId": "tunnel",
+          "right": "Crée un tunnel protégé vers un réseau ou service"
+        },
+        {
+          "leftId": "proxy",
+          "left": "Proxy",
+          "rightId": "intermediary",
+          "right": "Sert d’intermédiaire pour des requêtes"
+        },
+        {
+          "leftId": "fw",
+          "left": "Pare-feu",
+          "rightId": "filter",
+          "right": "Filtre des flux selon des règles"
+        },
+        {
+          "leftId": "av",
+          "left": "Antivirus",
+          "rightId": "detect",
+          "right": "Aide à détecter ou bloquer des programmes malveillants"
+        }
+      ],
+      "explanation": "Ces outils sont complémentaires et ne protègent pas les mêmes couches.",
+      "visual": "🧭",
+      "certification": true
+    },
+    {
+      "id": "network-backup-321-fill",
+      "theme": "network",
+      "subtheme": "sauvegarde",
+      "difficulty": "facile",
+      "type": "fill",
+      "prompt": "Complétez la règle de sauvegarde 3-2-1.",
+      "template": "Conserver {{copies}} copies, sur {{supports}} types de supports, avec {{outside}} copie hors site ou hors ligne.",
+      "blanks": [
+        {
+          "id": "copies",
+          "correct": "3",
+          "choices": [
+            "1",
+            "2",
+            "3",
+            "10"
+          ],
+          "shuffleChoices": false
+        },
+        {
+          "id": "supports",
+          "correct": "2",
+          "choices": [
+            "1",
+            "2",
+            "5",
+            "aucun"
+          ],
+          "shuffleChoices": false
+        },
+        {
+          "id": "outside",
+          "correct": "1",
+          "choices": [
+            "0",
+            "1",
+            "4",
+            "toutes les"
+          ],
+          "shuffleChoices": false
+        }
+      ],
+      "explanation": "La règle 3-2-1 réduit le risque qu’un seul incident détruise toutes les copies.",
+      "visual": "💽",
+      "certification": true
+    },
+    {
+      "id": "network-cert-role",
+      "theme": "network",
+      "subtheme": "cert",
+      "difficulty": "facile",
+      "type": "single",
+      "prompt": "Quel est un rôle typique d’un CERT ou CSIRT ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Aider à traiter les incidents et diffuser des alertes."
+        },
+        {
+          "id": "b",
+          "label": "Garantir que personne ne fera jamais d’erreur."
+        },
+        {
+          "id": "c",
+          "label": "Vendre obligatoirement des assurances."
+        },
+        {
+          "id": "d",
+          "label": "Remplacer tous les utilisateurs."
+        }
+      ],
+      "correct": "a",
+      "explanation": "Un CERT coordonne l’assistance, l’analyse, la prévention et le partage d’informations sur les incidents et vulnérabilités.",
+      "visual": "📡",
+      "certification": true
+    },
+    {
+      "id": "network-iso27001",
+      "theme": "network",
+      "subtheme": "iso",
+      "difficulty": "moyen",
+      "type": "tf-grid",
+      "prompt": "Indiquez si chaque affirmation sur ISO 27001 est vraie ou fausse.",
+      "statements": [
+        {
+          "id": "s1",
+          "text": "La norme concerne un système de management de la sécurité de l’information.",
+          "correct": true,
+          "explanation": "C’est son objectif central."
+        },
+        {
+          "id": "s2",
+          "text": "Une certification signifie qu’aucun incident ne peut arriver.",
+          "correct": false,
+          "explanation": "Elle montre une démarche structurée, pas une invulnérabilité."
+        },
+        {
+          "id": "s3",
+          "text": "La gestion des risques est importante dans cette approche.",
+          "correct": true,
+          "explanation": "L’analyse et le traitement des risques sont essentiels."
+        },
+        {
+          "id": "s4",
+          "text": "Elle supprime le besoin d’amélioration continue.",
+          "correct": false,
+          "explanation": "L’amélioration continue fait partie de la logique."
+        }
+      ],
+      "explanation": "ISO 27001 aide à organiser la sécurité, les responsabilités, les audits et l’amélioration.",
+      "visual": "🏛️",
+      "certification": true
+    },
+    {
+      "id": "osint-private-window",
+      "theme": "osint",
+      "subtheme": "audit personnel",
+      "difficulty": "facile",
+      "type": "single",
+      "prompt": "Pourquoi réaliser un audit OSINT personnel dans un navigateur non connecté ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Pour voir plus facilement ce qu’un visiteur extérieur pourrait trouver."
+        },
+        {
+          "id": "b",
+          "label": "Pour supprimer automatiquement les informations publiées."
+        },
+        {
+          "id": "c",
+          "label": "Pour devenir invisible aux sites."
+        },
+        {
+          "id": "d",
+          "label": "Pour contourner les droits des autres personnes."
+        }
+      ],
+      "correct": "a",
+      "explanation": "Un navigateur non connecté donne une vision moins personnalisée. Il ne rend pas anonyme et ne supprime rien en ligne.",
+      "visual": "🔎",
+      "certification": false
+    },
+    {
+      "id": "osint-photo-risks",
+      "theme": "osint",
+      "subtheme": "photos",
+      "difficulty": "facile",
+      "type": "multiple",
+      "prompt": "Quels éléments visibles sur une photo publique peuvent créer un risque ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Un badge professionnel lisible."
+        },
+        {
+          "id": "b",
+          "label": "Un document confidentiel à l’arrière-plan."
+        },
+        {
+          "id": "c",
+          "label": "Une plaque ou un lieu identifiable."
+        },
+        {
+          "id": "d",
+          "label": "Le fait que la photo soit lumineuse."
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "Les détails visuels peuvent révéler identité, employeur, localisation ou informations confidentielles.",
+      "visual": "🖼️",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "osint-reputation-order",
+      "theme": "osint",
+      "subtheme": "e-réputation",
+      "difficulty": "moyen",
+      "type": "order",
+      "prompt": "Classez une démarche simple pour réduire son exposition publique.",
+      "items": [
+        [
+          "search",
+          "Rechercher son nom, email et pseudos"
+        ],
+        [
+          "review",
+          "Identifier les contenus inutiles ou trop exposés"
+        ],
+        [
+          "settings",
+          "Ajuster confidentialité ou demander suppression"
+        ],
+        [
+          "monitor",
+          "Recontrôler périodiquement"
+        ]
+      ],
+      "correctOrder": [
+        "search",
+        "review",
+        "settings",
+        "monitor"
+      ],
+      "explanation": "On commence par constater, puis on corrige et on maintient une veille raisonnable.",
+      "visual": "🧹",
+      "certification": false
+    },
+    {
+      "id": "osint-social-settings",
+      "theme": "osint",
+      "subtheme": "réseaux sociaux",
+      "difficulty": "facile",
+      "type": "tf-grid",
+      "prompt": "Indiquez si chaque réglage de réseau social peut aider à limiter un risque.",
+      "statements": [
+        {
+          "id": "s1",
+          "text": "Limiter la visibilité des anciennes publications.",
+          "correct": true,
+          "explanation": "Cela réduit l’exposition de contenus passés."
+        },
+        {
+          "id": "s2",
+          "text": "Activer les alertes de connexion.",
+          "correct": true,
+          "explanation": "Cela aide à détecter un accès inhabituel."
+        },
+        {
+          "id": "s3",
+          "text": "Rendre publique sa liste d’amis sans besoin.",
+          "correct": false,
+          "explanation": "Cela peut aider au ciblage social."
+        },
+        {
+          "id": "s4",
+          "text": "Bloquer un compte usurpateur ou malveillant.",
+          "correct": true,
+          "explanation": "Le blocage peut limiter interactions et visibilité."
+        }
+      ],
+      "explanation": "Les paramètres doivent être revus régulièrement, surtout sur les anciens comptes.",
+      "visual": "👥",
+      "certification": true
+    },
+    {
+      "id": "osint-ethics",
+      "theme": "osint",
+      "subtheme": "éthique",
+      "difficulty": "facile",
+      "type": "single",
+      "prompt": "Dans un exercice de sensibilisation OSINT, quelle limite est la plus importante ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Travailler sur ses propres traces ou sur des exemples autorisés."
+        },
+        {
+          "id": "b",
+          "label": "Rechercher la vie privée d’un autre stagiaire."
+        },
+        {
+          "id": "c",
+          "label": "Publier les résultats individuels du groupe."
+        },
+        {
+          "id": "d",
+          "label": "Contourner les paramètres privés."
+        }
+      ],
+      "correct": "a",
+      "explanation": "L’objectif est la prise de conscience, pas l’intrusion dans la vie privée d’autrui.",
+      "visual": "⚖️",
+      "certification": false
+    },
+    {
+      "id": "prep-net-ddos-det",
+      "theme": "network",
+      "type": "single",
+      "prompt": "Quel indicateur est le plus pertinent pour détecter une attaque DDoS ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Connexions répétées depuis une seule IP"
+        },
+        {
+          "id": "b",
+          "label": "Pics de trafic provenant de nombreuses IP différentes"
+        },
+        {
+          "id": "c",
+          "label": "Création d’un nouvel utilisateur admin"
+        },
+        {
+          "id": "d",
+          "label": "Modification de fichiers système"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Les attaques DDoS (Distributed Denial of Service) se caractérisent par des volumes massifs d’attaques provenant de multiples sources distinctes visant à saturer la bande passante.",
+      "visual": "🌪️",
+      "certification": false
+    },
+    {
+      "id": "prep-net-ddos-mit",
+      "theme": "network",
+      "type": "single",
+      "prompt": "Quelle solution aide à réduire l’impact d’une attaque DDoS ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "CDN (Content Delivery Network)"
+        },
+        {
+          "id": "b",
+          "label": "Augmenter la bande passante uniquement"
+        },
+        {
+          "id": "c",
+          "label": "Désactiver les logs"
+        },
+        {
+          "id": "d",
+          "label": "Supprimer les antivirus"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Un CDN permet de disperser et d’absorber le trafic sur plusieurs serveurs géographiques, atténuant l'impact de la saturation.",
+      "visual": "🛡️",
+      "certification": true
+    },
+    {
+      "id": "prep-m-aptp",
+      "theme": "malware",
+      "type": "single",
+      "prompt": "Quelle caractéristique correspond à une APT (Advanced Persistent Threat) ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Attaque rapide et visible"
+        },
+        {
+          "id": "b",
+          "label": "Attaque longue et discrète"
+        },
+        {
+          "id": "c",
+          "label": "Attaque uniquement automatisée"
+        },
+        {
+          "id": "d",
+          "label": "Attaque sans objectif précis"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Une APT vise à maintenir un accès prolongé à une cible pour espionner ou exfiltrer des données, souvent de manière furtive et sur une longue période.",
+      "visual": "🕵️‍♂️",
+      "certification": false
+    },
+    {
+      "id": "prep-m-zero",
+      "theme": "malware",
+      "type": "single",
+      "prompt": "Qu’est-ce qu’une vulnérabilité zero-day ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Une faille déjà corrigée"
+        },
+        {
+          "id": "b",
+          "label": "Une faille inconnue du fournisseur"
+        },
+        {
+          "id": "c",
+          "label": "Une attaque basée sur phishing"
+        },
+        {
+          "id": "d",
+          "label": "Une sauvegarde corrompue"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Le terme « zero-day » désigne une vulnérabilité encore non connue ou non corrigée par l'éditeur du logiciel, rendant la protection difficile.",
+      "visual": "🕰️",
+      "certification": false
+    },
+    {
+      "id": "prep-n-siem",
+      "theme": "network",
+      "type": "single",
+      "prompt": "Quel est le rôle principal d’un SIEM (Security Information and Event Management) ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Supprimer les virus"
+        },
+        {
+          "id": "b",
+          "label": "Centraliser et analyser les logs"
+        },
+        {
+          "id": "c",
+          "label": "Crypter les fichiers"
+        },
+        {
+          "id": "d",
+          "label": "Remplacer un firewall"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Le SIEM agrège les logs de sécurité depuis différents équipements pour les corrélater et détecter des modèles d’attaques en temps réel.",
+      "visual": "📊",
+      "certification": true
+    },
+    {
+      "id": "prep-d-cloud-conf",
+      "theme": "data",
+      "type": "single",
+      "prompt": "Quel risque est spécifique à l'utilisation du cloud ? (contexte entreprise)",
+      "options": [
+        {
+          "id": "a",
+          "label": "Mauvaise configuration des accès"
+        },
+        {
+          "id": "b",
+          "label": "Virus matériel"
+        },
+        {
+          "id": "c",
+          "label": "Absence totale de réseau"
+        },
+        {
+          "id": "d",
+          "label": "Panne électrique locale"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Une configuration incorrecte des services (buckets S3, permissions IAM) est la cause principale de fuites de données en environnement cloud.",
+      "visual": "☁️",
+      "certification": true
+    },
+    {
+      "id": "prep-ph-deepfake",
+      "theme": "phishing",
+      "type": "single",
+      "prompt": "Un deepfake est :",
+      "options": [
+        {
+          "id": "a",
+          "label": "Un malware"
+        },
+        {
+          "id": "b",
+          "label": "Une image ou vidéo falsifiée par IA"
+        },
+        {
+          "id": "c",
+          "label": "Un antivirus"
+        },
+        {
+          "id": "d",
+          "label": "Un firewall intelligent"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Le deepfake utilise l'intelligence artificielle pour falsifier des médias visuels ou audio, souvent à des fins de tromperie (social engineering).",
+      "visual": "🎭",
+      "certification": false
+    },
+    {
+      "id": "prep-data-aiprompt",
+      "theme": "data",
+      "type": "single",
+      "prompt": "Quel est un risque spécifique de l'IA dans les données ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Génération de phishing avancé"
+        },
+        {
+          "id": "b",
+          "label": "Suppression des hackers"
+        },
+        {
+          "id": "c",
+          "label": "Automatisation des attaques par prompt injection"
+        },
+        {
+          "id": "d",
+          "label": "Absence de sécurité"
+        }
+      ],
+      "correct": [
+        "a",
+        "c"
+      ],
+      "explanation": "L'IA peut générer du contenu pour des attaques et être vulnérable à l'injection via des prompts.",
+      "visual": "🤖",
+      "certification": false
+    },
+    {
+      "id": "prep-n-iso-pdca",
+      "theme": "network",
+      "type": "single",
+      "prompt": "ISO 27001 repose sur quel cycle d’amélioration ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Plan – Do – Check – Act"
+        },
+        {
+          "id": "b",
+          "label": "Push – Delete – Copy – Access"
+        },
+        {
+          "id": "c",
+          "label": "Protect – Detect – Control – Attack"
+        },
+        {
+          "id": "d",
+          "label": "None"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Le cycle PDCA est le fondement de l'amélioration continue dans un système de management (ISMS).",
+      "visual": "🔄",
+      "certification": true
+    },
+    {
+      "id": "prep-inc-evidence",
+      "theme": "network",
+      "type": "single",
+      "prompt": "Les logs servent principalement à :",
+      "options": [
+        {
+          "id": "a",
+          "label": "Prouver l'incident et analyser sa source"
+        },
+        {
+          "id": "b",
+          "label": "Accélérer le réseau"
+        },
+        {
+          "id": "c",
+          "label": "Chiffrer les fichiers"
+        },
+        {
+          "id": "d",
+          "label": "Supprimer les attaques"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Les journaux (logs) sont la source de vérité pour l'investigation forensique lors d'un incident.",
+      "visual": "📝",
+      "certification": true
+    },
+    {
+      "id": "prep-data-breach",
+      "theme": "data",
+      "type": "multiple",
+      "prompt": "En cas de fuite de données personnelles, l'entreprise doit :",
+      "options": [
+        {
+          "id": "a",
+          "label": "Ignorer si c'est petit"
+        },
+        {
+          "id": "b",
+          "label": "Notifier la CNIL sous 72h"
+        },
+        {
+          "id": "c",
+          "label": "Informer les personnes concernées"
+        },
+        {
+          "id": "d",
+          "label": "Supprimer internet"
+        }
+      ],
+      "correct": [
+        "b",
+        "c"
+      ],
+      "explanation": "Les obligations légales RGPD imposent la notification à l'autorité (72h) et aux personnes impactées.",
+      "visual": "⚖️",
+      "certification": true
     }
   ]
-};
+}

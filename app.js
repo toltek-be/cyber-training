@@ -1,11 +1,22 @@
 (() => {
   'use strict';
 
-  const DATA = window.CYBER_TRAINING_DATA;
-  if (!DATA) {
-    document.getElementById('app').innerHTML = '<div class="nb-card empty-state"><h2>Erreur</h2><p>Le fichier questions.js est introuvable.</p></div>';
-    return;
-  }
+  async function init() {
+    let DATA;
+    try {
+      const [resQ, resE] = await Promise.all([
+        fetch('questions.json?v=2026-06-29-3'),
+        fetch('extra-content.json?v=2026-06-29-3')
+      ]);
+      const questionsData = await resQ.json();
+      const extraData = await resE.json();
+      DATA = { ...questionsData, ...extraData };
+    } catch (e) {
+      console.error('Failed to load data', e);
+      document.getElementById('app').innerHTML = '<div class="nb-card empty-state"><h2>Erreur</h2><p>Les fichiers de données sont introuvables ou invalides.</p></div>';
+      return;
+    }
+
 
   const app = document.getElementById('app');
   const toastRegion = document.getElementById('toast-region');
@@ -174,23 +185,30 @@
   }
 
   function selectBalancedQuestions({ count, certificationFirst = false, scenarioOnly = false } = {}) {
-    const source = ACTIVE_QUESTIONS.filter(q => {
-      if (scenarioOnly && !q.scenario) return false;
-      return true;
-    });
-    const byTheme = Object.keys(DATA.themes).map(themeId => {
-      const items = source.filter(q => q.theme === themeId);
-      const primary = certificationFirst ? items.filter(q => q.certification) : [];
-      const secondary = items.filter(q => !primary.includes(q));
-      return shuffle([...shuffle(primary), ...shuffle(secondary)]);
-    });
+    const source = ACTIVE_QUESTIONS.filter(q => !scenarioOnly || q.scenario);
+
+    const byTheme = Object.keys(DATA.themes)
+        .map(themeId => {
+          const items = source.filter(q => q.theme === themeId);
+          const primary = certificationFirst ? new Set(items.filter(q => q.certification)) : new Set();
+          const secondary = items.filter(q => !primary.has(q));
+          return shuffle([...shuffle([...primary]), ...shuffle(secondary)]);
+        })
+        .filter(list => list.length > 0); // on retire d'emblée les thèmes vides
+
     const picked = [];
     let cursor = 0;
-    while (picked.length < count && byTheme.some(list => list.length)) {
-      const bucket = byTheme[cursor % byTheme.length];
+    while (picked.length < count && byTheme.length > 0) {
+      const bucketIndex = cursor % byTheme.length;
+      const bucket = byTheme[bucketIndex];
       const q = bucket.shift();
-      if (q && !picked.includes(q.id)) picked.push(q.id);
-      cursor += 1;
+      if (q) picked.push(q.id);
+
+      if (bucket.length === 0) {
+        byTheme.splice(bucketIndex, 1); // bucket épuisé, on le retire
+      } else {
+        cursor += 1;
+      }
     }
     return picked;
   }
@@ -586,6 +604,7 @@
   }
 
   function hashCode(str) {
+    if (!str) return 0;
     let h = 0;
     for (let i = 0; i < str.length; i += 1) h = ((h << 5) - h) + str.charCodeAt(i) | 0;
     return h;
@@ -647,7 +666,7 @@
             <div class="question-actions">
               <div class="question-actions__main">
                 <button class="btn" data-action="previous" ${ui.quiz.currentIndex === 0 ? 'disabled' : ''}>← Précédente</button>
-                ${locked ? '' : '<button class="btn btn--pink" data-action="skip">🐱 Donner ma langue au chat</button>'}
+                ${locked ? '' : '<button class="btn btn--pink" data-action="skip">Je ne sais pas</button>'}
               </div>
               <div class="question-actions__main">
                 ${locked ? '' : '<button class="btn btn--dark" data-action="validate">Valider ma réponse</button>'}
@@ -848,8 +867,8 @@
         <p><strong>${safe(ui.quiz.title)}</strong> · ${total} questions terminées.</p>
         <div class="btn-row">
           <button class="btn btn--dark" data-action="home">Retour à l'accueil</button>
-          <button class="btn" data-action="syntheses">Revenir aux synthèses</button>
-          <button class="btn" data-action="restart-finished">Refaire tout le quiz</button>
+          <button class="btn btn--yellow" data-action="syntheses">Revenir aux synthèses</button>
+          <button class="btn btn--yellow" data-action="restart-finished">Refaire tout le quiz</button>
           ${retryIds.length ? `<button class="btn btn--pink" data-action="retry-errors">Refaire mes ${retryIds.length} erreur(s)</button>` : ''}
         </div>
       </section>
@@ -1269,5 +1288,8 @@
     if (ui.view === 'quiz' && currentQuestion()?.type === 'matching') drawMatchLines();
   });
 
-  render(true);
+    render(true);
+  }
+
+  init();
 })();

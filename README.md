@@ -4,8 +4,9 @@ Une application web de quiz interactive pour s'entraîner à la cybersécurité 
 
 ## 🚀 Fonctionnalités
 
-- **Grand Test Complet** : Plus de 80 questions couvrant l'ensemble du programme.
+- **Grand Test Complet** : 145 questions couvrant l'ensemble du programme.
 - **Entraînement par Thème** : 8 thèmes spécifiques (Web, Phishing, Mots de passe, RGPD, etc.).
+- **Synthèses de cours** : Fiches récapitulatives interactives sur les sujets clés (RGPD, IA, Incidents).
 - **Types de Questions Variés** :
   - Choix unique et multiple.
   - Vrai / Faux.
@@ -28,11 +29,11 @@ Aucune installation complexe n'est requise. L'application est composée de fichi
 
 ## 📂 Structure du projet
 
-- `index.html` : Structure de l'application et conteneurs UI (gère le versioning des ressources).
-- `app.js` : Logique de l'application (moteur de quiz, gestion d'état, rendu dynamique).
-- `questions.js` : Base de données principale des questions et thèmes.
-- `extra-content.js` : Extensions et questions additionnelles.
-- `styles.css` : Design "Neubrutalism" et mise en page responsive.
+- `index.html` : Point d'entrée de l'application (gère le versioning des ressources).
+- `app.js` : Logique de l'application (moteur de quiz, gestion d'état, chargement asynchrone des données).
+- `questions.json` : Base de données des questions (format JSON strict).
+- `extra-content.json` : Modes de test et synthèses pédagogiques (format JSON strict).
+- `styles/` : Dossier contenant les feuilles de style (Neobrutalism, Corpo, etc.).
 
 ## 🔄 Résumé des améliorations du mélange aléatoire
 
@@ -44,16 +45,18 @@ Aucune installation complexe n'est requise. L'application est composée de fichi
 | **Ordre initial "remise en ordre"** | ❌ Toujours inversé | ✅ Complètement mélangé |
 | **Doublons en matching** | ❌ Identifiants uniques stricts | ✅ Validation par libellé textuel |
 
-## ⚙️ Maintenance & Encodage
+## ⚙️ Maintenance & Fiabilisation
 
-- **Encodage** : Tous les fichiers doivent être enregistrés en **UTF-8 sans BOM**.
-- **Versioning** : Pour forcer la mise à jour des scripts chez les utilisateurs, le paramètre `?v=YYYY-MM-DD-X` est utilisé dans `index.html`.
-- **Scripts de réparation** : En cas de corruption des caractères (mojibake), des scripts Python ont été utilisés pour restaurer l'intégrité des accents.
+- **Architecture** : Séparation totale entre le code (`app.js`) et les données (`.json`).
+- **Chargement** : Utilisation de l'API `fetch` pour un chargement asynchrone et performant.
+- **Encodage** : Tous les fichiers sont en **UTF-8 sans BOM**.
+- **Robustesse** : Le moteur `app.js` intègre des sécurités (ex: `hashCode` sécurisé) et les questions disposent d'identifiants uniques.
+- **Versioning** : Paramètre `?v=YYYY-MM-DD-X` utilisé pour forcer le rafraîchissement du cache.
 
 ## 🚀 TODO - Nice to Have
 
-- **API serveur obligatoire** : Pour éviter la lecture en direct de `questions.js` et mieux protéger les contenus des quiz.
-- **Optimisation mobile** : Améliorer les interactions "drag and drop" sur tactile.
+- **API serveur** : Pour une gestion dynamique des contenus.
+- **Optimisation mobile** : Améliorer les interactions tactiles.
 
 ## 📝 Licence
 
