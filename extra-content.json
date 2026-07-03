@@ -19,7 +19,7 @@
       "kind": "random",
       "count": 20,
       "emoji": "⚡",
-      "accent": "yellow",
+      "accent": "blue",
       "meta": "Rapide"
     },
     {
@@ -30,9 +30,43 @@
       "kind": "scenario",
       "count": 25,
       "emoji": "🎯",
-      "accent": "pink",
+      "accent": "orange",
       "meta": "Cas pratiques"
+    },
+    {
+      "id": "difficulty-easy",
+      "kind": "difficulty",
+      "level": "easy",
+      "title": "Niveau Facile",
+      "description": "Les questions les plus abordables pour se mettre en jambe.",
+      "count": 25,
+      "emoji": "\uD83D\uDFE2",
+      "accent": "mint",
+      "button": "Lancer le mode facile"
+    },
+    {
+      "id": "difficulty-medium",
+      "kind": "difficulty",
+      "level": "medium",
+      "title": "Niveau Moyen",
+      "description": "Un bon test intermédiaire de vos connaissances.",
+      "count": 25,
+      "emoji": "\uD83D\uDFE0",
+      "accent": "yellow",
+      "button": "Lancer le mode moyen"
+    },
+    {
+      "id": "difficulty-hard",
+      "kind": "difficulty",
+      "level": "hard",
+      "title": "Niveau Difficile",
+      "description": "Pour les questions les plus pointues, style certification.",
+      "count": 25,
+      "emoji": "\uD83D\uDD34",
+      "accent": "red",
+      "button": "Lancer le mode difficile"
     }
+
   ],
   "syntheses": [
     {

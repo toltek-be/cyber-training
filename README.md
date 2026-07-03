@@ -4,7 +4,7 @@ Une application web de quiz interactive pour s'entraîner à la cybersécurité 
 
 ## 🚀 Fonctionnalités
 
-- **Grand Test Complet** : 145 questions couvrant l'ensemble du programme.
+- **Grand Test Complet** : 174 questions couvrant l'ensemble du programme.
 - **Entraînement par Thème** : 8 thèmes spécifiques (Web, Phishing, Mots de passe, RGPD, etc.).
 - **Synthèses de cours** : Fiches récapitulatives interactives sur les sujets clés (RGPD, IA, Incidents).
 - **Types de Questions Variés** :

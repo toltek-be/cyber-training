@@ -79,7 +79,8 @@
       "explanation": "Le RSSI pilote la politique de sécurité des systèmes d’information d’une organisation. Il ne se limite pas à la supervision technique : il coordonne les risques, les règles, la prévention et la réaction aux incidents.",
       "visual": "🧑‍💼",
       "certification": true,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "web-cookie",
@@ -108,7 +109,8 @@
       "explanation": "Un cookie est une petite donnée déposée ou lue par un site dans le navigateur. Il peut mémoriser une session, un panier ou des préférences. Il ne constitue ni un certificat de sécurité ni un moyen de paiement, et il ne contient pas forcément toutes les données du visiteur.",
       "visual": "🍪",
       "certification": true,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "web-https",
@@ -137,7 +139,8 @@
       "explanation": "HTTPS protège les échanges contre l’écoute et l’altération pendant le transport. Un site frauduleux peut lui aussi obtenir un certificat HTTPS : il faut donc également vérifier le nom de domaine, le contexte et la réputation du site.",
       "visual": "🔒",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "web-ca-google",
@@ -166,7 +169,8 @@
       "explanation": "Dans l’exemple fourni, le certificat est délivré par Google Trust Services. Une autorité de certification vérifie certains éléments d’identité et signe le certificat ; elle ne garantit toutefois pas à elle seule la fiabilité de tout le contenu du site.",
       "visual": "📜",
       "certification": true,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "web-domain",
@@ -195,7 +199,8 @@
       "explanation": "Le domaine important se lit juste avant l’extension. Ici, « microsoft-securite-verification.com » appartient à celui qui a enregistré ce nom et non nécessairement à Microsoft. Le simple fait de contenir une marque dans l’adresse ne rend pas le site officiel.",
       "visual": "🔗",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "web-private",
@@ -224,7 +229,8 @@
       "explanation": "La navigation privée limite surtout les traces conservées sur l’appareil après fermeture de la fenêtre. Elle ne masque pas l’adresse IP à l’entreprise, au fournisseur d’accès ou aux sites, et elle ne remplace pas les outils de sécurité.",
       "visual": "🕶️",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "web-download",
@@ -257,7 +263,8 @@
       "explanation": "Une source officielle, une adresse cohérente et une bonne réputation réduisent les risques. Désactiver les protections ou utiliser une copie piratée augmente au contraire le risque d’installer un logiciel modifié ou accompagné d’un malware.",
       "visual": "⬇️",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "web-public-wifi",
@@ -286,7 +293,8 @@
       "explanation": "Le partage de connexion ou un réseau connu limite le risque de se connecter à un faux point d’accès. Un Wi-Fi portant un nom crédible peut être créé par un attaquant. HTTPS et, selon les règles de l’entreprise, un VPN restent utiles.",
       "visual": "📶",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "web-proxy",
@@ -335,7 +343,8 @@
       "explanation": "Un proxy reçoit les requêtes à la place de l’utilisateur, puis les transmet. Selon sa configuration, il peut accélérer certains chargements, journaliser, masquer l’adresse directement présentée au site et filtrer des contenus. Cela ne garantit toutefois pas un anonymat absolu.",
       "visual": "🚦",
       "certification": true,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "web-update-browser",
@@ -364,7 +373,8 @@
       "explanation": "Les mises à jour corrigent notamment des vulnérabilités pouvant être exploitées par une page malveillante. Elles améliorent aussi la compatibilité. Elles ne suppriment pas automatiquement tout suivi publicitaire et ne rendent pas l’utilisateur invulnérable.",
       "visual": "🔄",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "phish-blocked",
@@ -393,7 +403,8 @@
       "explanation": "L’urgence est un levier classique du phishing. Il vaut mieux ouvrir soi-même le site ou l’application officielle et vérifier les notifications. Répondre ou cliquer depuis le message peut conduire vers une fausse page.",
       "visual": "⏰",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "phish-boss",
@@ -426,7 +437,8 @@
       "explanation": "La fraude au président combine autorité, urgence, secret et demande inhabituelle. Une formule polie ne prouve rien. Il faut vérifier par un canal indépendant, par exemple en appelant le responsable avec un numéro connu.",
       "visual": "🎁",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "phish-iban",
@@ -455,7 +467,8 @@
       "explanation": "La boîte du fournisseur ou celle d’un collègue peut être compromise. Une vérification par un numéro déjà connu et une procédure à deux personnes permettent de détecter une fraude au changement d’IBAN.",
       "visual": "🏦",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "phish-quishing",
@@ -484,7 +497,8 @@
       "explanation": "Le QR code masque l’adresse vers laquelle il redirige et peut mener à une fausse page de connexion ou de paiement. Il faut vérifier sa provenance et examiner l’adresse affichée avant de saisir des informations.",
       "visual": "🔳",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "phish-support",
@@ -517,7 +531,8 @@
       "explanation": "Un nom, un service ou du vocabulaire technique peuvent être obtenus publiquement. Un code de connexion ou de MFA ne doit pas être communiqué. Il faut vérifier l’identité par un canal indépendant et signaler l’incident.",
       "visual": "☎️",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "phish-spear",
@@ -546,7 +561,8 @@
       "explanation": "Le spear phishing utilise des informations ciblées — fonction, collègues, projets ou habitudes — pour paraître crédible. Il peut prendre la forme d’un email, d’un message ou d’un appel.",
       "visual": "🎯",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "phish-attachment",
@@ -579,7 +595,8 @@
       "explanation": "Aucun format n’est automatiquement inoffensif : des documents peuvent contenir des liens, des scripts ou exploiter des failles. La vérification du contexte et l’analyse avec les outils autorisés sont plus fiables que l’extension seule.",
       "visual": "📎",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "phish-smishing",
@@ -608,7 +625,8 @@
       "explanation": "Le smishing est du phishing par SMS. La petite somme sert souvent à récupérer des données bancaires ou à pousser vers un abonnement frauduleux. Il vaut mieux consulter directement le site ou l’application du transporteur.",
       "visual": "📱",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "phish-mfa-code",
@@ -637,7 +655,8 @@
       "explanation": "Un code de MFA sert précisément à prouver que vous possédez le second facteur. Le transmettre permet à l’attaquant de finaliser une connexion. Un support légitime n’a normalement pas besoin de ce code.",
       "visual": "6️⃣",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "phish-display-name",
@@ -666,7 +685,8 @@
       "explanation": "Le champ visible peut afficher « Direction », « Microsoft » ou le nom d’un collègue alors que l’adresse réelle est différente. Il faut examiner l’adresse complète et le contexte, sans se fier uniquement au nom.",
       "visual": "📨",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "phish-report-order",
@@ -700,7 +720,8 @@
       "explanation": "On évite d’abord toute interaction risquée. On vérifie ensuite les éléments disponibles, puis on signale afin que l’organisation puisse protéger les autres utilisateurs. La suppression vient après le signalement lorsqu’une procédure existe.",
       "visual": "🧭",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "phish-urgent-language",
@@ -729,7 +750,8 @@
       "explanation": "L’urgence extrême, la menace et la demande de mot de passe sont des indicateurs forts. Un message légitime peut être urgent, mais il ne faut jamais laisser la pression remplacer la vérification.",
       "visual": "🚨",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "pass-manager",
@@ -762,7 +784,8 @@
       "explanation": "Un gestionnaire sérieux chiffre le coffre, génère des secrets uniques et facilite leur saisie. Il ne doit pas exposer les mots de passe en clair sur un serveur public. Le mot de passe maître et la MFA restent essentiels.",
       "visual": "🗝️",
       "certification": true,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "pass-reuse-grid",
@@ -792,7 +815,8 @@
       "visual": "♻️",
       "certification": true,
       "title": null,
-      "explanation": "Chaque affirmation doit être évaluée séparément. Consulte le détail ligne par ligne ci-dessous."
+      "explanation": "Chaque affirmation doit être évaluée séparément. Consulte le détail ligne par ligne ci-dessous.",
+      "difficulty": "medium"
     },
     {
       "id": "pass-mfa",
@@ -821,7 +845,8 @@
       "explanation": "La MFA exige au moins deux catégories de preuves, par exemple un mot de passe et une application d’authentification. Si le mot de passe fuite, l’attaquant doit encore obtenir le second facteur. Elle réduit le risque sans le supprimer totalement.",
       "visual": "🧩",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "pass-phrase",
@@ -850,7 +875,8 @@
       "explanation": "La longueur et l’imprévisibilité sont déterminantes. Une phrase de passe longue, unique et non liée à des informations publiques résiste mieux aux devinettes et aux attaques automatisées que des variantes prévisibles.",
       "visual": "🧠",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "pass-hibp",
@@ -879,7 +905,8 @@
       "explanation": "Le service permet de rechercher une adresse email dans des bases de fuites connues. Il ne faut pas y saisir son mot de passe dans le champ de recherche d’adresse, ni tester les informations d’autrui sans autorisation.",
       "visual": "💥",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "pass-breach",
@@ -912,7 +939,8 @@
       "explanation": "La priorité est de rendre les identifiants volés inutilisables. La réutilisation impose de sécuriser tous les comptes concernés. La MFA et la surveillance des connexions ajoutent une protection supplémentaire.",
       "visual": "🚿",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "pass-security-question",
@@ -941,7 +969,8 @@
       "explanation": "Des informations familiales, scolaires ou personnelles peuvent apparaître sur les réseaux sociaux ou être connues de proches. Lorsqu’un service l’autorise, une réponse aléatoire stockée dans le gestionnaire est plus sûre qu’une réponse réelle et prévisible.",
       "visual": "❓",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "pass-session",
@@ -974,7 +1003,8 @@
       "explanation": "Les services proposent souvent une liste des sessions et une déconnexion à distance. Si l’ordinateur était public ou suspect, changer le mot de passe et vérifier la MFA réduit le risque de maintien d’accès.",
       "visual": "🚪",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "pass-recovery-codes",
@@ -1003,7 +1033,8 @@
       "explanation": "Les codes de récupération permettent de contourner le second facteur en cas de perte du téléphone. Ils doivent donc être protégés comme des mots de passe et idéalement conservés dans un coffre ou un support sécurisé distinct.",
       "visual": "🧾",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "pass-alert",
@@ -1032,7 +1063,8 @@
       "explanation": "Une alerte inconnue peut signaler une tentative ou une compromission. Il faut passer par l’application ou le site officiel, révoquer les sessions, changer le mot de passe si nécessaire et vérifier les méthodes de récupération.",
       "visual": "👀",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "device-phone-lock",
@@ -1070,7 +1102,8 @@
       "explanation": "Un balayage seul ne contrôle pas l’identité. PIN, mot de passe et biométrie peuvent protéger l’accès, à condition que la configuration et la technologie soient adaptées. Un code de secours robuste reste important.",
       "visual": "📲",
       "certification": true,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "device-mdm",
@@ -1107,7 +1140,8 @@
       "explanation": "Un MDM sert à configurer, sécuriser et gérer les appareils selon une politique connue. La surveillance permanente et l’interception généralisée seraient disproportionnées et soulèveraient de graves problèmes de vie privée et de légalité.",
       "visual": "📡",
       "certification": true,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "device-travel",
@@ -1147,7 +1181,8 @@
       "explanation": "Une sauvegarde limite les conséquences d’une perte ou d’un vol. La minimisation réduit la quantité d’informations exposées. Les réseaux publics inconnus doivent être évités ou utilisés avec les protections et consignes prévues par l’organisation.",
       "visual": "✈️",
       "certification": true,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "device-usb",
@@ -1176,7 +1211,8 @@
       "explanation": "Une clé peut exploiter automatiquement l’ordinateur ou contenir des fichiers piégés. La curiosité est précisément le levier recherché. Il faut suivre la procédure interne sans la brancher.",
       "visual": "💾",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "device-lock-screen",
@@ -1205,7 +1241,8 @@
       "explanation": "Le verrouillage empêche une personne d’utiliser votre session ou de consulter les informations affichées. Éteindre l’écran ne ferme pas la session et la confiance dans les collègues ne remplace pas une mesure simple de sécurité.",
       "visual": "🪟",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "device-cloud-personal",
@@ -1238,7 +1275,8 @@
       "explanation": "Le compte et l’espace appartiennent au contexte professionnel. Les droits, la conservation et l’accès peuvent changer, notamment au départ de l’employé. Il faut respecter les règles internes et séparer les usages personnels et professionnels.",
       "visual": "☁️",
       "certification": true,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "device-windows-version",
@@ -1267,7 +1305,8 @@
       "explanation": "La réponse reprend exactement l’édition et l’architecture affichées dans les informations système. Ce type de question vérifie la capacité à retrouver une information technique dans l’interface plutôt qu’à la deviner.",
       "visual": "🪟",
       "certification": true,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "device-updates",
@@ -1296,7 +1335,8 @@
       "explanation": "Lorsqu’une faille est publiée, les attaquants peuvent rapidement chercher les appareils non corrigés. Les mises à jour doivent être installées selon les règles de l’organisation, après sauvegarde ou validation lorsque cela est nécessaire.",
       "visual": "🩹",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "device-screen",
@@ -1329,7 +1369,8 @@
       "explanation": "La sécurité physique inclut le risque de « shoulder surfing », c’est-à-dire l’observation de l’écran. Limiter les données visibles et l’angle de vue réduit ce risque ; lire les informations à voix haute l’augmente.",
       "visual": "🚆",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "device-bluetooth",
@@ -1358,7 +1399,8 @@
       "explanation": "Réduire les interfaces actives limite la surface d’attaque et les connexions accidentelles. Il faut refuser les associations inattendues et maintenir l’appareil à jour.",
       "visual": "🔵",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "device-lost",
@@ -1392,7 +1434,8 @@
       "explanation": "Le signalement rapide permet de lancer le verrouillage à distance et la révocation des accès. L’analyse des données présentes détermine ensuite l’impact et les obligations éventuelles. Attendre augmente le temps disponible pour un attaquant.",
       "visual": "💼",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "malware-match",
@@ -1422,7 +1465,8 @@
       "explanation": "Une backdoor fournit un accès caché, un rootkit cherche surtout à dissimuler la présence malveillante et un keylogger capture les frappes. Ces techniques peuvent être combinées dans une même attaque.",
       "visual": "🧬",
       "certification": true,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "malware-ransomware",
@@ -1451,7 +1495,8 @@
       "explanation": "L’isolement peut limiter la propagation et le chiffrement de ressources partagées. Il faut prévenir rapidement pour préserver les preuves et lancer le plan de réponse. Le paiement ne garantit ni la récupération ni l’absence de nouvelle extorsion.",
       "visual": "💸",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "malware-trojan",
@@ -1480,7 +1525,8 @@
       "explanation": "Le cheval de Troie trompe l’utilisateur afin qu’il l’installe ou l’exécute. Contrairement à un ver, il ne se propage pas nécessairement tout seul ; il peut ensuite télécharger d’autres charges ou ouvrir un accès.",
       "visual": "🐴",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "malware-types",
@@ -1516,7 +1562,8 @@
       "explanation": "Les familles se distinguent par leur comportement principal, même si un malware moderne peut cumuler plusieurs fonctions : propagation, espionnage, vol d’identifiants et chiffrement.",
       "visual": "🧪",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "malware-attachments-grid",
@@ -1558,7 +1605,8 @@
       "visual": "📎",
       "certification": true,
       "title": null,
-      "explanation": "Chaque affirmation doit être évaluée séparément. Consulte le détail ligne par ligne ci-dessous."
+      "explanation": "Chaque affirmation doit être évaluée séparément. Consulte le détail ligne par ligne ci-dessous.",
+      "difficulty": "easy"
     },
     {
       "id": "malware-slow",
@@ -1595,7 +1643,8 @@
       "explanation": "Le signalement, l’isolement et la conservation des observations aident l’équipe à analyser l’incident. Un redémarrage peut parfois effacer des traces utiles ou déclencher d’autres actions ; il doit suivre les consignes du support.",
       "visual": "🐢",
       "certification": true,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "malware-rssi-actions",
@@ -1628,7 +1677,8 @@
       "explanation": "L’équipe doit comprendre, contenir et documenter l’incident. Une communication de crise peut être nécessaire, mais elle doit être coordonnée. Effacer les disques trop tôt détruirait des preuves et pourrait rendre la récupération plus difficile.",
       "visual": "🧯",
       "certification": true,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "malware-evidence",
@@ -1657,7 +1707,8 @@
       "explanation": "Les journaux, heures, messages et captures peuvent révéler l’origine, l’étendue et la chronologie. Ils aident aussi à prendre des décisions juridiques ou organisationnelles. Ils doivent être conservés de manière contrôlée.",
       "visual": "🧾",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "malware-report-fast",
@@ -1686,7 +1737,8 @@
       "explanation": "Les premières minutes peuvent permettre de bloquer un compte, rappeler un email ou isoler un appareil. Retarder le signalement donne davantage de temps à l’attaquant et complique l’analyse.",
       "visual": "📣",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "malware-phished-password",
@@ -1720,7 +1772,8 @@
       "explanation": "Le signalement permet de lancer les mesures internes. Le mot de passe doit être changé depuis un environnement fiable, puis les sessions et méthodes de récupération contrôlées. La réutilisation étend l’urgence à d’autres comptes.",
       "visual": "🪤",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "malware-mail-compromised",
@@ -1758,7 +1811,8 @@
       "explanation": "Un attaquant peut maintenir l’accès via une session, une méthode de récupération ou une règle de transfert cachée. Prévenir les destinataires évite qu’ils ne fassent confiance aux messages envoyés pendant la compromission.",
       "visual": "📤",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "malware-public-db",
@@ -1787,7 +1841,8 @@
       "explanation": "Il faut contenir l’exposition sans détruire les preuves : durée, journaux, données concernées et téléchargements possibles. L’organisation doit ensuite évaluer la violation et les notifications éventuelles.",
       "visual": "🗄️",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "malware-backup",
@@ -1816,7 +1871,8 @@
       "explanation": "Des sauvegardes testées et isolées facilitent la reprise. Si elles sont accessibles en permanence depuis le poste, le rançongiciel peut aussi les chiffrer. Elles complètent la prévention mais ne la remplacent pas.",
       "visual": "🛟",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "data-rgpd",
@@ -1845,7 +1901,8 @@
       "explanation": "Le RGPD encadre le traitement des données personnelles et renforce les droits des personnes. Il n’interdit pas tout traitement : il exige une base légale, de la transparence, de la sécurité et une utilisation proportionnée.",
       "visual": "🇪🇺",
       "certification": true,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "data-categories",
@@ -1881,7 +1938,8 @@
       "explanation": "Une donnée est personnelle lorsqu’elle permet d’identifier directement ou indirectement une personne. Les données de santé bénéficient d’une protection renforcée. Une anonymisation réelle doit empêcher raisonnablement la réidentification.",
       "visual": "🏷️",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "data-minimization",
@@ -1910,7 +1968,8 @@
       "explanation": "Il faut collecter uniquement les informations adéquates, pertinentes et nécessaires à l’objectif annoncé. La situation familiale, le dossier médical ou une copie d’identité semblent excessifs pour une simple inscription, sauf justification exceptionnelle.",
       "visual": "✂️",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "data-newsletter",
@@ -1939,7 +1998,8 @@
       "explanation": "La finalité commerciale doit être annoncée et reposer sur une base légale adaptée. Les personnes doivent notamment pouvoir s’opposer ou se désinscrire facilement. La création d’un compte ne permet pas automatiquement tous les usages futurs.",
       "visual": "📬",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "data-photos",
@@ -1968,7 +2028,8 @@
       "explanation": "Une image permettant d’identifier une personne constitue une donnée personnelle. La prise et surtout la publication doivent être encadrées : information, base légale, respect du droit à l’image et précautions selon le contexte.",
       "visual": "📸",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "data-cv",
@@ -1997,7 +2058,8 @@
       "explanation": "La durée de conservation doit être liée à la finalité. Une conservation pour de futures opportunités peut être possible avec information et cadre approprié, mais pas indéfiniment ni sans transparence.",
       "visual": "📄",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "data-erasure",
@@ -2026,7 +2088,8 @@
       "explanation": "Le droit à l’effacement existe mais n’est pas absolu. Des obligations légales, la défense de droits ou d’autres motifs peuvent imposer la conservation de certaines données. L’organisation doit répondre clairement et justifier sa décision.",
       "visual": "🧹",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "data-ai",
@@ -2059,7 +2122,8 @@
       "explanation": "Un service d’IA peut conserver, traiter ou transférer les informations selon ses conditions. La minimisation et l’anonymisation limitent l’exposition. Les règles de l’organisation déterminent quels outils et quelles données peuvent être utilisés.",
       "visual": "🤖",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "data-wrong-recipient",
@@ -2093,7 +2157,8 @@
       "explanation": "Une réaction immédiate peut encore limiter l’accès. L’analyse de la nature et de la sensibilité des données permet ensuite de mesurer le risque et de décider des obligations de notification.",
       "visual": "📩",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "data-privacy-design",
@@ -2122,7 +2187,8 @@
       "explanation": "La protection doit être pensée dans les choix fonctionnels et techniques : données minimales, accès limités, durées de conservation, sécurité et paramètres protecteurs par défaut. Elle ne doit pas être ajoutée à la fin.",
       "visual": "🏗️",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "data-shared-folder",
@@ -2158,7 +2224,8 @@
       "visual": "📁",
       "certification": true,
       "title": null,
-      "explanation": "Chaque affirmation doit être évaluée séparément. Consulte le détail ligne par ligne ci-dessous."
+      "explanation": "Chaque affirmation doit être évaluée séparément. Consulte le détail ligne par ligne ci-dessous.",
+      "difficulty": "medium"
     },
     {
       "id": "data-medical",
@@ -2191,7 +2258,8 @@
       "explanation": "Les données de santé sont particulièrement sensibles. Leur collecte doit être justifiée et minimale, avec des accès restreints et des mesures de sécurité adaptées. Un partage général serait disproportionné.",
       "visual": "🩺",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "network-vpn",
@@ -2220,7 +2288,8 @@
       "explanation": "Le VPN crée un tunnel protégé vers le réseau ou les services de l’organisation et peut appliquer des contrôles d’accès. Il ne remplace pas le mot de passe, la MFA ni les mises à jour.",
       "visual": "🛣️",
       "certification": true,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "network-cert",
@@ -2269,7 +2338,8 @@
       "explanation": "Un CERT ou CSIRT coordonne l’assistance, l’analyse et l’échange d’informations concernant les incidents. Il contribue également à la prévention en publiant des alertes, des conseils et des informations sur les vulnérabilités.",
       "visual": "🚑",
       "certification": true,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "network-safeonweb",
@@ -2298,10 +2368,11 @@
       "explanation": "Safeonweb diffuse des alertes, des conseils et des outils de sensibilisation. Il permet notamment de transmettre certains messages suspects. Il ne remplace pas les autorités, les banques ou le support interne lorsque leur intervention est nécessaire.",
       "visual": "🇧🇪",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
-      "id": "network-iso27001",
+      "id": "network-iso27001-a",
       "theme": "network",
       "type": "single",
       "prompt": "Que concerne principalement la norme ISO 27001 ?",
@@ -2327,7 +2398,8 @@
       "explanation": "ISO 27001 aide une organisation à gérer les risques liés à la confidentialité, l’intégrité et la disponibilité de l’information dans une démarche structurée et d’amélioration continue.",
       "visual": "📘",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "network-backup-321",
@@ -2356,7 +2428,8 @@
       "explanation": "La règle 3-2-1 réduit le risque qu’un même incident détruise toutes les copies. Elle doit être complétée par des tests de restauration, du chiffrement lorsque nécessaire et des accès limités.",
       "visual": "3️⃣",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "network-firewall",
@@ -2385,7 +2458,8 @@
       "explanation": "Le pare-feu autorise ou bloque certains flux selon des règles. Il ne détecte pas toutes les attaques et n’empêche pas une personne d’exécuter un fichier malveillant ; il fait partie d’un ensemble de mesures.",
       "visual": "🧱",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "network-backup-test",
@@ -2414,7 +2488,8 @@
       "explanation": "Une sauvegarde peut être corrompue, incomplète ou protégée par des identifiants perdus. Un test de restauration confirme que l’organisation pourra réellement reprendre ses activités le jour où elle en aura besoin.",
       "visual": "✅",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "osint-definition",
@@ -2443,7 +2518,8 @@
       "explanation": "L’Open Source Intelligence exploite des sources ouvertes : moteurs de recherche, profils publics, documents, forums ou images. Dans la formation, l’objectif est de comprendre ses propres traces et non d’enquêter sur les autres.",
       "visual": "🔎",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "osint-self",
@@ -2472,7 +2548,8 @@
       "explanation": "L’exercice vise la prise de conscience personnelle tout en respectant la vie privée. Rechercher et croiser les informations d’une autre personne sans raison ni autorisation peut être intrusif et contraire aux consignes.",
       "visual": "🪞",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "osint-private",
@@ -2501,7 +2578,8 @@
       "explanation": "Une session non connectée donne une vision plus proche de celle d’un visiteur extérieur. Elle ne rend pas anonyme et ne supprime aucune donnée en ligne.",
       "visual": "🕵️",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "osint-cross",
@@ -2530,7 +2608,8 @@
       "explanation": "Un pseudo peut mener à un ancien compte, une photo à un lieu et un profil professionnel à une entreprise. Réunies, ces informations facilitent le ciblage, l’usurpation ou le spear phishing.",
       "visual": "🧩",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "osint-photo",
@@ -2563,7 +2642,8 @@
       "explanation": "Les détails visuels et parfois les métadonnées peuvent révéler bien plus que le sujet principal. Il faut vérifier les arrière-plans, plaques, badges, documents et paramètres de publication avant de partager.",
       "visual": "🖼️",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "osint-facebook",
@@ -2605,7 +2685,8 @@
       "visual": "👍",
       "certification": true,
       "title": null,
-      "explanation": "Chaque affirmation doit être évaluée séparément. Consulte le détail ligne par ligne ci-dessous."
+      "explanation": "Chaque affirmation doit être évaluée séparément. Consulte le détail ligne par ligne ci-dessous.",
+      "difficulty": "medium"
     },
     {
       "id": "osint-hacktivists",
@@ -2637,7 +2718,8 @@
       "explanation": "L’hacktivisme cherche souvent à défendre une cause, protester ou rendre une information visible. Le gain financier et l’espionnage industriel existent dans d’autres profils d’attaquants, mais ne définissent pas l’hacktivisme.",
       "visual": "📢",
       "certification": true,
-      "title": null
+      "title": null,
+      "difficulty": "medium"
     },
     {
       "id": "osint-reduce",
@@ -2670,13 +2752,14 @@
       "explanation": "Un nettoyage périodique, des paramètres adaptés et une veille sur son nom ou ses pseudos réduisent les traces inutiles. Réutiliser systématiquement les mêmes identifiants facilite au contraire le rapprochement entre comptes.",
       "visual": "🧽",
       "certification": false,
-      "title": null
+      "title": null,
+      "difficulty": "easy"
     },
     {
       "id": "web-risk-triad",
       "theme": "web",
       "subtheme": "bases",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "matching",
       "prompt": "Reliez chaque notion de base à sa définition.",
       "pairs": [
@@ -2713,7 +2796,7 @@
       "id": "web-cia-grid",
       "theme": "web",
       "subtheme": "bases",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "tf-grid",
       "prompt": "Indiquez si chaque exemple concerne surtout la confidentialité, l’intégrité ou la disponibilité.",
       "statements": [
@@ -2744,7 +2827,7 @@
       "id": "web-cia-matching",
       "theme": "web",
       "subtheme": "bases",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "prompt": "Reliez chaque exemple au pilier de la sécurité de l’information le plus concerné.",
       "type": "matching",
       "pairs": [
@@ -2775,7 +2858,7 @@
       "id": "web-url-subdomain",
       "theme": "web",
       "subtheme": "navigation",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "single",
       "prompt": "Dans l’adresse https://login.microsoft.com.security-check.example.net, quel est le domaine réellement contrôlé par le titulaire principal ?",
       "options": [
@@ -2785,7 +2868,7 @@
         },
         {
           "id": "b",
-          "label": "security-check.example.net"
+          "label": "example.net"
         },
         {
           "id": "c",
@@ -2805,7 +2888,7 @@
       "id": "web-cert-limits",
       "theme": "web",
       "subtheme": "certificat",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "multiple",
       "prompt": "Que peut-on raisonnablement déduire d’un certificat HTTPS valide ?",
       "options": [
@@ -2839,7 +2922,7 @@
       "id": "web-cookie-types",
       "theme": "web",
       "subtheme": "cookies",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "matching",
       "prompt": "Reliez chaque type de cookie à son usage typique.",
       "pairs": [
@@ -2870,7 +2953,7 @@
       "id": "phishing-vishing",
       "theme": "phishing",
       "subtheme": "vishing",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "single",
       "prompt": "Un appel prétend venir du support informatique et vous demande votre code MFA. De quel type d’attaque s’agit-il principalement ?",
       "options": [
@@ -2901,7 +2984,7 @@
       "id": "phishing-email-alerts",
       "theme": "phishing",
       "subtheme": "email",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "multiple",
       "prompt": "Quels éléments doivent vous alerter dans un email de sécurité de compte ?",
       "options": [
@@ -2936,7 +3019,7 @@
       "id": "phishing-iban-order",
       "theme": "phishing",
       "subtheme": "fraude",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "order",
       "prompt": "Remettez dans l’ordre une réaction prudente à un changement d’IBAN reçu par email.",
       "items": [
@@ -2972,7 +3055,7 @@
       "id": "phishing-qr-scenario",
       "theme": "phishing",
       "subtheme": "quishing",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "single",
       "prompt": "Un QR code collé sur une borne de paiement redirige vers une page demandant vos identifiants bancaires. Quel réflexe est le meilleur ?",
       "options": [
@@ -3003,7 +3086,7 @@
       "id": "phishing-faux-support",
       "theme": "phishing",
       "subtheme": "faux support",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "multiple",
       "prompt": "Un faux support vous pousse à installer un outil de contrôle à distance. Quelles actions sont correctes ?",
       "options": [
@@ -3038,7 +3121,7 @@
       "id": "password-passphrase",
       "theme": "passwords",
       "subtheme": "robustesse",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "single",
       "prompt": "Quel exemple illustre le mieux une phrase de passe robuste pour un usage personnel ?",
       "options": [
@@ -3068,7 +3151,7 @@
       "id": "password-mfa-prompt",
       "theme": "passwords",
       "subtheme": "mfa",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "single",
       "prompt": "Vous recevez une notification MFA alors que vous n’essayez pas de vous connecter. Que faire ?",
       "options": [
@@ -3099,7 +3182,7 @@
       "id": "password-manager-roles",
       "theme": "passwords",
       "subtheme": "gestionnaire",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "tf-grid",
       "prompt": "Indiquez si chaque affirmation sur un gestionnaire de mots de passe est vraie ou fausse.",
       "statements": [
@@ -3136,7 +3219,7 @@
       "id": "password-leak-order",
       "theme": "passwords",
       "subtheme": "fuite",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "order",
       "prompt": "Après confirmation qu’un mot de passe réutilisé a fuité, classez les actions prioritaires.",
       "items": [
@@ -3172,7 +3255,7 @@
       "id": "password-recovery-codes",
       "theme": "passwords",
       "subtheme": "mfa",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "single",
       "prompt": "À quoi servent les codes de récupération MFA ?",
       "options": [
@@ -3202,7 +3285,7 @@
       "id": "devices-windows-version",
       "theme": "devices",
       "subtheme": "système",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "single",
       "prompt": "Pourquoi connaître la version de Windows et l’architecture 32/64 bits peut-il être utile ?",
       "options": [
@@ -3232,7 +3315,7 @@
       "id": "devices-lost-phone",
       "theme": "devices",
       "subtheme": "perte",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "multiple",
       "prompt": "Vous perdez un téléphone professionnel. Quelles actions sont pertinentes ?",
       "options": [
@@ -3267,7 +3350,7 @@
       "id": "devices-mdm-limits",
       "theme": "devices",
       "subtheme": "mdm",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "tf-grid",
       "prompt": "Indiquez si chaque affirmation sur le MDM est vraie ou fausse.",
       "statements": [
@@ -3304,7 +3387,7 @@
       "id": "devices-usb-found",
       "theme": "devices",
       "subtheme": "usb",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "single",
       "prompt": "Vous trouvez une clé USB sur le parking de l’entreprise. Quel réflexe est le plus sûr ?",
       "options": [
@@ -3335,7 +3418,7 @@
       "id": "devices-lock-screen",
       "theme": "devices",
       "subtheme": "poste",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "single",
       "prompt": "Pourquoi verrouiller son écran en quittant son poste ?",
       "options": [
@@ -3365,7 +3448,7 @@
       "id": "malware-ransomware-signs",
       "theme": "malware",
       "subtheme": "ransomware",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "multiple",
       "prompt": "Quels signes peuvent évoquer un rançongiciel ?",
       "options": [
@@ -3400,7 +3483,7 @@
       "id": "malware-types-match",
       "theme": "malware",
       "subtheme": "familles",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "matching",
       "prompt": "Reliez chaque logiciel malveillant à son comportement principal.",
       "pairs": [
@@ -3437,7 +3520,7 @@
       "id": "malware-macro",
       "theme": "malware",
       "subtheme": "documents",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "single",
       "prompt": "Un document Office inattendu demande d’activer les macros pour afficher une facture. Que faire ?",
       "options": [
@@ -3468,7 +3551,7 @@
       "id": "malware-remote-tool",
       "theme": "malware",
       "subtheme": "prise en main",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "tf-grid",
       "prompt": "Indiquez si chaque affirmation sur les outils de prise en main à distance est vraie ou fausse.",
       "statements": [
@@ -3506,7 +3589,7 @@
       "id": "malware-isolate-order",
       "theme": "malware",
       "subtheme": "incident",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "order",
       "prompt": "Classez les premières actions raisonnables face à un poste fortement suspect.",
       "items": [
@@ -3542,7 +3625,7 @@
       "id": "data-personal-sensitive",
       "theme": "data",
       "subtheme": "rgpd",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "matching",
       "prompt": "Reliez chaque exemple à la catégorie RGPD la plus adaptée.",
       "pairs": [
@@ -3579,7 +3662,7 @@
       "id": "data-minimisation-form",
       "theme": "data",
       "subtheme": "minimisation",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "single",
       "prompt": "Un formulaire pour recevoir une brochure demande le numéro national et la situation médicale. Quel principe est le plus en cause ?",
       "options": [
@@ -3609,7 +3692,7 @@
       "id": "data-ai-redaction",
       "theme": "data",
       "subtheme": "ia",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "multiple",
       "prompt": "Avant de coller une réclamation client dans un outil d’IA, quelles précautions sont pertinentes ?",
       "options": [
@@ -3644,7 +3727,7 @@
       "id": "data-breach-order",
       "theme": "data",
       "subtheme": "violation",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "order",
       "prompt": "Classez les actions après découverte d’un fichier client public sur Internet.",
       "items": [
@@ -3680,7 +3763,7 @@
       "id": "data-right-erasure",
       "theme": "data",
       "subtheme": "droits",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "tf-grid",
       "prompt": "Indiquez si chaque affirmation sur le droit à l’effacement est vraie ou fausse.",
       "statements": [
@@ -3717,7 +3800,7 @@
       "id": "data-work-cloud-personal-file",
       "theme": "data",
       "subtheme": "rgpd-travail",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "single",
       "prompt": "Un manager voit dans le cloud de l’entreprise un dossier clairement nommé “Personnel” appartenant à un travailleur. Peut-il l’ouvrir librement parce que l’espace cloud appartient à l’entreprise ?",
       "options": [
@@ -3748,7 +3831,7 @@
       "id": "data-work-monitoring-principles",
       "theme": "data",
       "subtheme": "rgpd-travail",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "multiple",
       "prompt": "Quels principes doivent encadrer une surveillance des outils professionnels par l’employeur ?",
       "options": [
@@ -3782,7 +3865,7 @@
       "id": "data-work-email-control",
       "theme": "data",
       "subtheme": "rgpd-travail",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "tf-grid",
       "prompt": "Indiquez si chaque affirmation sur la messagerie professionnelle est vraie ou fausse.",
       "statements": [
@@ -3820,7 +3903,7 @@
       "id": "data-work-geolocation",
       "theme": "data",
       "subtheme": "rgpd-travail",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "multiple",
       "prompt": "Une entreprise équipe ses véhicules professionnels d’un système de géolocalisation. Quelles précautions sont pertinentes ?",
       "options": [
@@ -3855,7 +3938,7 @@
       "id": "data-work-telework-surveillance",
       "theme": "data",
       "subtheme": "rgpd-travail",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "single",
       "prompt": "En télétravail, une entreprise veut activer en continu la webcam et prendre des captures d’écran automatiques toutes les minutes. Quelle analyse est la plus correcte ?",
       "options": [
@@ -3886,7 +3969,7 @@
       "id": "data-work-gsm-mdm",
       "theme": "data",
       "subtheme": "rgpd-travail",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "tf-grid",
       "prompt": "Indiquez si chaque affirmation sur un GSM professionnel est vraie ou fausse.",
       "statements": [
@@ -3924,7 +4007,7 @@
       "id": "data-work-control-order",
       "theme": "data",
       "subtheme": "rgpd-travail",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "order",
       "prompt": "Classez les étapes raisonnables avant de mettre en place un contrôle des usages Internet au travail.",
       "items": [
@@ -3959,7 +4042,7 @@
       "id": "data-work-employee-good-practice",
       "theme": "data",
       "subtheme": "rgpd-travail",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "multiple",
       "prompt": "Comme travailleur, quels réflexes limitent les problèmes de vie privée dans les outils professionnels ?",
       "options": [
@@ -3994,7 +4077,7 @@
       "id": "data-work-personal-folder-trap",
       "theme": "data",
       "subtheme": "rgpd-travail",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "single",
       "prompt": "Quelle phrase résume le mieux la situation d’un fichier personnel stocké dans un outil professionnel ?",
       "options": [
@@ -4024,7 +4107,7 @@
       "id": "data-work-logs",
       "theme": "data",
       "subtheme": "rgpd-travail",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "single",
       "prompt": "Pourquoi les journaux de connexion ou historiques d’accès d’un outil professionnel sont-ils concernés par le RGPD ?",
       "options": [
@@ -4054,7 +4137,7 @@
       "id": "network-vpn-limits",
       "theme": "network",
       "subtheme": "vpn",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "multiple",
       "prompt": "Quelles affirmations sur un VPN d’entreprise sont correctes ?",
       "options": [
@@ -4088,7 +4171,7 @@
       "id": "network-proxy-firewall-match",
       "theme": "network",
       "subtheme": "outils",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "matching",
       "prompt": "Reliez chaque outil à son rôle principal.",
       "pairs": [
@@ -4125,7 +4208,7 @@
       "id": "network-backup-321-fill",
       "theme": "network",
       "subtheme": "sauvegarde",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "fill",
       "prompt": "Complétez la règle de sauvegarde 3-2-1.",
       "template": "Conserver {{copies}} copies, sur {{supports}} types de supports, avec {{outside}} copie hors site ou hors ligne.",
@@ -4172,7 +4255,7 @@
       "id": "network-cert-role",
       "theme": "network",
       "subtheme": "cert",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "single",
       "prompt": "Quel est un rôle typique d’un CERT ou CSIRT ?",
       "options": [
@@ -4199,10 +4282,10 @@
       "certification": true
     },
     {
-      "id": "network-iso27001",
+      "id": "network-iso27001-b",
       "theme": "network",
       "subtheme": "iso",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "tf-grid",
       "prompt": "Indiquez si chaque affirmation sur ISO 27001 est vraie ou fausse.",
       "statements": [
@@ -4239,7 +4322,7 @@
       "id": "osint-private-window",
       "theme": "osint",
       "subtheme": "audit personnel",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "single",
       "prompt": "Pourquoi réaliser un audit OSINT personnel dans un navigateur non connecté ?",
       "options": [
@@ -4269,7 +4352,7 @@
       "id": "osint-photo-risks",
       "theme": "osint",
       "subtheme": "photos",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "multiple",
       "prompt": "Quels éléments visibles sur une photo publique peuvent créer un risque ?",
       "options": [
@@ -4304,7 +4387,7 @@
       "id": "osint-reputation-order",
       "theme": "osint",
       "subtheme": "e-réputation",
-      "difficulty": "moyen",
+      "difficulty": "medium",
       "type": "order",
       "prompt": "Classez une démarche simple pour réduire son exposition publique.",
       "items": [
@@ -4339,7 +4422,7 @@
       "id": "osint-social-settings",
       "theme": "osint",
       "subtheme": "réseaux sociaux",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "tf-grid",
       "prompt": "Indiquez si chaque réglage de réseau social peut aider à limiter un risque.",
       "statements": [
@@ -4376,7 +4459,7 @@
       "id": "osint-ethics",
       "theme": "osint",
       "subtheme": "éthique",
-      "difficulty": "facile",
+      "difficulty": "easy",
       "type": "single",
       "prompt": "Dans un exercice de sensibilisation OSINT, quelle limite est la plus importante ?",
       "options": [
@@ -4428,7 +4511,8 @@
       "correct": "b",
       "explanation": "Les attaques DDoS (Distributed Denial of Service) se caractérisent par des volumes massifs d’attaques provenant de multiples sources distinctes visant à saturer la bande passante.",
       "visual": "🌪️",
-      "certification": false
+      "certification": false,
+      "difficulty": "medium"
     },
     {
       "id": "prep-net-ddos-mit",
@@ -4456,7 +4540,8 @@
       "correct": "a",
       "explanation": "Un CDN permet de disperser et d’absorber le trafic sur plusieurs serveurs géographiques, atténuant l'impact de la saturation.",
       "visual": "🛡️",
-      "certification": true
+      "certification": true,
+      "difficulty": "medium"
     },
     {
       "id": "prep-m-aptp",
@@ -4484,7 +4569,8 @@
       "correct": "b",
       "explanation": "Une APT vise à maintenir un accès prolongé à une cible pour espionner ou exfiltrer des données, souvent de manière furtive et sur une longue période.",
       "visual": "🕵️‍♂️",
-      "certification": false
+      "certification": false,
+      "difficulty": "medium"
     },
     {
       "id": "prep-m-zero",
@@ -4512,7 +4598,8 @@
       "correct": "b",
       "explanation": "Le terme « zero-day » désigne une vulnérabilité encore non connue ou non corrigée par l'éditeur du logiciel, rendant la protection difficile.",
       "visual": "🕰️",
-      "certification": false
+      "certification": false,
+      "difficulty": "medium"
     },
     {
       "id": "prep-n-siem",
@@ -4540,7 +4627,8 @@
       "correct": "b",
       "explanation": "Le SIEM agrège les logs de sécurité depuis différents équipements pour les corrélater et détecter des modèles d’attaques en temps réel.",
       "visual": "📊",
-      "certification": true
+      "certification": true,
+      "difficulty": "medium"
     },
     {
       "id": "prep-d-cloud-conf",
@@ -4568,7 +4656,8 @@
       "correct": "a",
       "explanation": "Une configuration incorrecte des services (buckets S3, permissions IAM) est la cause principale de fuites de données en environnement cloud.",
       "visual": "☁️",
-      "certification": true
+      "certification": true,
+      "difficulty": "medium"
     },
     {
       "id": "prep-ph-deepfake",
@@ -4596,12 +4685,13 @@
       "correct": "b",
       "explanation": "Le deepfake utilise l'intelligence artificielle pour falsifier des médias visuels ou audio, souvent à des fins de tromperie (social engineering).",
       "visual": "🎭",
-      "certification": false
+      "certification": false,
+      "difficulty": "easy"
     },
     {
       "id": "prep-data-aiprompt",
       "theme": "data",
-      "type": "single",
+      "type": "multiple",
       "prompt": "Quel est un risque spécifique de l'IA dans les données ?",
       "options": [
         {
@@ -4627,7 +4717,8 @@
       ],
       "explanation": "L'IA peut générer du contenu pour des attaques et être vulnérable à l'injection via des prompts.",
       "visual": "🤖",
-      "certification": false
+      "certification": false,
+      "difficulty": "medium"
     },
     {
       "id": "prep-n-iso-pdca",
@@ -4655,7 +4746,8 @@
       "correct": "a",
       "explanation": "Le cycle PDCA est le fondement de l'amélioration continue dans un système de management (ISMS).",
       "visual": "🔄",
-      "certification": true
+      "certification": true,
+      "difficulty": "hard"
     },
     {
       "id": "prep-inc-evidence",
@@ -4683,7 +4775,8 @@
       "correct": "a",
       "explanation": "Les journaux (logs) sont la source de vérité pour l'investigation forensique lors d'un incident.",
       "visual": "📝",
-      "certification": true
+      "certification": true,
+      "difficulty": "easy"
     },
     {
       "id": "prep-data-breach",
@@ -4714,7 +4807,919 @@
       ],
       "explanation": "Les obligations légales RGPD imposent la notification à l'autorité (72h) et aux personnes impactées.",
       "visual": "⚖️",
+      "certification": true,
+      "difficulty": "medium"
+    },
+    {
+      "id": "hard-web-hsts",
+      "theme": "web",
+      "subtheme": "en-tetes-securite",
+      "difficulty": "hard",
+      "type": "single",
+      "prompt": "Quel est le rôle principal de l’en-tête HTTP Strict-Transport-Security (HSTS) ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Chiffrer automatiquement le contenu affiché côté serveur avant tout envoi vers le navigateur"
+        },
+        {
+          "id": "b",
+          "label": "Forcer le navigateur à toujours utiliser HTTPS pour ce domaine, même si l’utilisateur tape http://"
+        },
+        {
+          "id": "c",
+          "label": "Bloquer automatiquement tous les scripts tiers chargés depuis des domaines externes au site"
+        },
+        {
+          "id": "d",
+          "label": "Remplacer temporairement un certificat expiré par un certificat auto-signé généré localement"
+        }
+      ],
+      "correct": "b",
+      "explanation": "HSTS indique au navigateur de mémoriser qu’un domaine doit toujours être contacté en HTTPS, ce qui limite les attaques de rétrogradation (downgrade) vers HTTP, notamment lors de la première visite sur un réseau non fiable.",
+      "visual": "🔐",
       "certification": true
+    },
+    {
+      "id": "hard-web-csp",
+      "theme": "web",
+      "subtheme": "en-tetes-securite",
+      "difficulty": "hard",
+      "type": "multiple",
+      "prompt": "Quels risques une politique de sécurité de contenu (CSP) bien configurée permet-elle de réduire ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "L’exécution de scripts injectés (XSS) depuis des sources non autorisées"
+        },
+        {
+          "id": "b",
+          "label": "Le chargement de ressources depuis des domaines non déclarés"
+        },
+        {
+          "id": "c",
+          "label": "La lenteur du réseau mobile"
+        },
+        {
+          "id": "d",
+          "label": "Le vol de cookies par un script malveillant injecté dans la page"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "d"
+      ],
+      "explanation": "La CSP restreint les origines autorisées à charger des scripts, styles ou autres ressources, réduisant ainsi la surface d’exploitation des failles XSS. Elle n’a aucun effet sur la performance réseau.",
+      "visual": "🧱",
+      "certification": true
+    },
+    {
+      "id": "hard-web-idn-homoglyph",
+      "theme": "web",
+      "subtheme": "typosquatting",
+      "difficulty": "hard",
+      "type": "single",
+      "prompt": "Un attaquant enregistre un domaine visuellement identique à « paypal.com » en remplaçant le « a » latin par un caractère cyrillique équivalent. Comment appelle-t-on cette technique ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Attaque par force brute visant à deviner le mot de passe du compte associé au domaine"
+        },
+        {
+          "id": "b",
+          "label": "Attaque homoglyphe (IDN homograph attack)"
+        },
+        {
+          "id": "c",
+          "label": "Attaque par rejeu consistant à retransmettre une requête d’authentification déjà capturée"
+        },
+        {
+          "id": "d",
+          "label": "Attaque par déni de service visant à rendre le vrai site officiel indisponible"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Les attaques homoglyphes exploitent des caractères Unicode visuellement proches des lettres latines pour créer des noms de domaine internationalisés (IDN) trompeurs, difficiles à distinguer à l’œil nu.",
+      "visual": "🔤",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "hard-ph-spf-dkim-dmarc",
+      "theme": "phishing",
+      "subtheme": "authentification-email",
+      "difficulty": "hard",
+      "type": "matching",
+      "prompt": "Reliez chaque mécanisme d’authentification email à sa fonction principale.",
+      "pairs": [
+        {
+          "leftId": "spf",
+          "left": "SPF",
+          "rightId": "spf-def",
+          "right": "Liste les serveurs autorisés à envoyer des emails pour un domaine"
+        },
+        {
+          "leftId": "dkim",
+          "left": "DKIM",
+          "rightId": "dkim-def",
+          "right": "Signe cryptographiquement le contenu du message pour en garantir l’intégrité"
+        },
+        {
+          "leftId": "dmarc",
+          "left": "DMARC",
+          "rightId": "dmarc-def",
+          "right": "Définit la politique à appliquer si SPF ou DKIM échouent, et centralise les rapports"
+        }
+      ],
+      "explanation": "SPF, DKIM et DMARC forment ensemble une défense contre l’usurpation d’adresse d’expéditeur : SPF vérifie la source, DKIM l’intégrité du message, et DMARC impose la politique (quarantaine, rejet) en cas d’échec.",
+      "visual": "📧",
+      "certification": true
+    },
+    {
+      "id": "hard-ph-bec",
+      "theme": "phishing",
+      "subtheme": "fraude-president",
+      "difficulty": "hard",
+      "type": "single",
+      "prompt": "Un attaquant compromet la boîte mail réelle d’un fournisseur habituel et modifie discrètement les coordonnées bancaires figurant sur une facture légitime avant qu’elle ne soit transférée. De quelle catégorie d’attaque s’agit-il ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Business Email Compromise (BEC) par détournement de facture"
+        },
+        {
+          "id": "b",
+          "label": "Ransomware à double extorsion combinant chiffrement des fichiers et menace de publication"
+        },
+        {
+          "id": "c",
+          "label": "Attaque par force brute visant à deviner le mot de passe de la boîte mail du fournisseur"
+        },
+        {
+          "id": "d",
+          "label": "Attaque par déni de service distribué visant à rendre le service de facturation indisponible"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Le BEC (compromission de messagerie d’affaires) inclut le détournement de factures via une boîte mail légitime compromise. Contrairement au phishing classique, l’email provient d’une adresse authentique, ce qui le rend particulièrement difficile à détecter.",
+      "visual": "🧾",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "hard-ph-pretexting-chain",
+      "theme": "phishing",
+      "subtheme": "ingenierie-sociale",
+      "difficulty": "hard",
+      "type": "order",
+      "prompt": "Remettez dans l’ordre logique les étapes typiques d’une attaque d’ingénierie sociale multi-canal (pretexting) ciblant un service financier.",
+      "items": [
+        [
+          "o1",
+          "Collecte d’informations publiques sur l’organigramme et les habitudes de l’entreprise (OSINT)"
+        ],
+        [
+          "o2",
+          "Premier contact à faible enjeu pour établir la confiance (ex. email anodin ou appel de courtoisie)"
+        ],
+        [
+          "o3",
+          "Construction d’un scénario crédible s’appuyant sur les informations collectées"
+        ],
+        [
+          "o4",
+          "Demande finale sensible (virement, identifiants, accès) sous prétexte d’urgence"
+        ]
+      ],
+      "correctOrder": [
+        "o1",
+        "o2",
+        "o3",
+        "o4"
+      ],
+      "explanation": "Une attaque de pretexting élaborée suit généralement une reconnaissance préalable, un contact initial destiné à instaurer la confiance, la mise en scène d’un scénario crédible, puis la demande sensible finale, souvent sous pression temporelle.",
+      "visual": "🎭",
+      "certification": false
+    },
+    {
+      "id": "hard-pwd-hashing",
+      "theme": "passwords",
+      "subtheme": "stockage",
+      "difficulty": "hard",
+      "type": "multiple",
+      "prompt": "Concernant le stockage sécurisé des mots de passe côté serveur, quelles affirmations sont correctes ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Un algorithme de hachage lent et salé (ex. bcrypt, Argon2) est préférable à un hachage rapide (ex. MD5, SHA-1 seul)"
+        },
+        {
+          "id": "b",
+          "label": "Le sel (salt) doit être identique pour tous les utilisateurs afin de simplifier la vérification"
+        },
+        {
+          "id": "c",
+          "label": "Le chiffrement réversible du mot de passe est une meilleure pratique que le hachage"
+        },
+        {
+          "id": "d",
+          "label": "Un algorithme lent ralentit délibérément les attaques par force brute ou par table arc-en-ciel"
+        }
+      ],
+      "correct": [
+        "a",
+        "d"
+      ],
+      "explanation": "bcrypt et Argon2 sont conçus pour être lents et consommer des ressources, ce qui freine les attaques par force brute. Le sel doit être unique par utilisateur pour empêcher les attaques par table précalculée, et le hachage (non réversible) est préférable au chiffrement réversible.",
+      "visual": "🧂",
+      "certification": true
+    },
+    {
+      "id": "hard-pwd-kerberoasting",
+      "theme": "passwords",
+      "subtheme": "active-directory",
+      "difficulty": "hard",
+      "type": "single",
+      "prompt": "Dans un environnement Active Directory, qu’est-ce que le « Kerberoasting » ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Une technique consistant à sauvegarder automatiquement les mots de passe dans un coffre-fort chiffré du domaine"
+        },
+        {
+          "id": "b",
+          "label": "Une attaque consistant à demander des tickets de service Kerberos pour ensuite tenter de casser hors ligne le hash du mot de passe du compte de service associé"
+        },
+        {
+          "id": "c",
+          "label": "Un protocole de chiffrement des emails échangés entre les contrôleurs de domaine et les postes clients"
+        },
+        {
+          "id": "d",
+          "label": "Une méthode de mise à jour automatique et centralisée des politiques de mot de passe du domaine"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Le Kerberoasting exploite le fait que tout utilisateur authentifié peut demander un ticket de service (TGS) chiffré avec le hash du mot de passe du compte de service ciblé, puis tenter de le casser hors ligne, souvent sans déclencher d’alerte immédiate.",
+      "visual": "🗝️",
+      "certification": false
+    },
+    {
+      "id": "hard-pwd-credential-stuffing",
+      "theme": "passwords",
+      "subtheme": "attaques",
+      "difficulty": "hard",
+      "type": "single",
+      "prompt": "Une attaque de « credential stuffing » consiste principalement à :",
+      "options": [
+        {
+          "id": "a",
+          "label": "Tester en masse, sur de nombreux sites, des couples identifiant/mot de passe issus de fuites de données antérieures"
+        },
+        {
+          "id": "b",
+          "label": "Deviner un mot de passe en testant systématiquement toutes les combinaisons possibles de caractères"
+        },
+        {
+          "id": "c",
+          "label": "Intercepter un mot de passe transmis en clair lors d’une connexion à un réseau Wi-Fi non chiffré"
+        },
+        {
+          "id": "d",
+          "label": "Installer discrètement un enregistreur de frappe (keylogger) sur le poste de travail de la victime"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Le credential stuffing réutilise des identifiants déjà compromis lors de fuites passées, en pariant sur la réutilisation de mots de passe par les utilisateurs sur plusieurs services. C’est pourquoi l’unicité des mots de passe par service est essentielle.",
+      "visual": "♻️",
+      "certification": true
+    },
+    {
+      "id": "hard-dev-edr-vs-av",
+      "theme": "devices",
+      "subtheme": "protection-poste",
+      "difficulty": "hard",
+      "type": "single",
+      "prompt": "Quelle est la principale différence entre un antivirus classique et une solution EDR (Endpoint Detection and Response) ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "L’EDR se limite à bloquer les signatures de virus déjà connues, exactement comme un antivirus classique"
+        },
+        {
+          "id": "b",
+          "label": "L’EDR surveille en continu les comportements sur le poste, permet l’investigation et la réponse à incident, au-delà de la simple détection par signature"
+        },
+        {
+          "id": "c",
+          "label": "L’antivirus protège l’ensemble du réseau de l’entreprise, alors que l’EDR ne protège qu’un seul fichier isolé"
+        },
+        {
+          "id": "d",
+          "label": "Il n’existe aucune différence fonctionnelle mesurable entre un antivirus classique et une solution EDR"
+        }
+      ],
+      "correct": "b",
+      "explanation": "L’EDR ajoute une surveillance comportementale continue, la corrélation d’événements et des capacités de réponse (isolement, investigation) que l’antivirus traditionnel, centré sur les signatures connues, ne propose pas.",
+      "visual": "🖥️",
+      "certification": true
+    },
+    {
+      "id": "hard-dev-supply-chain",
+      "theme": "devices",
+      "subtheme": "chaine-approvisionnement",
+      "difficulty": "hard",
+      "type": "single",
+      "prompt": "Une mise à jour logicielle légitime, distribuée par l’éditeur officiel, contient en réalité un code malveillant inséré en amont dans la chaîne de production. Comment qualifie-t-on ce type d’attaque ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Attaque de la chaîne d’approvisionnement (supply chain attack)"
+        },
+        {
+          "id": "b",
+          "label": "Attaque de l’homme du milieu interceptant les échanges entre le poste client et le serveur de l’éditeur"
+        },
+        {
+          "id": "c",
+          "label": "Attaque par hameçonnage ciblé visant directement les équipes de développement de l’éditeur logiciel"
+        },
+        {
+          "id": "d",
+          "label": "Attaque par déni de service visant à rendre indisponible le portail de téléchargement de l’éditeur"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Une attaque de la chaîne d’approvisionnement compromet un composant, un fournisseur ou un processus de build en amont, permettant à un code malveillant de se propager via des mises à jour ou logiciels par ailleurs légitimes et signés.",
+      "visual": "📦",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "hard-dev-byod-mdm",
+      "theme": "devices",
+      "subtheme": "mobilite",
+      "difficulty": "hard",
+      "type": "multiple",
+      "prompt": "Dans une politique BYOD (Bring Your Own Device) encadrée par un MDM, quelles mesures sont couramment appliquées ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Cloisonnement (containerisation) des données professionnelles et personnelles"
+        },
+        {
+          "id": "b",
+          "label": "Effacement à distance limité au conteneur professionnel en cas de perte du terminal"
+        },
+        {
+          "id": "c",
+          "label": "Accès total et permanent de l’employeur à toutes les données personnelles de l’appareil"
+        },
+        {
+          "id": "d",
+          "label": "Application de politiques de chiffrement et de code d’accès minimal sur l’appareil"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "d"
+      ],
+      "explanation": "Un MDM bien conçu isole les données professionnelles, permet un effacement ciblé du conteneur pro sans toucher aux données personnelles, et impose des règles de chiffrement et de verrouillage. L’accès total aux données personnelles n’est ni nécessaire ni conforme.",
+      "visual": "📱",
+      "certification": false
+    },
+    {
+      "id": "hard-mal-fileless",
+      "theme": "malware",
+      "subtheme": "techniques-avancees",
+      "difficulty": "hard",
+      "type": "single",
+      "prompt": "Qu’est-ce qu’un malware « fileless » (sans fichier) ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Un malware qui ne dépose aucun exécutable sur le disque et opère principalement en mémoire, souvent via des outils système légitimes"
+        },
+        {
+          "id": "b",
+          "label": "Un malware distribué uniquement par clé USB et incapable de se propager par tout autre moyen"
+        },
+        {
+          "id": "c",
+          "label": "Un malware qui ne peut infecter que des fichiers PDF ouverts avec un lecteur non mis à jour"
+        },
+        {
+          "id": "d",
+          "label": "Un malware qui nécessite obligatoirement une connexion Bluetooth active pour pouvoir s’exécuter"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Les malwares « fileless » évitent d’écrire des fichiers détectables sur le disque, s’exécutant en mémoire et détournant des outils légitimes (PowerShell, WMI), ce qui complique leur détection par les antivirus traditionnels basés sur les signatures de fichiers.",
+      "visual": "👻",
+      "certification": true
+    },
+    {
+      "id": "hard-mal-lotl",
+      "theme": "malware",
+      "subtheme": "techniques-avancees",
+      "difficulty": "hard",
+      "type": "single",
+      "prompt": "La technique « Living off the Land » (LotL) désigne le fait pour un attaquant de :",
+      "options": [
+        {
+          "id": "a",
+          "label": "Utiliser des outils et binaires déjà présents et légitimes du système d’exploitation pour mener ses actions malveillantes"
+        },
+        {
+          "id": "b",
+          "label": "Couper physiquement l’alimentation électrique du serveur ciblé pour interrompre ses services"
+        },
+        {
+          "id": "c",
+          "label": "Installer systématiquement un nouveau logiciel malveillant personnalisé et non détecté auparavant"
+        },
+        {
+          "id": "d",
+          "label": "Envoyer des emails de phishing en masse à l’ensemble des collaborateurs de l’organisation ciblée"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Le LotL consiste à détourner des outils légitimes déjà présents (PowerShell, PsExec, WMI, etc.) plutôt que d’introduire un malware personnalisé détectable, afin de se fondre dans l’activité normale du système et échapper aux détections classiques.",
+      "visual": "🌿",
+      "certification": false
+    },
+    {
+      "id": "hard-mal-double-extortion",
+      "theme": "malware",
+      "subtheme": "rancongiciels",
+      "difficulty": "hard",
+      "type": "single",
+      "prompt": "Qu’est-ce que la « double extorsion » dans une attaque par rançongiciel ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Demander deux fois la même rançon à quelques jours d’intervalle pour maximiser la pression"
+        },
+        {
+          "id": "b",
+          "label": "Chiffrer les données ET menacer de publier les données exfiltrées si la rançon n’est pas payée"
+        },
+        {
+          "id": "c",
+          "label": "Infecter simultanément le poste de travail et le smartphone professionnel de la victime"
+        },
+        {
+          "id": "d",
+          "label": "Exiger le paiement de la rançon dans deux monnaies différentes pour compliquer la traçabilité"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Au-delà du chiffrement classique, les attaquants exfiltrent souvent les données avant de les chiffrer, puis menacent de les divulguer publiquement, ajoutant une pression supplémentaire même si la victime peut restaurer ses données depuis une sauvegarde.",
+      "visual": "💣",
+      "certification": true
+    },
+    {
+      "id": "hard-mal-c2",
+      "theme": "malware",
+      "subtheme": "techniques-avancees",
+      "difficulty": "hard",
+      "type": "single",
+      "prompt": "Dans le cycle de vie d’une attaque, à quoi sert un serveur de commande et contrôle (C2) ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "À héberger le site vitrine officiel de l’entreprise victime pour masquer l’intrusion en cours"
+        },
+        {
+          "id": "b",
+          "label": "À permettre à l’attaquant de piloter à distance les machines compromises et d’exfiltrer des données"
+        },
+        {
+          "id": "c",
+          "label": "À sauvegarder automatiquement les données de la victime pour le compte de son service informatique"
+        },
+        {
+          "id": "d",
+          "label": "À chiffrer les communications légitimes de l’entreprise avec ses fournisseurs habituels"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Un serveur C2 (Command & Control) permet à l’attaquant de communiquer avec les machines infectées : envoi de commandes, déploiement d’outils complémentaires, exfiltration de données, souvent en tentant de se fondre dans le trafic légitime.",
+      "visual": "🛰️",
+      "certification": true
+    },
+    {
+      "id": "hard-data-dpia",
+      "theme": "data",
+      "subtheme": "rgpd-avance",
+      "difficulty": "hard",
+      "type": "single",
+      "prompt": "Dans quel cas une analyse d’impact relative à la protection des données (AIPD / DPIA) est-elle obligatoire au titre du RGPD ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Pour tout traitement de données personnelles, sans aucune exception ni seuil de risque à évaluer"
+        },
+        {
+          "id": "b",
+          "label": "Uniquement lorsque l’entreprise compte plus de 250 salariés, indépendamment de la nature ou du volume du traitement effectué"
+        },
+        {
+          "id": "c",
+          "label": "Lorsque le traitement est susceptible d’engendrer un risque élevé pour les droits et libertés des personnes (ex. surveillance à grande échelle, données sensibles)"
+        },
+        {
+          "id": "d",
+          "label": "Jamais, car cette obligation légale d’analyse d’impact a été purement et simplement supprimée du texte du RGPD depuis son entrée en vigueur"
+        }
+      ],
+      "correct": "c",
+      "explanation": "Le RGPD impose une AIPD lorsque le traitement présente un risque élevé pour les personnes concernées, par exemple un profilage à grande échelle, une surveillance systématique ou le traitement de catégories particulières de données.",
+      "visual": "📋",
+      "certification": true
+    },
+    {
+      "id": "hard-data-pseudonymisation",
+      "theme": "data",
+      "subtheme": "protection-donnees",
+      "difficulty": "hard",
+      "type": "single",
+      "prompt": "Quelle est la différence essentielle entre pseudonymisation et anonymisation au sens du RGPD ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Il n’existe aucune différence entre les deux termes, qui décrivent exactement le même procédé technique"
+        },
+        {
+          "id": "b",
+          "label": "La pseudonymisation reste réversible avec une information supplémentaire conservée séparément, alors que l’anonymisation rend théoriquement impossible tout retour à l’identification"
+        },
+        {
+          "id": "c",
+          "label": "L’anonymisation reste toujours réversible grâce à une clé conservée séparément, contrairement à la pseudonymisation"
+        },
+        {
+          "id": "d",
+          "label": "La pseudonymisation ne s’applique qu’aux données de santé, à l’exclusion de toute autre catégorie de données"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Les données pseudonymisées restent des données personnelles car une ré-identification reste possible via une clé conservée séparément. Les données véritablement anonymisées échappent au champ d’application du RGPD car la ré-identification est considérée comme impossible.",
+      "visual": "🎭",
+      "certification": true
+    },
+    {
+      "id": "hard-data-transferts-hors-ue",
+      "theme": "data",
+      "subtheme": "transferts-internationaux",
+      "difficulty": "hard",
+      "type": "multiple",
+      "prompt": "Quels mécanismes permettent d’encadrer légalement un transfert de données personnelles vers un pays hors Union européenne ne bénéficiant pas d’une décision d’adéquation ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Les clauses contractuelles types (Standard Contractual Clauses)"
+        },
+        {
+          "id": "b",
+          "label": "Les règles d’entreprise contraignantes (Binding Corporate Rules)"
+        },
+        {
+          "id": "c",
+          "label": "Le simple accord verbal entre les deux entreprises"
+        },
+        {
+          "id": "d",
+          "label": "Des garanties appropriées assorties, si besoin, de mesures supplémentaires évaluées au cas par cas"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "d"
+      ],
+      "explanation": "En l’absence de décision d’adéquation, le RGPD permet le transfert via des clauses contractuelles types, des règles d’entreprise contraignantes ou d’autres garanties appropriées, éventuellement complétées de mesures techniques supplémentaires. Un simple accord verbal ne constitue pas une garantie valable.",
+      "visual": "🌍",
+      "certification": true
+    },
+    {
+      "id": "hard-data-shadow-ai",
+      "theme": "data",
+      "subtheme": "ia-en-entreprise",
+      "difficulty": "hard",
+      "type": "single",
+      "prompt": "Un salarié colle des extraits de contrats confidentiels dans un assistant IA public pour en obtenir un résumé rapide, sans validation de son entreprise. Quel est le principal risque de cette pratique, parfois appelée « Shadow AI » ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Aucun risque particulier n’existe tant que le résumé produit par l’outil est jugé correct et utile"
+        },
+        {
+          "id": "b",
+          "label": "Aucun risque particulier n’existe tant que le résumé produit par l’outil est jugé pertinent, utile et correctement formulé"
+        },
+        {
+          "id": "c",
+          "label": "Un risque purement financier, limité au seul coût de l’abonnement mensuel à l’outil d’intelligence artificielle utilisé"
+        },
+        {
+          "id": "d",
+          "label": "Un simple ralentissement temporaire du réseau interne de l’entreprise pendant le traitement"
+        }
+      ],
+      "correct": "b",
+      "explanation": "L’usage non encadré d’outils d’IA publics avec des données sensibles ou confidentielles échappe à la politique de sécurité de l’entreprise et peut entraîner une divulgation involontaire, une violation contractuelle ou une non-conformité RGPD.",
+      "visual": "🕶️",
+      "certification": false,
+      "scenario": true
+    },
+    {
+      "id": "hard-net-zero-trust",
+      "theme": "network",
+      "subtheme": "architecture",
+      "difficulty": "hard",
+      "type": "single",
+      "prompt": "Quel principe fondamental caractérise une architecture « Zero Trust » ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Faire confiance par défaut à tout utilisateur ou appareil situé à l’intérieur du réseau de l’entreprise"
+        },
+        {
+          "id": "b",
+          "label": "Ne jamais faire confiance implicitement, et vérifier systématiquement chaque accès, indépendamment de sa provenance interne ou externe"
+        },
+        {
+          "id": "c",
+          "label": "Supprimer tous les pare-feux existants afin de simplifier et fluidifier les échanges réseau internes"
+        },
+        {
+          "id": "d",
+          "label": "Autoriser automatiquement tout accès dès lors que l’utilisateur passe par une connexion VPN"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Le modèle Zero Trust part du principe qu’aucun utilisateur ni appareil n’est intrinsèquement fiable, y compris à l’intérieur du périmètre réseau traditionnel. Chaque demande d’accès est vérifiée selon l’identité, le contexte et le niveau de risque.",
+      "visual": "🚫",
+      "certification": true
+    },
+    {
+      "id": "hard-net-ids-ips",
+      "theme": "network",
+      "subtheme": "detection",
+      "difficulty": "hard",
+      "type": "single",
+      "prompt": "Quelle est la différence principale entre un IDS (Intrusion Detection System) et un IPS (Intrusion Prevention System) ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "L’IDS détecte et alerte sans bloquer le trafic, tandis que l’IPS peut bloquer activement le trafic identifié comme malveillant"
+        },
+        {
+          "id": "b",
+          "label": "L’IPS ne fonctionne que sur les réseaux sans fil, contrairement à l’IDS qui couvre tous les réseaux"
+        },
+        {
+          "id": "c",
+          "label": "L’IDS chiffre l’ensemble du trafic réseau qu’il analyse, contrairement à l’IPS qui le laisse en clair"
+        },
+        {
+          "id": "d",
+          "label": "Il n’existe aucune différence fonctionnelle mesurable entre un IDS et un IPS correctement configurés"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Un IDS est un système de détection passif qui génère des alertes, alors qu’un IPS est positionné en ligne sur le flux de trafic et peut bloquer activement les paquets ou connexions jugés malveillants.",
+      "visual": "🚨",
+      "certification": true
+    },
+    {
+      "id": "hard-net-segmentation",
+      "theme": "network",
+      "subtheme": "architecture",
+      "difficulty": "hard",
+      "type": "single",
+      "prompt": "Pourquoi la segmentation réseau (par exemple via des VLANs) est-elle recommandée pour limiter l’impact d’un incident de sécurité ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Elle empêche toute connexion à Internet depuis le réseau interne, ce qui bloque toutes les attaques"
+        },
+        {
+          "id": "b",
+          "label": "Elle limite la propagation latérale d’un attaquant ou d’un malware en cloisonnant les différentes zones du réseau"
+        },
+        {
+          "id": "c",
+          "label": "Elle remplace complètement le besoin d’un pare-feu entre les différentes zones du réseau"
+        },
+        {
+          "id": "d",
+          "label": "Elle accélère uniquement la vitesse de connexion Wi-Fi perçue par les utilisateurs finaux"
+        }
+      ],
+      "correct": "b",
+      "explanation": "En cloisonnant les segments réseau (production, bureautique, invités, etc.), la segmentation limite le mouvement latéral d’un attaquant ayant compromis une zone, réduisant l’étendue des dégâts possibles.",
+      "visual": "🧩",
+      "certification": true
+    },
+    {
+      "id": "hard-osint-exif",
+      "theme": "osint",
+      "subtheme": "metadonnees",
+      "difficulty": "hard",
+      "type": "single",
+      "prompt": "Un employé publie sur les réseaux sociaux une photo prise depuis son bureau, prise avec son smartphone. Quel risque lié aux métadonnées EXIF de l’image doit-il particulièrement considérer ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Les métadonnées EXIF peuvent révéler la géolocalisation précise et le modèle d’appareil ayant pris la photo"
+        },
+        {
+          "id": "b",
+          "label": "Les métadonnées EXIF chiffrent automatiquement la photo dès qu’elle est publiée sur un réseau social"
+        },
+        {
+          "id": "c",
+          "label": "Les métadonnées EXIF suppriment automatiquement les visages détectés avant la publication de la photo"
+        },
+        {
+          "id": "d",
+          "label": "Les métadonnées EXIF n’existent que sur les photographies imprimées, jamais sur les fichiers numériques"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Les métadonnées EXIF peuvent contenir des coordonnées GPS précises, la date, l’heure et le modèle d’appareil, autant d’informations exploitables en reconnaissance OSINT si elles ne sont pas retirées avant publication.",
+      "visual": "📷",
+      "certification": false,
+      "scenario": true
+    },
+    {
+      "id": "hard-osint-correlation",
+      "theme": "osint",
+      "subtheme": "croisement-informations",
+      "difficulty": "hard",
+      "type": "single",
+      "prompt": "Un attaquant croise le nom d’un employé trouvé sur LinkedIn, sa ville affichée sur Instagram et le nom de son animal de compagnie mentionné publiquement sur un forum, pour tenter de deviner ses questions de sécurité. Cette technique relève principalement de :",
+      "options": [
+        {
+          "id": "a",
+          "label": "L’attaque par force brute visant à deviner directement le mot de passe du compte de messagerie"
+        },
+        {
+          "id": "b",
+          "label": "La corrélation d’informations issues de sources ouvertes (OSINT)"
+        },
+        {
+          "id": "c",
+          "label": "L’exploitation d’une faille logicielle non corrigée présente sur le poste de travail de la victime"
+        },
+        {
+          "id": "d",
+          "label": "Une attaque de type déni de service visant à rendre indisponible le compte professionnel ciblé"
+        }
+      ],
+      "correct": "b",
+      "explanation": "L’OSINT consiste à collecter et croiser des informations publiquement accessibles sur différentes plateformes pour construire un profil exploitable, par exemple pour deviner des réponses à des questions de sécurité ou personnaliser une attaque de phishing.",
+      "visual": "🔎",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "hard-net-cert-acronym",
+      "theme": "network",
+      "subtheme": "acteurs-cybersecurite",
+      "difficulty": "hard",
+      "type": "single",
+      "prompt": "Quel est le nom du centre qui gère les menaces actives de cybersécurité (CERT) ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Le Contrôleur Européen des Radio-Transmissions (Check European Radio Transmission)"
+        },
+        {
+          "id": "b",
+          "label": "L’Équipe d’intervention en cas d’urgence informatique (Computer Emergency Response Team)"
+        },
+        {
+          "id": "c",
+          "label": "L’Équipe de résilience en cas d’urgence de cybersécurité (Cybersecurity Emergency Recovery Team)"
+        },
+        {
+          "id": "d",
+          "label": "L’Équipe d’intervention en cas d’urgence de cybersécurité (Cybersecurity Emergency Response Team)"
+        }
+      ],
+      "correct": "b",
+      "explanation": "CERT signifie Computer Emergency Response Team : une équipe chargée de détecter, analyser et coordonner la réponse aux incidents de cybersécurité. Attention aux acronymes proches comme CSIRT, qui désignent une notion voisine mais distincte.",
+      "visual": "🧯",
+      "certification": true
+    },
+    {
+      "id": "network-airport-wifi-risks",
+      "theme": "network",
+      "subtheme": "wifi-public",
+      "difficulty": "medium",
+      "type": "multiple",
+      "prompt": "En déplacement professionnel, vous vous trouvez dans un aéroport où un Wi-Fi public est disponible. Quels sont les risques liés à l’utilisation d’un tel réseau ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Le vol de données et l’usurpation d’identité"
+        },
+        {
+          "id": "b",
+          "label": "Des dommages physiques sur le matériel informatique"
+        },
+        {
+          "id": "c",
+          "label": "L’infection de son ordinateur par un virus ou un ransomware"
+        },
+        {
+          "id": "d",
+          "label": "Le phishing (hameçonnage)"
+        }
+      ],
+      "correct": [
+        "a",
+        "c",
+        "d"
+      ],
+      "explanation": "Un Wi-Fi public non maîtrisé facilite l’interception du trafic, la propagation de malwares et les tentatives de phishing ciblées sur des voyageurs. En revanche, il ne cause aucun dommage physique au matériel.",
+      "visual": "✈️",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "network-order-secure-types",
+      "theme": "network",
+      "subtheme": "architecture",
+      "difficulty": "medium",
+      "type": "order",
+      "prompt": "Classez les types de réseaux suivants du plus sûr au moins sûr.",
+      "items": [
+        [
+          "net1",
+          "Réseau câblé à la maison"
+        ],
+        [
+          "net2",
+          "Wi-Fi domestique avec un mot de passe faible"
+        ],
+        [
+          "net3",
+          "Réseau câblé dans une bibliothèque"
+        ],
+        [
+          "net4",
+          "Wi-Fi public avec un mot de passe fort"
+        ]
+      ],
+      "correctOrder": [
+        "net1",
+        "net2",
+        "net3",
+        "net4"
+      ],
+      "explanation": "Un réseau câblé à domicile, physiquement inaccessible à un tiers, reste le plus sûr. Un Wi-Fi domestique mal protégé l’est déjà moins. Un réseau câblé partagé dans un lieu public expose à d’autres usagers du bâtiment. Un Wi-Fi public reste le moins sûr : même avec un mot de passe fort, il est partagé par de nombreux inconnus et le trafic peut être intercepté.",
+      "visual": "📶",
+      "certification": true
+    },
+    {
+      "id": "device-usb-charging-stranger",
+      "theme": "devices",
+      "subtheme": "usb",
+      "difficulty": "medium",
+      "type": "multiple",
+      "prompt": "Vous utilisez votre ordinateur dans un café quand un inconnu vous demande s’il peut recharger son téléphone en le connectant au port USB de votre ordinateur. Quels sont les risques ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Il n’y a aucun risque, un simple chargement ne peut rien transmettre"
+        },
+        {
+          "id": "b",
+          "label": "L’ordinateur pourrait être infecté par un virus via la connexion USB"
+        },
+        {
+          "id": "c",
+          "label": "Le téléphone pourrait ne pas se charger correctement"
+        },
+        {
+          "id": "d",
+          "label": "Vos données pourraient fuiter via la connexion établie avec le téléphone"
+        }
+      ],
+      "correct": [
+        "b",
+        "d"
+      ],
+      "explanation": "Un port USB transmet aussi bien de l’électricité que des données. Un téléphone compromis (ou un adaptateur piégé) peut servir à infecter l’ordinateur ou à en exfiltrer des données, un principe connu sous le nom de « juice jacking ».",
+      "visual": "🔌",
+      "certification": true,
+      "scenario": true
     }
   ]
 }
