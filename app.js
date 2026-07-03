@@ -282,9 +282,9 @@
 
       // Ajout du sélecteur de thème
       const themes = [
+        { id: 'secops', name: 'Mode SecOps', file: 'styles/secops_styles.css' },
         { id: 'brutalism', name: 'Mode Neobrutalism', file: 'styles/brutalism_styles.css' },
-        { id: 'classic', name: 'Mode Classique', file: 'styles/corpo_styles.css' },
-        { id: 'secops', name: 'Mode SecOps', file: 'styles/hacker_styles.css' }
+        { id: 'classic', name: 'Mode Classique', file: 'styles/corpo_styles.css' }
       ];
 
       const themeSelect = `
@@ -345,6 +345,37 @@
         </div>
       </section>
 
+      <div class="section-title">
+        <div><h2>Ressources</h2></div>
+        <p>Qui contacter et quels outils utiliser au quotidien.</p>
+      </div>
+      <section class="synthesis-callout nb-card">
+        <div>
+          <span class="badge">Cours</span>
+          <h2>Synthèses de cours</h2>
+          <p>Réviser les notions clés, les pièges fréquents et les bons réflexes avant de passer aux quiz.</p>
+        </div>
+        <button class="btn btn--dark" data-action="syntheses">Ouvrir les synthèses</button>
+      </section>
+      <section class="home-actions home-actions--equal">
+        <article class="action-card nb-card">
+          <h2>Organismes officiels</h2>
+          <p>Qui contacter en France et en Belgique : autorités nationales, protection des données, enquête, CERT, associations.</p>
+          <button class="btn" data-action="organismes">Voir les organismes</button>
+        </article>
+        <article class="action-card nb-card">
+          <h2>Boîte à outils</h2>
+          <p>80 outils OSINT, veille, sauvegarde et chiffrement classés par catégorie, avec recherche.</p>
+          <button class="btn" data-action="tools">Voir la boîte à outils</button>
+        </article>
+      </section>
+     
+      
+      <div class="section-title">
+        <div><h2>Modes de test</h2></div>
+        <p>Des formats courts ou proches de l'esprit TOSA, avec un ordre conservé pendant toute la tentative.</p>
+      </div>
+      
       <section class="home-actions">
         <article class="action-card action-card--general nb-card">
           <h2>Le grand test</h2>
@@ -354,7 +385,7 @@
             <span class="badge">Correction directe</span>
             ${generalCompleted ? `<span class="badge">Progression : ${generalCompleted}/${ACTIVE_QUESTIONS.length}</span>` : ''}
           </div>
-          <button class="btn btn--dark" data-action="start-general">${generalSaved && !generalSaved.completedAt ? 'Reprendre le grand test' : 'Commencer le grand test'}</button>
+          <button class="btn btn--ghost " data-action="start-general">${generalSaved && !generalSaved.completedAt ? 'Reprendre le grand test' : 'Commencer le grand test'}</button>
         </article>
 
         ${incomplete ? `
@@ -369,38 +400,8 @@
             <span class="badge">100 % local</span>
           </article>`}
       </section>
-
-      <div class="section-title">
-        <div><h2>Modes de test</h2></div>
-        <p>Des formats courts ou proches de l'esprit TOSA, avec un ordre conservé pendant toute la tentative.</p>
-      </div>
+      
       <section class="mode-grid">${modeCards}</section>
-
-      <section class="synthesis-callout nb-card">
-        <div>
-          <span class="badge">Cours</span>
-          <h2>Synthèses de cours</h2>
-          <p>Réviser les notions clés, les pièges fréquents et les bons réflexes avant de passer aux quiz.</p>
-        </div>
-        <button class="btn btn--dark" data-action="syntheses">Ouvrir les synthèses</button>
-      </section>
-
-      <div class="section-title">
-        <div><h2>Ressources</h2></div>
-        <p>Qui contacter et quels outils utiliser au quotidien.</p>
-      </div>
-      <section class="home-actions">
-        <article class="action-card nb-card">
-          <h3>🏛️ Organismes officiels</h3>
-          <p>Qui contacter en France et en Belgique : autorités nationales, protection des données, enquête, CERT, associations.</p>
-          <button class="btn" data-action="organismes">Voir les organismes</button>
-        </article>
-        <article class="action-card nb-card">
-          <h3>🧰 Boîte à outils</h3>
-          <p>80 outils OSINT, veille, sauvegarde et chiffrement classés par catégorie, avec recherche.</p>
-          <button class="btn" data-action="tools">Voir la boîte à outils</button>
-        </article>
-      </section>
 
       <div class="section-title">
         <div><h2>Quiz par thème</h2></div>
