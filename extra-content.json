@@ -1368,6 +1368,11 @@
           "name": "Shodan",
           "description": "Moteur de recherche pour trouver les appareils connectés (caméras, serveurs, IoT) exposés sur Internet.",
           "url": "https://www.shodan.io/"
+        },
+        {
+          "name": "Quad9",
+          "description": "Résolveur DNS public gratuit et axé confidentialité, qui bloque automatiquement l'accès aux domaines malveillants connus (phishing, malware) au niveau du réseau.",
+          "url": "https://quad9.net/fr/"
         }
       ]
     },
@@ -1589,7 +1594,7 @@
       "items": [
         {
           "name": "Sites de veille",
-          "description": "Bellingcat (investigation open source de référence), EFF (défense des libertés numériques), Project Fox, Osint Newsletter, Osint Field Notes, Osint Ambition.",
+          "description": "Bellingcat (investigation open source de référence), EFF (défense des libertés numériques), RadioCSIRT (actualité et podcasts cybersécurité), Project Fox, Osint Newsletter, Osint Field Notes, Osint Ambition.",
           "url": "https://www.bellingcat.com/",
           "links": [
             {
@@ -1599,6 +1604,10 @@
             {
               "label": "EFF",
               "url": "https://www.eff.org/"
+            },
+            {
+              "label": "RadioCSIRT",
+              "url": "https://www.radiocsirt.org/"
             }
           ]
         },
@@ -1646,7 +1655,7 @@
       "items": [
         {
           "name": "Nextcloud",
-          "description": "Solution cloud auto-hébergeable, alternative open-source à Google Drive/Dropbox, maîtrise totale des données.",
+          "description": "Solution cloud auto-hébergée, alternative open-source à Google Drive/Dropbox, maîtrise totale des données.",
           "url": "https://nextcloud.com/"
         },
         {
@@ -1655,9 +1664,9 @@
           "url": "https://www.infomaniak.com/fr/kdrive"
         },
         {
-          "name": "OneDrive",
-          "description": "Cloud Microsoft, intégré à l'écosystème Office 365.",
-          "url": "https://onedrive.live.com/"
+          "name": "iCloud",
+          "description": "Cloud Apple, intégré à l'écosystème macOS/iOS (Photos, Fichiers, sauvegardes d'appareils).",
+          "url": "https://www.icloud.com/"
         },
         {
           "name": "Proton Drive",
@@ -1673,6 +1682,21 @@
           "name": "Tresorit",
           "description": "Cloud chiffré de bout en bout orienté entreprises, avec contrôles d'administration avancés.",
           "url": "https://tresorit.com/"
+        },
+        {
+          "name": "OneDrive",
+          "description": "Cloud Microsoft, intégré à l'écosystème Office 365.",
+          "url": "https://onedrive.live.com/"
+        },
+        {
+          "name": "Google Drive",
+          "description": "Cloud Google, intégré à l'écosystème Workspace (Docs, Sheets, Gmail), avec édition collaborative en temps réel.",
+          "url": "https://drive.google.com/"
+        },
+        {
+          "name": "Dropbox",
+          "description": "Un des pionniers du stockage cloud, reconnu pour sa synchronisation fiable entre appareils et ses intégrations tierces nombreuses.",
+          "url": "https://www.dropbox.com/"
         }
       ]
     },
