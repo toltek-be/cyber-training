@@ -1011,5 +1011,701 @@
         "Amélioration continue"
       ]
     }
+  ],
+  "organismes": [
+    {
+      "id": "autorites-nationales",
+      "title": "Autorités nationales de cybersécurité",
+      "entries": [
+        {
+          "country": "FR",
+          "flag": "🇫🇷",
+          "name": "ANSSI",
+          "url": "https://cyber.gouv.fr/",
+          "role": "Autorité nationale de cybersécurité et de cyberdéfense : protection des systèmes d'État et des opérateurs critiques, référentiels et réglementations (NIS2, SAIV), réponse aux incidents majeurs via CERT-FR.",
+          "public": "Administrations, OIV/OSE, entreprises, collectivités, toute entité présente sur le territoire français.",
+          "situations": "Incident avéré ou suspecté, vulnérabilité découverte, obligation de notification (NIS2), besoin de conseil.",
+          "contact": "Tél. 3218 (+33 9 70 83 32 18 depuis l'étranger) · cert-fr@ssi.gouv.fr · formulaire sur cyber.gouv.fr",
+          "signaler": "Incidents de sécurité numérique, vulnérabilités, situations anormales (signalement anonyme possible)."
+        },
+        {
+          "country": "BE",
+          "flag": "🇧🇪",
+          "name": "CCB — Centre pour la Cybersécurité Belgique",
+          "url": "https://ccb.belgium.be/",
+          "role": "Autorité nationale unique de cybersécurité et CSIRT national : stratégie nationale, autorité NIS2, certification, gestion de crise cyber.",
+          "public": "Citoyens, entreprises, administrations, secteurs vitaux (énergie, finance, santé...).",
+          "situations": "Cyberincident en cours ou passé, obligation NIS2, message suspect reçu, besoin de conseils.",
+          "contact": "Formulaire notif.safeonweb.be · urgence +32 2 501 05 60 · incident@ccb.belgium.be · suspect@safeonweb.be · info@safeonweb.be",
+          "signaler": "Cyberincidents (ransomware, intrusion, phishing), vulnérabilités, e-mails/SMS suspects, incidents NIS2."
+        }
+      ]
+    },
+    {
+      "id": "protection-donnees",
+      "title": "Autorités de protection des données personnelles",
+      "entries": [
+        {
+          "country": "FR",
+          "flag": "🇫🇷",
+          "name": "CNIL",
+          "url": "https://www.cnil.fr/fr",
+          "role": "Application du RGPD et de la loi Informatique et Libertés : information, contrôle de conformité, instruction des plaintes, sanctions.",
+          "public": "Particuliers exerçant leurs droits ; organismes responsables de traitement ou sous-traitants.",
+          "situations": "Réponse insatisfaisante à une demande de droits, violation de données à notifier, besoin d'information réglementaire.",
+          "contact": "Téléservice de plainte en ligne · téléservice de notification de violation · courrier : CNIL, 3 Place de Fontenoy, 75007 Paris",
+          "signaler": "Manquements au RGPD, défaut de sécurité, absence de consentement, violations de données personnelles."
+        },
+        {
+          "country": "BE",
+          "flag": "🇧🇪",
+          "name": "APD (GBA) — Autorité de protection des données",
+          "url": "https://www.autoriteprotectiondonnees.be/",
+          "role": "Veille au respect du RGPD, instruit les plaintes, statue via sa Chambre Contentieuse (amendes jusqu'à 20 M€ ou 4 % du CA mondial).",
+          "public": "Particuliers et organismes basés en Belgique ou concernés par un traitement transfrontalier.",
+          "situations": "Atteinte constatée à ses droits, besoin de médiation, notification d'une violation de données.",
+          "contact": "Formulaire en ligne · contact@apd-gba.be · +32 2 274 48 00 · Rue de la Presse 35, 1000 Bruxelles",
+          "signaler": "Manquements au RGPD, refus d'exercice de droits, violations de données, plaintes nécessitant médiation ou enquête."
+        }
+      ]
+    },
+    {
+      "id": "enquete-cybercriminalite",
+      "title": "Services d'enquête contre la cybercriminalité",
+      "entries": [
+        {
+          "country": "FR",
+          "flag": "🇫🇷",
+          "name": "C3N / OCLCTIC",
+          "url": "https://www.masecurite.interieur.gouv.fr/",
+          "role": "Mènent et appuient les enquêtes judiciaires sur les infractions numériques (piratage, escroqueries, rançongiciel, fraude), en coordination avec les unités locales.",
+          "public": "Toute victime de cybercriminalité : particuliers, entreprises, administrations.",
+          "situations": "Après une cyberattaque avérée, pour déposer plainte (dépôt sous 72h requis pour l'indemnisation assurantielle des entreprises depuis la LOPMI).",
+          "contact": "Commissariat/brigade · plateforme THESEE ou masecurite.interieur.gouv.fr · chat 24h/24 · Info Escroqueries 0 805 805 817",
+          "signaler": "Intrusion système, vol/fuite de données, rançongiciel, escroquerie en ligne, usurpation d'identité."
+        },
+        {
+          "country": "BE",
+          "flag": "🇧🇪",
+          "name": "Police Fédérale — CCU (Computer Crime Unit)",
+          "url": "https://www.police.be/",
+          "role": "Unités spécialisées de la Police judiciaire fédérale (FCCU/RCCU) : enquêtes sur les infractions numériques, appui technique aux polices locales et magistrats.",
+          "public": "Toute victime de cybercriminalité en Belgique : particuliers, entreprises, administrations.",
+          "situations": "Après une cyberattaque, un piratage, une escroquerie en ligne (idéalement après blocage des comptes bancaires concernés).",
+          "contact": "Déclaration en ligne sur my.police.be · déplacement au commissariat de la zone de police locale",
+          "signaler": "Piratage, escroquerie en ligne, rançongiciel, harcèlement numérique, vol de données, fraude bancaire liée à une cyberattaque."
+        }
+      ]
+    },
+    {
+      "id": "cert-national",
+      "title": "Réponse opérationnelle aux incidents (CERT)",
+      "entries": [
+        {
+          "country": "FR",
+          "flag": "🇫🇷",
+          "name": "CERT-FR",
+          "url": "https://www.cert.ssi.gouv.fr/",
+          "role": "Centre gouvernemental de réponse à incident, rattaché à l'ANSSI : détecte, qualifie et traite les incidents et vulnérabilités ; assiste les victimes.",
+          "public": "Ministères, services de l'État, OIV/OSE en priorité ; accessible à toute entité française en cas d'incident.",
+          "situations": "Incident de sécurité en cours, vulnérabilité découverte, besoin d'assistance technique immédiate.",
+          "contact": "Tél. 3218 (+33 9 70 83 32 18) · cert-fr@ssi.gouv.fr · formulaire sur cyber.gouv.fr",
+          "signaler": "Incidents cyber, vulnérabilités logicielles/matérielles, notifications réglementaires (OIV, OSE, NIS2)."
+        },
+        {
+          "country": "BE",
+          "flag": "🇧🇪",
+          "name": "CERT.be",
+          "url": "https://ccb.belgium.be/cert",
+          "role": "Équipe d'intervention d'urgence en sécurité informatique, service opérationnel du CCB : détecte, observe et analyse les problèmes de sécurité en ligne.",
+          "public": "Autorités publiques, secteurs vitaux, entreprises et citoyens belges.",
+          "situations": "Cyberattaque en cours, demande de premiers secours techniques, besoin de conseils pour gérer une crise cyber.",
+          "contact": "Formulaire notif.safeonweb.be · +32 2 501 05 60 · incident@ccb.belgium.be",
+          "signaler": "Cyberincidents, ransomware, intrusions, vulnérabilités, demandes d'assistance en cas d'attaque active."
+        }
+      ]
+    },
+    {
+      "id": "associations-professionnelles",
+      "title": "Associations professionnelles et écosystèmes collaboratifs",
+      "entries": [
+        {
+          "country": "FR",
+          "flag": "🇫🇷",
+          "name": "CESIN",
+          "url": "https://cesin.fr/",
+          "role": "Association regroupant plus de 1 200 professionnels (RSSI, DSI, experts juridiques) : partage d'expérience, professionnalisation du métier de RSSI, représentation.",
+          "public": "Professionnels occupant une responsabilité en sécurité de l'information (RSSI, DSI, DSSI).",
+          "situations": "Pour adhérer, participer aux groupes de travail, ou accéder aux publications (baromètre, livres blancs).",
+          "contact": "Formulaire d'adhésion sur cesin.fr · 115 rue Saint-Dominique, 75007 Paris",
+          "signaler": "Ce n'est pas un point de signalement d'incidents ; espace d'échange entre pairs sur la profession."
+        },
+        {
+          "country": "BE",
+          "flag": "🇧🇪",
+          "name": "Cybersecurity Coalition",
+          "url": "https://cybersecuritycoalition.be/",
+          "role": "Partenariat académique / public / privé (200+ organisations) : partage de connaissances, collaboration, recommandations, sensibilisation.",
+          "public": "Organisations belges (entreprises, universités, administrations) impliquées dans la cybersécurité.",
+          "situations": "Pour rejoindre la coalition, accéder aux outils/formations en ligne, participer aux groupes de travail.",
+          "contact": "Formulaire de contact sur cybersecuritycoalition.be",
+          "signaler": "Ce n'est pas un point de signalement d'incidents ; plateforme d'échange et de sensibilisation collective."
+        }
+      ]
+    },
+    {
+      "id": "evenements-sensibilisation",
+      "title": "Événements et plateformes de sensibilisation",
+      "entries": [
+        {
+          "country": "FR",
+          "flag": "🇫🇷",
+          "name": "FIC (Forum InCyber Europe)",
+          "url": "https://www.forum-fic.com/en/home/",
+          "role": "Plus grand événement européen de cybersécurité, lancé en 2007 par la Gendarmerie nationale (Lille), renommé Forum InCyber Europe depuis 2024.",
+          "public": "Professionnels de la cybersécurité, RSSI, décideurs publics, fournisseurs de solutions, étudiants.",
+          "situations": "Pour s'inscrire à l'événement annuel, exposer en tant qu'entreprise, consulter les contenus publiés.",
+          "contact": "Formulaire d'inscription et de contact sur forum-fic.com",
+          "signaler": "Sans objet ; événement de rencontre et de réflexion, pas un organisme de signalement."
+        },
+        {
+          "country": "BE",
+          "flag": "🇧🇪",
+          "name": "Safeonweb",
+          "url": "https://www.safeonweb.be/",
+          "role": "Plateforme et campagne de sensibilisation grand public portée par le CCB et CERT.be : informe, diffuse des conseils, relaie les signalements.",
+          "public": "Grand public, particuliers et PME belges.",
+          "situations": "Réception d'un message suspect, besoin de conseils de sécurité, avant de porter plainte pour une escroquerie numérique.",
+          "contact": "suspect@safeonweb.be · info@safeonweb.be · notif.safeonweb.be",
+          "signaler": "Messages de phishing, sites suspects, incidents cyber pour entreprises et organisations."
+        }
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "id": "telephonie",
+      "title": "Téléphonie",
+      "items": [
+        {
+          "name": "Free Carrier Lookup",
+          "description": "Identifie l'opérateur d'origine et le type de ligne. Utile pour les numéros internationaux hors Belgique.",
+          "url": "https://www.freecarrierlookup.com/"
+        },
+        {
+          "name": "CRDC",
+          "description": "Système central de gestion des portabilités en Belgique. Donne l'opérateur actuel réel d'une ligne, indispensable pour vérifier la légitimité d'un SMS ou d'un appel suspect.",
+          "url": "https://www.crdc.be/"
+        }
+      ]
+    },
+    {
+      "id": "referentiels",
+      "title": "Référentiels & catalogues de sécurité",
+      "items": [
+        {
+          "name": "OWASP",
+          "description": "Référence mondiale des bonnes pratiques et des risques (OWASP Top 10). Indispensable pour sécuriser le code et comprendre les failles courantes.",
+          "url": "https://owasp.org/"
+        },
+        {
+          "name": "CVE",
+          "description": "Dictionnaire public et standardisé de toutes les failles de sécurité connues, chacune avec un identifiant unique pour suivre correctifs et menaces.",
+          "url": "https://cve.mitre.org/"
+        },
+        {
+          "name": "CERT-FR",
+          "description": "CERT national et gouvernemental français.",
+          "url": "https://www.cert.ssi.gouv.fr/"
+        }
+      ]
+    },
+    {
+      "id": "images-medias",
+      "title": "Images & médias",
+      "items": [
+        {
+          "name": "Jimpl",
+          "description": "Visualiseur de métadonnées EXIF en ligne : date, modèle d'appareil, coordonnées GPS. Permet aussi de les supprimer avant publication.",
+          "url": "https://jimpl.com/"
+        },
+        {
+          "name": "Recherche inversée",
+          "description": "Retrouve l'origine d'une image pour vérifier les fake news ou les profils usurpés.",
+          "url": "https://tineye.com/",
+          "links": [
+            {
+              "label": "TinEye",
+              "url": "https://tineye.com/"
+            },
+            {
+              "label": "PimEyes",
+              "url": "https://pimeyes.com/en"
+            },
+            {
+              "label": "Google Images",
+              "url": "https://images.google.com/"
+            },
+            {
+              "label": "Yandex Images",
+              "url": "https://yandex.com/images/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "investigation-multi",
+      "title": "Investigation multi-sources (emails, pseudos, téléphones)",
+      "items": [
+        {
+          "name": "Mosint",
+          "description": "Outil OSINT en ligne de commande pour croiser une adresse email (fuites, réseaux sociaux, validité du compte) en une seule requête.",
+          "url": "https://github.com/alpkeskin/mosint"
+        },
+        {
+          "name": "Epieos",
+          "description": "Moteur de recherche OSINT pour le reverse lookup d'email/téléphone. Interroge plus de 140 services sans notifier la cible, croisé avec Have I Been Pwned.",
+          "url": "https://epieos.com/"
+        },
+        {
+          "name": "Osint Industries",
+          "description": "Plateforme de reverse lookup avancée (email, téléphone, pseudo) agrégeant des centaines de sources, alternative plus large qu'Epieos.",
+          "url": "https://www.osint.industries/"
+        },
+        {
+          "name": "WhatsMyName",
+          "description": "Recherche un pseudo sur plusieurs centaines de plateformes simultanément pour cartographier l'empreinte numérique d'une identité.",
+          "url": "https://whatsmyname.app/"
+        },
+        {
+          "name": "Sherlock",
+          "description": "Outil en ligne de commande (Python) qui recherche un nom d'utilisateur sur des centaines de réseaux sociaux.",
+          "url": "https://github.com/sherlock-project/sherlock"
+        },
+        {
+          "name": "Maigret",
+          "description": "Alternative à Sherlock, plus exhaustive : recherche de pseudo avec rapport détaillé (HTML, PDF, JSON).",
+          "url": "https://github.com/soxoj/maigret"
+        },
+        {
+          "name": "Holehe",
+          "description": "Vérifie si une adresse email est utilisée pour créer un compte sur une multitude de sites, sans authentification ni alerte à la cible.",
+          "url": "https://github.com/megadose/holehe"
+        },
+        {
+          "name": "Have I Been Pwned",
+          "description": "Vérifie instantanément si un email ou un mot de passe a été compromis dans une fuite de données connue.",
+          "url": "https://haveibeenpwned.com/"
+        },
+        {
+          "name": "Hunter.io",
+          "description": "Outil orienté prospection mais très utilisé en OSINT pour trouver/vérifier les adresses email d'un nom de domaine donné.",
+          "url": "https://hunter.io/dashboard"
+        },
+        {
+          "name": "IntelX (Intelligence X)",
+          "description": "Moteur de recherche indexant des données de fuites, du dark web, de documents publics et de versions archivées du web.",
+          "url": "https://intelx.io/"
+        },
+        {
+          "name": "DeHashed",
+          "description": "Moteur de recherche dans des bases de données de fuites (emails, mots de passe, identifiants).",
+          "url": "https://dehashed.com/search#searchPricing"
+        },
+        {
+          "name": "Breach.vip",
+          "description": "Service de recherche dans des fuites de données, pour vérifier rapidement l'exposition d'un email ou d'un identifiant.",
+          "url": "https://breach.vip/"
+        }
+      ]
+    },
+    {
+      "id": "web-domaines",
+      "title": "Web, domaines & URL",
+      "items": [
+        {
+          "name": "Whois / RDAP",
+          "description": "Identifie le propriétaire enregistré d'un nom de domaine pour tracer l'origine d'un site frauduleux.",
+          "url": "https://whois.domaintools.com/"
+        },
+        {
+          "name": "Whoxy",
+          "description": "Service Whois/RDAP avec historique des changements de propriétaire et API de recherche inversée par email/personne.",
+          "url": "https://www.whoxy.com/"
+        },
+        {
+          "name": "Wayback Machine",
+          "description": "Archive d'Internet permettant de consulter les versions passées d'un site, même supprimé.",
+          "url": "https://web.archive.org/"
+        },
+        {
+          "name": "MXToolbox",
+          "description": "Vérifie la configuration et la santé d'un domaine email (MX, SPF, DKIM, DMARC, blacklists).",
+          "url": "https://mxtoolbox.com/emailhealth"
+        },
+        {
+          "name": "Unshortlink",
+          "description": "Révèle la destination réelle d'une URL raccourcie avant de cliquer, pour éviter le phishing.",
+          "url": "https://unshortlink.com/"
+        },
+        {
+          "name": "VirusTotal",
+          "description": "Scanne fichiers et URL suspects avec plus de 70 moteurs antivirus avant ouverture.",
+          "url": "https://www.virustotal.com/"
+        },
+        {
+          "name": "Any.Run",
+          "description": "Bac à sable interactif en ligne pour exécuter et observer le comportement d'un fichier/URL suspecte en temps réel.",
+          "url": "https://any.run/"
+        },
+        {
+          "name": "Hybrid Analysis",
+          "description": "Plateforme d'analyse dynamique de malwares (sandbox) gratuite, opérée par CrowdStrike.",
+          "url": "https://hybrid-analysis.com/"
+        },
+        {
+          "name": "Shodan",
+          "description": "Moteur de recherche pour trouver les appareils connectés (caméras, serveurs, IoT) exposés sur Internet.",
+          "url": "https://www.shodan.io/"
+        }
+      ]
+    },
+    {
+      "id": "investigation-visu",
+      "title": "Investigation, visualisation & automatisation",
+      "items": [
+        {
+          "name": "Maltego",
+          "description": "Logiciel de visualisation d'investigation sous forme de graphes, avec de nombreux connecteurs vers des sources OSINT tierces.",
+          "url": "https://www.maltego.com/"
+        },
+        {
+          "name": "OsinTracker",
+          "description": "Outil de prise de notes et de structuration d'investigation OSINT (sources, hypothèses, schémas mentaux).",
+          "url": "https://www.osintracker.com/"
+        },
+        {
+          "name": "n8n",
+          "description": "Plateforme d'automatisation de workflows (no-code/low-code) pour chaîner plusieurs outils OSINT.",
+          "url": "https://n8n.io/"
+        },
+        {
+          "name": "Kasm",
+          "description": "Lance un navigateur dans un conteneur Docker isolé ; tout disparaît à la fermeture. Pratique pour consulter des sites suspects en sécurité.",
+          "url": "https://kasm.com/community-edition"
+        },
+        {
+          "name": "Tails OS",
+          "description": "Système live (clé USB) axé anonymat : tout le trafic passe par Tor, aucune trace laissée sur la machine.",
+          "url": "https://tails.net/"
+        },
+        {
+          "name": "Exegol",
+          "description": "Environnements de hacking conteneurisés prêts à l'emploi (pentest, OSINT, CTF).",
+          "url": "https://exegol.com/"
+        },
+        {
+          "name": "OSINT France",
+          "description": "Portail francophone regroupant des centaines d'outils gratuits classés par catégorie.",
+          "url": "https://osintfr.com/outils/"
+        },
+        {
+          "name": "Osintopia",
+          "description": "Annuaire et hub d'outils OSINT, avec ressources et exercices pratiques.",
+          "url": "https://osintopia.fr/"
+        },
+        {
+          "name": "OSINT Newsletter — Tools",
+          "description": "Bibliothèque d'outils OSINT documentés et mis à jour régulièrement par la communauté.",
+          "url": "https://tools.osintnewsletter.com/"
+        }
+      ]
+    },
+    {
+      "id": "geoint",
+      "title": "GEOINT (géolocalisation)",
+      "items": [
+        {
+          "name": "Overpass Turbo",
+          "description": "Interface de requête avancée sur OpenStreetMap pour extraire et visualiser des objets géographiques précis.",
+          "url": "https://overpass-turbo.eu/"
+        },
+        {
+          "name": "SunCalc",
+          "description": "Calcule la position du soleil à un endroit et une date donnés ; utile pour estimer l'heure d'une photo à partir des ombres.",
+          "url": "https://www.suncalc.org/"
+        }
+      ]
+    },
+    {
+      "id": "crypto",
+      "title": "Cryptomonnaies",
+      "items": [
+        {
+          "name": "Blockchain Explorer",
+          "description": "Permet de consulter publiquement les transactions et soldes d'une adresse de cryptomonnaie, utile pour tracer des flux suspects.",
+          "url": "https://www.blockchain.com/explorer"
+        }
+      ]
+    },
+    {
+      "id": "suppression-donnees",
+      "title": "Suppression de données personnelles & droit à l'oubli",
+      "items": [
+        {
+          "name": "Just Delete Me",
+          "description": "Annuaire de liens directs pour supprimer son compte sur des centaines de services, avec niveau de difficulté indiqué.",
+          "url": "https://backgroundchecks.org/justdeleteme/"
+        },
+        {
+          "name": "JustDeleteAccount.com",
+          "description": "Alternative à Just Delete Me, avec sa propre base de liens de suppression de comptes classés par catégorie.",
+          "url": "https://justdeleteaccount.com/"
+        },
+        {
+          "name": "Deseat.me",
+          "description": "Après connexion à sa boîte mail, repère les comptes créés via cette adresse et propose des liens directs de suppression.",
+          "url": "https://www.deseat.me/"
+        },
+        {
+          "name": "Formulaire Google — Droit à l'oubli",
+          "description": "Demande à Google le déréférencement d'une page dans les résultats associés à son nom (le contenu reste en ligne sur le site source).",
+          "url": "https://support.google.com/legal/answer/10769224?hl=fr"
+        },
+        {
+          "name": "Formulaire Google — Retrait de contenu",
+          "description": "Signaler des contenus spécifiques à retirer des résultats Google (données sensibles, usurpation d'identité).",
+          "url": "https://support.google.com/websearch/troubleshooter/9584951"
+        },
+        {
+          "name": "CNIL — Droit au déréférencement",
+          "description": "Procédure officielle pour demander le déréférencement d'un contenu auprès des moteurs de recherche (France).",
+          "url": "https://www.cnil.fr/fr/comprendre-mes-droits/droit-au-dereferencement"
+        },
+        {
+          "name": "CNIL — Faire supprimer des informations",
+          "description": "Procédure CNIL pour exercer le droit à l'effacement (article 17 RGPD) auprès du responsable d'un site.",
+          "url": "https://www.cnil.fr/fr/cnil-direct/question/comment-faire-supprimer-des-informations-me-concernant-diffusees-sur-internet"
+        },
+        {
+          "name": "APD — Droit à l'effacement (Belgique)",
+          "description": "Conditions d'exercice du droit à l'effacement (article 17 RGPD) et procédure de plainte ou médiation.",
+          "url": "https://www.autoriteprotectiondonnees.be/professionnel/rgpd-/droits-des-citoyens/droit-a-l-effacement"
+        },
+        {
+          "name": "APD — Désindexation (Belgique)",
+          "description": "Guide pour demander la désindexation d'un contenu auprès d'un moteur de recherche, avec procédure de recours.",
+          "url": "https://www.autoriteprotectiondonnees.be/citoyen/desindexation"
+        },
+        {
+          "name": "Modèle de lettre — Droit à l'effacement (APD)",
+          "description": "Modèle de courrier officiel pour formuler une demande d'effacement de données auprès d'un responsable de traitement.",
+          "url": "https://www.autoriteprotectiondonnees.be/publications/modele-de-lettre-droit-a-l-effacement.docx"
+        }
+      ]
+    },
+    {
+      "id": "sock-puppet",
+      "title": "Puppet sock (identités de couverture)",
+      "items": [
+        {
+          "name": "Fake Identity Generator",
+          "description": "Génère une identité fictive complète, utile pour créer un compte de couverture destiné à des investigations OSINT.",
+          "url": "https://backgroundchecks.org/justdeleteme/fake-identity-generator/"
+        },
+        {
+          "name": "This Person Does Not Exist",
+          "description": "Générateur de visages humains synthétiques via IA : aucune photo ne correspond à une personne réelle.",
+          "url": "https://this-person-does-not-exist.com/"
+        }
+      ]
+    },
+    {
+      "id": "detection-ia",
+      "title": "Détection de contenu généré par IA",
+      "items": [
+        {
+          "name": "ZeroGPT",
+          "description": "Détecteur multi-usage (texte et images IA), gratuit, sans inscription, précision variable selon les modèles testés.",
+          "url": "https://www.zerogpt.com/"
+        },
+        {
+          "name": "GPTZero",
+          "description": "L'un des détecteurs de texte IA les plus connus, conçu pour le milieu académique. Extension Chrome et intégration LMS.",
+          "url": "https://gptzero.me/"
+        },
+        {
+          "name": "Originality.ai",
+          "description": "Détecteur orienté professionnels du contenu web, combinant détection IA et vérification de plagiat.",
+          "url": "https://originality.ai/"
+        },
+        {
+          "name": "Copyleaks",
+          "description": "Détecteur de texte IA multilingue, intégrable aux LMS, conforme RGPD/SOC2.",
+          "url": "https://copyleaks.com/"
+        },
+        {
+          "name": "Pangram Labs",
+          "description": "Détecteur développé par des chercheurs, réputé pour un taux de faux positifs très bas, 20+ langues.",
+          "url": "https://www.pangram.com/"
+        },
+        {
+          "name": "Hive Moderation",
+          "description": "Détecteur multimodal (texte, image, vidéo, audio) capable d'identifier le moteur génératif probable.",
+          "url": "https://hivemoderation.com/ai-generated-content-detection/"
+        },
+        {
+          "name": "Hive Detect",
+          "description": "Version grand public de Hive : glisser-déposer une image/vidéo/audio pour obtenir un score de probabilité IA.",
+          "url": "https://hivedetect.ai/"
+        },
+        {
+          "name": "Isgen",
+          "description": "Outil français de détection de texte IA (ChatGPT, GPT-4, Gemini, Llama, Claude, Mistral) et contenus mixtes.",
+          "url": "https://isgen.ai/"
+        }
+      ]
+    },
+    {
+      "id": "ctf-communautes",
+      "title": "Communautés CTF / entraînement OSINT",
+      "items": [
+        {
+          "name": "CTF & challenges OSINT",
+          "description": "IsFred, OSINT-FR, Osintopia, Osint4Fun — communautés et challenges pour s'entraîner aux techniques OSINT.",
+          "url": "https://mooc.osintfr.com/course/view.php?id=4"
+        },
+        {
+          "name": "OSINT-FR — MOOC",
+          "description": "Formation en ligne gratuite sur les fondamentaux de l'OSINT.",
+          "url": "https://mooc.osintfr.com/course/view.php?id=4"
+        }
+      ]
+    },
+    {
+      "id": "veille-lecture",
+      "title": "Veille & lecture",
+      "items": [
+        {
+          "name": "Sites de veille",
+          "description": "Bellingcat (investigation open source de référence), EFF (défense des libertés numériques), Project Fox, Osint Newsletter, Osint Field Notes, Osint Ambition.",
+          "url": "https://www.bellingcat.com/",
+          "links": [
+            {
+              "label": "Bellingcat",
+              "url": "https://www.bellingcat.com/"
+            },
+            {
+              "label": "EFF",
+              "url": "https://www.eff.org/"
+            }
+          ]
+        },
+        {
+          "name": "Livre — OSINT Techniques (Michael Bazzell)",
+          "description": "Référence pour approfondir les méthodes et outils OSINT.",
+          "url": ""
+        },
+        {
+          "name": "Templates OSINT pour Obsidian",
+          "description": "Modèles de prise de notes OSINT.",
+          "url": "https://github.com/WebBreacher/obsidian-osint-templates"
+        }
+      ]
+    },
+    {
+      "id": "backup-local",
+      "title": "Sauvegarde — local / hybride",
+      "items": [
+        {
+          "name": "Resilio Sync",
+          "description": "Synchronisation pair-à-pair (sans serveur central) entre plusieurs appareils, utile comme sauvegarde miroir.",
+          "url": "https://www.resilio.com/sync"
+        },
+        {
+          "name": "Time Machine",
+          "description": "Solution de sauvegarde native de macOS, avec versionning automatique et restauration simplifiée.",
+          "url": ""
+        },
+        {
+          "name": "Historique des fichiers (Windows 11)",
+          "description": "Fonction native Windows de sauvegarde incrémentale des fichiers personnels sur disque externe ou réseau.",
+          "url": "https://www.asus.com/ca-fr/support/faq/1013067/"
+        },
+        {
+          "name": "cron",
+          "description": "Planificateur de tâches sous Linux/macOS permettant d'automatiser des scripts de sauvegarde récurrents.",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": "backup-cloud",
+      "title": "Sauvegarde — cloud",
+      "items": [
+        {
+          "name": "Nextcloud",
+          "description": "Solution cloud auto-hébergeable, alternative open-source à Google Drive/Dropbox, maîtrise totale des données.",
+          "url": "https://nextcloud.com/"
+        },
+        {
+          "name": "kDrive",
+          "description": "Cloud souverain proposé par Infomaniak, avec hébergement en Suisse.",
+          "url": "https://www.infomaniak.com/fr/kdrive"
+        },
+        {
+          "name": "OneDrive",
+          "description": "Cloud Microsoft, intégré à l'écosystème Office 365.",
+          "url": "https://onedrive.live.com/"
+        },
+        {
+          "name": "Proton Drive",
+          "description": "Stockage cloud chiffré de bout en bout, opéré par Proton (Suisse), axé confidentialité.",
+          "url": "https://proton.me/drive"
+        },
+        {
+          "name": "pCloud",
+          "description": "Stockage cloud avec option de chiffrement renforcé et paiement à vie.",
+          "url": "https://www.pcloud.com/"
+        },
+        {
+          "name": "Tresorit",
+          "description": "Cloud chiffré de bout en bout orienté entreprises, avec contrôles d'administration avancés.",
+          "url": "https://tresorit.com/"
+        }
+      ]
+    },
+    {
+      "id": "chiffrement",
+      "title": "Outils de chiffrement",
+      "items": [
+        {
+          "name": "VeraCrypt",
+          "description": "Création de conteneurs ou de disques entièrement chiffrés (succession de TrueCrypt), multiplateforme.",
+          "url": "https://www.veracrypt.fr/"
+        },
+        {
+          "name": "Cryptomator",
+          "description": "Chiffrement transparent de fichiers destinés au cloud (Nextcloud, OneDrive, Google Drive...), côté client avant synchronisation.",
+          "url": "https://cryptomator.org/"
+        },
+        {
+          "name": "7-Zip",
+          "description": "Compression d'archives avec chiffrement AES-256 intégré (format .7z), simple et largement répandu.",
+          "url": "https://www.7-zip.org/"
+        },
+        {
+          "name": "GPG / OpenPGP",
+          "description": "Standard de chiffrement et de signature pour les emails et fichiers, garantissant confidentialité et authenticité.",
+          "url": "https://gnupg.org/"
+        },
+        {
+          "name": "BitLocker / FileVault",
+          "description": "Chiffrement intégral de disque natif à Windows (BitLocker) et macOS (FileVault).",
+          "url": ""
+        }
+      ]
+    }
   ]
 }

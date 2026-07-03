@@ -674,3 +674,45 @@ a { color: inherit; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
 .table-scroll { overflow-x: auto; padding-bottom: 4px; }
+
+.org-card, .tool-item {padding: 10px;}
+/* Grille des fiches "Organismes" */
+.org-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+.org-card p { margin: 0.35rem 0; font-size: 0.92rem; line-height: 1.4; }
+.org-card h3 { margin-top: 0.25rem; }
+
+/* Grille des outils */
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+.tool-item {padding: 10px;}
+.tool-item h4 { margin: 0 0 0.35rem; }
+.tool-item p { margin: 0; font-size: 0.9rem; line-height: 1.4; }
+.tool-links { margin-top: 0.5rem; font-size: 0.85rem; }
+.tool-links a { margin-right: 0.4rem; }
+
+/* Recherche + raccourcis de la boîte à outils */
+.tool-search-input {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  margin: 0.75rem 0;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 2px solid currentColor;
+  font-size: 1rem;
+}
+.tool-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}

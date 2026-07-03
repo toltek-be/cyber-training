@@ -282,9 +282,9 @@
 
       // Ajout du sélecteur de thème
       const themes = [
-        { id: 'secops', name: 'Mode SecOps', file: 'styles/secops_styles.css' },
         { id: 'brutalism', name: 'Mode Neobrutalism', file: 'styles/brutalism_styles.css' },
-        { id: 'classic', name: 'Mode Classique', file: 'styles/corpo_styles.css' }
+        { id: 'classic', name: 'Mode Classique', file: 'styles/corpo_styles.css' },
+        { id: 'secops', name: 'Mode SecOps', file: 'styles/hacker_styles.css' }
       ];
 
       const themeSelect = `
@@ -344,15 +344,6 @@
           <span class="stat-pill">${totalCertification} questions style certification</span>
         </div>
       </section>
-      
-      <section class="synthesis-callout nb-card">
-        <div>
-          <span class="badge">Cours</span>
-          <h2>Synthèses de cours</h2>
-          <p>Réviser les notions clés, les pièges fréquents et les bons réflexes avant de passer aux quiz.</p>
-        </div>
-        <button class="btn btn--dark" data-action="syntheses">Ouvrir les synthèses</button>
-      </section>
 
       <section class="home-actions">
         <article class="action-card action-card--general nb-card">
@@ -384,6 +375,32 @@
         <p>Des formats courts ou proches de l'esprit TOSA, avec un ordre conservé pendant toute la tentative.</p>
       </div>
       <section class="mode-grid">${modeCards}</section>
+
+      <section class="synthesis-callout nb-card">
+        <div>
+          <span class="badge">Cours</span>
+          <h2>Synthèses de cours</h2>
+          <p>Réviser les notions clés, les pièges fréquents et les bons réflexes avant de passer aux quiz.</p>
+        </div>
+        <button class="btn btn--dark" data-action="syntheses">Ouvrir les synthèses</button>
+      </section>
+
+      <div class="section-title">
+        <div><h2>Ressources</h2></div>
+        <p>Qui contacter et quels outils utiliser au quotidien.</p>
+      </div>
+      <section class="home-actions">
+        <article class="action-card nb-card">
+          <h3>🏛️ Organismes officiels</h3>
+          <p>Qui contacter en France et en Belgique : autorités nationales, protection des données, enquête, CERT, associations.</p>
+          <button class="btn" data-action="organismes">Voir les organismes</button>
+        </article>
+        <article class="action-card nb-card">
+          <h3>🧰 Boîte à outils</h3>
+          <p>80 outils OSINT, veille, sauvegarde et chiffrement classés par catégorie, avec recherche.</p>
+          <button class="btn" data-action="tools">Voir la boîte à outils</button>
+        </article>
+      </section>
 
       <div class="section-title">
         <div><h2>Quiz par thème</h2></div>
@@ -994,6 +1011,81 @@
       </article>`;
     }
 
+    function organismesMarkup() {
+      const categories = DATA.organismes || [];
+      const sections = categories.map(cat => {
+        const cards = (cat.entries || []).map(e => `
+        <article class="nb-card org-card">
+          <div class="theme-card__icon" aria-hidden="true">${safe(e.flag || '')}</div>
+          <h3><a href="${safe(e.url)}" target="_blank" rel="noopener">${safe(e.name)}</a></h3>
+          <p><strong>Rôle :</strong> ${safe(e.role)}</p>
+          <p><strong>Public :</strong> ${safe(e.public)}</p>
+          <p><strong>Quand les contacter :</strong> ${safe(e.situations)}</p>
+          <p><strong>Contact :</strong> ${safe(e.contact)}</p>
+          <p><strong>Que signaler :</strong> ${safe(e.signaler)}</p>
+        </article>`).join('');
+        return `
+        <section class="lesson-section">
+          <h2>${safe(cat.title)}</h2>
+          <div class="org-grid">${cards}</div>
+        </section>`;
+      }).join('');
+
+      return `
+      <header class="topbar">
+        <button class="btn btn--small" data-action="home">← Accueil</button>
+        <div class="topbar__title"><strong>Organismes officiels</strong><span>France 🇫🇷 vs Belgique 🇧🇪</span></div>
+        <button class="btn btn--small" data-action="tools">Boîte à outils</button>
+      </header>
+      <section class="hero nb-card hero--compact">
+        <span class="hero__eyebrow">Ressources</span>
+        <h1>Organismes de cybersécurité</h1>
+        <p>Qui contacter en France et en Belgique selon la situation : autorités nationales, protection des données, enquête, réponse à incident, associations et sensibilisation.</p>
+      </section>
+      ${sections}`;
+    }
+
+    function toolsMarkup() {
+      const categories = DATA.tools || [];
+      const chips = categories.map(cat => `<a class="btn btn--ghost btn--small" href="#tools-${safe(cat.id)}">${safe(cat.title)}</a>`).join('');
+      const sections = categories.map(cat => {
+        const items = (cat.items || []).map(item => {
+          const extraLinks = item.links?.length
+              ? `<div class="tool-links">${item.links.map(l => `<a href="${safe(l.url)}" target="_blank" rel="noopener">${safe(l.label)}</a>`).join(' · ')}</div>`
+              : '';
+          const titleMarkup = item.url
+              ? `<a href="${safe(item.url)}" target="_blank" rel="noopener">${safe(item.name)}</a>`
+              : safe(item.name);
+          return `
+          <article class="nb-card tool-item" data-tool-search="${safe((item.name + ' ' + item.description).toLowerCase())}">
+            <h4>${titleMarkup}</h4>
+            <p>${safe(item.description)}</p>
+            ${extraLinks}
+          </article>`;
+        }).join('');
+        return `
+        <section class="lesson-section" id="tools-${safe(cat.id)}">
+          <h2>${safe(cat.title)}</h2>
+          <div class="tool-grid">${items}</div>
+        </section>`;
+      }).join('');
+
+      return `
+      <header class="topbar">
+        <button class="btn btn--small" data-action="home">← Accueil</button>
+        <div class="topbar__title"><strong>Boîte à outils</strong><span>OSINT, veille, sauvegarde, chiffrement</span></div>
+        <button class="btn btn--small" data-action="organismes">Organismes officiels</button>
+      </header>
+      <section class="hero nb-card hero--compact">
+        <span class="hero__eyebrow">Ressources</span>
+        <h1>Boîte à outils opérationnelle</h1>
+        <p>${categories.reduce((n, c) => n + (c.items?.length || 0), 0)} outils classés par catégorie. Utilisez la recherche pour filtrer, ou les raccourcis ci-dessous pour naviguer.</p>
+        <input type="search" class="tool-search-input" data-tools-search placeholder="Rechercher un outil (ex : email, EXIF, sauvegarde...)" aria-label="Rechercher un outil">
+        <div class="tool-chips">${chips}</div>
+      </section>
+      ${sections}`;
+    }
+
     function modalMarkup() {
       if (!ui.modal) return '';
       if (ui.modal.type === 'resume') {
@@ -1024,7 +1116,11 @@
                       ? synthesesIndexMarkup()
                       : ui.view === 'synthesis'
                           ? synthesisDetailMarkup()
-                          : homeMarkup();
+                          : ui.view === 'organismes'
+                              ? organismesMarkup()
+                              : ui.view === 'tools'
+                                  ? toolsMarkup()
+                                  : homeMarkup();
       app.innerHTML = viewMarkup + modalMarkup();
       attachDynamicEvents();
       if (ui.view === 'quiz' && currentQuestion()?.type === 'matching') requestAnimationFrame(drawMatchLines);
@@ -1187,6 +1283,20 @@
       if (themeTarget) applyTheme(themeTarget.value);
     });
 
+    app.addEventListener('input', event => {
+      const searchInput = event.target.closest('[data-tools-search]');
+      if (!searchInput) return;
+      const query = searchInput.value.trim().toLowerCase();
+      document.querySelectorAll('[data-tool-search]').forEach(card => {
+        const match = !query || card.dataset.toolSearch.includes(query);
+        card.style.display = match ? '' : 'none';
+      });
+      document.querySelectorAll('.lesson-section[id^="tools-"]').forEach(section => {
+        const visible = section.querySelectorAll('.tool-item:not([style*="display: none"])').length;
+        section.style.display = visible ? '' : 'none';
+      });
+    });
+
     app.addEventListener('click', event => {
       const matchTarget = event.target.closest('[data-match-left], [data-match-right]');
       if (matchTarget) {
@@ -1205,6 +1315,16 @@
       if (action === 'start-mode') {
         const mode = (DATA.testModes || []).find(item => item.id === button.dataset.mode);
         if (mode) launchQuiz(mode.id, mode.title, modeQuestionIds(mode), mode.description);
+        return;
+      }
+      if (action === 'organismes') {
+        ui.view = 'organismes';
+        render(true);
+        return;
+      }
+      if (action === 'tools') {
+        ui.view = 'tools';
+        render(true);
         return;
       }
       if (action === 'syntheses') {
