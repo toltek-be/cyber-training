@@ -347,7 +347,6 @@
 
       <div class="section-title">
         <div><h2>Ressources</h2></div>
-        <p>Qui contacter et quels outils utiliser au quotidien.</p>
       </div>
       <section class="synthesis-callout nb-card">
         <div>
@@ -373,7 +372,6 @@
       
       <div class="section-title">
         <div><h2>Modes de test</h2></div>
-        <p>Des formats courts ou proches de l'esprit TOSA, avec un ordre conservé pendant toute la tentative.</p>
       </div>
       
       <section class="home-actions">
@@ -405,7 +403,7 @@
 
       <div class="section-title">
         <div><h2>Quiz par thème</h2></div>
-        <p>Idéal pour revoir une matière précise avant de se lancer dans le test complet.</p>
+        <p>Idéal pour revoir une matière spécifique.</p>
       </div>
       <section class="theme-grid">${themeCards}</section>
 
