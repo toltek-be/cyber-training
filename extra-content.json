@@ -1010,9 +1010,306 @@
         "Politique de sécurité",
         "Amélioration continue"
       ]
+    },
+    {
+      "id": "ingenierie-sociale-physique",
+      "title": "Ingénierie sociale physique et sécurité des locaux",
+      "themeIds": ["devices", "network"],
+      "intro": "Une attaque ne passe pas toujours par un écran. Talonnage, faux intervenant, badge oublié ou bureau mal rangé peuvent suffire à obtenir un accès physique à des locaux, du matériel ou des documents sensibles.",
+      "definitions": [
+        "Talonnage (tailgating): fait de suivre une personne autorisée pour entrer dans un local sécurisé sans badge propre.",
+        "Piggybacking: variante où la personne autorisée laisse volontairement entrer quelqu'un par courtoisie.",
+        "Clean desk policy: règle imposant de ne laisser aucun document ou support sensible visible sur un poste inoccupé.",
+        "Badge cloné: reproduction non autorisée d'un badge d'accès physique.",
+        "Ingénierie sociale physique: manipulation visant un accès matériel plutôt que numérique."
+      ],
+      "keyPoints": [
+        "Un faux livreur, technicien ou candidat peut se présenter avec assurance pour franchir un accueil ou un sas.",
+        "Tenir une porte à quelqu'un qui a les mains chargées est un réflexe poli mais peut être exploité.",
+        "Un poste de travail déverrouillé et sans surveillance donne accès à la messagerie, aux fichiers et parfois à des sessions déjà ouvertes.",
+        "Des documents imprimés laissés sur une imprimante partagée peuvent contenir des informations confidentielles.",
+        "Un visiteur non accompagné peut photographier un écran, brancher une clé USB ou observer un mot de passe tapé au clavier.",
+        "Les zones à risque incluent les salles serveurs, les accueils, les parkings et les espaces de coworking partagés."
+      ],
+      "goodPractices": [
+        "Toujours badger soi-même, même si quelqu'un tient la porte.",
+        "Demander poliment l'identité et le motif de visite d'une personne inconnue dans une zone sensible.",
+        "Verrouiller son poste dès qu'on s'en éloigne, même quelques minutes.",
+        "Ranger les documents sensibles et récupérer immédiatement les impressions.",
+        "Accompagner systématiquement les visiteurs et prestataires externes.",
+        "Signaler toute personne non identifiée dans une zone réservée."
+      ],
+      "commonMistakes": [
+        "Penser que la politesse doit toujours primer sur la vérification d'identité.",
+        "Laisser un badge visible ou accessible sans surveillance.",
+        "Considérer le talonnage comme un cas d'école qui n'arrive jamais en pratique.",
+        "Laisser une session ouverte pendant une pause ou une réunion.",
+        "Ne pas signaler un visiteur seul dans un couloir sécurisé par peur de déranger."
+      ],
+      "scenario": "Une personne en tenue de technicien, les bras chargés de matériel, demande à quelqu'un de lui tenir la porte d'un local sécurisé. Le bon réflexe est de vérifier son identité et son motif de visite avant d'ouvrir, ou de l'orienter vers l'accueil, plutôt que de céder au réflexe poli.",
+      "remember": "La sécurité physique et la sécurité numérique se complètent: un accès physique non contrôlé peut rendre inutiles les meilleures protections informatiques.",
+      "trap": "Une tenue professionnelle, un badge visible de loin ou une attitude assurée ne prouvent pas une identité légitime.",
+      "vocabulary": [
+        "Talonnage",
+        "Piggybacking",
+        "Clean desk policy",
+        "Badge cloné",
+        "Zone sensible",
+        "Accès physique"
+      ]
+    },
+    {
+      "id": "deepfake-ia-vishing",
+      "title": "Deepfake, voix clonée et fraude assistée par IA",
+      "themeIds": ["phishing", "data"],
+      "intro": "L'intelligence artificielle permet de générer des voix, des images ou des vidéos très réalistes. Cela renforce des attaques déjà connues comme la fraude au président ou le faux support, en les rendant plus difficiles à détecter à l'oreille ou à l'œil.",
+      "definitions": [
+        "Deepfake: contenu audio, image ou vidéo synthétique généré par IA pour imiter une personne réelle.",
+        "Clonage vocal: reproduction de la voix d'une personne à partir de quelques échantillons audio.",
+        "Fraude au président assistée par IA: variante de la fraude au président utilisant une voix ou une vidéo clonée du dirigeant.",
+        "Contenu synthétique: image, texte ou audio généré artificiellement, parfois indiscernable d'un contenu réel.",
+        "Détection de contenu IA: outils cherchant à estimer si un contenu a été généré artificiellement, avec une fiabilité imparfaite."
+      ],
+      "keyPoints": [
+        "Quelques secondes d'audio public (interview, vidéo, réseau social) peuvent suffire à entraîner un clonage vocal crédible.",
+        "Un appel imitant la voix d'un responsable peut demander un virement urgent ou une information confidentielle.",
+        "Une vidéo ou un appel visio deepfake peut renforcer artificiellement la confiance dans une demande frauduleuse.",
+        "Les mêmes signaux d'alerte que le phishing classique restent valables: urgence, secret, demande inhabituelle, pression financière.",
+        "Les outils de détection de contenu IA ne sont pas infaillibles et ne doivent pas être le seul rempart.",
+        "Une procédure de vérification indépendante (rappel sur un numéro connu, validation par un second canal) reste la protection la plus fiable."
+      ],
+      "goodPractices": [
+        "Vérifier toute demande sensible par un canal indépendant déjà connu, même si la voix ou l'image semble authentique.",
+        "Mettre en place une procédure de double validation pour les virements ou changements de coordonnées bancaires.",
+        "Se méfier d'une urgence inhabituelle même venant d'une voix ou d'un visage reconnaissable.",
+        "Limiter la quantité de contenu audio/vidéo personnel librement accessible en ligne lorsque c'est pertinent.",
+        "Sensibiliser les équipes financières et RH, souvent ciblées par ce type de fraude.",
+        "Signaler toute tentative suspecte, même si elle a échoué."
+      ],
+      "commonMistakes": [
+        "Croire qu'une voix familière suffit à authentifier une demande.",
+        "Penser que seuls les grands dirigeants ou grandes entreprises sont ciblés.",
+        "Ne pas avoir de procédure de vérification indépendante pour les demandes financières urgentes.",
+        "Faire une confiance totale à un outil de détection de deepfake.",
+        "Sous-estimer la quantité de voix ou d'images personnelles disponibles publiquement."
+      ],
+      "scenario": "Un appel vidéo semble montrer un directeur financier demandant en urgence un virement inhabituel vers un nouveau compte. La voix et l'image paraissent authentiques. Le bon réflexe est de raccrocher et de vérifier la demande par un canal indépendant déjà connu, comme un appel sur le numéro habituel du directeur, avant toute action.",
+      "remember": "Le deepfake ne change pas la nature du risque, il le rend seulement plus convaincant: les mêmes procédures de vérification indépendante s'appliquent.",
+      "trap": "Un appel ou une vidéo peut sembler parfaitement authentique tout en étant entièrement généré par IA.",
+      "vocabulary": [
+        "Deepfake",
+        "Clonage vocal",
+        "Contenu synthétique",
+        "Fraude au président",
+        "Double validation",
+        "Détection IA"
+      ]
+    },
+    {
+      "id": "iot-objets-connectes",
+      "title": "Objets connectés (IoT) et domotique",
+      "themeIds": ["devices", "network"],
+      "intro": "Caméras, assistants vocaux, montres connectées, box domotique ou imprimantes réseau élargissent la surface d'attaque d'un domicile ou d'une organisation. Beaucoup de ces objets sont mal sécurisés par défaut.",
+      "definitions": [
+        "IoT (Internet of Things): objets physiques connectés à Internet ou à un réseau local, capables de collecter ou d'échanger des données.",
+        "Identifiants par défaut: nom d'utilisateur et mot de passe préconfigurés en usine, souvent identiques pour tout un modèle d'appareil.",
+        "Firmware: logiciel embarqué qui fait fonctionner un objet connecté.",
+        "Réseau invité (VLAN/Wi-Fi séparé): réseau isolé permettant de séparer les objets connectés du réseau principal.",
+        "Botnet IoT: réseau d'objets connectés compromis utilisés à l'insu de leurs propriétaires pour mener des attaques."
+      ],
+      "keyPoints": [
+        "De nombreux objets connectés conservent leurs identifiants par défaut si l'utilisateur ne les change pas.",
+        "Une caméra ou un assistant vocal mal configuré peut exposer des flux audio ou vidéo à des tiers.",
+        "Le firmware d'un objet connecté est rarement mis à jour spontanément par l'utilisateur.",
+        "Des objets connectés compromis peuvent servir à espionner un domicile ou à attaquer d'autres cibles via un botnet.",
+        "Séparer les objets connectés du réseau principal limite les conséquences d'une compromission.",
+        "En entreprise, des imprimantes, caméras ou capteurs connectés mal gérés peuvent devenir des points d'entrée sur le réseau interne."
+      ],
+      "goodPractices": [
+        "Changer systématiquement les identifiants par défaut de tout objet connecté.",
+        "Mettre à jour le firmware dès que des correctifs sont disponibles.",
+        "Isoler les objets connectés sur un réseau Wi-Fi séparé du réseau principal quand c'est possible.",
+        "Désactiver les fonctionnalités non utilisées, notamment l'accès distant si inutile.",
+        "Vérifier les réglages de confidentialité des caméras et assistants vocaux.",
+        "Recenser les objets connectés présents dans un environnement professionnel."
+      ],
+      "commonMistakes": [
+        "Laisser le mot de passe usine d'une caméra ou d'une box domotique.",
+        "Ignorer les mises à jour de firmware proposées par le fabricant.",
+        "Connecter tous les objets sur le même réseau que les ordinateurs professionnels.",
+        "Installer un objet connecté sans consulter les réglages de confidentialité.",
+        "Oublier de désinstaller ou déconnecter un objet connecté qui n'est plus utilisé."
+      ],
+      "scenario": "Une caméra de surveillance domestique est installée avec le mot de passe fourni par défaut. Sans changement de ce mot de passe, un attaquant scannant des appareils exposés sur Internet pourrait potentiellement y accéder. Le bon réflexe est de changer immédiatement les identifiants et de vérifier les réglages d'accès distant.",
+      "remember": "Un objet connecté reste un ordinateur miniature: il doit être mis à jour, protégé par un mot de passe unique et idéalement isolé du réseau principal.",
+      "trap": "Un objet connecté 'prêt à l'emploi' n'est pas sécurisé par défaut: c'est souvent l'inverse.",
+      "vocabulary": [
+        "IoT",
+        "Identifiants par défaut",
+        "Firmware",
+        "Réseau invité",
+        "Botnet IoT",
+        "Isolation réseau"
+      ]
+    },
+    {
+      "id": "securite-mobile",
+      "title": "Sécurité des smartphones et applications mobiles",
+      "themeIds": ["devices"],
+      "intro": "Le smartphone concentre messagerie, comptes bancaires, photos, MFA et données professionnelles. Sa sécurité dépend autant du système que des applications installées et des permissions accordées.",
+      "definitions": [
+        "Permission d'application: autorisation accordée à une application pour accéder à une fonction ou une donnée du téléphone (contacts, localisation, micro, caméra).",
+        "Store officiel: plateforme de distribution d'applications validée par le fabricant du système (Google Play, App Store).",
+        "Root / jailbreak: modification du système qui supprime certaines protections de sécurité natives.",
+        "Application tierce: application installée en dehors du store officiel.",
+        "Sideloading: installation manuelle d'une application hors magasin officiel."
+      ],
+      "keyPoints": [
+        "Une application peut demander bien plus de permissions que nécessaire à son fonctionnement réel.",
+        "Installer une application en dehors du store officiel augmente fortement le risque de malware.",
+        "Le root ou le jailbreak désactive des mécanismes de sécurité intégrés au système.",
+        "Une application professionnelle peut être gérée par un MDM, avec des règles de sécurité imposées.",
+        "Les mises à jour du système et des applications corrigent régulièrement des vulnérabilités connues.",
+        "Un smartphone perdu ou volé sans verrouillage donne accès direct aux comptes, messages et applications ouvertes."
+      ],
+      "goodPractices": [
+        "N'installer des applications que depuis les stores officiels.",
+        "Vérifier les permissions demandées avant et après installation, et les limiter au nécessaire.",
+        "Maintenir le système et les applications à jour.",
+        "Éviter le root ou le jailbreak sur un appareil utilisé pour des usages professionnels ou sensibles.",
+        "Activer un verrouillage fort (code, biométrie) et le chiffrement du stockage.",
+        "Vérifier régulièrement la liste des applications installées et désinstaller celles qui ne sont plus utilisées."
+      ],
+      "commonMistakes": [
+        "Accorder toutes les permissions demandées sans réflexion.",
+        "Installer une application via un lien direct ou un fichier APK non officiel.",
+        "Rooter ou jailbreaker un appareil professionnel.",
+        "Laisser un smartphone déverrouillé ou avec un code trivial.",
+        "Ignorer les mises à jour système pendant de longues périodes."
+      ],
+      "scenario": "Une application de lampe torche demande l'accès aux contacts, à la localisation et au microphone. Ces permissions ne sont pas nécessaires à sa fonction. Le bon réflexe est de refuser les permissions non pertinentes ou de choisir une autre application plus respectueuse.",
+      "remember": "Un smartphone bien protégé combine store officiel, permissions limitées, mises à jour régulières et verrouillage robuste.",
+      "trap": "Une application peut sembler utile et gratuite tout en collectant bien plus de données que nécessaire.",
+      "vocabulary": [
+        "Permission",
+        "Store officiel",
+        "Root",
+        "Jailbreak",
+        "Sideloading",
+        "MDM"
+      ]
+    },
+    {
+      "id": "bases-cryptographie",
+      "title": "Bases de la cryptographie",
+      "themeIds": ["data", "network"],
+      "intro": "Le chiffrement, le hachage et la signature électronique protègent la confidentialité, l'intégrité et l'authenticité des données, sans nécessiter de comprendre les mathématiques sous-jacentes.",
+      "definitions": [
+        "Chiffrement symétrique: méthode utilisant la même clé pour chiffrer et déchiffrer.",
+        "Chiffrement asymétrique: méthode utilisant une paire de clés, une publique et une privée.",
+        "Clé publique: clé partageable librement, utilisée pour chiffrer un message ou vérifier une signature.",
+        "Clé privée: clé secrète, jamais partagée, utilisée pour déchiffrer ou signer.",
+        "Hachage: transformation à sens unique produisant une empreinte de taille fixe à partir de données.",
+        "Signature électronique: mécanisme garantissant l'authenticité et l'intégrité d'un document ou message."
+      ],
+      "keyPoints": [
+        "Le chiffrement symétrique est rapide mais pose la question du partage sécurisé de la clé.",
+        "Le chiffrement asymétrique résout ce problème: la clé publique peut circuler librement, seule la clé privée déchiffre.",
+        "HTTPS combine chiffrement symétrique et asymétrique pour sécuriser les connexions web.",
+        "Le hachage sert à vérifier qu'un fichier n'a pas été modifié, ou à stocker un mot de passe sans le conserver en clair.",
+        "Une signature électronique permet de vérifier qui a émis un document et qu'il n'a pas été altéré.",
+        "Perdre sa clé privée peut rendre des données définitivement inaccessibles; la divulguer peut compromettre toute la sécurité associée."
+      ],
+      "goodPractices": [
+        "Utiliser des outils de chiffrement reconnus plutôt que des solutions maison.",
+        "Protéger soigneusement toute clé privée, y compris par une phrase de passe.",
+        "Vérifier une signature électronique avant de faire confiance à un document sensible.",
+        "Utiliser le hachage pour vérifier l'intégrité d'un fichier téléchargé lorsque l'empreinte est fournie par la source officielle.",
+        "Ne jamais transmettre une clé privée par email ou message non sécurisé."
+      ],
+      "commonMistakes": [
+        "Confondre chiffrement et hachage.",
+        "Croire qu'un mot de passe haché est totalement irréversible dans tous les cas.",
+        "Partager une clé privée pour 'faciliter' un accès.",
+        "Penser que HTTPS chiffre uniquement grâce à une seule méthode.",
+        "Négliger la sauvegarde d'une clé privée ou d'une phrase de passe de chiffrement."
+      ],
+      "scenario": "Un fichier sensible est chiffré avec un outil comme VeraCrypt avant d'être transporté sur une clé USB. Si la clé USB est perdue, les données restent protégées tant que le mot de passe de chiffrement n'est pas compromis.",
+      "remember": "Chiffrement, hachage et signature répondent à des besoins différents: confidentialité, intégrité et authenticité.",
+      "trap": "Un mot de passe haché n'est pas magique: un mot de passe faible reste rapidement retrouvable même haché.",
+      "vocabulary": [
+        "Chiffrement symétrique",
+        "Chiffrement asymétrique",
+        "Clé publique",
+        "Clé privée",
+        "Hachage",
+        "Signature électronique"
+      ]
+    },
+    {
+      "id": "attaques-reseau-techniques",
+      "title": "Attaques réseau de base: DDoS, MITM, sniffing",
+      "themeIds": ["network", "malware"],
+      "intro": "Certaines attaques ciblent directement le réseau plutôt qu'un utilisateur précis: saturation de service, interception de trafic ou écoute de communications non protégées.",
+      "definitions": [
+        "DDoS (déni de service distribué): saturation volontaire d'un service par un grand nombre de requêtes, souvent depuis un botnet.",
+        "Man-in-the-Middle (MITM): interception du trafic entre deux parties qui pensent communiquer directement.",
+        "Sniffing: écoute passive du trafic réseau pour capturer des informations.",
+        "ARP spoofing: technique locale de MITM exploitant le protocole ARP sur un réseau.",
+        "Point d'accès Wi-Fi malveillant: faux réseau Wi-Fi imitant un réseau légitime pour intercepter le trafic des victimes."
+      ],
+      "keyPoints": [
+        "Un DDoS vise la disponibilité d'un service, pas nécessairement le vol de données.",
+        "Une attaque MITM peut intercepter des identifiants ou des données si le trafic n'est pas chiffré.",
+        "HTTPS limite fortement l'efficacité du MITM et du sniffing sur le contenu échangé.",
+        "Un faux point d'accès Wi-Fi peut porter un nom très proche d'un réseau légitime.",
+        "Les réseaux publics non chiffrés sont plus exposés au sniffing que les réseaux protégés par un mot de passe robuste.",
+        "Ces attaques réseau ciblent souvent l'infrastructure plutôt qu'un individu précis, mais les utilisateurs en subissent les conséquences."
+      ],
+      "goodPractices": [
+        "Toujours vérifier la présence d'HTTPS sur les sites sensibles, en plus des autres vérifications déjà vues.",
+        "Éviter les échanges sensibles sur un Wi-Fi public non maîtrisé.",
+        "Utiliser un VPN professionnel sur un réseau inconnu ou peu fiable.",
+        "Signaler un service devenu subitement inaccessible ou anormalement lent, qui peut être le signe d'un DDoS.",
+        "Vérifier le nom exact d'un réseau Wi-Fi auprès de l'établissement avant de s'y connecter."
+      ],
+      "commonMistakes": [
+        "Croire qu'un DDoS implique nécessairement un vol de données.",
+        "Se connecter automatiquement à un Wi-Fi public au nom familier sans vérification.",
+        "Penser que le sniffing nécessite un accès physique complexe alors qu'un simple réseau partagé peut suffire.",
+        "Négliger un service anormalement lent en pensant à un simple problème technique.",
+        "Considérer le MITM comme un risque uniquement théorique."
+      ],
+      "scenario": "Dans un café, un réseau Wi-Fi nommé presque comme celui de l'établissement est disponible. S'y connecter sans vérification pourrait exposer le trafic à un point d'accès malveillant. Le bon réflexe est de vérifier le nom exact du réseau auprès du personnel avant de s'y connecter.",
+      "remember": "Ces attaques exploitent la confiance accordée au réseau lui-même: vérifier et chiffrer restent les meilleures protections.",
+      "trap": "Un réseau Wi-Fi au nom rassurant n'est pas nécessairement le réseau légitime de l'établissement.",
+      "vocabulary": [
+        "DDoS",
+        "Man-in-the-Middle",
+        "Sniffing",
+        "ARP spoofing",
+        "Point d'accès malveillant"
+      ]
     }
   ],
   "organismes": [
+    {
+      "id": "instances-europeennes",
+      "title": "Instances européennes",
+      "entries": [
+        {
+          "country": "UE",
+          "flag": "🇪🇺",
+          "name": "ENISA — Agence de l'Union européenne pour la cybersécurité",
+          "url": "https://www.enisa.europa.eu/",
+          "role": "Agence européenne qui soutient les États membres et les institutions de l'UE sur la cybersécurité : recommandations, coordination NIS2, exercices de crise paneuropéens, certification.",
+          "public": "États membres, institutions européennes, organisations concernées par des réglementations européennes (NIS2, Cyber Resilience Act).",
+          "situations": "Recherche de référentiels européens, compréhension du cadre réglementaire NIS2, veille sur les menaces à l'échelle de l'UE.",
+          "contact": "Formulaire de contact sur enisa.europa.eu",
+          "signaler": "Ce n'est pas un point de signalement d'incident individuel ; agence de coordination et de recommandation au niveau européen."
+        }
+      ]
+    },
     {
       "id": "autorites-nationales",
       "title": "Autorités nationales de cybersécurité",
@@ -1160,13 +1457,13 @@
         {
           "country": "FR",
           "flag": "🇫🇷",
-          "name": "FIC (Forum InCyber Europe)",
-          "url": "https://www.forum-fic.com/en/home/",
-          "role": "Plus grand événement européen de cybersécurité, lancé en 2007 par la Gendarmerie nationale (Lille), renommé Forum InCyber Europe depuis 2024.",
-          "public": "Professionnels de la cybersécurité, RSSI, décideurs publics, fournisseurs de solutions, étudiants.",
-          "situations": "Pour s'inscrire à l'événement annuel, exposer en tant qu'entreprise, consulter les contenus publiés.",
-          "contact": "Formulaire d'inscription et de contact sur forum-fic.com",
-          "signaler": "Sans objet ; événement de rencontre et de réflexion, pas un organisme de signalement."
+          "name": "Cybermalveillance.gouv.fr",
+          "url": "https://www.cybermalveillance.gouv.fr/",
+          "role": "Dispositif national d'assistance aux victimes de cybermalveillance : diagnostic en ligne, mise en relation avec des prestataires de proximité labellisés, sensibilisation et kits pratiques.",
+          "public": "Particuliers, entreprises (notamment TPE/PME), collectivités et associations.",
+          "situations": "Après une attaque (phishing, rançongiciel, piratage de compte), pour trouver un prestataire technique local ou obtenir des conseils pratiques immédiats.",
+          "contact": "Diagnostic et mise en relation via le site cybermalveillance.gouv.fr",
+          "signaler": "Ce n'est pas un service de plainte judiciaire, mais un point d'orientation et d'assistance technique après incident."
         },
         {
           "country": "BE",
@@ -1180,22 +1477,220 @@
           "signaler": "Messages de phishing, sites suspects, incidents cyber pour entreprises et organisations."
         }
       ]
+    },
+    {
+      "id": "evenements",
+      "title": "Événements et plateformes de sensibilisation",
+      "entries": [
+        {
+          "country": "FR",
+          "flag": "🇫🇷",
+          "name": "FIC (Forum InCyber Europe)",
+          "url": "https://www.forum-fic.com/en/home/",
+          "role": "Plus grand événement européen de cybersécurité, lancé en 2007 par la Gendarmerie nationale (Lille), renommé Forum InCyber Europe depuis 2024.",
+          "public": "Professionnels de la cybersécurité, RSSI, décideurs publics, fournisseurs de solutions, étudiants.",
+          "situations": "Pour s'inscrire à l'événement annuel, exposer en tant qu'entreprise, consulter les contenus publiés.",
+          "contact": "Formulaire d'inscription et de contact sur forum-fic.com",
+          "signaler": "Sans objet ; événement de rencontre et de réflexion, pas un organisme de signalement."
+        }
+      ]
     }
   ],
   "tools": [
     {
-      "id": "telephonie",
-      "title": "Téléphonie",
+      "id": "gestionnaires-mdp",
+      "title": "Gestionnaires de mots de passe",
       "items": [
         {
-          "name": "Free Carrier Lookup",
-          "description": "Identifie l'opérateur d'origine et le type de ligne. Utile pour les numéros internationaux hors Belgique.",
-          "url": "https://www.freecarrierlookup.com/"
+          "name": "Bitwarden",
+          "description": "Gestionnaire de mots de passe open-source, gratuit pour un usage personnel, avec synchronisation multiplateforme et coffre chiffré.",
+          "url": "https://bitwarden.com/"
         },
         {
-          "name": "CRDC",
-          "description": "Système central de gestion des portabilités en Belgique. Donne l'opérateur actuel réel d'une ligne, indispensable pour vérifier la légitimité d'un SMS ou d'un appel suspect.",
-          "url": "https://www.crdc.be/"
+          "name": "KeePassXC",
+          "description": "Gestionnaire de mots de passe local et open-source, sans dépendance à un cloud tiers ; la base de données reste sous contrôle total de l'utilisateur.",
+          "url": "https://keepassxc.org/"
+        },
+        {
+          "name": "1Password",
+          "description": "Gestionnaire de mots de passe payant orienté grand public et entreprises, avec partage sécurisé et surveillance des fuites intégrée.",
+          "url": "https://1password.com/"
+        },
+        {
+          "name": "Dashlane",
+          "description": "Gestionnaire de mots de passe avec VPN intégré et surveillance du dark web sur les offres payantes.",
+          "url": "https://www.dashlane.com/"
+        }
+      ]
+    },
+    {
+      "id": "verification-mdp",
+      "title": "Vérification de la robustesse des mots de passe",
+      "items": [
+        {
+          "name": "Kaspersky Password Checker",
+          "description": "Estime le temps théorique nécessaire pour deviner un mot de passe par force brute, sans jamais l'envoyer sur un serveur.",
+          "url": "https://password.kaspersky.com/"
+        },
+        {
+          "name": "Have I Been Pwned — Passwords",
+          "description": "Vérifie si un mot de passe (ou son empreinte) est déjà apparu dans des fuites connues, via un mécanisme préservant la confidentialité (k-anonymity).",
+          "url": "https://haveibeenpwned.com/Passwords"
+        }
+      ]
+    },
+    {
+      "id": "authentification-mfa",
+      "title": "Applications d'authentification multifacteur",
+      "items": [
+        {
+          "name": "Aegis Authenticator",
+          "description": "Application MFA open-source pour Android, avec sauvegarde chiffrée des secrets et export possible.",
+          "url": "https://getaegis.app/"
+        },
+        {
+          "name": "Google Authenticator",
+          "description": "Application MFA simple générant des codes temporaires (TOTP), avec option de synchronisation via compte Google.",
+          "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2"
+        },
+        {
+          "name": "Authy",
+          "description": "Application MFA avec sauvegarde cloud chiffrée et multi-appareils, pratique pour retrouver ses codes après changement de téléphone.",
+          "url": "https://authy.com/"
+        },
+        {
+          "name": "Clé de sécurité physique (YubiKey)",
+          "description": "Dispositif matériel U2F/FIDO2 servant de second facteur physique, considéré comme l'une des protections MFA les plus robustes contre le phishing.",
+          "url": "https://www.yubico.com/"
+        }
+      ]
+    },
+    {
+      "id": "vpn-grand-public",
+      "title": "VPN grand public",
+      "items": [
+        {
+          "name": "Proton VPN",
+          "description": "VPN opéré par Proton (Suisse), avec une offre gratuite limitée et un positionnement axé confidentialité.",
+          "url": "https://protonvpn.com/"
+        },
+        {
+          "name": "Mullvad",
+          "description": "VPN suédois reconnu pour son anonymat renforcé : compte identifié par un simple numéro, sans email requis.",
+          "url": "https://mullvad.net/"
+        },
+        {
+          "name": "NordVPN",
+          "description": "VPN commercial très répandu, avec large réseau de serveurs et fonctionnalités additionnelles (blocage de trackers, double VPN).",
+          "url": "https://nordvpn.com/"
+        }
+      ]
+    },
+    {
+      "id": "chiffrement",
+      "title": "Outils de chiffrement",
+      "items": [
+        {
+          "name": "VeraCrypt",
+          "description": "Création de conteneurs ou de disques entièrement chiffrés (succession de TrueCrypt), multiplateforme.",
+          "url": "https://www.veracrypt.fr/"
+        },
+        {
+          "name": "Cryptomator",
+          "description": "Chiffrement transparent de fichiers destinés au cloud (Nextcloud, OneDrive, Google Drive...), côté client avant synchronisation.",
+          "url": "https://cryptomator.org/"
+        },
+        {
+          "name": "7-Zip",
+          "description": "Compression d'archives avec chiffrement AES-256 intégré (format .7z), simple et largement répandu.",
+          "url": "https://www.7-zip.org/"
+        },
+        {
+          "name": "GPG / OpenPGP",
+          "description": "Standard de chiffrement et de signature pour les emails et fichiers, garantissant confidentialité et authenticité.",
+          "url": "https://gnupg.org/"
+        },
+        {
+          "name": "BitLocker / FileVault",
+          "description": "Chiffrement intégral de disque natif à Windows (BitLocker) et macOS (FileVault).",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": "backup-local",
+      "title": "Sauvegarde — local / hybride",
+      "items": [
+        {
+          "name": "Resilio Sync",
+          "description": "Synchronisation pair-à-pair (sans serveur central) entre plusieurs appareils, utile comme sauvegarde miroir.",
+          "url": "https://www.resilio.com/sync"
+        },
+        {
+          "name": "Time Machine",
+          "description": "Solution de sauvegarde native de macOS, avec versionning automatique et restauration simplifiée.",
+          "url": ""
+        },
+        {
+          "name": "Historique des fichiers (Windows 11)",
+          "description": "Fonction native Windows de sauvegarde incrémentale des fichiers personnels sur disque externe ou réseau.",
+          "url": "https://www.asus.com/ca-fr/support/faq/1013067/"
+        },
+        {
+          "name": "cron",
+          "description": "Planificateur de tâches sous Linux/macOS permettant d'automatiser des scripts de sauvegarde récurrents.",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": "backup-cloud",
+      "title": "Sauvegarde — cloud",
+      "items": [
+        {
+          "name": "Nextcloud",
+          "description": "Solution cloud auto-hébergée, alternative open-source à Google Drive/Dropbox, maîtrise totale des données.",
+          "url": "https://nextcloud.com/"
+        },
+        {
+          "name": "kDrive",
+          "description": "Cloud souverain proposé par Infomaniak, avec hébergement en Suisse.",
+          "url": "https://www.infomaniak.com/fr/kdrive"
+        },
+        {
+          "name": "iCloud",
+          "description": "Cloud Apple, intégré à l'écosystème macOS/iOS (Photos, Fichiers, sauvegardes d'appareils).",
+          "url": "https://www.icloud.com/"
+        },
+        {
+          "name": "Proton Drive",
+          "description": "Stockage cloud chiffré de bout en bout, opéré par Proton (Suisse), axé confidentialité.",
+          "url": "https://proton.me/drive"
+        },
+        {
+          "name": "pCloud",
+          "description": "Stockage cloud avec option de chiffrement renforcé et paiement à vie.",
+          "url": "https://www.pcloud.com/"
+        },
+        {
+          "name": "Tresorit",
+          "description": "Cloud chiffré de bout en bout orienté entreprises, avec contrôles d'administration avancés.",
+          "url": "https://tresorit.com/"
+        },
+        {
+          "name": "OneDrive",
+          "description": "Cloud Microsoft, intégré à l'écosystème Office 365.",
+          "url": "https://onedrive.live.com/"
+        },
+        {
+          "name": "Google Drive",
+          "description": "Cloud Google, intégré à l'écosystème Workspace (Docs, Sheets, Gmail), avec édition collaborative en temps réel.",
+          "url": "https://drive.google.com/"
+        },
+        {
+          "name": "Dropbox",
+          "description": "Un des pionniers du stockage cloud, reconnu pour sa synchronisation fiable entre appareils et ses intégrations tierces nombreuses.",
+          "url": "https://www.dropbox.com/"
         }
       ]
     },
@@ -1217,6 +1712,78 @@
           "name": "CERT-FR",
           "description": "CERT national et gouvernemental français.",
           "url": "https://www.cert.ssi.gouv.fr/"
+        }
+      ]
+    },
+    {
+      "id": "web-domaines",
+      "title": "Web, domaines & URL",
+      "items": [
+        {
+          "name": "Whois / RDAP",
+          "description": "Identifie le propriétaire enregistré d'un nom de domaine pour tracer l'origine d'un site frauduleux.",
+          "url": "https://whois.domaintools.com/"
+        },
+        {
+          "name": "Whoxy",
+          "description": "Service Whois/RDAP avec historique des changements de propriétaire et API de recherche inversée par email/personne.",
+          "url": "https://www.whoxy.com/"
+        },
+        {
+          "name": "Wayback Machine",
+          "description": "Archive d'Internet permettant de consulter les versions passées d'un site, même supprimé.",
+          "url": "https://web.archive.org/"
+        },
+        {
+          "name": "MXToolbox",
+          "description": "Vérifie la configuration et la santé d'un domaine email (MX, SPF, DKIM, DMARC, blacklists).",
+          "url": "https://mxtoolbox.com/emailhealth"
+        },
+        {
+          "name": "Unshortlink",
+          "description": "Révèle la destination réelle d'une URL raccourcie avant de cliquer, pour éviter le phishing.",
+          "url": "https://unshortlink.com/"
+        },
+        {
+          "name": "VirusTotal",
+          "description": "Scanne fichiers et URL suspects avec plus de 70 moteurs antivirus avant ouverture.",
+          "url": "https://www.virustotal.com/"
+        },
+        {
+          "name": "Any.Run",
+          "description": "Bac à sable interactif en ligne pour exécuter et observer le comportement d'un fichier/URL suspecte en temps réel.",
+          "url": "https://any.run/"
+        },
+        {
+          "name": "Hybrid Analysis",
+          "description": "Plateforme d'analyse dynamique de malwares (sandbox) gratuite, opérée par CrowdStrike.",
+          "url": "https://hybrid-analysis.com/"
+        },
+        {
+          "name": "Shodan",
+          "description": "Moteur de recherche pour trouver les appareils connectés (caméras, serveurs, IoT) exposés sur Internet.",
+          "url": "https://www.shodan.io/"
+        },
+        {
+          "name": "Quad9",
+          "description": "Résolveur DNS public gratuit et axé confidentialité, qui bloque automatiquement l'accès aux domaines malveillants connus (phishing, malware) au niveau du réseau.",
+          "url": "https://quad9.net/fr/"
+        }
+      ]
+    },
+    {
+      "id": "telephonie",
+      "title": "Téléphonie",
+      "items": [
+        {
+          "name": "Free Carrier Lookup",
+          "description": "Identifie l'opérateur d'origine et le type de ligne. Utile pour les numéros internationaux hors Belgique.",
+          "url": "https://www.freecarrierlookup.com/"
+        },
+        {
+          "name": "CRDC",
+          "description": "Système central de gestion des portabilités en Belgique. Donne l'opérateur actuel réel d'une ligne, indispensable pour vérifier la légitimité d'un SMS ou d'un appel suspect.",
+          "url": "https://www.crdc.be/"
         }
       ]
     },
@@ -1321,62 +1888,6 @@
       ]
     },
     {
-      "id": "web-domaines",
-      "title": "Web, domaines & URL",
-      "items": [
-        {
-          "name": "Whois / RDAP",
-          "description": "Identifie le propriétaire enregistré d'un nom de domaine pour tracer l'origine d'un site frauduleux.",
-          "url": "https://whois.domaintools.com/"
-        },
-        {
-          "name": "Whoxy",
-          "description": "Service Whois/RDAP avec historique des changements de propriétaire et API de recherche inversée par email/personne.",
-          "url": "https://www.whoxy.com/"
-        },
-        {
-          "name": "Wayback Machine",
-          "description": "Archive d'Internet permettant de consulter les versions passées d'un site, même supprimé.",
-          "url": "https://web.archive.org/"
-        },
-        {
-          "name": "MXToolbox",
-          "description": "Vérifie la configuration et la santé d'un domaine email (MX, SPF, DKIM, DMARC, blacklists).",
-          "url": "https://mxtoolbox.com/emailhealth"
-        },
-        {
-          "name": "Unshortlink",
-          "description": "Révèle la destination réelle d'une URL raccourcie avant de cliquer, pour éviter le phishing.",
-          "url": "https://unshortlink.com/"
-        },
-        {
-          "name": "VirusTotal",
-          "description": "Scanne fichiers et URL suspects avec plus de 70 moteurs antivirus avant ouverture.",
-          "url": "https://www.virustotal.com/"
-        },
-        {
-          "name": "Any.Run",
-          "description": "Bac à sable interactif en ligne pour exécuter et observer le comportement d'un fichier/URL suspecte en temps réel.",
-          "url": "https://any.run/"
-        },
-        {
-          "name": "Hybrid Analysis",
-          "description": "Plateforme d'analyse dynamique de malwares (sandbox) gratuite, opérée par CrowdStrike.",
-          "url": "https://hybrid-analysis.com/"
-        },
-        {
-          "name": "Shodan",
-          "description": "Moteur de recherche pour trouver les appareils connectés (caméras, serveurs, IoT) exposés sur Internet.",
-          "url": "https://www.shodan.io/"
-        },
-        {
-          "name": "Quad9",
-          "description": "Résolveur DNS public gratuit et axé confidentialité, qui bloque automatiquement l'accès aux domaines malveillants connus (phishing, malware) au niveau du réseau.",
-          "url": "https://quad9.net/fr/"
-        }
-      ]
-    },
-    {
       "id": "investigation-visu",
       "title": "Investigation, visualisation & automatisation",
       "items": [
@@ -1444,13 +1955,64 @@
       ]
     },
     {
-      "id": "crypto",
-      "title": "Cryptomonnaies",
+      "id": "sock-puppet",
+      "title": "Puppet sock (identités de couverture)",
       "items": [
         {
-          "name": "Blockchain Explorer",
-          "description": "Permet de consulter publiquement les transactions et soldes d'une adresse de cryptomonnaie, utile pour tracer des flux suspects.",
-          "url": "https://www.blockchain.com/explorer"
+          "name": "Fake Identity Generator",
+          "description": "Génère une identité fictive complète, utile pour créer un compte de couverture destiné à des investigations OSINT.",
+          "url": "https://www.fakenamegenerator.com/"
+        },
+        {
+          "name": "This Person Does Not Exist",
+          "description": "Générateur de visages humains synthétiques via IA : aucune photo ne correspond à une personne réelle.",
+          "url": "https://this-person-does-not-exist.com/"
+        }
+      ]
+    },
+    {
+      "id": "detection-ia",
+      "title": "Détection de contenu généré par IA",
+      "items": [
+        {
+          "name": "ZeroGPT",
+          "description": "Détecteur multi-usage (texte et images IA), gratuit, sans inscription, précision variable selon les modèles testés.",
+          "url": "https://www.zerogpt.com/"
+        },
+        {
+          "name": "GPTZero",
+          "description": "L'un des détecteurs de texte IA les plus connus, conçu pour le milieu académique. Extension Chrome et intégration LMS.",
+          "url": "https://gptzero.me/"
+        },
+        {
+          "name": "Originality.ai",
+          "description": "Détecteur orienté professionnels du contenu web, combinant détection IA et vérification de plagiat.",
+          "url": "https://originality.ai/"
+        },
+        {
+          "name": "Copyleaks",
+          "description": "Détecteur de texte IA multilingue, intégrable aux LMS, conforme RGPD/SOC2.",
+          "url": "https://copyleaks.com/"
+        },
+        {
+          "name": "Pangram Labs",
+          "description": "Détecteur développé par des chercheurs, réputé pour un taux de faux positifs très bas, 20+ langues.",
+          "url": "https://www.pangram.com/"
+        },
+        {
+          "name": "Hive Moderation",
+          "description": "Détecteur multimodal (texte, image, vidéo, audio) capable d'identifier le moteur génératif probable.",
+          "url": "https://hivemoderation.com/ai-generated-content-detection/"
+        },
+        {
+          "name": "Hive Detect",
+          "description": "Version grand public de Hive : glisser-déposer une image/vidéo/audio pour obtenir un score de probabilité IA.",
+          "url": "https://hivedetect.ai/"
+        },
+        {
+          "name": "Isgen",
+          "description": "Outil français de détection de texte IA (ChatGPT, GPT-4, Gemini, Llama, Claude, Mistral) et contenus mixtes.",
+          "url": "https://isgen.ai/"
         }
       ]
     },
@@ -1511,64 +2073,13 @@
       ]
     },
     {
-      "id": "sock-puppet",
-      "title": "Puppet sock (identités de couverture)",
+      "id": "crypto",
+      "title": "Cryptomonnaies",
       "items": [
         {
-          "name": "Fake Identity Generator",
-          "description": "Génère une identité fictive complète, utile pour créer un compte de couverture destiné à des investigations OSINT.",
-          "url": "https://backgroundchecks.org/justdeleteme/fake-identity-generator/"
-        },
-        {
-          "name": "This Person Does Not Exist",
-          "description": "Générateur de visages humains synthétiques via IA : aucune photo ne correspond à une personne réelle.",
-          "url": "https://this-person-does-not-exist.com/"
-        }
-      ]
-    },
-    {
-      "id": "detection-ia",
-      "title": "Détection de contenu généré par IA",
-      "items": [
-        {
-          "name": "ZeroGPT",
-          "description": "Détecteur multi-usage (texte et images IA), gratuit, sans inscription, précision variable selon les modèles testés.",
-          "url": "https://www.zerogpt.com/"
-        },
-        {
-          "name": "GPTZero",
-          "description": "L'un des détecteurs de texte IA les plus connus, conçu pour le milieu académique. Extension Chrome et intégration LMS.",
-          "url": "https://gptzero.me/"
-        },
-        {
-          "name": "Originality.ai",
-          "description": "Détecteur orienté professionnels du contenu web, combinant détection IA et vérification de plagiat.",
-          "url": "https://originality.ai/"
-        },
-        {
-          "name": "Copyleaks",
-          "description": "Détecteur de texte IA multilingue, intégrable aux LMS, conforme RGPD/SOC2.",
-          "url": "https://copyleaks.com/"
-        },
-        {
-          "name": "Pangram Labs",
-          "description": "Détecteur développé par des chercheurs, réputé pour un taux de faux positifs très bas, 20+ langues.",
-          "url": "https://www.pangram.com/"
-        },
-        {
-          "name": "Hive Moderation",
-          "description": "Détecteur multimodal (texte, image, vidéo, audio) capable d'identifier le moteur génératif probable.",
-          "url": "https://hivemoderation.com/ai-generated-content-detection/"
-        },
-        {
-          "name": "Hive Detect",
-          "description": "Version grand public de Hive : glisser-déposer une image/vidéo/audio pour obtenir un score de probabilité IA.",
-          "url": "https://hivedetect.ai/"
-        },
-        {
-          "name": "Isgen",
-          "description": "Outil français de détection de texte IA (ChatGPT, GPT-4, Gemini, Llama, Claude, Mistral) et contenus mixtes.",
-          "url": "https://isgen.ai/"
+          "name": "Blockchain Explorer",
+          "description": "Permet de consulter publiquement les transactions et soldes d'une adresse de cryptomonnaie, utile pour tracer des flux suspects.",
+          "url": "https://www.blockchain.com/explorer"
         }
       ]
     },
@@ -1620,114 +2131,6 @@
           "name": "Templates OSINT pour Obsidian",
           "description": "Modèles de prise de notes OSINT.",
           "url": "https://github.com/WebBreacher/obsidian-osint-templates"
-        }
-      ]
-    },
-    {
-      "id": "backup-local",
-      "title": "Sauvegarde — local / hybride",
-      "items": [
-        {
-          "name": "Resilio Sync",
-          "description": "Synchronisation pair-à-pair (sans serveur central) entre plusieurs appareils, utile comme sauvegarde miroir.",
-          "url": "https://www.resilio.com/sync"
-        },
-        {
-          "name": "Time Machine",
-          "description": "Solution de sauvegarde native de macOS, avec versionning automatique et restauration simplifiée.",
-          "url": ""
-        },
-        {
-          "name": "Historique des fichiers (Windows 11)",
-          "description": "Fonction native Windows de sauvegarde incrémentale des fichiers personnels sur disque externe ou réseau.",
-          "url": "https://www.asus.com/ca-fr/support/faq/1013067/"
-        },
-        {
-          "name": "cron",
-          "description": "Planificateur de tâches sous Linux/macOS permettant d'automatiser des scripts de sauvegarde récurrents.",
-          "url": ""
-        }
-      ]
-    },
-    {
-      "id": "backup-cloud",
-      "title": "Sauvegarde — cloud",
-      "items": [
-        {
-          "name": "Nextcloud",
-          "description": "Solution cloud auto-hébergée, alternative open-source à Google Drive/Dropbox, maîtrise totale des données.",
-          "url": "https://nextcloud.com/"
-        },
-        {
-          "name": "kDrive",
-          "description": "Cloud souverain proposé par Infomaniak, avec hébergement en Suisse.",
-          "url": "https://www.infomaniak.com/fr/kdrive"
-        },
-        {
-          "name": "iCloud",
-          "description": "Cloud Apple, intégré à l'écosystème macOS/iOS (Photos, Fichiers, sauvegardes d'appareils).",
-          "url": "https://www.icloud.com/"
-        },
-        {
-          "name": "Proton Drive",
-          "description": "Stockage cloud chiffré de bout en bout, opéré par Proton (Suisse), axé confidentialité.",
-          "url": "https://proton.me/drive"
-        },
-        {
-          "name": "pCloud",
-          "description": "Stockage cloud avec option de chiffrement renforcé et paiement à vie.",
-          "url": "https://www.pcloud.com/"
-        },
-        {
-          "name": "Tresorit",
-          "description": "Cloud chiffré de bout en bout orienté entreprises, avec contrôles d'administration avancés.",
-          "url": "https://tresorit.com/"
-        },
-        {
-          "name": "OneDrive",
-          "description": "Cloud Microsoft, intégré à l'écosystème Office 365.",
-          "url": "https://onedrive.live.com/"
-        },
-        {
-          "name": "Google Drive",
-          "description": "Cloud Google, intégré à l'écosystème Workspace (Docs, Sheets, Gmail), avec édition collaborative en temps réel.",
-          "url": "https://drive.google.com/"
-        },
-        {
-          "name": "Dropbox",
-          "description": "Un des pionniers du stockage cloud, reconnu pour sa synchronisation fiable entre appareils et ses intégrations tierces nombreuses.",
-          "url": "https://www.dropbox.com/"
-        }
-      ]
-    },
-    {
-      "id": "chiffrement",
-      "title": "Outils de chiffrement",
-      "items": [
-        {
-          "name": "VeraCrypt",
-          "description": "Création de conteneurs ou de disques entièrement chiffrés (succession de TrueCrypt), multiplateforme.",
-          "url": "https://www.veracrypt.fr/"
-        },
-        {
-          "name": "Cryptomator",
-          "description": "Chiffrement transparent de fichiers destinés au cloud (Nextcloud, OneDrive, Google Drive...), côté client avant synchronisation.",
-          "url": "https://cryptomator.org/"
-        },
-        {
-          "name": "7-Zip",
-          "description": "Compression d'archives avec chiffrement AES-256 intégré (format .7z), simple et largement répandu.",
-          "url": "https://www.7-zip.org/"
-        },
-        {
-          "name": "GPG / OpenPGP",
-          "description": "Standard de chiffrement et de signature pour les emails et fichiers, garantissant confidentialité et authenticité.",
-          "url": "https://gnupg.org/"
-        },
-        {
-          "name": "BitLocker / FileVault",
-          "description": "Chiffrement intégral de disque natif à Windows (BitLocker) et macOS (FileVault).",
-          "url": ""
         }
       ]
     }

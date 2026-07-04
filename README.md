@@ -13,9 +13,15 @@ Une application web de quiz interactive pour s'entraîner à la cybersécurité 
 
 ## 🚀 Fonctionnalités
 
-- **Grand Test Complet** : 174 questions couvrant l'ensemble du programme.
-- **Entraînement par Thème** : 8 thèmes spécifiques (Web, Phishing, Mots de passe, RGPD, etc.).
-- **Synthèses de cours** : Fiches récapitulatives interactives sur les sujets clés (RGPD, IA, Incidents).
+- **Modes de Test Variés** :
+  - **Grand Test Complet** : 174 questions couvrant l'ensemble du programme.
+  - **Test Blanc TOSA** : 50 questions équilibrées pour simuler l'examen.
+  - **Mises en situation** : Focus sur les scénarios concrets (emails, phishing, incidents).
+  - **Révision Express** : Session rapide de 20 questions aléatoires.
+  - **Niveaux de difficulté** : Facile, Moyen ou Difficile pour une progression adaptée.
+- **Entraînement par Thème** : 8 thèmes spécifiques (Web, Phishing, Mots de passe, RGPD, OSINT, etc.).
+- **Synthèses de cours** : Plus de 50 fiches récapitulatives interactives sur des sujets variés (RGPD, IA, IoT, Cryptographie, etc.).
+- **Personnalisation** : 3 thèmes graphiques au choix (**SecOps**, **Neobrutalism**, **Corpo**) pour une expérience adaptée à vos préférences.
 - **Types de Questions Variés** :
   - Choix unique et multiple.
   - Vrai / Faux.
@@ -23,7 +29,7 @@ Une application web de quiz interactive pour s'entraîner à la cybersécurité 
   - Éléments à relier (Matching).
   - Remise en ordre.
 - **Correction Immédiate** : Explications détaillées pour chaque question après validation.
-- **Progression Persistante** : Sauvegarde automatique de l'avancement dans le navigateur (LocalStorage).
+- **Progression Persistante** : Sauvegarde automatique de l'avancement dans le navigateur (`LocalStorage`).
 - **Zéro Data** : Fonctionne entièrement côté client, aucune donnée personnelle n'est collectée ou envoyée à un serveur.
 - **Expérience Dynamique** : Mélange aléatoire des réponses à chaque session pour éviter le par cœur visuel.
 - **Ergonomie Matching** : Gestion intelligente des doublons (plusieurs réponses à droite peuvent avoir le même libellé) et possibilité de modifier ou d'annuler une liaison par simple clic.
@@ -42,7 +48,8 @@ Aucune installation complexe n'est requise. L'application est composée de fichi
 - `app.js` : Logique de l'application (moteur de quiz, gestion d'état, chargement asynchrone des données).
 - `questions.json` : Base de données des questions (format JSON strict).
 - `extra-content.json` : Modes de test et synthèses pédagogiques (format JSON strict).
-- `styles/` : Dossier contenant les feuilles de style (Neobrutalism, Corpo, etc.).
+- `styles/` : Dossier contenant les feuilles de style (SecOps, Neobrutalism, Corpo).
+- `favicon/` : Ressources graphiques et manifest de l'application.
 
 ## 🔄 Résumé des améliorations du mélange aléatoire
 
@@ -57,15 +64,17 @@ Aucune installation complexe n'est requise. L'application est composée de fichi
 ## ⚙️ Maintenance & Fiabilisation
 
 - **Architecture** : Séparation totale entre le code (`app.js`) et les données (`.json`).
+- **Sécurité** : Utilisation d'une **Content Security Policy (CSP)** stricte pour protéger l'exécution.
 - **Chargement** : Utilisation de l'API `fetch` pour un chargement asynchrone et performant.
 - **Encodage** : Tous les fichiers sont en **UTF-8 sans BOM**.
 - **Robustesse** : Le moteur `app.js` intègre des sécurités (ex: `hashCode` sécurisé) et les questions disposent d'identifiants uniques.
-- **Versioning** : Paramètre `?v=YYYY-MM-DD-X` utilisé pour forcer le rafraîchissement du cache.
+- **Versioning** : Paramètre `?v=YYYY-MM-DD-X` utilisé pour forcer le rafraîchissement du cache des scripts et données.
 
 ## 🚀 TODO - Nice to Have
 
-- **API serveur** : Pour une gestion dynamique des contenus.
-- **Optimisation mobile** : Améliorer les interactions tactiles.
+- **Statistiques globales** : Visualisation de la progression globale par thème.
+- **Mode sombre automatique** : Bascule basée sur les préférences système.
+- **Optimisation mobile** : Améliorer les interactions tactiles sur les types Matching/Order.
 
 
 
@@ -73,4 +82,4 @@ Aucune installation complexe n'est requise. L'application est composée de fichi
 
 Ce projet est distribué sous licence **MIT** — libre à vous de l'utiliser, le modifier et le redistribuer, y compris à des fins commerciales, en conservant la mention de copyright.
 
-Développé initialement par Celio Miceli pour la formation CyberCitizen, puis repris et poursuivi par Toltek après la formation. 
+Développé initialement par [Celio Miceli](https://www.linkedin.com/in/celio-miceli-57285a1b5) pour la formation CyberCitizen, puis repris et poursuivi par Toltek après la formation. 
