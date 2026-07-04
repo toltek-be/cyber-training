@@ -1,5 +1,14 @@
 # Cyber Training - Révision TOSA
 
+![GitHub last commit](https://img.shields.io/github/last-commit/toltek-be/cyber-training)
+![GitHub repo size](https://img.shields.io/github/repo-size/toltek-be/cyber-training)
+[![Issues Welcome](https://img.shields.io/badge/issues-welcome-brightgreen)](https://github.com/toltek-be/cyber-training/issues)
+![GitHub license](https://img.shields.io/github/license/toltek-be/cyber-training)
+![No backend](https://img.shields.io/badge/backend-none-blue)
+![Made with JavaScript](https://img.shields.io/badge/made%20with-JavaScript-yellow)
+
+---
+
 Une application web de quiz interactive pour s'entraîner à la cybersécurité et préparer la certification TOSA.
 
 ## 🚀 Fonctionnalités
@@ -58,6 +67,10 @@ Aucune installation complexe n'est requise. L'application est composée de fichi
 - **API serveur** : Pour une gestion dynamique des contenus.
 - **Optimisation mobile** : Améliorer les interactions tactiles.
 
+
+
 ## 📝 Licence
 
-Projet développé par Celio Miceli pour la formation CyberCitizen. 
+Ce projet est distribué sous licence **MIT** — libre à vous de l'utiliser, le modifier et le redistribuer, y compris à des fins commerciales, en conservant la mention de copyright.
+
+Développé initialement par Celio Miceli pour la formation CyberCitizen, puis repris et poursuivi par Toltek après la formation. 

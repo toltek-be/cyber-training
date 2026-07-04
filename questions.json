@@ -3123,11 +3123,11 @@
       "subtheme": "robustesse",
       "difficulty": "easy",
       "type": "single",
-      "prompt": "Quel exemple illustre le mieux une phrase de passe robuste pour un usage personnel ?",
+      "prompt": "Quel exemple illustre le mieux un mot de passe robuste pour un usage personnel ?",
       "options": [
         {
           "id": "a",
-          "label": "SoleilTableTrain!42 très longue et unique"
+          "label": "SoleilTableTrain!42"
         },
         {
           "id": "b",
