@@ -4790,7 +4790,7 @@
         },
         {
           "id": "b",
-          "label": "Notifier la CNIL sous 72h"
+          "label": "Notifier la CNIL (France) ou l'APD (Belgique) sous 72h"
         },
         {
           "id": "c",

@@ -81,7 +81,7 @@
 .hero h1 { font-weight: 800; }
 
 .stat-pill {
-    background: var(--mint-soft);
+    background: var(--orange);
     border: 1px solid var(--line);
     box-shadow: var(--shadow-small);
     border-radius: 9px;

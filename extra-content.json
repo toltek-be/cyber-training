@@ -1990,9 +1990,9 @@
       "title": "Puppet sock (identités de couverture)",
       "items": [
         {
-          "name": "Fake Identity Generator",
+          "name": "Fake Name Generator",
           "description": "Génère une identité fictive complète, utile pour créer un compte de couverture destiné à des investigations OSINT.",
-          "url": "https://backgroundchecks.org/justdeleteme/fake-identity-generator/"
+          "url": "https://www.fakenamegenerator.com/"
         },
         {
           "name": "This Person Does Not Exist",
