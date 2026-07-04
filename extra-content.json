@@ -1618,6 +1618,37 @@
       ]
     },
     {
+      "id": "partage-secrets",
+      "title": "Partage sécurisé de secrets & messages éphémères",
+      "items": [
+        {
+          "name": "kpaste (Infomaniak)",
+          "description": "Instance de PrivateBin opérée par Infomaniak (Suisse) : colle un texte ou un secret chiffré côté client, avec lien à usage unique qui s'autodétruit après lecture ou expiration.",
+          "url": "https://kpaste.infomaniak.com/"
+        },
+        {
+          "name": "Privnote",
+          "description": "Service simple de notes autodestructrices : le message disparaît définitivement après sa première lecture.",
+          "url": "https://privnote.com/"
+        },
+        {
+          "name": "OnionShare",
+          "description": "Partage de fichiers, messages ou hébergement d'un site éphémère via un service caché Tor, sans dépendre d'un serveur tiers.",
+          "url": "https://onionshare.org/"
+        },
+        {
+          "name": "PrivateBin",
+          "description": "Logiciel open-source de pastebin chiffré côté client (le serveur ne voit jamais le contenu en clair), auto-hébergeable, à la base de nombreuses instances publiques comme kpaste.",
+          "url": "https://privatebin.info/"
+        },
+        {
+          "name": "Yopass",
+          "description": "Outil open-source pensé pour les équipes techniques : partage de secrets (mots de passe, clés API) via un lien à usage unique et une durée de vie limitée.",
+          "url": "https://github.com/jhaals/yopass"
+        }
+      ]
+    },
+    {
       "id": "backup-local",
       "title": "Sauvegarde — local / hybride",
       "items": [
@@ -1961,7 +1992,7 @@
         {
           "name": "Fake Identity Generator",
           "description": "Génère une identité fictive complète, utile pour créer un compte de couverture destiné à des investigations OSINT.",
-          "url": "https://www.fakenamegenerator.com/"
+          "url": "https://backgroundchecks.org/justdeleteme/fake-identity-generator/"
         },
         {
           "name": "This Person Does Not Exist",
