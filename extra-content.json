@@ -1566,6 +1566,37 @@
       ]
     },
     {
+      "id": "prise-de-notes",
+      "title": "Prise de notes",
+      "items": [
+        {
+          "name": "Obsidian",
+          "description": "Éditeur de notes en Markdown avec liens bidirectionnels et graphe de connaissances — très utilisé en OSINT pour relier sources, hypothèses et pistes d'investigation. Stockage 100% local.",
+          "url": "https://obsidian.md/"
+        },
+        {
+          "name": "Templates OSINT pour Obsidian",
+          "description": "Modèles de prise de notes prêts à l'emploi pour structurer une investigation OSINT dans Obsidian.",
+          "url": "https://github.com/WebBreacher/obsidian-osint-templates"
+        },
+        {
+          "name": "Joplin",
+          "description": "Alternative open source et gratuite à Evernote, avec chiffrement de bout en bout et synchronisation sur son propre stockage (Nextcloud, Dropbox...).",
+          "url": "https://joplinapp.org/"
+        },
+        {
+          "name": "CherryTree",
+          "description": "Éditeur de notes hiérarchique (arborescence de nœuds) très apprécié en cybersécurité et pentest pour structurer une investigation étape par étape.",
+          "url": "https://www.giuspen.net/cherrytree/"
+        },
+        {
+          "name": "Notion",
+          "description": "Espace de travail tout-en-un (notes, bases de données, tableaux) pour centraliser une investigation ou un projet en équipe.",
+          "url": "https://www.notion.com/"
+        }
+      ]
+    },
+    {
       "id": "vpn-grand-public",
       "title": "VPN grand public",
       "items": [
@@ -1849,6 +1880,11 @@
               "url": "https://yandex.com/images/"
             }
           ]
+        },
+        {
+          "name": "ExifRemover",
+          "description": "Supprime en un clic toutes les métadonnées EXIF d'une photo (GPS, date, modèle d'appareil) avant publication, directement dans le navigateur.",
+          "url": "https://exifremover.com/fr/"
         }
       ]
     },
@@ -1953,19 +1989,9 @@
           "url": "https://exegol.com/"
         },
         {
-          "name": "OSINT France",
-          "description": "Portail francophone regroupant des centaines d'outils gratuits classés par catégorie.",
-          "url": "https://osintfr.com/outils/"
-        },
-        {
-          "name": "Osintopia",
-          "description": "Annuaire et hub d'outils OSINT, avec ressources et exercices pratiques.",
-          "url": "https://osintopia.fr/"
-        },
-        {
-          "name": "OSINT Newsletter — Tools",
-          "description": "Bibliothèque d'outils OSINT documentés et mis à jour régulièrement par la communauté.",
-          "url": "https://tools.osintnewsletter.com/"
+          "name": "IT-Tools",
+          "description": "Collection d'utilitaires techniques en ligne (encodage Base64, générateurs de hash, décodeur JWT, calculs réseau, etc.), pratique pour dépanner rapidement sans installer d'outil dédié.",
+          "url": "https://it-tools.tech/"
         }
       ]
     },
@@ -2120,8 +2146,14 @@
       "items": [
         {
           "name": "CTF & challenges OSINT",
-          "description": "IsFred, OSINT-FR, Osintopia, Osint4Fun — communautés et challenges pour s'entraîner aux techniques OSINT.",
-          "url": "https://mooc.osintfr.com/course/view.php?id=4"
+          "description": "IsFred, OSINT-FR, Osintopia, OSINT4Fun — communautés et challenges pour s'entraîner aux techniques OSINT en conditions ludiques.",
+          "url": "https://osintfr.com/",
+          "links": [
+            {"label": "IsFred", "url": "https://isfred.fr/"},
+            {"label": "OSINT-FR", "url": "https://osintfr.com/"},
+            {"label": "Osintopia", "url": "https://osintopia.fr/"},
+            {"label": "OSINT4Fun", "url": "https://osint4fun.eu/"}
+          ]
         },
         {
           "name": "OSINT-FR — MOOC",
@@ -2154,14 +2186,24 @@
           ]
         },
         {
+          "name": "OSINT France",
+          "description": "Portail francophone regroupant des centaines d'outils gratuits classés par catégorie.",
+          "url": "https://osintfr.com/outils/"
+        },
+        {
+          "name": "Osintopia",
+          "description": "Annuaire et hub d'outils OSINT, avec ressources et exercices pratiques.",
+          "url": "https://osintopia.fr/"
+        },
+        {
+          "name": "OSINT Newsletter — Tools",
+          "description": "Bibliothèque d'outils OSINT documentés et mis à jour régulièrement par la communauté.",
+          "url": "https://tools.osintnewsletter.com/"
+        },
+        {
           "name": "Livre — OSINT Techniques (Michael Bazzell)",
           "description": "Référence pour approfondir les méthodes et outils OSINT.",
           "url": ""
-        },
-        {
-          "name": "Templates OSINT pour Obsidian",
-          "description": "Modèles de prise de notes OSINT.",
-          "url": "https://github.com/WebBreacher/obsidian-osint-templates"
         }
       ]
     }
