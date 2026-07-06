@@ -174,10 +174,6 @@
       return ACTIVE_QUESTIONS.map(q => q.id);
     }
 
-    function questionsByTypes(types) {
-      return ACTIVE_QUESTIONS.filter(q => types.includes(q.type)).map(q => q.id);
-    }
-
     function isScenarioQuestion(q) {
       return Boolean(q.scenario)
           || /^(vous|un|une|après|des collègues|dans|avant de|sur un)/i.test(q.prompt || '')
@@ -579,6 +575,23 @@
       return '<p>Type de question inconnu.</p>';
     }
 
+    function renderMedia(q) {
+      if (!q || !q.media) return '';
+      const m = q.media;
+      const type = safe(m.type);
+      const src = safe(m.src);
+      const alt = safe(m.alt || '');
+      const caption = m.caption ? `<figcaption>${safe(m.caption)}</figcaption>` : '';
+
+      if (type === 'image') {
+        return `<figure class="question-media"><img src="${src}" alt="${alt}" data-action="zoom-image" data-caption="${safe(m.caption || '')}">${caption}</figure>`;
+      }
+      if (type === 'video') {
+        return `<figure class="question-media"><video src="${src}" controls></video>${caption}</figure>`;
+      }
+      return '';
+    }
+
     function correctAnswerText(q) {
       if (q.type === 'single' || q.type === 'multiple') {
         const ids = new Set(Array.isArray(q.correct) ? q.correct : [q.correct]);
@@ -708,6 +721,7 @@
               ${q.visual ? `<div class="question-visual" aria-hidden="true">${safe(q.visual)}</div>` : ''}
             </div>
             <h2>${safe(q.prompt)}</h2>
+            ${renderMedia(q)}
             ${q.type === 'multiple' ? '<p><strong>Plusieurs réponses peuvent être correctes.</strong></p>' : ''}
             ${questionBody(q, locked, value)}
             ${feedbackMarkup(q, answer)}
@@ -898,6 +912,7 @@
         return `<details class="review-item nb-card is-${answer.status === 'incorrect' ? 'wrong' : answer.status}">
         <summary>Question ${originalIndex} — ${safe(label)} : ${safe(q.prompt)}</summary>
         <div class="review-body">
+          ${renderMedia(q)}
           <div class="review-answer"><strong>Votre réponse :</strong><br>${safe(formatAnswer(q, answer.value))}</div>
           <div class="review-answer"><strong>Réponse attendue :</strong><br>${safe(correctAnswerText(q))}</div>
           <p>${safe(q.explanation)}</p>
@@ -1089,17 +1104,25 @@
       if (!ui.modal) return '';
       if (ui.modal.type === 'resume') {
         const done = completedCount(ui.modal.existing);
-        return `<div class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal nb-card">
+        return `<div class="modal-backdrop" data-action="close-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal nb-card">
         <h2 id="modal-title">Quiz déjà commencé</h2>
         <p>Tu as déjà terminé ${done} question(s) sur ${ui.modal.questionIds.length}. Tu peux reprendre ou recommencer à zéro.</p>
         <div class="btn-row"><button class="btn btn--dark" data-action="confirm-resume">Reprendre</button><button class="btn btn--red" data-action="confirm-restart-launch">Recommencer</button><button class="btn" data-action="close-modal">Annuler</button></div>
       </div></div>`;
       }
       if (ui.modal.type === 'reset-current') {
-        return `<div class="modal-backdrop" role="dialog" aria-modal="true"><div class="modal nb-card"><h2>Recommencer ce quiz ?</h2><p>Toutes les réponses enregistrées pour ce quiz seront effacées.</p><div class="btn-row"><button class="btn btn--red" data-action="confirm-reset-current">Oui, recommencer</button><button class="btn" data-action="close-modal">Annuler</button></div></div></div>`;
+        return `<div class="modal-backdrop" data-action="close-modal" role="dialog" aria-modal="true"><div class="modal nb-card"><h2>Recommencer ce quiz ?</h2><p>Toutes les réponses enregistrées pour ce quiz seront effacées.</p><div class="btn-row"><button class="btn btn--red" data-action="confirm-reset-current">Oui, recommencer</button><button class="btn" data-action="close-modal">Annuler</button></div></div></div>`;
       }
       if (ui.modal.type === 'reset-all') {
-        return `<div class="modal-backdrop" role="dialog" aria-modal="true"><div class="modal nb-card"><h2>Tout réinitialiser ?</h2><p>La progression de tous les quiz sera supprimée de ce navigateur.</p><div class="btn-row"><button class="btn btn--red" data-action="confirm-reset-all">Oui, tout effacer</button><button class="btn" data-action="close-modal">Annuler</button></div></div></div>`;
+        return `<div class="modal-backdrop" data-action="close-modal" role="dialog" aria-modal="true"><div class="modal nb-card"><h2>Tout réinitialiser ?</h2><p>La progression de tous les quiz sera supprimée de ce navigateur.</p><div class="btn-row"><button class="btn btn--red" data-action="confirm-reset-all">Oui, tout effacer</button><button class="btn" data-action="close-modal">Annuler</button></div></div></div>`;
+      }
+      if (ui.modal.type === 'zoom-image') {
+        return `<div class="modal-backdrop" data-action="close-modal" role="dialog" aria-modal="true">
+        <div class="modal modal--large nb-card">
+          <img src="${safe(ui.modal.src)}" alt="${safe(ui.modal.alt)}" class="modal-image" data-action="close-modal">
+          ${ui.modal.caption ? `<p style="text-align:center; margin-bottom:16px; font-weight:650;">${safe(ui.modal.caption)}</p>` : ''}
+          <div class="btn-row" style="justify-content:center"><button class="btn btn--dark" data-action="close-modal">Fermer</button></div>
+        </div></div>`;
       }
       return '';
     }
@@ -1369,6 +1392,16 @@
         ui.modal = null;
         render(true);
       }
+
+      if (action === 'zoom-image') {
+        ui.modal = {
+          type: 'zoom-image',
+          src: button.src || button.dataset.src,
+          alt: button.alt || button.dataset.alt,
+          caption: button.dataset.caption
+        };
+        render();
+      }
       if (action === 'previous' && ui.quiz && ui.quiz.currentIndex > 0) {
         ui.quiz.currentIndex -= 1;
         ui.activeMatchLeft = null;
@@ -1417,6 +1450,7 @@
         render(true);
       }
       if (action === 'close-modal') {
+        if (button.classList.contains('modal-backdrop') && event.target !== button) return;
         ui.modal = null;
         render();
       }

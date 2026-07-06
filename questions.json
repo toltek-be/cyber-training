@@ -146,11 +146,11 @@
       "id": "web-ca-google",
       "theme": "web",
       "type": "single",
-      "prompt": "Dans la capture de certification fournie, quelle autorité de certification est indiquée pour le certificat HTTPS de google.com ?",
+      "prompt": "Dans la capture d'écran ci-dessous, quelle autorité de certification est indiquée pour le certificat HTTPS de google.com ?",
       "options": [
         {
           "id": "a",
-          "label": "Google Trust Services LLC / GTS CA"
+          "label": " Google Trust Services"
         },
         {
           "id": "b",
@@ -170,7 +170,12 @@
       "visual": "📜",
       "certification": true,
       "title": null,
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "media": {
+        "type": "image",
+        "src": "media/web-ca-google.png",
+        "alt": "Capture d'écran du certificat HTTPS de google.com affichant l'autorité de certification émettrice"
+      }
     },
     {
       "id": "web-domain",
@@ -345,6 +350,75 @@
       "certification": true,
       "title": null,
       "difficulty": "medium"
+    },
+    {
+      "id": "device-physical-tailgating",
+      "theme": "devices",
+      "subtheme": "securite-physique",
+      "difficulty": "medium",
+      "type": "multiple",
+      "prompt": "Une personne que vous ne connaissez pas essaie d’entrer dans le bâtiment de l’entreprise juste derrière vous, sans badger, en vous demandant de lui tenir la porte. Que devez-vous faire ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Lui tenir la porte par politesse, sans lui demander de justifier son identité"
+        },
+        {
+          "id": "b",
+          "label": "Lui demander poliment de badger elle-même ou de se présenter à l’accueil"
+        },
+        {
+          "id": "c",
+          "label": "L’accompagner directement vers les bureaux sans vérification supplémentaire"
+        },
+        {
+          "id": "d",
+          "label": "Prévenir la sécurité ou l’accueil si elle insiste, refuse de s’identifier ou semble suspecte"
+        }
+      ],
+      "correct": [
+        "b",
+        "d"
+      ],
+      "explanation": "Le « tailgating » (talonnage) consiste à profiter du passage d’une personne autorisée pour entrer sans contrôle d’accès. C’est l’une des techniques d’intrusion physique les plus simples et les plus efficaces. Il est normal d’être poli, mais la politesse ne doit jamais dispenser de vérifier badge ou identité, surtout dans des locaux professionnels.",
+      "visual": "🚪",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "device-physical-visitor",
+      "theme": "devices",
+      "subtheme": "securite-physique",
+      "difficulty": "medium",
+      "type": "multiple",
+      "prompt": "Un visiteur est officiellement invité dans vos bureaux pour un rendez-vous. Quelles sont les bonnes pratiques à respecter ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Le faire enregistrer à l’accueil et lui remettre un badge visiteur clairement identifiable"
+        },
+        {
+          "id": "b",
+          "label": "Le laisser circuler seul dans les locaux une fois arrivé à son rendez-vous"
+        },
+        {
+          "id": "c",
+          "label": "L’accompagner en permanence, y compris lors de ses déplacements dans le bâtiment"
+        },
+        {
+          "id": "d",
+          "label": "Verrouiller son poste de travail et ranger les documents sensibles avant son arrivée"
+        }
+      ],
+      "correct": [
+        "a",
+        "c",
+        "d"
+      ],
+      "explanation": "Même un visiteur légitime et attendu ne doit jamais circuler librement ni sans accompagnement dans des locaux professionnels : badge visiteur, accompagnement permanent et rangement préalable des informations sensibles (écran verrouillé, documents non laissés en évidence) limitent les risques d’espionnage industriel ou de vol d’informations, y compris de bonne foi.",
+      "visual": "🧑‍💼",
+      "certification": true,
+      "scenario": true
     },
     {
       "id": "web-update-browser",
@@ -5157,6 +5231,162 @@
       "scenario": true
     },
     {
+      "id": "device-usb-promotional-gift",
+      "theme": "devices",
+      "subtheme": "usb",
+      "difficulty": "medium",
+      "type": "single",
+      "prompt": "Lors d’un salon professionnel, un stand vous offre gratuitement une clé USB publicitaire à l’effigie de l’entreprise. Que devez-vous faire avant de l’utiliser ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "La brancher directement sur mon ordinateur professionnel pour voir ce qu’elle contient"
+        },
+        {
+          "id": "b",
+          "label": "Ne pas la brancher sur un poste sensible ; la faire vérifier par le service informatique ou l’éviter par précaution"
+        },
+        {
+          "id": "c",
+          "label": "La formater immédiatement puis l’utiliser normalement sans autre vérification"
+        },
+        {
+          "id": "d",
+          "label": "La donner à un collègue pour qu’il la teste à ma place sur son ordinateur"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Même une clé USB reçue lors d’un événement officiel peut être piégée (préinstallée avec un malware, ou de type BadUSB simulant un clavier pour exécuter des commandes). Un simple formatage ne suffit pas toujours à neutraliser certaines attaques matérielles. La prudence est de la faire analyser par l’IT ou de s’en abstenir.",
+      "visual": "🎁",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "osint-ctf-definition",
+      "theme": "osint",
+      "subtheme": "culture-generale",
+      "difficulty": "easy",
+      "type": "single",
+      "prompt": "Qu’est-ce qu’un CTF (Capture The Flag) dans le domaine de la cybersécurité ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Un logiciel antivirus permettant de bloquer les tentatives d’intrusion en temps réel"
+        },
+        {
+          "id": "b",
+          "label": "Une compétition ou un exercice pédagogique où il faut résoudre des défis techniques (piratage, OSINT, cryptographie) pour trouver des « flags » cachés"
+        },
+        {
+          "id": "c",
+          "label": "Un protocole réseau utilisé pour sécuriser les échanges entre deux serveurs"
+        },
+        {
+          "id": "d",
+          "label": "Un certificat officiel délivré après une formation en sécurité informatique"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Un CTF est un format d’entraînement ludique et pédagogique très répandu en cybersécurité (et en OSINT) : les participants résolvent des défis variés pour retrouver un « flag » (chaîne de caractères prouvant la réussite), individuellement ou en équipe.",
+      "visual": "🚩",
+      "certification": false
+    },
+    {
+      "id": "network-pentest-authorization",
+      "theme": "network",
+      "subtheme": "tests-intrusion",
+      "difficulty": "medium",
+      "type": "single",
+      "prompt": "Que faut-il impérativement obtenir avant de rechercher des vulnérabilités sur un système informatique dans le cadre d’un test d’intrusion (pentest) ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Une autorisation écrite du propriétaire du système, définissant précisément le périmètre et les conditions du test"
+        },
+        {
+          "id": "b",
+          "label": "Un simple accord verbal informel avec n’importe quel membre de l’équipe technique"
+        },
+        {
+          "id": "c",
+          "label": "Aucune autorisation n’est nécessaire si l’intention est bienveillante et pédagogique"
+        },
+        {
+          "id": "d",
+          "label": "Une autorisation orale suffit, à condition de prévenir l’équipe après coup"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Un mandat écrit (souvent appelé « lettre d’engagement » ou « rules of engagement ») définissant le périmètre, la durée et les autorisations est indispensable avant tout test d’intrusion. Sans cela, rechercher des vulnérabilités sur un système qui ne vous appartient pas constitue une infraction pénale, même avec de bonnes intentions.",
+      "visual": "📝",
+      "certification": true
+    },
+    {
+      "id": "data-transfer-client-document",
+      "theme": "data",
+      "subtheme": "transfert-securise",
+      "difficulty": "medium",
+      "type": "single",
+      "prompt": "Un client n’a pas réussi à télécharger un document depuis le serveur public de l’entreprise. Le document étant déjà public, quel critère devrait guider le choix du moyen de transmission ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "La rapidité et la simplicité pour le client, puisqu’aucune donnée sensible n’est en jeu"
+        },
+        {
+          "id": "b",
+          "label": "Le chiffrement obligatoire, comme pour toute donnée de l’entreprise"
+        },
+        {
+          "id": "c",
+          "label": "L’utilisation exclusive d’un support physique pour garantir la traçabilité"
+        },
+        {
+          "id": "d",
+          "label": "Aucun envoi n’est possible sans validation préalable du DPO"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Le document étant déjà destiné à être public, il ne présente aucune sensibilité particulière : le critère de choix devient donc la simplicité et la rapidité pour le client (email, lien de téléchargement), plutôt que des mesures de protection réservées aux données sensibles. Le réflexe à retenir : adapter le niveau de précaution au niveau réel de sensibilité des données, ni plus, ni moins.",
+      "visual": "📤",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "data-transfer-colleague-sensitive",
+      "theme": "data",
+      "subtheme": "transfert-securise",
+      "difficulty": "medium",
+      "type": "multiple",
+      "prompt": "Vous devez faire parvenir des données sensibles à un collègue. Quelles méthodes sont recommandées ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Une clé USB chiffrée, remise en main propre ou par un canal de confiance"
+        },
+        {
+          "id": "b",
+          "label": "Un email chiffré via l’outil de messagerie sécurisée validé par l’entreprise"
+        },
+        {
+          "id": "c",
+          "label": "Un simple email avec le fichier en pièce jointe, sans protection"
+        },
+        {
+          "id": "d",
+          "label": "Une clé USB ou un disque dur non chiffré envoyé par courrier postal standard"
+        }
+      ],
+      "correct": [
+        "a",
+        "b"
+      ],
+      "explanation": "Le chiffrement (support physique chiffré ou messagerie chiffrée validée par l’entreprise) protège les données en cas de perte, de vol ou d’interception. Un email non protégé ou un support non chiffré expose les données à quiconque intercepterait l’envoi.",
+      "visual": "🔒",
+      "certification": true,
+      "scenario": true
+    },
+    {
       "id": "hard-dev-byod-mdm",
       "theme": "devices",
       "subtheme": "mobilite",
@@ -5658,23 +5888,23 @@
       "subtheme": "architecture",
       "difficulty": "medium",
       "type": "order",
-      "prompt": "Classez les types de réseaux suivants du plus sûr au moins sûr.",
+      "prompt": "Classez ces situations de connexion du plus sûr au moins sûr.",
       "items": [
         [
           "net1",
-          "Réseau câblé à la maison"
+          "Réseau câblé de l'entreprise, dans des bureaux avec contrôle d'accès physique (badge)"
         ],
         [
           "net2",
-          "Wi-Fi domestique avec un mot de passe faible"
+          "Wi-Fi domestique protégé par un mot de passe fort et un chiffrement récent (WPA3)"
         ],
         [
           "net3",
-          "Réseau câblé dans une bibliothèque"
+          "Réseau câblé accessible dans un espace de coworking ouvert à de nombreux inconnus"
         ],
         [
           "net4",
-          "Wi-Fi public avec un mot de passe fort"
+          "Wi-Fi public totalement ouvert, sans mot de passe, dans un lieu très fréquenté"
         ]
       ],
       "correctOrder": [
@@ -5683,7 +5913,7 @@
         "net3",
         "net4"
       ],
-      "explanation": "Un réseau câblé à domicile, physiquement inaccessible à un tiers, reste le plus sûr. Un Wi-Fi domestique mal protégé l’est déjà moins. Un réseau câblé partagé dans un lieu public expose à d’autres usagers du bâtiment. Un Wi-Fi public reste le moins sûr : même avec un mot de passe fort, il est partagé par de nombreux inconnus et le trafic peut être intercepté.",
+      "explanation": "Le réseau câblé de l'entreprise combine un contrôle d'accès physique strict et une infrastructure maîtrisée : c'est le plus sûr. Le Wi-Fi domestique bien protégé (mot de passe fort, WPA3) reste solide car son accès est limité au foyer. Un réseau câblé partagé dans un espace ouvert au public perd ce contrôle physique, même si le câble limite l'interception à distance. Le Wi-Fi public totalement ouvert cumule les deux faiblesses : aucun contrôle d'accès et un trafic facilement interceptable.",
       "visual": "📶",
       "certification": true
     },

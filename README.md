@@ -14,7 +14,7 @@ Une application web de quiz interactive pour s'entraîner à la cybersécurité 
 ## 🚀 Fonctionnalités
 
 - **Modes de Test Variés** :
-  - **Grand Test Complet** : 174 questions couvrant l'ensemble du programme.
+  - **Grand Test Complet** : 181 questions couvrant l'ensemble du programme.
   - **Test Blanc TOSA** : 50 questions équilibrées pour simuler l'examen.
   - **Mises en situation** : Focus sur les scénarios concrets (emails, phishing, incidents).
   - **Révision Express** : Session rapide de 20 questions aléatoires.
@@ -22,6 +22,7 @@ Une application web de quiz interactive pour s'entraîner à la cybersécurité 
 - **Entraînement par Thème** : 8 thèmes spécifiques (Web, Phishing, Mots de passe, RGPD, OSINT, etc.).
 - **Synthèses de cours** : Plus de 50 fiches récapitulatives interactives sur des sujets variés (RGPD, IA, IoT, Cryptographie, etc.).
 - **Personnalisation** : 3 thèmes graphiques au choix (**SecOps**, **Neobrutalism**, **Corpo**) pour une expérience adaptée à vos préférences.
+- **Support Multimédia** : Intégration d'images et de vidéos pour illustrer les questions, avec fonction de zoom (modale) pour les visuels.
 - **Types de Questions Variés** :
   - Choix unique et multiple.
   - Vrai / Faux.
@@ -62,6 +63,23 @@ Aucune installation complexe n'est requise. L'application est composée de fichi
 | **Doublons en matching** | ❌ Identifiants uniques stricts | ✅ Validation par libellé textuel |
 
 ## ⚙️ Maintenance & Fiabilisation
+
+### Format des Questions (JSON)
+
+Chaque question dans `questions.json` peut inclure un champ `media` optionnel pour afficher une image ou une vidéo :
+
+```json
+"media": {
+  "type": "image",
+  "src": "media/nom-du-fichier.png",
+  "alt": "Texte alternatif pour l'accessibilité",
+  "caption": "Légende affichée sous le média"
+}
+```
+
+*Note : Pour une vidéo, utilisez `"type": "video"`. Les formats supportés dépendent des capacités du navigateur (généralement MP4/WebM).*
+
+### Architecture & Sécurité
 
 - **Architecture** : Séparation totale entre le code (`app.js`) et les données (`.json`).
 - **Sécurité** : Utilisation d'une **Content Security Policy (CSP)** stricte pour protéger l'exécution.
