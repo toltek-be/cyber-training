@@ -276,10 +276,7 @@ a { color: var(--info); }
 .question-card__header { border-bottom: 1px solid rgba(34,230,200,.3); }
 .question-number { color: var(--primary); }
 .question-card h2 { font-size: clamp(1.1rem, 2.6vw, 1.6rem); line-height: 1.35; color: var(--ink); font-weight: 600; }
-.question-visual {
-    width: 68px; height: 68px;
-    background: var(--primary-dim); box-shadow: var(--shadow-small);
-}
+.question-visual { width: 68px; height: 68px; filter: drop-shadow(0 0 6px rgba(34, 230, 200, .45)) }
 .cert-badge { border-color: var(--danger); background: rgba(255,49,104,.08); }
 .type-badge { border-color: var(--info); background: rgba(79,195,255,.08); }
 

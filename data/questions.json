@@ -179,7 +179,7 @@
       "difficulty": "easy",
       "media": {
         "type": "image",
-        "src": "media/web-ca-google.png",
+        "src": "media/web-ca-google.webp",
         "alt": "Capture d'écran du certificat HTTPS de google.com affichant l'autorité de certification émettrice"
       }
     },
