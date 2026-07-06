@@ -5,7 +5,8 @@
       "title": "Bases et acteurs de la cybersécurité",
       "themeIds": [
         "web",
-        "network"
+        "network",
+        "data"
       ],
       "intro": "La cybersécurité consiste à protéger les usages numériques du quotidien: navigation, emails, comptes, fichiers, appareils, données professionnelles et vie privée. L’objectif de la formation est surtout de construire des réflexes simples face aux risques rencontrés sur Internet et au travail.",
       "definitions": [
@@ -23,28 +24,32 @@
         "L’intégrité signifie que les informations restent exactes et ne sont pas modifiées sans autorisation.",
         "La disponibilité signifie que les services et données restent accessibles quand on en a besoin.",
         "L’erreur humaine fait partie des risques: cliquer trop vite, cacher une erreur ou utiliser un outil non autorisé peut aggraver une situation.",
-        "Le RSSI pilote la politique de sécurité dans une organisation, tandis que les équipes IT et sécurité traitent les alertes et appliquent les mesures techniques.",
-        "Un CERT ou CSIRT aide à répondre aux incidents, partager des alertes et diffuser des conseils.",
-        "Safeonweb sensibilise et informe, notamment sur les arnaques, le phishing et les bons réflexes en Belgique."
+        "Le RSSI pilote la politique de sécurité technique dans une organisation, tandis que les équipes IT traitent les alertes.",
+        "Un CERT interne (ou CSIRT) gère les incidents au sein d'une organisation spécifique.",
+        "Safeonweb est le portail de sensibilisation du CERT.be, offrant des conseils aux citoyens et aux entreprises.",
+        "L'APD (en Belgique) est l'autorité de contrôle qui veille au respect du RGPD et reçoit les plaintes liées aux données personnelles.",
+        "Le CERT.be est l'équipe nationale de référence en Belgique pour les incidents graves, travaillant avec le CCB (Centre pour la Cybersécurité Belgique)."
       ],
       "goodPractices": [
         "Lire attentivement une situation avant d’agir, surtout si elle paraît urgente.",
         "Se demander: quel est le risque, quels éléments doivent m’alerter, que dois-je faire concrètement ?",
-        "Signaler rapidement une anomalie plutôt que tenter de la régler seul.",
+        "Signaler rapidement une anomalie à son support interne, ou au CERT.be via Safeonweb si l'incident est majeur et touche l'intérêt général.",
         "Conserver les informations utiles: heure, message reçu, capture, nom de fichier, action réalisée.",
         "Appliquer les procédures internes, même si elles semblent plus lentes.",
         "Ne pas partager d’informations personnelles ou professionnelles sans besoin clair.",
-        "Utiliser les ressources de sensibilisation et poser une question quand une notion reste floue."
+        "Utiliser les ressources officielles belges (Safeonweb.be, apd-gba.be) pour vérifier une information."
       ],
       "commonMistakes": [
         "Penser que la cybersécurité est uniquement une affaire d’antivirus ou de techniciens.",
         "Attendre d’être certain avant de signaler un problème.",
         "Effacer un message, reformater un support ou redémarrer une machine sans consigne alors que cela peut supprimer des preuves.",
         "Croire qu’un outil technique suffit à supprimer le risque.",
-        "Confondre une situation simplement étrange avec une situation sans risque."
+        "Confondre une situation simplement étrange avec une situation sans risque.",
+        "Oublier que l'APD peut être saisie en cas de négligence grave concernant les données personnelles.",
+        "Ne pas connaître l'existence du CERT.be et de Safeonweb comme ressources nationales."
       ],
-      "scenario": "Un ordinateur devient anormalement lent et affiche des comportements inhabituels. Le bon réflexe n’est pas de continuer comme si de rien n’était: il faut noter ce que l’on observe, prévenir le support ou la personne compétente et suivre les consignes de confinement.",
-      "remember": "Le cœur de la formation est le réflexe: observer, ralentir, vérifier par un canal fiable, signaler et ne pas aggraver la situation.",
+      "scenario": "Un ordinateur devient anormalement lent et affiche des comportements inhabituels. Le bon réflexe n’est pas de continuer comme si de rien n’était: il faut noter ce que l’on observe, prévenir le support interne. Si l'incident semble toucher une infrastructure critique belge ou une large campagne nationale, le CERT.be peut être informé via Safeonweb.",
+      "remember": "Le cœur de la formation est le réflexe: observer, ralentir, vérifier par un canal fiable, signaler et ne pas aggraver la situation. En Belgique, le CERT.be et l'APD sont vos interlocuteurs nationaux respectifs pour la technique et le légal.",
       "trap": "Un incident peut commencer par une petite action banale: ouvrir une pièce jointe, répondre à un message, brancher une clé USB ou repousser une mise à jour.",
       "vocabulary": [
         "Confidentialité",
@@ -55,9 +60,13 @@
         "Risque",
         "Incident",
         "RSSI",
-        "CERT/CSIRT",
+        "CERT",
+        "CCB",
         "Safeonweb",
-        "Journalisation"
+        "APD",
+        "CERT.be",
+        "RGPD",
+        "Journalisation / logs"
       ]
     },
     {
@@ -115,63 +124,292 @@
       ]
     },
     {
-      "id": "phishing-social",
-      "title": "Phishing et ingénierie sociale",
+      "id": "vie-privee-osint",
+      "title": "Vie privée, réseaux sociaux et OSINT",
       "themeIds": [
-        "phishing"
+        "osint"
       ],
-      "intro": "Le phishing et l’ingénierie sociale cherchent à pousser une personne à cliquer, ouvrir une pièce jointe, payer, installer un logiciel, scanner un QR code ou communiquer une information sensible.",
+      "intro": "L’OSINT consiste à rechercher et analyser des informations accessibles publiquement. Dans la formation, l’objectif est de comprendre ses propres traces numériques, pas d’enquêter sur d’autres personnes.",
       "definitions": [
-        "Phishing: tentative de tromperie visant à voler des informations ou provoquer une action risquée.",
-        "Spear phishing: phishing personnalisé grâce à des informations sur la cible.",
-        "Smishing: phishing par SMS.",
-        "Vishing: phishing par appel téléphonique.",
-        "Quishing: phishing utilisant un QR code.",
-        "Fraude au président: arnaque dans laquelle un faux responsable demande une action urgente et confidentielle.",
-        "Faux support: personne qui se fait passer pour l’assistance technique pour obtenir un accès ou un code."
+        "OSINT: Open Source Intelligence, recherche d’informations dans des sources ouvertes.",
+        "Trace numérique: information laissée ou publiée en ligne.",
+        "E-réputation: image que les traces publiques donnent d’une personne.",
+        "Recherche exacte: recherche entre guillemets pour trouver une expression précise.",
+        "Croisement d’informations: utilisation de plusieurs indices séparés pour obtenir une information plus précise.",
+        "Navigation privée: utile pour réduire la personnalisation locale des résultats, mais pas pour devenir anonyme."
       ],
       "keyPoints": [
-        "Le faux mail de compte bloqué met la pression avec une suspension rapide et un bouton de confirmation.",
-        "Le responsable pressé demande souvent une action inhabituelle: cartes cadeaux, paiement rapide ou envoi d’information sensible.",
-        "Le QR code suspect peut mener vers une fausse page de connexion ou de paiement.",
-        "Le changement d’IBAN doit toujours être vérifié par un canal indépendant connu à l’avance.",
-        "La pièce jointe inattendue peut contenir un malware ou un lien dangereux, même si son nom paraît professionnel.",
-        "Le faux appel du support peut demander un mot de passe, un code reçu par SMS ou l’installation d’un outil de prise en main à distance.",
-        "Un message crédible peut utiliser un logo, un ton professionnel, un nom réel ou peu de fautes.",
-        "Le bon raisonnement est toujours: risque principal, éléments d’alerte, action concrète."
+        "Les sources OSINT peuvent être moteurs de recherche, réseaux sociaux, anciens comptes, forums, annuaires, documents publics, photos, vidéos et commentaires.",
+        "L’exercice doit être fait uniquement sur soi-même, jamais sur un autre stagiaire, collègue ou proche.",
+        "Un nom peut mener à un ancien pseudo, un pseudo à un forum, une photo à un lieu, un profil professionnel à une entreprise.",
+        "Les guillemets permettent de chercher précisément un nom, un pseudo, une adresse email ou un numéro.",
+        "Les images peuvent révéler un domicile, une école, un travail, un badge, une plaque, un écran ou des habitudes.",
+        "Une même photo réutilisée sur plusieurs plateformes peut relier plusieurs comptes.",
+        "Il ne faut pas mettre ses vraies données personnelles exactes dans le rapport d’exercice."
       ],
       "goodPractices": [
-        "Ne pas cliquer sur le bouton d’un message urgent: ouvrir soi-même le site ou l’application officielle.",
-        "Vérifier l’adresse réelle de l’expéditeur et le domaine du lien.",
-        "Contacter l’organisation ou la personne par un canal indépendant déjà connu.",
-        "Ne jamais communiquer de mot de passe, de code MFA ou de code de prise en main à distance.",
-        "Signaler le message suspect selon la procédure.",
-        "Garder le message pour analyse si l’organisation le demande.",
-        "En cas de doute sur une pièce jointe, ne pas l’ouvrir et demander confirmation par un autre canal.",
-        "Pour un QR code, vérifier l’origine du support et l’adresse affichée avant toute saisie."
+        "Faire l’audit dans une fenêtre privée ou un navigateur non connecté pour voir ce qu’un visiteur extérieur verrait plus facilement.",
+        "Lister ses variantes d’identité: prénom nom, nom prénom, pseudo, email, ville, métier, école, ancienne entreprise.",
+        "Rechercher ses anciens pseudos et anciens comptes.",
+        "Observer les informations visibles sans être connecté.",
+        "Décrire les types d’informations retrouvées sans les recopier précisément.",
+        "Identifier comment les informations se croisent.",
+        "Réduire son exposition: supprimer, corriger, passer en privé, dissocier des pseudos, limiter les photos et vérifier les anciens comptes."
       ],
       "commonMistakes": [
-        "Répondre directement au message pour vérifier.",
-        "Cliquer “juste pour voir”.",
-        "Se fier uniquement au logo, au nom affiché ou au cadenas HTTPS.",
-        "Faire confiance à une demande parce qu’elle est polie et professionnelle.",
-        "Installer un outil demandé par téléphone sans vérification.",
-        "Traiter un changement d’IBAN comme une simple formalité administrative.",
-        "Penser qu’un QR code est plus sûr qu’un lien classique."
+        "Faire des recherches sur quelqu’un d’autre sans autorisation.",
+        "Partager des captures contenant des informations sensibles.",
+        "Mentionner dans le rapport une adresse complète, un numéro ou des données exactes.",
+        "Penser qu’une information ancienne n’a plus d’importance.",
+        "Réutiliser partout le même pseudo ou la même photo.",
+        "Confondre navigation privée et anonymat complet.",
+        "Oublier les anciennes publications et anciens comptes."
       ],
-      "scenario": "Vous recevez une facture inattendue avec une pièce jointe et un message pressant. Avant d’ouvrir, il faut se demander si le document était attendu, si l’expéditeur est cohérent, si le domaine est correct et si une vérification par un canal sûr est possible.",
-      "remember": "Urgence, secret, autorité, argent, pièce jointe inattendue, QR code non vérifié et demande de code sont des alertes fortes.",
-      "trap": "Un phishing peut être parfaitement écrit. L’absence de fautes ne suffit pas à le rendre légitime.",
+      "scenario": "Vous trouvez un ancien pseudo sur un vieux profil public. En cherchant ce pseudo entre guillemets, vous retrouvez un compte de forum avec une photo similaire et un centre d’intérêt. C’est exactement le principe du croisement OSINT.",
+      "remember": "Une information seule paraît parfois anodine; plusieurs informations croisées peuvent créer un profil précis.",
+      "trap": "Le but d’un audit OSINT personnel n’est pas de publier ce que vous trouvez, mais de comprendre ce qui est visible et de réduire l’exposition.",
+      "vocabulary": [
+        "OSINT",
+        "Source ouverte",
+        "Pseudo",
+        "Recherche exacte",
+        "Croisement",
+        "E-réputation",
+        "Navigation privée",
+        "Métadonnées",
+        "Ancien compte"
+      ]
+    },
+    {
+      "id": "phishing-canaux-numeriques",
+      "title": "Phishing et canaux numériques (Email, Web, QR)",
+      "themeIds": [
+        "phishing",
+        "web",
+        "social-engineering"
+      ],
+      "intro": "Le phishing utilise les canaux numériques (emails, sites web, SMS, QR codes) pour délivrer des messages frauduleux. Si la manipulation psychologique est le moteur (voir fiche Ingénierie sociale), la détection repose ici sur l'analyse technique des expéditeurs, des liens et des pièces jointes.",
+      "definitions": [
+        "Phishing: tentative de tromperie par canal numérique visant à voler des informations ou installer un malware.",
+        "Spear phishing: phishing ciblé et personnalisé grâce à des informations précises sur la victime.",
+        "Smishing: phishing par SMS (Short Message Service).",
+        "Quishing: phishing utilisant un QR code pour masquer l'adresse de destination.",
+        "Typosquatting: enregistrement d'un domaine très proche d'un domaine officiel (ex: microsofr.com).",
+        "Usurpation d'expéditeur: technique consistant à modifier le nom affiché ou l'adresse pour imiter un tiers de confiance."
+      ],
+      "keyPoints": [
+        "L'adresse réelle de l'expéditeur (et pas seulement le nom affiché) doit toujours être vérifiée.",
+        "Un lien peut afficher un texte rassurant mais rediriger vers un site frauduleux : il faut survoler le lien ou examiner l'URL réelle.",
+        "Le domaine principal se lit juste avant l'extension : dans 'login.microsoft.faux-site.com', le domaine est 'faux-site.com'.",
+        "Les QR codes masquent la destination finale : il faut vérifier l'aperçu de l'URL avant d'ouvrir.",
+        "Une pièce jointe inattendue, même avec un nom professionnel (facture.pdf, commande.zip), peut contenir un malware.",
+        "Le cadenas HTTPS prouve le chiffrement de la connexion, mais pas l'honnêteté du site : un site de phishing peut aussi avoir un cadenas.",
+        "Les fautes d'orthographe, les logos flous ou les génériques ('Cher client') sont des indices, mais les attaques modernes peuvent être parfaites techniquement."
+      ],
+      "goodPractices": [
+        "Examiner l'adresse email complète de l'expéditeur, pas seulement le nom affiché.",
+        "Survoler les liens (sans cliquer) pour voir la véritable destination.",
+        "Taper soi-même l'adresse du site officiel dans le navigateur plutôt que de cliquer sur un lien.",
+        "Pour un QR code, vérifier que l'URL affichée avant ouverture correspond bien au service attendu.",
+        "Ne jamais ouvrir une pièce jointe inattendue sans vérification par un autre canal (téléphone, chat interne).",
+        "Signaler le message suspect via le bouton dédié ou au service informatique.",
+        "Se méfier des demandes de saisie d'identifiants suite à un clic dans un email."
+      ],
+      "commonMistakes": [
+        "Faire confiance au nom affiché ('Direction', 'Support Microsoft') sans vérifier l'adresse réelle.",
+        "Cliquer sur un lien ou scanner un QR code par curiosité ou réflexe.",
+        "Penser qu'un site est sûr parce qu'il possède un cadenas HTTPS.",
+        "Ouvrir une pièce jointe parce que l'extension semble inoffensive (.pdf, .docx).",
+        "Répondre à l'email pour demander des explications à l'attaquant.",
+        "Confondre un sous-domaine trompeur avec le domaine officiel de l'entreprise."
+      ],
+      "scenario": "Vous recevez un email semblant venir de votre banque avec un lien 'Mettre à jour mon compte'. Le nom affiché est 'Ma Banque', mais l'adresse réelle est 'contact@ma-banque-securite.net'. Le domaine officiel étant 'mabanque.fr', il s'agit d'une tentative de phishing par typosquatting. Le bon réflexe est de ne pas cliquer et de se connecter directement via l'application ou le site officiel connu.",
+      "remember": "La technique ne ment pas : un domaine incohérent, une adresse étrange ou un lien masqué sont des preuves objectives de phishing, quelle que soit la qualité du message.",
+      "trap": "Un email techniquement parfait (bons logos, pas de fautes, lien HTTPS) reste un phishing si l'expéditeur ou la destination est illégitime.",
       "vocabulary": [
         "Phishing",
         "Spear phishing",
         "Smishing",
-        "Vishing",
         "Quishing",
+        "Typosquatting",
+        "Nom de domaine",
+        "URL",
+        "Pièce jointe",
+        "Usurpation d'identité"
+      ]
+    },
+    {
+      "id": "malwares-pieces-jointes",
+      "title": "Logiciels malveillants et pièces jointes",
+      "themeIds": [
+        "malware"
+      ],
+      "intro": "Les logiciels malveillants peuvent voler, espionner, chiffrer, se cacher, ouvrir un accès ou perturber un système. Ils arrivent souvent par liens, pièces jointes, logiciels piégés, faux supports ou supports externes.",
+      "definitions": [
+        "Virus: malware souvent associé à un fichier ou programme hôte.",
+        "Ver: malware capable de se propager automatiquement.",
+        "Cheval de Troie: programme qui paraît légitime mais cache une fonction malveillante.",
+        "Ransomware: malware qui chiffre ou bloque des données et demande une rançon.",
+        "Spyware: logiciel espion.",
+        "Keylogger: outil qui capture les frappes clavier.",
+        "Rootkit: composant qui cherche à dissimuler une présence malveillante.",
+        "Backdoor: accès caché maintenu par l’attaquant.",
+        "Botnet: ensemble de machines compromises contrôlées à distance."
+      ],
+      "keyPoints": [
+        "Une pièce jointe inattendue est un risque même si son nom paraît banal: facture, contrat, bon de commande, relance paiement.",
+        "Les documents Office, PDF, archives ZIP, scripts, faux PDF ou fichiers exécutables peuvent être dangereux.",
+        "Les macros dans les documents Office peuvent exécuter du code.",
+        "Un outil de prise en main à distance est légitime dans un cadre vérifié, mais dangereux s’il est demandé par un faux support.",
+        "Un ransomware peut chiffrer des fichiers locaux, partagés et parfois des sauvegardes accessibles.",
+        "L’antivirus aide mais ne détecte pas toutes les menaces, surtout les attaques récentes ou ciblées.",
+        "L’ouverture d’une pièce jointe suspecte suivie de fichiers illisibles doit être traitée comme un incident urgent."
+      ],
+      "goodPractices": [
+        "Vérifier le contexte d’une pièce jointe avant ouverture.",
+        "Ne pas activer les macros d’un document inattendu.",
+        "Ne pas installer un logiciel demandé par téléphone sans validation officielle.",
+        "Analyser un fichier suspect avec les outils autorisés.",
+        "Isoler rapidement la machine si des signes de ransomware apparaissent.",
+        "Prévenir le service compétent et conserver les messages ou fichiers suspects.",
+        "Ne pas payer immédiatement une rançon: suivre la procédure de crise et évaluer les sauvegardes."
+      ],
+      "commonMistakes": [
+        "Se fier uniquement à l’extension ou à l’icône du fichier.",
+        "Ouvrir une pièce jointe pour identifier l’expéditeur.",
+        "Activer les macros parce que le document le demande.",
+        "Redémarrer ou nettoyer soi-même une machine suspecte.",
+        "Payer rapidement en espérant régler le problème.",
+        "Supposer qu’une image ou un PDF est toujours inoffensif."
+      ],
+      "scenario": "Après ouverture d’une pièce jointe, plusieurs fichiers deviennent impossibles à ouvrir et un message exige une rançon. La priorité est d’arrêter les manipulations inutiles, isoler l’appareil selon la procédure, prévenir rapidement et préserver les preuves.",
+      "remember": "Un malware moderne peut combiner plusieurs fonctions: espionnage, vol de mots de passe, chiffrement et accès caché.",
+      "trap": "Un fichier dangereux peut avoir une icône rassurante ou être contenu dans une archive.",
+      "vocabulary": [
+        "Virus",
+        "Ver",
+        "Cheval de Troie",
+        "Ransomware",
+        "Spyware",
+        "Adware",
+        "Keylogger",
+        "Rootkit",
+        "Backdoor",
+        "Botnet",
+        "Macro",
+        "Quarantaine"
+      ]
+    },
+    {
+      "id": "ingenierie-sociale-global",
+      "title": "Ingénierie sociale : manipulations et réflexes",
+      "themeIds": [
+        "social-engineering",
+        "phishing",
+        "devices"
+      ],
+      "intro": "L'ingénierie sociale ne pirate pas la machine, elle pirate l'humain. Qu'il s'agisse d'un email, d'un appel téléphonique ou d'une personne à la porte, l'attaquant utilise la psychologie (urgence, autorité, politesse) pour vous faire contourner vous-même les règles de sécurité.",
+      "definitions": [
+        "Ingénierie sociale: art de manipuler une personne pour lui faire commettre une erreur de sécurité.",
+        "Pretexting: invention d'un scénario crédible (faux technicien, urgence, enquête) pour obtenir des informations ou un accès.",
+        "Talonnage (tailgating): fait de suivre une personne autorisée pour entrer dans un local sécurisé sans badge propre.",
+        "Piggybacking: variante du talonnage où la personne autorisée laisse volontairement entrer quelqu'un par courtoisie.",
+        "Clean desk policy: règle imposant de ne laisser aucun document ou support sensible visible sur un poste inoccupé.",
+        "Badge cloné: reproduction non autorisée d'un badge d'accès physique.",
+        "Vishing: ingénierie sociale par la voix (téléphone).",
+        "Urgence induite: création artificielle d'une pression temporelle pour empêcher la réflexion."
+      ],
+      "keyPoints": [
+        "Le canal change (email, téléphone, porte), mais la technique reste la même: contourner la vigilance par la manipulation.",
+        "L'urgence est le signal d'alerte numéro 1: un vrai responsable ne vous demandera jamais de contourner une procédure par précipitation.",
+        "La politesse est un levier puissant: le talonnage et le piggybacking exploitent ce réflexe pour franchir des accès physiques.",
+        "Un faux technicien, un livreur pressé ou un candidat perdu sont des scénarios classiques (pretexting) pour tester les accès.",
+        "Un poste non verrouillé ou un bureau encombré (violation de la clean desk policy) offre un accès immédiat à des informations sensibles.",
+        "Au téléphone, l'attaquant peut utiliser des bruitages, un ton autoritaire ou se faire passer pour un collègue connu.",
+        "La vérification doit toujours se faire par un canal indépendant: on ne rappelle pas le numéro donné par l'appelant, on utilise l'annuaire officiel.",
+        "Il est légitime et professionnel de demander une preuve d'identité ou de référer une demande inhabituelle à son responsable."
+      ],
+      "goodPractices": [
+        "Ralentir systématiquement face à une demande urgente ou émotionnelle.",
+        "Vérifier l'identité de son interlocuteur par un canal connu (annuaire interne, badge, rappel sur numéro officiel).",
+        "Refuser poliment mais fermement toute demande de contourner une procédure de sécurité.",
+        "Pour un accès physique: badger soi-même, ne pas tenir la porte aux inconnus (éviter le piggybacking), accompagner les visiteurs.",
+        "Appliquer la clean desk policy: ranger les documents sensibles et verrouiller son poste dès qu'on s'en éloigne.",
+        "Ne jamais communiquer de code MFA, mot de passe ou information sensible, même à un 'support technique'.",
+        "Signaler toute tentative de manipulation ou toute personne non identifiée dans une zone sensible."
+      ],
+      "commonMistakes": [
+        "Céder à la pression de l'urgence sans vérifier.",
+        "Avoir peur de paraître impoli en demandant une preuve d'identité ou en refusant de tenir une porte.",
+        "Penser qu'un ton professionnel ou une tenue de travail garantit l'honnêteté.",
+        "Laisser des documents sensibles en vue ou une session ouverte (violation de la clean desk policy).",
+        "Rappeler un numéro fourni par un appelant suspect au lieu de chercher le numéro officiel.",
+        "Croire que le talonnage est anodin ou que le badge d'un voisin suffit pour entrer."
+      ],
+      "scenario": "Un appel urgent prétend venir du PDG en déplacement, demandant un virement immédiat et secret. La voix semble stressée et autoritaire. Le bon réflexe: ne pas céder à l'urgence, raccrocher, et rappeler le PDG sur son numéro habituel enregistré dans l'annuaire de l'entreprise pour vérifier la demande.",
+      "remember": "La sécurité n'est pas impolie: vérifier une identité, refuser de tenir une porte ou appliquer la clean desk policy fait partie de votre rôle professionnel.",
+      "trap": "Plus l'attaquant est convaincant, poli ou autoritaire, plus il faut activer son esprit critique. Une tenue professionnelle ne prouve pas une identité légitime.",
+      "vocabulary": [
+        "Ingénierie sociale",
+        "Pretexting",
+        "Talonnage",
+        "Piggybacking",
+        "Clean desk policy",
+        "Badge cloné",
+        "Vishing",
+        "Urgence induite",
+        "Canal indépendant",
+        "Zone sensible"
+      ]
+    },
+    {
+      "id": "deepfake-ia-vishing",
+      "title": "Deepfake, voix clonée et fraude assistée par IA",
+      "themeIds": [
+        "phishing",
+        "data"
+      ],
+      "intro": "L'intelligence artificielle permet de générer des voix, des images ou des vidéos très réalistes. Cela renforce des attaques déjà connues comme la fraude au président ou le faux support, en les rendant plus difficiles à détecter à l'oreille ou à l'œil.",
+      "definitions": [
+        "Deepfake: contenu audio, image ou vidéo synthétique généré par IA pour imiter une personne réelle.",
+        "Clonage vocal: reproduction de la voix d'une personne à partir de quelques échantillons audio.",
+        "Fraude au président assistée par IA: variante de la fraude au président utilisant une voix ou une vidéo clonée du dirigeant.",
+        "Contenu synthétique: image, texte ou audio généré artificiellement, parfois indiscernable d'un contenu réel.",
+        "Détection de contenu IA: outils cherchant à estimer si un contenu a été généré artificiellement, avec une fiabilité imparfaite."
+      ],
+      "keyPoints": [
+        "Quelques secondes d'audio public (interview, vidéo, réseau social) peuvent suffire à entraîner un clonage vocal crédible.",
+        "Un appel imitant la voix d'un responsable peut demander un virement urgent ou une information confidentielle.",
+        "Une vidéo ou un appel visio deepfake peut renforcer artificiellement la confiance dans une demande frauduleuse.",
+        "Les mêmes signaux d'alerte que le phishing classique restent valables: urgence, secret, demande inhabituelle, pression financière.",
+        "Les outils de détection de contenu IA ne sont pas infaillibles et ne doivent pas être le seul rempart.",
+        "Une procédure de vérification indépendante (rappel sur un numéro connu, validation par un second canal) reste la protection la plus fiable."
+      ],
+      "goodPractices": [
+        "Vérifier toute demande sensible par un canal indépendant déjà connu, même si la voix ou l'image semble authentique.",
+        "Mettre en place une procédure de double validation pour les virements ou changements de coordonnées bancaires.",
+        "Se méfier d'une urgence inhabituelle même venant d'une voix ou d'un visage reconnaissable.",
+        "Limiter la quantité de contenu audio/vidéo personnel librement accessible en ligne lorsque c'est pertinent.",
+        "Sensibiliser les équipes financières et RH, souvent ciblées par ce type de fraude.",
+        "Signaler toute tentative suspecte, même si elle a échoué."
+      ],
+      "commonMistakes": [
+        "Croire qu'une voix familière suffit à authentifier une demande.",
+        "Penser que seuls les grands dirigeants ou grandes entreprises sont ciblés.",
+        "Ne pas avoir de procédure de vérification indépendante pour les demandes financières urgentes.",
+        "Faire une confiance totale à un outil de détection de deepfake.",
+        "Sous-estimer la quantité de voix ou d'images personnelles disponibles publiquement."
+      ],
+      "scenario": "Un appel vidéo semble montrer un directeur financier demandant en urgence un virement inhabituel vers un nouveau compte. La voix et l'image paraissent authentiques. Le bon réflexe est de raccrocher et de vérifier la demande par un canal indépendant déjà connu, comme un appel sur le numéro habituel du directeur, avant toute action.",
+      "remember": "Le deepfake ne change pas la nature du risque, il le rend seulement plus convaincant: les mêmes procédures de vérification indépendante s'appliquent.",
+      "trap": "Un appel ou une vidéo peut sembler parfaitement authentique tout en étant entièrement généré par IA.",
+      "vocabulary": [
+        "Deepfake",
+        "Clonage vocal",
+        "Contenu synthétique",
         "Fraude au président",
-        "Faux support",
-        "Changement d’IBAN",
-        "Canal indépendant"
+        "Double validation",
+        "Détection IA"
       ]
     },
     {
@@ -228,6 +466,59 @@
         "Have I Been Pwned",
         "Code de récupération",
         "Session ouverte"
+      ]
+    },
+    {
+      "id": "bases-cryptographie",
+      "title": "Bases de la cryptographie",
+      "themeIds": [
+        "data",
+        "network",
+        "cryptography"
+      ],
+      "intro": "Le chiffrement, le hachage et la signature électronique protègent la confidentialité, l'intégrité et l'authenticité des données, sans nécessiter de comprendre les mathématiques sous-jacentes.",
+      "definitions": [
+        "Chiffrement symétrique: méthode utilisant la même clé pour chiffrer et déchiffrer.",
+        "Chiffrement asymétrique: méthode utilisant une paire de clés, une publique et une privée.",
+        "Clé publique: clé partageable librement, utilisée pour chiffrer un message ou vérifier une signature.",
+        "Clé privée: clé secrète, jamais partagée, utilisée pour déchiffrer ou signer.",
+        "Hachage: transformation à sens unique produisant une empreinte de taille fixe (permettant une comparaison rapide et constante).",
+        "Signature électronique: mécanisme garantissant l'authenticité et l'intégrité d'un document ou message.",
+        "Salt (Sel): donnée aléatoire ajoutée avant le hachage pour protéger les mots de passe contre les attaques par tables précalculées."
+      ],
+      "keyPoints": [
+        "Le chiffrement symétrique est rapide mais pose la question du partage sécurisé de la clé.",
+        "Le chiffrement asymétrique résout ce problème: la clé publique peut circuler librement, seule la clé privée déchiffre.",
+        "Le hachage assure l'intégrité : une modification mineure du contenu change radicalement l'empreinte (effet avalanche).",
+        "HTTPS combine chiffrement symétrique et asymétrique pour sécuriser les connexions web.",
+        "Le hachage sert à vérifier qu'un fichier n'a pas été modifié, ou à stocker un mot de passe sans le conserver en clair.",
+        "Une signature électronique permet de vérifier qui a émis un document et qu'il n'a pas été altéré.",
+        "Perdre sa clé privée peut rendre des données définitivement inaccessibles; la divulguer peut compromettre toute la sécurité associée."
+      ],
+      "goodPractices": [
+        "Utiliser des outils de chiffrement reconnus plutôt que des solutions maison.",
+        "Protéger soigneusement toute clé privée, y compris par une phrase de passe.",
+        "Vérifier une signature électronique avant de faire confiance à un document sensible.",
+        "Utiliser le hachage pour vérifier l'intégrité d'un fichier téléchargé lorsque l'empreinte est fournie par la source officielle.",
+        "Ne jamais transmettre une clé privée par email ou message non sécurisé."
+      ],
+      "commonMistakes": [
+        "Confondre chiffrement et hachage.",
+        "Croire qu'un mot de passe haché est totalement irréversible dans tous les cas.",
+        "Partager une clé privée pour 'faciliter' un accès.",
+        "Penser que HTTPS chiffre uniquement grâce à une seule méthode.",
+        "Négliger la sauvegarde d'une clé privée ou d'une phrase de passe de chiffrement."
+      ],
+      "scenario": "Un fichier sensible est chiffré avec un outil comme VeraCrypt avant d'être transporté sur une clé USB. Si la clé USB est perdue, les données restent protégées tant que le mot de passe de chiffrement n'est pas compromis.",
+      "remember": "Chiffrement, hachage et signature répondent à des besoins différents: confidentialité, intégrité et authenticité.",
+      "trap": "Un mot de passe haché n'est pas magique: un mot de passe faible reste rapidement retrouvable même haché.",
+      "vocabulary": [
+        "Chiffrement symétrique",
+        "Chiffrement asymétrique",
+        "Clé publique",
+        "Clé privée",
+        "Hachage",
+        "Signature électronique"
       ]
     },
     {
@@ -337,72 +628,58 @@
         "Pare-feu",
         "Tunnel",
         "Filtrage",
-        "Journalisation",
+        "Journalisation / logs",
         "Wi-Fi public",
         "Partage de connexion",
         "Isolation réseau"
       ]
     },
     {
-      "id": "malwares-pieces-jointes",
-      "title": "Logiciels malveillants et pièces jointes",
+      "id": "attaques-reseau-techniques",
+      "title": "Attaques réseau de base: DDoS, MITM, sniffing",
       "themeIds": [
+        "network",
         "malware"
       ],
-      "intro": "Les logiciels malveillants peuvent voler, espionner, chiffrer, se cacher, ouvrir un accès ou perturber un système. Ils arrivent souvent par liens, pièces jointes, logiciels piégés, faux supports ou supports externes.",
+      "intro": "Certaines attaques ciblent directement le réseau plutôt qu'un utilisateur précis: saturation de service, interception de trafic ou écoute de communications non protégées.",
       "definitions": [
-        "Virus: malware souvent associé à un fichier ou programme hôte.",
-        "Ver: malware capable de se propager automatiquement.",
-        "Cheval de Troie: programme qui paraît légitime mais cache une fonction malveillante.",
-        "Ransomware: malware qui chiffre ou bloque des données et demande une rançon.",
-        "Spyware: logiciel espion.",
-        "Keylogger: outil qui capture les frappes clavier.",
-        "Rootkit: composant qui cherche à dissimuler une présence malveillante.",
-        "Backdoor: accès caché maintenu par l’attaquant.",
-        "Botnet: ensemble de machines compromises contrôlées à distance."
+        "DDoS (déni de service distribué): saturation volontaire d'un service par un grand nombre de requêtes, souvent depuis un botnet.",
+        "Man-in-the-Middle (MITM): interception du trafic entre deux parties qui pensent communiquer directement.",
+        "Sniffing: écoute passive du trafic réseau pour capturer des informations.",
+        "ARP spoofing: technique locale de MITM exploitant le protocole ARP sur un réseau.",
+        "Point d'accès Wi-Fi malveillant: faux réseau Wi-Fi imitant un réseau légitime pour intercepter le trafic des victimes."
       ],
       "keyPoints": [
-        "Une pièce jointe inattendue est un risque même si son nom paraît banal: facture, contrat, bon de commande, relance paiement.",
-        "Les documents Office, PDF, archives ZIP, scripts, faux PDF ou fichiers exécutables peuvent être dangereux.",
-        "Les macros dans les documents Office peuvent exécuter du code.",
-        "Un outil de prise en main à distance est légitime dans un cadre vérifié, mais dangereux s’il est demandé par un faux support.",
-        "Un ransomware peut chiffrer des fichiers locaux, partagés et parfois des sauvegardes accessibles.",
-        "L’antivirus aide mais ne détecte pas toutes les menaces, surtout les attaques récentes ou ciblées.",
-        "L’ouverture d’une pièce jointe suspecte suivie de fichiers illisibles doit être traitée comme un incident urgent."
+        "Un DDoS vise la disponibilité d'un service, pas nécessairement le vol de données.",
+        "Une attaque MITM peut intercepter des identifiants ou des données si le trafic n'est pas chiffré.",
+        "HTTPS limite fortement l'efficacité du MITM et du sniffing sur le contenu échangé.",
+        "Un faux point d'accès Wi-Fi peut porter un nom très proche d'un réseau légitime.",
+        "Les réseaux publics non chiffrés sont plus exposés au sniffing que les réseaux protégés par un mot de passe robuste.",
+        "Ces attaques réseau ciblent souvent l'infrastructure plutôt qu'un individu précis, mais les utilisateurs en subissent les conséquences."
       ],
       "goodPractices": [
-        "Vérifier le contexte d’une pièce jointe avant ouverture.",
-        "Ne pas activer les macros d’un document inattendu.",
-        "Ne pas installer un logiciel demandé par téléphone sans validation officielle.",
-        "Analyser un fichier suspect avec les outils autorisés.",
-        "Isoler rapidement la machine si des signes de ransomware apparaissent.",
-        "Prévenir le service compétent et conserver les messages ou fichiers suspects.",
-        "Ne pas payer immédiatement une rançon: suivre la procédure de crise et évaluer les sauvegardes."
+        "Toujours vérifier la présence d'HTTPS sur les sites sensibles, en plus des autres vérifications déjà vues.",
+        "Éviter les échanges sensibles sur un Wi-Fi public non maîtrisé.",
+        "Utiliser un VPN professionnel sur un réseau inconnu ou peu fiable.",
+        "Signaler un service devenu subitement inaccessible ou anormalement lent, qui peut être le signe d'un DDoS.",
+        "Vérifier le nom exact d'un réseau Wi-Fi auprès de l'établissement avant de s'y connecter."
       ],
       "commonMistakes": [
-        "Se fier uniquement à l’extension ou à l’icône du fichier.",
-        "Ouvrir une pièce jointe pour identifier l’expéditeur.",
-        "Activer les macros parce que le document le demande.",
-        "Redémarrer ou nettoyer soi-même une machine suspecte.",
-        "Payer rapidement en espérant régler le problème.",
-        "Supposer qu’une image ou un PDF est toujours inoffensif."
+        "Croire qu'un DDoS implique nécessairement un vol de données.",
+        "Se connecter automatiquement à un Wi-Fi public au nom familier sans vérification.",
+        "Penser que le sniffing nécessite un accès physique complexe alors qu'un simple réseau partagé peut suffire.",
+        "Négliger un service anormalement lent en pensant à un simple problème technique.",
+        "Considérer le MITM comme un risque uniquement théorique."
       ],
-      "scenario": "Après ouverture d’une pièce jointe, plusieurs fichiers deviennent impossibles à ouvrir et un message exige une rançon. La priorité est d’arrêter les manipulations inutiles, isoler l’appareil selon la procédure, prévenir rapidement et préserver les preuves.",
-      "remember": "Un malware moderne peut combiner plusieurs fonctions: espionnage, vol de mots de passe, chiffrement et accès caché.",
-      "trap": "Un fichier dangereux peut avoir une icône rassurante ou être contenu dans une archive.",
+      "scenario": "Dans un café, un réseau Wi-Fi nommé presque comme celui de l'établissement est disponible. S'y connecter sans vérification pourrait exposer le trafic à un point d'accès malveillant. Le bon réflexe est de vérifier le nom exact du réseau auprès du personnel avant de s'y connecter.",
+      "remember": "Ces attaques exploitent la confiance accordée au réseau lui-même: vérifier et chiffrer restent les meilleures protections.",
+      "trap": "Un réseau Wi-Fi au nom rassurant n'est pas nécessairement le réseau légitime de l'établissement.",
       "vocabulary": [
-        "Virus",
-        "Ver",
-        "Cheval de Troie",
-        "Ransomware",
-        "Spyware",
-        "Adware",
-        "Keylogger",
-        "Rootkit",
-        "Backdoor",
-        "Botnet",
-        "Macro",
-        "Quarantaine"
+        "DDoS",
+        "Man-in-the-Middle",
+        "Sniffing",
+        "ARP spoofing",
+        "Point d'accès malveillant"
       ]
     },
     {
@@ -459,6 +736,105 @@
         "Antivirus",
         "Pare-feu",
         "Effacement à distance"
+      ]
+    },
+    {
+      "id": "securite-mobile",
+      "title": "Sécurité des smartphones et applications mobiles",
+      "themeIds": [
+        "devices"
+      ],
+      "intro": "Le smartphone concentre messagerie, comptes bancaires, photos, MFA et données professionnelles. Sa sécurité dépend autant du système que des applications installées et des permissions accordées.",
+      "definitions": [
+        "Permission d'application: autorisation accordée à une application pour accéder à une fonction ou une donnée du téléphone (contacts, localisation, micro, caméra).",
+        "Store officiel: plateforme de distribution d'applications validée par le fabricant du système (Google Play, App Store).",
+        "Root / jailbreak: modification du système qui supprime certaines protections de sécurité natives.",
+        "Application tierce: application installée en dehors du store officiel.",
+        "Sideloading: installation manuelle d'une application hors magasin officiel."
+      ],
+      "keyPoints": [
+        "Une application peut demander bien plus de permissions que nécessaire à son fonctionnement réel.",
+        "Installer une application en dehors du store officiel augmente fortement le risque de malware.",
+        "Le root ou le jailbreak désactive des mécanismes de sécurité intégrés au système.",
+        "Une application professionnelle peut être gérée par un MDM, avec des règles de sécurité imposées.",
+        "Les mises à jour du système et des applications corrigent régulièrement des vulnérabilités connues.",
+        "Un smartphone perdu ou volé sans verrouillage donne accès direct aux comptes, messages et applications ouvertes."
+      ],
+      "goodPractices": [
+        "N'installer des applications que depuis les stores officiels.",
+        "Vérifier les permissions demandées avant et après installation, et les limiter au nécessaire.",
+        "Maintenir le système et les applications à jour.",
+        "Éviter le root ou le jailbreak sur un appareil utilisé pour des usages professionnels ou sensibles.",
+        "Activer un verrouillage fort (code, biométrie) et le chiffrement du stockage.",
+        "Vérifier régulièrement la liste des applications installées et désinstaller celles qui ne sont plus utilisées."
+      ],
+      "commonMistakes": [
+        "Accorder toutes les permissions demandées sans réflexion.",
+        "Installer une application via un lien direct ou un fichier APK non officiel.",
+        "Rooter ou jailbreaker un appareil professionnel.",
+        "Laisser un smartphone déverrouillé ou avec un code trivial.",
+        "Ignorer les mises à jour système pendant de longues périodes."
+      ],
+      "scenario": "Une application de lampe torche demande l'accès aux contacts, à la localisation et au microphone. Ces permissions ne sont pas nécessaires à sa fonction. Le bon réflexe est de refuser les permissions non pertinentes ou de choisir une autre application plus respectueuse.",
+      "remember": "Un smartphone bien protégé combine store officiel, permissions limitées, mises à jour régulières et verrouillage robuste.",
+      "trap": "Une application peut sembler utile et gratuite tout en collectant bien plus de données que nécessaire.",
+      "vocabulary": [
+        "Permission",
+        "Store officiel",
+        "Root",
+        "Jailbreak",
+        "Sideloading",
+        "MDM"
+      ]
+    },
+    {
+      "id": "iot-objets-connectes",
+      "title": "Objets connectés (IoT) et domotique",
+      "themeIds": [
+        "devices",
+        "network"
+      ],
+      "intro": "Caméras, assistants vocaux, montres connectées, box domotique ou imprimantes réseau élargissent la surface d'attaque d'un domicile ou d'une organisation. Beaucoup de ces objets sont mal sécurisés par défaut.",
+      "definitions": [
+        "IoT (Internet of Things): objets physiques connectés à Internet ou à un réseau local, capables de collecter ou d'échanger des données.",
+        "Identifiants par défaut: nom d'utilisateur et mot de passe préconfigurés en usine, souvent identiques pour tout un modèle d'appareil.",
+        "Firmware: logiciel embarqué qui fait fonctionner un objet connecté.",
+        "Réseau invité (VLAN/Wi-Fi séparé): réseau isolé permettant de séparer les objets connectés du réseau principal.",
+        "Botnet IoT: réseau d'objets connectés compromis utilisés à l'insu de leurs propriétaires pour mener des attaques."
+      ],
+      "keyPoints": [
+        "De nombreux objets connectés conservent leurs identifiants par défaut si l'utilisateur ne les change pas.",
+        "Une caméra ou un assistant vocal mal configuré peut exposer des flux audio ou vidéo à des tiers.",
+        "Le firmware d'un objet connecté est rarement mis à jour spontanément par l'utilisateur.",
+        "Des objets connectés compromis peuvent servir à espionner un domicile ou à attaquer d'autres cibles via un botnet.",
+        "Séparer les objets connectés du réseau principal limite les conséquences d'une compromission.",
+        "En entreprise, des imprimantes, caméras ou capteurs connectés mal gérés peuvent devenir des points d'entrée sur le réseau interne."
+      ],
+      "goodPractices": [
+        "Changer systématiquement les identifiants par défaut de tout objet connecté.",
+        "Mettre à jour le firmware dès que des correctifs sont disponibles.",
+        "Isoler les objets connectés sur un réseau Wi-Fi séparé du réseau principal quand c'est possible.",
+        "Désactiver les fonctionnalités non utilisées, notamment l'accès distant si inutile.",
+        "Vérifier les réglages de confidentialité des caméras et assistants vocaux.",
+        "Recenser les objets connectés présents dans un environnement professionnel."
+      ],
+      "commonMistakes": [
+        "Laisser le mot de passe usine d'une caméra ou d'une box domotique.",
+        "Ignorer les mises à jour de firmware proposées par le fabricant.",
+        "Connecter tous les objets sur le même réseau que les ordinateurs professionnels.",
+        "Installer un objet connecté sans consulter les réglages de confidentialité.",
+        "Oublier de désinstaller ou déconnecter un objet connecté qui n'est plus utilisé."
+      ],
+      "scenario": "Une caméra de surveillance domestique est installée avec le mot de passe fourni par défaut. Sans changement de ce mot de passe, un attaquant scannant des appareils exposés sur Internet pourrait potentiellement y accéder. Le bon réflexe est de changer immédiatement les identifiants et de vérifier les réglages d'accès distant.",
+      "remember": "Un objet connecté reste un ordinateur miniature: il doit être mis à jour, protégé par un mot de passe unique et idéalement isolé du réseau principal.",
+      "trap": "Un objet connecté 'prêt à l'emploi' n'est pas sécurisé par défaut: c'est souvent l'inverse.",
+      "vocabulary": [
+        "IoT",
+        "Identifiants par défaut",
+        "Firmware",
+        "Réseau invité",
+        "Botnet IoT",
+        "Isolation réseau"
       ]
     },
     {
@@ -574,60 +950,58 @@
       ]
     },
     {
-      "id": "vie-privee-osint",
-      "title": "Vie privée, réseaux sociaux et OSINT",
+      "id": "ia-confidentialite",
+      "title": "Intelligence artificielle et confidentialité",
       "themeIds": [
-        "osint"
+        "data"
       ],
-      "intro": "L’OSINT consiste à rechercher et analyser des informations accessibles publiquement. Dans la formation, l’objectif est de comprendre ses propres traces numériques, pas d’enquêter sur d’autres personnes.",
+      "intro": "Les outils d’intelligence artificielle peuvent aider à rédiger, reformuler ou analyser, mais ils posent un risque si l’on y copie des données personnelles, professionnelles, confidentielles ou inutiles.",
       "definitions": [
-        "OSINT: Open Source Intelligence, recherche d’informations dans des sources ouvertes.",
-        "Trace numérique: information laissée ou publiée en ligne.",
-        "E-réputation: image que les traces publiques donnent d’une personne.",
-        "Recherche exacte: recherche entre guillemets pour trouver une expression précise.",
-        "Croisement d’informations: utilisation de plusieurs indices séparés pour obtenir une information plus précise.",
-        "Navigation privée: utile pour réduire la personnalisation locale des résultats, mais pas pour devenir anonyme."
+        "Anonymisation: transformation qui empêche raisonnablement de réidentifier une personne.",
+        "Pseudonymisation: remplacement d’identifiants directs par des codes, sans supprimer tout risque.",
+        "Minimisation: retrait des informations inutiles avant utilisation.",
+        "Donnée client: information liée à une personne ou organisation cliente.",
+        "Règle interne: consigne de l’organisation sur les outils IA autorisés ou interdits.",
+        "Validation humaine: contrôle de la réponse produite avant usage."
       ],
       "keyPoints": [
-        "Les sources OSINT peuvent être moteurs de recherche, réseaux sociaux, anciens comptes, forums, annuaires, documents publics, photos, vidéos et commentaires.",
-        "L’exercice doit être fait uniquement sur soi-même, jamais sur un autre stagiaire, collègue ou proche.",
-        "Un nom peut mener à un ancien pseudo, un pseudo à un forum, une photo à un lieu, un profil professionnel à une entreprise.",
-        "Les guillemets permettent de chercher précisément un nom, un pseudo, une adresse email ou un numéro.",
-        "Les images peuvent révéler un domicile, une école, un travail, un badge, une plaque, un écran ou des habitudes.",
-        "Une même photo réutilisée sur plusieurs plateformes peut relier plusieurs comptes.",
-        "Il ne faut pas mettre ses vraies données personnelles exactes dans le rapport d’exercice."
+        "On ne peut pas transmettre n’importe quelle information à un outil d’IA.",
+        "Une réclamation client peut contenir nom, adresse, email, numéro de commande et détails sensibles.",
+        "Certaines données peuvent être supprimées, remplacées par des variables ou généralisées sans nuire à la demande.",
+        "Les outils d’IA peuvent conserver, traiter ou réutiliser des informations selon leurs conditions.",
+        "Les règles de l’organisation déterminent quels outils sont autorisés et pour quels types de données.",
+        "Il ne faut jamais copier d’identifiants, mots de passe, secrets professionnels ou données médicales dans un outil non prévu pour cela.",
+        "Une réponse IA peut être fausse, incomplète ou inadaptée: elle doit être relue."
       ],
       "goodPractices": [
-        "Faire l’audit dans une fenêtre privée ou un navigateur non connecté pour voir ce qu’un visiteur extérieur verrait plus facilement.",
-        "Lister ses variantes d’identité: prénom nom, nom prénom, pseudo, email, ville, métier, école, ancienne entreprise.",
-        "Rechercher ses anciens pseudos et anciens comptes.",
-        "Observer les informations visibles sans être connecté.",
-        "Décrire les types d’informations retrouvées sans les recopier précisément.",
-        "Identifier comment les informations se croisent.",
-        "Réduire son exposition: supprimer, corriger, passer en privé, dissocier des pseudos, limiter les photos et vérifier les anciens comptes."
+        "Supprimer les noms, emails, adresses, numéros de commande et détails non nécessaires.",
+        "Utiliser des exemples fictifs ou des variables: Client A, commande X, date approximative.",
+        "Vérifier les règles internes avant d’utiliser un outil IA.",
+        "Limiter la demande à ce qui est strictement utile.",
+        "Relire et corriger la réponse générée.",
+        "Ne pas transmettre de secret professionnel, d’identifiants ou de données sensibles.",
+        "Choisir un outil validé par l’organisation si le contenu est professionnel."
       ],
       "commonMistakes": [
-        "Faire des recherches sur quelqu’un d’autre sans autorisation.",
-        "Partager des captures contenant des informations sensibles.",
-        "Mentionner dans le rapport une adresse complète, un numéro ou des données exactes.",
-        "Penser qu’une information ancienne n’a plus d’importance.",
-        "Réutiliser partout le même pseudo ou la même photo.",
-        "Confondre navigation privée et anonymat complet.",
-        "Oublier les anciennes publications et anciens comptes."
+        "Coller une réclamation client complète pour obtenir une réponse plus précise.",
+        "Penser que pseudonymiser un nom suffit toujours.",
+        "Oublier qu’un numéro de commande ou un contexte précis peut réidentifier une personne.",
+        "Copier un fichier interne entier dans une IA publique.",
+        "Utiliser un outil non autorisé parce qu’il est pratique.",
+        "Faire confiance à la réponse sans vérification humaine."
       ],
-      "scenario": "Vous trouvez un ancien pseudo sur un vieux profil public. En cherchant ce pseudo entre guillemets, vous retrouvez un compte de forum avec une photo similaire et un centre d’intérêt. C’est exactement le principe du croisement OSINT.",
-      "remember": "Une information seule paraît parfois anodine; plusieurs informations croisées peuvent créer un profil précis.",
-      "trap": "Le but d’un audit OSINT personnel n’est pas de publier ce que vous trouvez, mais de comprendre ce qui est visible et de réduire l’exposition.",
+      "scenario": "Un employé veut rédiger une réponse à un client. Au lieu de copier le nom, l’adresse, l’email, le numéro de commande et tout le détail de la réclamation, il peut résumer le problème avec des données fictives ou anonymisées et vérifier la réponse avant de l’envoyer.",
+      "remember": "Moins l’IA reçoit de données réelles, plus le risque de fuite ou de réutilisation non maîtrisée diminue.",
+      "trap": "Une donnée apparemment anodine, comme un numéro de commande ou une combinaison de détails, peut suffire à réidentifier une personne.",
       "vocabulary": [
-        "OSINT",
-        "Source ouverte",
-        "Pseudo",
-        "Recherche exacte",
-        "Croisement",
-        "E-réputation",
-        "Navigation privée",
-        "Métadonnées",
-        "Ancien compte"
+        "IA générative",
+        "Anonymisation",
+        "Pseudonymisation",
+        "Minimisation",
+        "Données client",
+        "Secret professionnel",
+        "Outil autorisé",
+        "Validation humaine"
       ]
     },
     {
@@ -769,61 +1143,6 @@
       ]
     },
     {
-      "id": "ia-confidentialite",
-      "title": "Intelligence artificielle et confidentialité",
-      "themeIds": [
-        "data"
-      ],
-      "intro": "Les outils d’intelligence artificielle peuvent aider à rédiger, reformuler ou analyser, mais ils posent un risque si l’on y copie des données personnelles, professionnelles, confidentielles ou inutiles.",
-      "definitions": [
-        "Anonymisation: transformation qui empêche raisonnablement de réidentifier une personne.",
-        "Pseudonymisation: remplacement d’identifiants directs par des codes, sans supprimer tout risque.",
-        "Minimisation: retrait des informations inutiles avant utilisation.",
-        "Donnée client: information liée à une personne ou organisation cliente.",
-        "Règle interne: consigne de l’organisation sur les outils IA autorisés ou interdits.",
-        "Validation humaine: contrôle de la réponse produite avant usage."
-      ],
-      "keyPoints": [
-        "On ne peut pas transmettre n’importe quelle information à un outil d’IA.",
-        "Une réclamation client peut contenir nom, adresse, email, numéro de commande et détails sensibles.",
-        "Certaines données peuvent être supprimées, remplacées par des variables ou généralisées sans nuire à la demande.",
-        "Les outils d’IA peuvent conserver, traiter ou réutiliser des informations selon leurs conditions.",
-        "Les règles de l’organisation déterminent quels outils sont autorisés et pour quels types de données.",
-        "Il ne faut jamais copier d’identifiants, mots de passe, secrets professionnels ou données médicales dans un outil non prévu pour cela.",
-        "Une réponse IA peut être fausse, incomplète ou inadaptée: elle doit être relue."
-      ],
-      "goodPractices": [
-        "Supprimer les noms, emails, adresses, numéros de commande et détails non nécessaires.",
-        "Utiliser des exemples fictifs ou des variables: Client A, commande X, date approximative.",
-        "Vérifier les règles internes avant d’utiliser un outil IA.",
-        "Limiter la demande à ce qui est strictement utile.",
-        "Relire et corriger la réponse générée.",
-        "Ne pas transmettre de secret professionnel, d’identifiants ou de données sensibles.",
-        "Choisir un outil validé par l’organisation si le contenu est professionnel."
-      ],
-      "commonMistakes": [
-        "Coller une réclamation client complète pour obtenir une réponse plus précise.",
-        "Penser que pseudonymiser un nom suffit toujours.",
-        "Oublier qu’un numéro de commande ou un contexte précis peut réidentifier une personne.",
-        "Copier un fichier interne entier dans une IA publique.",
-        "Utiliser un outil non autorisé parce qu’il est pratique.",
-        "Faire confiance à la réponse sans vérification humaine."
-      ],
-      "scenario": "Un employé veut rédiger une réponse à un client. Au lieu de copier le nom, l’adresse, l’email, le numéro de commande et tout le détail de la réclamation, il peut résumer le problème avec des données fictives ou anonymisées et vérifier la réponse avant de l’envoyer.",
-      "remember": "Moins l’IA reçoit de données réelles, plus le risque de fuite ou de réutilisation non maîtrisée diminue.",
-      "trap": "Une donnée apparemment anodine, comme un numéro de commande ou une combinaison de détails, peut suffire à réidentifier une personne.",
-      "vocabulary": [
-        "IA générative",
-        "Anonymisation",
-        "Pseudonymisation",
-        "Minimisation",
-        "Données client",
-        "Secret professionnel",
-        "Outil autorisé",
-        "Validation humaine"
-      ]
-    },
-    {
       "id": "incidents-violations",
       "title": "Réaction aux incidents et violations de données",
       "themeIds": [
@@ -940,306 +1259,6 @@
         "Gestion des risques",
         "Politique de sécurité",
         "Amélioration continue"
-      ]
-    },
-    {
-      "id": "ingenierie-sociale-physique",
-      "title": "Ingénierie sociale physique et sécurité des locaux",
-      "themeIds": [
-        "devices",
-        "network"
-      ],
-      "intro": "Une attaque ne passe pas toujours par un écran. Talonnage, faux intervenant, badge oublié ou bureau mal rangé peuvent suffire à obtenir un accès physique à des locaux, du matériel ou des documents sensibles.",
-      "definitions": [
-        "Talonnage (tailgating): fait de suivre une personne autorisée pour entrer dans un local sécurisé sans badge propre.",
-        "Piggybacking: variante où la personne autorisée laisse volontairement entrer quelqu'un par courtoisie.",
-        "Clean desk policy: règle imposant de ne laisser aucun document ou support sensible visible sur un poste inoccupé.",
-        "Badge cloné: reproduction non autorisée d'un badge d'accès physique.",
-        "Ingénierie sociale physique: manipulation visant un accès matériel plutôt que numérique."
-      ],
-      "keyPoints": [
-        "Un faux livreur, technicien ou candidat peut se présenter avec assurance pour franchir un accueil ou un sas.",
-        "Tenir une porte à quelqu'un qui a les mains chargées est un réflexe poli mais peut être exploité.",
-        "Un poste de travail déverrouillé et sans surveillance donne accès à la messagerie, aux fichiers et parfois à des sessions déjà ouvertes.",
-        "Des documents imprimés laissés sur une imprimante partagée peuvent contenir des informations confidentielles.",
-        "Un visiteur non accompagné peut photographier un écran, brancher une clé USB ou observer un mot de passe tapé au clavier.",
-        "Les zones à risque incluent les salles serveurs, les accueils, les parkings et les espaces de coworking partagés."
-      ],
-      "goodPractices": [
-        "Toujours badger soi-même, même si quelqu'un tient la porte.",
-        "Demander poliment l'identité et le motif de visite d'une personne inconnue dans une zone sensible.",
-        "Verrouiller son poste dès qu'on s'en éloigne, même quelques minutes.",
-        "Ranger les documents sensibles et récupérer immédiatement les impressions.",
-        "Accompagner systématiquement les visiteurs et prestataires externes.",
-        "Signaler toute personne non identifiée dans une zone réservée."
-      ],
-      "commonMistakes": [
-        "Penser que la politesse doit toujours primer sur la vérification d'identité.",
-        "Laisser un badge visible ou accessible sans surveillance.",
-        "Considérer le talonnage comme un cas d'école qui n'arrive jamais en pratique.",
-        "Laisser une session ouverte pendant une pause ou une réunion.",
-        "Ne pas signaler un visiteur seul dans un couloir sécurisé par peur de déranger."
-      ],
-      "scenario": "Une personne en tenue de technicien, les bras chargés de matériel, demande à quelqu'un de lui tenir la porte d'un local sécurisé. Le bon réflexe est de vérifier son identité et son motif de visite avant d'ouvrir, ou de l'orienter vers l'accueil, plutôt que de céder au réflexe poli.",
-      "remember": "La sécurité physique et la sécurité numérique se complètent: un accès physique non contrôlé peut rendre inutiles les meilleures protections informatiques.",
-      "trap": "Une tenue professionnelle, un badge visible de loin ou une attitude assurée ne prouvent pas une identité légitime.",
-      "vocabulary": [
-        "Talonnage",
-        "Piggybacking",
-        "Clean desk policy",
-        "Badge cloné",
-        "Zone sensible",
-        "Accès physique"
-      ]
-    },
-    {
-      "id": "deepfake-ia-vishing",
-      "title": "Deepfake, voix clonée et fraude assistée par IA",
-      "themeIds": [
-        "phishing",
-        "data"
-      ],
-      "intro": "L'intelligence artificielle permet de générer des voix, des images ou des vidéos très réalistes. Cela renforce des attaques déjà connues comme la fraude au président ou le faux support, en les rendant plus difficiles à détecter à l'oreille ou à l'œil.",
-      "definitions": [
-        "Deepfake: contenu audio, image ou vidéo synthétique généré par IA pour imiter une personne réelle.",
-        "Clonage vocal: reproduction de la voix d'une personne à partir de quelques échantillons audio.",
-        "Fraude au président assistée par IA: variante de la fraude au président utilisant une voix ou une vidéo clonée du dirigeant.",
-        "Contenu synthétique: image, texte ou audio généré artificiellement, parfois indiscernable d'un contenu réel.",
-        "Détection de contenu IA: outils cherchant à estimer si un contenu a été généré artificiellement, avec une fiabilité imparfaite."
-      ],
-      "keyPoints": [
-        "Quelques secondes d'audio public (interview, vidéo, réseau social) peuvent suffire à entraîner un clonage vocal crédible.",
-        "Un appel imitant la voix d'un responsable peut demander un virement urgent ou une information confidentielle.",
-        "Une vidéo ou un appel visio deepfake peut renforcer artificiellement la confiance dans une demande frauduleuse.",
-        "Les mêmes signaux d'alerte que le phishing classique restent valables: urgence, secret, demande inhabituelle, pression financière.",
-        "Les outils de détection de contenu IA ne sont pas infaillibles et ne doivent pas être le seul rempart.",
-        "Une procédure de vérification indépendante (rappel sur un numéro connu, validation par un second canal) reste la protection la plus fiable."
-      ],
-      "goodPractices": [
-        "Vérifier toute demande sensible par un canal indépendant déjà connu, même si la voix ou l'image semble authentique.",
-        "Mettre en place une procédure de double validation pour les virements ou changements de coordonnées bancaires.",
-        "Se méfier d'une urgence inhabituelle même venant d'une voix ou d'un visage reconnaissable.",
-        "Limiter la quantité de contenu audio/vidéo personnel librement accessible en ligne lorsque c'est pertinent.",
-        "Sensibiliser les équipes financières et RH, souvent ciblées par ce type de fraude.",
-        "Signaler toute tentative suspecte, même si elle a échoué."
-      ],
-      "commonMistakes": [
-        "Croire qu'une voix familière suffit à authentifier une demande.",
-        "Penser que seuls les grands dirigeants ou grandes entreprises sont ciblés.",
-        "Ne pas avoir de procédure de vérification indépendante pour les demandes financières urgentes.",
-        "Faire une confiance totale à un outil de détection de deepfake.",
-        "Sous-estimer la quantité de voix ou d'images personnelles disponibles publiquement."
-      ],
-      "scenario": "Un appel vidéo semble montrer un directeur financier demandant en urgence un virement inhabituel vers un nouveau compte. La voix et l'image paraissent authentiques. Le bon réflexe est de raccrocher et de vérifier la demande par un canal indépendant déjà connu, comme un appel sur le numéro habituel du directeur, avant toute action.",
-      "remember": "Le deepfake ne change pas la nature du risque, il le rend seulement plus convaincant: les mêmes procédures de vérification indépendante s'appliquent.",
-      "trap": "Un appel ou une vidéo peut sembler parfaitement authentique tout en étant entièrement généré par IA.",
-      "vocabulary": [
-        "Deepfake",
-        "Clonage vocal",
-        "Contenu synthétique",
-        "Fraude au président",
-        "Double validation",
-        "Détection IA"
-      ]
-    },
-    {
-      "id": "iot-objets-connectes",
-      "title": "Objets connectés (IoT) et domotique",
-      "themeIds": [
-        "devices",
-        "network"
-      ],
-      "intro": "Caméras, assistants vocaux, montres connectées, box domotique ou imprimantes réseau élargissent la surface d'attaque d'un domicile ou d'une organisation. Beaucoup de ces objets sont mal sécurisés par défaut.",
-      "definitions": [
-        "IoT (Internet of Things): objets physiques connectés à Internet ou à un réseau local, capables de collecter ou d'échanger des données.",
-        "Identifiants par défaut: nom d'utilisateur et mot de passe préconfigurés en usine, souvent identiques pour tout un modèle d'appareil.",
-        "Firmware: logiciel embarqué qui fait fonctionner un objet connecté.",
-        "Réseau invité (VLAN/Wi-Fi séparé): réseau isolé permettant de séparer les objets connectés du réseau principal.",
-        "Botnet IoT: réseau d'objets connectés compromis utilisés à l'insu de leurs propriétaires pour mener des attaques."
-      ],
-      "keyPoints": [
-        "De nombreux objets connectés conservent leurs identifiants par défaut si l'utilisateur ne les change pas.",
-        "Une caméra ou un assistant vocal mal configuré peut exposer des flux audio ou vidéo à des tiers.",
-        "Le firmware d'un objet connecté est rarement mis à jour spontanément par l'utilisateur.",
-        "Des objets connectés compromis peuvent servir à espionner un domicile ou à attaquer d'autres cibles via un botnet.",
-        "Séparer les objets connectés du réseau principal limite les conséquences d'une compromission.",
-        "En entreprise, des imprimantes, caméras ou capteurs connectés mal gérés peuvent devenir des points d'entrée sur le réseau interne."
-      ],
-      "goodPractices": [
-        "Changer systématiquement les identifiants par défaut de tout objet connecté.",
-        "Mettre à jour le firmware dès que des correctifs sont disponibles.",
-        "Isoler les objets connectés sur un réseau Wi-Fi séparé du réseau principal quand c'est possible.",
-        "Désactiver les fonctionnalités non utilisées, notamment l'accès distant si inutile.",
-        "Vérifier les réglages de confidentialité des caméras et assistants vocaux.",
-        "Recenser les objets connectés présents dans un environnement professionnel."
-      ],
-      "commonMistakes": [
-        "Laisser le mot de passe usine d'une caméra ou d'une box domotique.",
-        "Ignorer les mises à jour de firmware proposées par le fabricant.",
-        "Connecter tous les objets sur le même réseau que les ordinateurs professionnels.",
-        "Installer un objet connecté sans consulter les réglages de confidentialité.",
-        "Oublier de désinstaller ou déconnecter un objet connecté qui n'est plus utilisé."
-      ],
-      "scenario": "Une caméra de surveillance domestique est installée avec le mot de passe fourni par défaut. Sans changement de ce mot de passe, un attaquant scannant des appareils exposés sur Internet pourrait potentiellement y accéder. Le bon réflexe est de changer immédiatement les identifiants et de vérifier les réglages d'accès distant.",
-      "remember": "Un objet connecté reste un ordinateur miniature: il doit être mis à jour, protégé par un mot de passe unique et idéalement isolé du réseau principal.",
-      "trap": "Un objet connecté 'prêt à l'emploi' n'est pas sécurisé par défaut: c'est souvent l'inverse.",
-      "vocabulary": [
-        "IoT",
-        "Identifiants par défaut",
-        "Firmware",
-        "Réseau invité",
-        "Botnet IoT",
-        "Isolation réseau"
-      ]
-    },
-    {
-      "id": "securite-mobile",
-      "title": "Sécurité des smartphones et applications mobiles",
-      "themeIds": [
-        "devices"
-      ],
-      "intro": "Le smartphone concentre messagerie, comptes bancaires, photos, MFA et données professionnelles. Sa sécurité dépend autant du système que des applications installées et des permissions accordées.",
-      "definitions": [
-        "Permission d'application: autorisation accordée à une application pour accéder à une fonction ou une donnée du téléphone (contacts, localisation, micro, caméra).",
-        "Store officiel: plateforme de distribution d'applications validée par le fabricant du système (Google Play, App Store).",
-        "Root / jailbreak: modification du système qui supprime certaines protections de sécurité natives.",
-        "Application tierce: application installée en dehors du store officiel.",
-        "Sideloading: installation manuelle d'une application hors magasin officiel."
-      ],
-      "keyPoints": [
-        "Une application peut demander bien plus de permissions que nécessaire à son fonctionnement réel.",
-        "Installer une application en dehors du store officiel augmente fortement le risque de malware.",
-        "Le root ou le jailbreak désactive des mécanismes de sécurité intégrés au système.",
-        "Une application professionnelle peut être gérée par un MDM, avec des règles de sécurité imposées.",
-        "Les mises à jour du système et des applications corrigent régulièrement des vulnérabilités connues.",
-        "Un smartphone perdu ou volé sans verrouillage donne accès direct aux comptes, messages et applications ouvertes."
-      ],
-      "goodPractices": [
-        "N'installer des applications que depuis les stores officiels.",
-        "Vérifier les permissions demandées avant et après installation, et les limiter au nécessaire.",
-        "Maintenir le système et les applications à jour.",
-        "Éviter le root ou le jailbreak sur un appareil utilisé pour des usages professionnels ou sensibles.",
-        "Activer un verrouillage fort (code, biométrie) et le chiffrement du stockage.",
-        "Vérifier régulièrement la liste des applications installées et désinstaller celles qui ne sont plus utilisées."
-      ],
-      "commonMistakes": [
-        "Accorder toutes les permissions demandées sans réflexion.",
-        "Installer une application via un lien direct ou un fichier APK non officiel.",
-        "Rooter ou jailbreaker un appareil professionnel.",
-        "Laisser un smartphone déverrouillé ou avec un code trivial.",
-        "Ignorer les mises à jour système pendant de longues périodes."
-      ],
-      "scenario": "Une application de lampe torche demande l'accès aux contacts, à la localisation et au microphone. Ces permissions ne sont pas nécessaires à sa fonction. Le bon réflexe est de refuser les permissions non pertinentes ou de choisir une autre application plus respectueuse.",
-      "remember": "Un smartphone bien protégé combine store officiel, permissions limitées, mises à jour régulières et verrouillage robuste.",
-      "trap": "Une application peut sembler utile et gratuite tout en collectant bien plus de données que nécessaire.",
-      "vocabulary": [
-        "Permission",
-        "Store officiel",
-        "Root",
-        "Jailbreak",
-        "Sideloading",
-        "MDM"
-      ]
-    },
-    {
-      "id": "bases-cryptographie",
-      "title": "Bases de la cryptographie",
-      "themeIds": [
-        "data",
-        "network",
-        "cryptography"
-      ],
-      "intro": "Le chiffrement, le hachage et la signature électronique protègent la confidentialité, l'intégrité et l'authenticité des données, sans nécessiter de comprendre les mathématiques sous-jacentes.",
-      "definitions": [
-        "Chiffrement symétrique: méthode utilisant la même clé pour chiffrer et déchiffrer.",
-        "Chiffrement asymétrique: méthode utilisant une paire de clés, une publique et une privée.",
-        "Clé publique: clé partageable librement, utilisée pour chiffrer un message ou vérifier une signature.",
-        "Clé privée: clé secrète, jamais partagée, utilisée pour déchiffrer ou signer.",
-        "Hachage: transformation à sens unique produisant une empreinte de taille fixe (permettant une comparaison rapide et constante).",
-        "Signature électronique: mécanisme garantissant l'authenticité et l'intégrité d'un document ou message.",
-        "Salt (Sel): donnée aléatoire ajoutée avant le hachage pour protéger les mots de passe contre les attaques par tables précalculées."
-      ],
-      "keyPoints": [
-        "Le chiffrement symétrique est rapide mais pose la question du partage sécurisé de la clé.",
-        "Le chiffrement asymétrique résout ce problème: la clé publique peut circuler librement, seule la clé privée déchiffre.",
-        "Le hachage assure l'intégrité : une modification mineure du contenu change radicalement l'empreinte (effet avalanche).",
-        "HTTPS combine chiffrement symétrique et asymétrique pour sécuriser les connexions web.",
-        "Le hachage sert à vérifier qu'un fichier n'a pas été modifié, ou à stocker un mot de passe sans le conserver en clair.",
-        "Une signature électronique permet de vérifier qui a émis un document et qu'il n'a pas été altéré.",
-        "Perdre sa clé privée peut rendre des données définitivement inaccessibles; la divulguer peut compromettre toute la sécurité associée."
-      ],
-      "goodPractices": [
-        "Utiliser des outils de chiffrement reconnus plutôt que des solutions maison.",
-        "Protéger soigneusement toute clé privée, y compris par une phrase de passe.",
-        "Vérifier une signature électronique avant de faire confiance à un document sensible.",
-        "Utiliser le hachage pour vérifier l'intégrité d'un fichier téléchargé lorsque l'empreinte est fournie par la source officielle.",
-        "Ne jamais transmettre une clé privée par email ou message non sécurisé."
-      ],
-      "commonMistakes": [
-        "Confondre chiffrement et hachage.",
-        "Croire qu'un mot de passe haché est totalement irréversible dans tous les cas.",
-        "Partager une clé privée pour 'faciliter' un accès.",
-        "Penser que HTTPS chiffre uniquement grâce à une seule méthode.",
-        "Négliger la sauvegarde d'une clé privée ou d'une phrase de passe de chiffrement."
-      ],
-      "scenario": "Un fichier sensible est chiffré avec un outil comme VeraCrypt avant d'être transporté sur une clé USB. Si la clé USB est perdue, les données restent protégées tant que le mot de passe de chiffrement n'est pas compromis.",
-      "remember": "Chiffrement, hachage et signature répondent à des besoins différents: confidentialité, intégrité et authenticité.",
-      "trap": "Un mot de passe haché n'est pas magique: un mot de passe faible reste rapidement retrouvable même haché.",
-      "vocabulary": [
-        "Chiffrement symétrique",
-        "Chiffrement asymétrique",
-        "Clé publique",
-        "Clé privée",
-        "Hachage",
-        "Signature électronique"
-      ]
-    },
-    {
-      "id": "attaques-reseau-techniques",
-      "title": "Attaques réseau de base: DDoS, MITM, sniffing",
-      "themeIds": [
-        "network",
-        "malware"
-      ],
-      "intro": "Certaines attaques ciblent directement le réseau plutôt qu'un utilisateur précis: saturation de service, interception de trafic ou écoute de communications non protégées.",
-      "definitions": [
-        "DDoS (déni de service distribué): saturation volontaire d'un service par un grand nombre de requêtes, souvent depuis un botnet.",
-        "Man-in-the-Middle (MITM): interception du trafic entre deux parties qui pensent communiquer directement.",
-        "Sniffing: écoute passive du trafic réseau pour capturer des informations.",
-        "ARP spoofing: technique locale de MITM exploitant le protocole ARP sur un réseau.",
-        "Point d'accès Wi-Fi malveillant: faux réseau Wi-Fi imitant un réseau légitime pour intercepter le trafic des victimes."
-      ],
-      "keyPoints": [
-        "Un DDoS vise la disponibilité d'un service, pas nécessairement le vol de données.",
-        "Une attaque MITM peut intercepter des identifiants ou des données si le trafic n'est pas chiffré.",
-        "HTTPS limite fortement l'efficacité du MITM et du sniffing sur le contenu échangé.",
-        "Un faux point d'accès Wi-Fi peut porter un nom très proche d'un réseau légitime.",
-        "Les réseaux publics non chiffrés sont plus exposés au sniffing que les réseaux protégés par un mot de passe robuste.",
-        "Ces attaques réseau ciblent souvent l'infrastructure plutôt qu'un individu précis, mais les utilisateurs en subissent les conséquences."
-      ],
-      "goodPractices": [
-        "Toujours vérifier la présence d'HTTPS sur les sites sensibles, en plus des autres vérifications déjà vues.",
-        "Éviter les échanges sensibles sur un Wi-Fi public non maîtrisé.",
-        "Utiliser un VPN professionnel sur un réseau inconnu ou peu fiable.",
-        "Signaler un service devenu subitement inaccessible ou anormalement lent, qui peut être le signe d'un DDoS.",
-        "Vérifier le nom exact d'un réseau Wi-Fi auprès de l'établissement avant de s'y connecter."
-      ],
-      "commonMistakes": [
-        "Croire qu'un DDoS implique nécessairement un vol de données.",
-        "Se connecter automatiquement à un Wi-Fi public au nom familier sans vérification.",
-        "Penser que le sniffing nécessite un accès physique complexe alors qu'un simple réseau partagé peut suffire.",
-        "Négliger un service anormalement lent en pensant à un simple problème technique.",
-        "Considérer le MITM comme un risque uniquement théorique."
-      ],
-      "scenario": "Dans un café, un réseau Wi-Fi nommé presque comme celui de l'établissement est disponible. S'y connecter sans vérification pourrait exposer le trafic à un point d'accès malveillant. Le bon réflexe est de vérifier le nom exact du réseau auprès du personnel avant de s'y connecter.",
-      "remember": "Ces attaques exploitent la confiance accordée au réseau lui-même: vérifier et chiffrer restent les meilleures protections.",
-      "trap": "Un réseau Wi-Fi au nom rassurant n'est pas nécessairement le réseau légitime de l'établissement.",
-      "vocabulary": [
-        "DDoS",
-        "Man-in-the-Middle",
-        "Sniffing",
-        "ARP spoofing",
-        "Point d'accès malveillant"
       ]
     }
   ]

@@ -55,6 +55,12 @@
       "description": "Principes du chiffrement (symétrique/asymétrique), algorithmes de hachage, certificats et intégrité.",
       "emoji": "🔑",
       "accent": "green"
+    },
+    "social-engineering": {
+      "name": "Ingénierie sociale (humain et physique)",
+      "description": "Techniques de manipulation psychologique pour contourner la sécurité : phishing, vishing, tailgating, faux techniciens, prétextes et urgence.",
+      "emoji": "🎭",
+      "accent": "orange"
     }
   },
   "questions": [
@@ -359,7 +365,7 @@
     },
     {
       "id": "device-physical-tailgating",
-      "theme": "devices",
+      "theme": "social-engineering",
       "subtheme": "securite-physique",
       "difficulty": "medium",
       "type": "multiple",
@@ -388,6 +394,103 @@
       ],
       "explanation": "Le « tailgating » (talonnage) consiste à profiter du passage d’une personne autorisée pour entrer sans contrôle d’accès. C’est l’une des techniques d’intrusion physique les plus simples et les plus efficaces. Il est normal d’être poli, mais la politesse ne doit jamais dispenser de vérifier badge ou identité, surtout dans des locaux professionnels.",
       "visual": "🚪",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "device-physical-pretexting",
+      "theme": "social-engineering",
+      "subtheme": "securite-physique",
+      "difficulty": "medium",
+      "type": "single",
+      "prompt": "Une personne se présente à l'accueil en tenue de technicien de maintenance, affirmant qu'une fuite d'eau menace le serveur et qu'elle doit intervenir immédiatement sans badge pour gagner du temps. Que devez-vous faire ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "La laisser passer immédiatement car l'urgence prime sur la procédure"
+        },
+        {
+          "id": "b",
+          "label": "Refuser l'accès et contacter le responsable facility management ou la sécurité pour vérifier la demande"
+        },
+        {
+          "id": "c",
+          "label": "L'accompagner vous-même jusqu'au serveur sans prévenir personne"
+        },
+        {
+          "id": "d",
+          "label": "Lui prêter votre propre badge le temps de l'intervention"
+        }
+      ],
+      "correct": "b",
+      "explanation": "L'urgence est un levier classique de l'ingénierie sociale pour contourner les règles. Même en cas de crise supposée, la procédure de vérification (appel au responsable connu, pas au numéro donné par l'intrus) doit rester la priorité. Prêter son badge ou laisser entrer sans validation compromet la sécurité de tout le bâtiment.",
+      "visual": "🚰",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "device-physical-lost-badge",
+      "theme": "devices",
+      "subtheme": "securite-physique",
+      "difficulty": "easy",
+      "type": "single",
+      "prompt": "Vous réalisez que vous avez perdu votre badge d'accès à l'entreprise dans les transports en commun. Quelle est la première action à entreprendre ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Attendre le lendemain matin pour le signaler à l'accueil"
+        },
+        {
+          "id": "b",
+          "label": "Prévenir immédiatement le service de sécurité ou les RH pour faire désactiver le badge"
+        },
+        {
+          "id": "c",
+          "label": "Essayer de retourner sur les lieux de perte pour le retrouver avant de prévenir"
+        },
+        {
+          "id": "d",
+          "label": "Utiliser le badge d'un collègue pour entrer jusqu'à ce que vous retrouviez le vôtre"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Un badge perdu est une clé potentielle pour un intrus. La réactivité est cruciale : il faut faire révoquer l'accès immédiatement pour empêcher toute utilisation malveillante. Utiliser le badge d'un collègue est interdit car cela fausse la traçabilité des entrées.",
+      "visual": "🪪",
+      "certification": true,
+      "scenario": true
+    },
+    {
+      "id": "device-physical-sensitive-area",
+      "theme": "devices",
+      "subtheme": "securite-physique",
+      "difficulty": "medium",
+      "type": "multiple",
+      "prompt": "Vous devez laisser temporairement votre bureau dans une zone accessible à des prestataires de nettoyage. Quelles mesures de sécurité physique appliquez-vous ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Verrouiller votre session ordinateur (Windows + L)"
+        },
+        {
+          "id": "b",
+          "label": "Ranger les documents confidentiels dans un tiroir fermé à clé"
+        },
+        {
+          "id": "c",
+          "label": "Laisser un post-it avec votre mot de passe sur l'écran pour faciliter le dépannage"
+        },
+        {
+          "id": "d",
+          "label": "Éteindre ou masquer les écrans affichant des données sensibles"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "d"
+      ],
+      "explanation": "La sécurité physique ne s'arrête pas aux portes du bâtiment. Une fois à l'intérieur, la politique du « bureau clean » et le verrouillage des sessions empêchent qu'une personne autorisée dans les locaux (comme un agent d'entretien ou un visiteur) n'accède opportunément à des informations ou à une session ouverte.",
+      "visual": "🧹",
       "certification": true,
       "scenario": true
     },
@@ -488,7 +591,7 @@
     },
     {
       "id": "phish-boss",
-      "theme": "phishing",
+      "theme": "social-engineering",
       "type": "multiple",
       "prompt": "Un prétendu responsable demande en urgence et en secret l’achat de cartes cadeaux. Quels éléments doivent vous alerter ?",
       "options": [
@@ -552,7 +655,7 @@
     },
     {
       "id": "phish-quishing",
-      "theme": "phishing",
+      "theme": "social-engineering",
       "type": "single",
       "prompt": "Qu’est-ce que le quishing ?",
       "options": [
@@ -3031,7 +3134,7 @@
     },
     {
       "id": "phishing-vishing",
-      "theme": "phishing",
+      "theme": "social-engineering",
       "subtheme": "vishing",
       "difficulty": "easy",
       "type": "single",

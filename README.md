@@ -14,7 +14,7 @@ Une application web de quiz interactive pour s'entraîner à la cybersécurité 
 ## 🚀 Fonctionnalités
 
 - **Modes de Test Variés** :
-  - **Grand Test Complet** : 186 questions couvrant l'ensemble du programme.
+  - **Grand Test Complet** : 189 questions couvrant l'ensemble du programme.
   - **Test Blanc TOSA** : 50 questions équilibrées pour simuler l'examen.
   - **Mises en situation** : Focus sur les scénarios concrets (emails, phishing, incidents).
   - **Révision Express** : Session rapide de 20 questions aléatoires.
