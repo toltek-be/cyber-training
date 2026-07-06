@@ -9,10 +9,16 @@
       "accent": "cyan"
     },
     "phishing": {
-      "name": "Phishing et ingénierie sociale",
-      "description": "Emails suspects, quishing, fraude au président, faux support et bons réflexes.",
+      "name": "Cyber-hameçonnage et supports numériques",
+      "description": "Attaques par canaux écrits ou numériques : emails frauduleux, SMS (smishing), QR codes (quishing) et détection des liens ou pièces jointes malveillants.",
       "emoji": "🎣",
       "accent": "pink"
+    },
+    "social-engineering": {
+      "name": "Ingénierie sociale et intrusion physique",
+      "description": "Manipulation psychologique et accès non autorisés : appels frauduleux (vishing), suivi dans les locaux (tailgating), faux techniciens, usurpation d'identité en face-à-face et leviers d'urgence.",
+      "emoji": "🎭",
+      "accent": "orange"
     },
     "passwords": {
       "name": "Mots de passe et comptes",
@@ -55,12 +61,6 @@
       "description": "Principes du chiffrement (symétrique/asymétrique), algorithmes de hachage, certificats et intégrité.",
       "emoji": "🔑",
       "accent": "green"
-    },
-    "social-engineering": {
-      "name": "Ingénierie sociale (humain et physique)",
-      "description": "Techniques de manipulation psychologique pour contourner la sécurité : phishing, vishing, tailgating, faux techniciens, prétextes et urgence.",
-      "emoji": "🎭",
-      "accent": "orange"
     }
   },
   "questions": [
