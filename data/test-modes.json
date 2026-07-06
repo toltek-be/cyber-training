@@ -1,0 +1,70 @@
+{
+  "testModes": [
+    {
+      "id": "mock-tosa",
+      "title": "Test blanc TOSA",
+      "description": "Un entraînement équilibré avec des questions variées, proche de l’esprit certification.",
+      "button": "Lancer le test blanc",
+      "kind": "balanced",
+      "count": 50,
+      "emoji": "🧪",
+      "accent": "purple",
+      "meta": "40 à 50 min"
+    },
+    {
+      "id": "revision-express",
+      "title": "Révision express",
+      "description": "Une session courte de questions aléatoires dans l’ensemble des données.",
+      "button": "Lancer 20 questions",
+      "kind": "random",
+      "count": 20,
+      "emoji": "⚡",
+      "accent": "blue",
+      "meta": "Rapide"
+    },
+    {
+      "id": "scenario-drill",
+      "title": "Mises en situation",
+      "description": "Des cas concrets: email suspect, appareil perdu, ransomware, faux support, fuite de données.",
+      "button": "Lancer les situations",
+      "kind": "scenario",
+      "count": 25,
+      "emoji": "🎯",
+      "accent": "orange",
+      "meta": "Cas pratiques"
+    },
+    {
+      "id": "difficulty-easy",
+      "kind": "difficulty",
+      "level": "easy",
+      "title": "Niveau Facile",
+      "description": "Les questions les plus abordables pour se mettre en jambe.",
+      "count": 25,
+      "emoji": "🟢",
+      "accent": "mint",
+      "button": "Lancer le mode facile"
+    },
+    {
+      "id": "difficulty-medium",
+      "kind": "difficulty",
+      "level": "medium",
+      "title": "Niveau Moyen",
+      "description": "Un bon test intermédiaire de vos connaissances.",
+      "count": 25,
+      "emoji": "🟠",
+      "accent": "yellow",
+      "button": "Lancer le mode moyen"
+    },
+    {
+      "id": "difficulty-hard",
+      "kind": "difficulty",
+      "level": "hard",
+      "title": "Niveau Difficile",
+      "description": "Pour les questions les plus pointues, style certification.",
+      "count": 25,
+      "emoji": "🔴",
+      "accent": "red",
+      "button": "Lancer le mode difficile"
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "organismes": [
+    {
+      "id": "instances-europeennes",
+      "title": "Instances européennes",
+      "entries": [
+        {
+          "country": "UE",
+          "flag": "🇪🇺",
+          "name": "ENISA — Agence de l'Union européenne pour la cybersécurité",
+          "url": "https://www.enisa.europa.eu/",
+          "role": "Agence européenne qui soutient les États membres et les institutions de l'UE sur la cybersécurité : recommandations, coordination NIS2, exercices de crise paneuropéens, certification.",
+          "public": "États membres, institutions européennes, organisations concernées par des réglementations européennes (NIS2, Cyber Resilience Act).",
+          "situations": "Recherche de référentiels européens, compréhension du cadre réglementaire NIS2, veille sur les menaces à l'échelle de l'UE.",
+          "contact": "Formulaire de contact sur enisa.europa.eu",
+          "signaler": "Ce n'est pas un point de signalement d'incident individuel ; agence de coordination et de recommandation au niveau européen."
+        }
+      ]
+    },
+    {
+      "id": "autorites-nationales",
+      "title": "Autorités nationales de cybersécurité",
+      "entries": [
+        {
+          "country": "FR",
+          "flag": "🇫🇷",
+          "name": "ANSSI",
+          "url": "https://cyber.gouv.fr/",
+          "role": "Autorité nationale de cybersécurité et de cyberdéfense : protection des systèmes d'État et des opérateurs critiques, référentiels et réglementations (NIS2, SAIV), réponse aux incidents majeurs via CERT-FR.",
+          "public": "Administrations, OIV/OSE, entreprises, collectivités, toute entité présente sur le territoire français.",
+          "situations": "Incident avéré ou suspecté, vulnérabilité découverte, obligation de notification (NIS2), besoin de conseil.",
+          "contact": "Tél. 3218 (+33 9 70 83 32 18 depuis l'étranger) · cert-fr@ssi.gouv.fr · formulaire sur cyber.gouv.fr",
+          "signaler": "Incidents de sécurité numérique, vulnérabilités, situations anormales (signalement anonyme possible)."
+        },
+        {
+          "country": "BE",
+          "flag": "🇧🇪",
+          "name": "CCB — Centre pour la Cybersécurité Belgique",
+          "url": "https://ccb.belgium.be/",
+          "role": "Autorité nationale unique de cybersécurité et CSIRT national : stratégie nationale, autorité NIS2, certification, gestion de crise cyber.",
+          "public": "Citoyens, entreprises, administrations, secteurs vitaux (énergie, finance, santé...).",
+          "situations": "Cyberincident en cours ou passé, obligation NIS2, message suspect reçu, besoin de conseils.",
+          "contact": "Formulaire notif.safeonweb.be · urgence +32 2 501 05 60 · incident@ccb.belgium.be · suspect@safeonweb.be · info@safeonweb.be",
+          "signaler": "Cyberincidents (ransomware, intrusion, phishing), vulnérabilités, e-mails/SMS suspects, incidents NIS2."
+        }
+      ]
+    },
+    {
+      "id": "protection-donnees",
+      "title": "Autorités de protection des données personnelles",
+      "entries": [
+        {
+          "country": "FR",
+          "flag": "🇫🇷",
+          "name": "CNIL",
+          "url": "https://www.cnil.fr/fr",
+          "role": "Application du RGPD et de la loi Informatique et Libertés : information, contrôle de conformité, instruction des plaintes, sanctions.",
+          "public": "Particuliers exerçant leurs droits ; organismes responsables de traitement ou sous-traitants.",
+          "situations": "Réponse insatisfaisante à une demande de droits, violation de données à notifier, besoin d'information réglementaire.",
+          "contact": "Téléservice de plainte en ligne · téléservice de notification de violation · courrier : CNIL, 3 Place de Fontenoy, 75007 Paris",
+          "signaler": "Manquements au RGPD, défaut de sécurité, absence de consentement, violations de données personnelles."
+        },
+        {
+          "country": "BE",
+          "flag": "🇧🇪",
+          "name": "APD (GBA) — Autorité de protection des données",
+          "url": "https://www.autoriteprotectiondonnees.be/",
+          "role": "Veille au respect du RGPD, instruit les plaintes, statue via sa Chambre Contentieuse (amendes jusqu'à 20 M€ ou 4 % du CA mondial).",
+          "public": "Particuliers et organismes basés en Belgique ou concernés par un traitement transfrontalier.",
+          "situations": "Atteinte constatée à ses droits, besoin de médiation, notification d'une violation de données.",
+          "contact": "Formulaire en ligne · contact@apd-gba.be · +32 2 274 48 00 · Rue de la Presse 35, 1000 Bruxelles",
+          "signaler": "Manquements au RGPD, refus d'exercice de droits, violations de données, plaintes nécessitant médiation ou enquête."
+        }
+      ]
+    },
+    {
+      "id": "enquete-cybercriminalite",
+      "title": "Services d'enquête contre la cybercriminalité",
+      "entries": [
+        {
+          "country": "FR",
+          "flag": "🇫🇷",
+          "name": "C3N / OCLCTIC",
+          "url": "https://www.masecurite.interieur.gouv.fr/",
+          "role": "Mènent et appuient les enquêtes judiciaires sur les infractions numériques (piratage, escroqueries, rançongiciel, fraude), en coordination avec les unités locales.",
+          "public": "Toute victime de cybercriminalité : particuliers, entreprises, administrations.",
+          "situations": "Après une cyberattaque avérée, pour déposer plainte (dépôt sous 72h requis pour l'indemnisation assurantielle des entreprises depuis la LOPMI).",
+          "contact": "Commissariat/brigade · plateforme THESEE ou masecurite.interieur.gouv.fr · chat 24h/24 · Info Escroqueries 0 805 805 817",
+          "signaler": "Intrusion système, vol/fuite de données, rançongiciel, escroquerie en ligne, usurpation d'identité."
+        },
+        {
+          "country": "BE",
+          "flag": "🇧🇪",
+          "name": "Police Fédérale — CCU (Computer Crime Unit)",
+          "url": "https://www.police.be/",
+          "role": "Unités spécialisées de la Police judiciaire fédérale (FCCU/RCCU) : enquêtes sur les infractions numériques, appui technique aux polices locales et magistrats.",
+          "public": "Toute victime de cybercriminalité en Belgique : particuliers, entreprises, administrations.",
+          "situations": "Après une cyberattaque, un piratage, une escroquerie en ligne (idéalement après blocage des comptes bancaires concernés).",
+          "contact": "Déclaration en ligne sur my.police.be · déplacement au commissariat de la zone de police locale",
+          "signaler": "Piratage, escroquerie en ligne, rançongiciel, harcèlement numérique, vol de données, fraude bancaire liée à une cyberattaque."
+        }
+      ]
+    },
+    {
+      "id": "cert-national",
+      "title": "Réponse opérationnelle aux incidents (CERT)",
+      "entries": [
+        {
+          "country": "FR",
+          "flag": "🇫🇷",
+          "name": "CERT-FR",
+          "url": "https://www.cert.ssi.gouv.fr/",
+          "role": "Centre gouvernemental de réponse à incident, rattaché à l'ANSSI : détecte, qualifie et traite les incidents et vulnérabilités ; assiste les victimes.",
+          "public": "Ministères, services de l'État, OIV/OSE en priorité ; accessible à toute entité française en cas d'incident.",
+          "situations": "Incident de sécurité en cours, vulnérabilité découverte, besoin d'assistance technique immédiate.",
+          "contact": "Tél. 3218 (+33 9 70 83 32 18) · cert-fr@ssi.gouv.fr · formulaire sur cyber.gouv.fr",
+          "signaler": "Incidents cyber, vulnérabilités logicielles/matérielles, notifications réglementaires (OIV, OSE, NIS2)."
+        },
+        {
+          "country": "BE",
+          "flag": "🇧🇪",
+          "name": "CERT.be",
+          "url": "https://ccb.belgium.be/cert",
+          "role": "Équipe d'intervention d'urgence en sécurité informatique, service opérationnel du CCB : détecte, observe et analyse les problèmes de sécurité en ligne.",
+          "public": "Autorités publiques, secteurs vitaux, entreprises et citoyens belges.",
+          "situations": "Cyberattaque en cours, demande de premiers secours techniques, besoin de conseils pour gérer une crise cyber.",
+          "contact": "Formulaire notif.safeonweb.be · +32 2 501 05 60 · incident@ccb.belgium.be",
+          "signaler": "Cyberincidents, ransomware, intrusions, vulnérabilités, demandes d'assistance en cas d'attaque active."
+        }
+      ]
+    },
+    {
+      "id": "associations-professionnelles",
+      "title": "Associations professionnelles et écosystèmes collaboratifs",
+      "entries": [
+        {
+          "country": "FR",
+          "flag": "🇫🇷",
+          "name": "CESIN",
+          "url": "https://cesin.fr/",
+          "role": "Association regroupant plus de 1 200 professionnels (RSSI, DSI, experts juridiques) : partage d'expérience, professionnalisation du métier de RSSI, représentation.",
+          "public": "Professionnels occupant une responsabilité en sécurité de l'information (RSSI, DSI, DSSI).",
+          "situations": "Pour adhérer, participer aux groupes de travail, ou accéder aux publications (baromètre, livres blancs).",
+          "contact": "Formulaire d'adhésion sur cesin.fr · 115 rue Saint-Dominique, 75007 Paris",
+          "signaler": "Ce n'est pas un point de signalement d'incidents ; espace d'échange entre pairs sur la profession."
+        },
+        {
+          "country": "BE",
+          "flag": "🇧🇪",
+          "name": "Cybersecurity Coalition",
+          "url": "https://cybersecuritycoalition.be/",
+          "role": "Partenariat académique / public / privé (200+ organisations) : partage de connaissances, collaboration, recommandations, sensibilisation.",
+          "public": "Organisations belges (entreprises, universités, administrations) impliquées dans la cybersécurité.",
+          "situations": "Pour rejoindre la coalition, accéder aux outils/formations en ligne, participer aux groupes de travail.",
+          "contact": "Formulaire de contact sur cybersecuritycoalition.be",
+          "signaler": "Ce n'est pas un point de signalement d'incidents ; plateforme d'échange et de sensibilisation collective."
+        }
+      ]
+    },
+    {
+      "id": "evenements-sensibilisation",
+      "title": "Événements et plateformes de sensibilisation",
+      "entries": [
+        {
+          "country": "FR",
+          "flag": "🇫🇷",
+          "name": "Cybermalveillance.gouv.fr",
+          "url": "https://www.cybermalveillance.gouv.fr/",
+          "role": "Dispositif national d'assistance aux victimes de cybermalveillance : diagnostic en ligne, mise en relation avec des prestataires de proximité labellisés, sensibilisation et kits pratiques.",
+          "public": "Particuliers, entreprises (notamment TPE/PME), collectivités et associations.",
+          "situations": "Après une attaque (phishing, rançongiciel, piratage de compte), pour trouver un prestataire technique local ou obtenir des conseils pratiques immédiats.",
+          "contact": "Diagnostic et mise en relation via le site cybermalveillance.gouv.fr",
+          "signaler": "Ce n'est pas un service de plainte judiciaire, mais un point d'orientation et d'assistance technique après incident."
+        },
+        {
+          "country": "BE",
+          "flag": "🇧🇪",
+          "name": "Safeonweb",
+          "url": "https://www.safeonweb.be/",
+          "role": "Plateforme et campagne de sensibilisation grand public portée par le CCB et CERT.be : informe, diffuse des conseils, relaie les signalements.",
+          "public": "Grand public, particuliers et PME belges.",
+          "situations": "Réception d'un message suspect, besoin de conseils de sécurité, avant de porter plainte pour une escroquerie numérique.",
+          "contact": "suspect@safeonweb.be · info@safeonweb.be · notif.safeonweb.be",
+          "signaler": "Messages de phishing, sites suspects, incidents cyber pour entreprises et organisations."
+        }
+      ]
+    },
+    {
+      "id": "evenements",
+      "title": "Événements et plateformes de sensibilisation",
+      "entries": [
+        {
+          "country": "FR",
+          "flag": "🇫🇷",
+          "name": "FIC (Forum InCyber Europe)",
+          "url": "https://www.forum-fic.com/en/home/",
+          "role": "Plus grand événement européen de cybersécurité, lancé en 2007 par la Gendarmerie nationale (Lille), renommé Forum InCyber Europe depuis 2024.",
+          "public": "Professionnels de la cybersécurité, RSSI, décideurs publics, fournisseurs de solutions, étudiants.",
+          "situations": "Pour s'inscrire à l'événement annuel, exposer en tant qu'entreprise, consulter les contenus publiés.",
+          "contact": "Formulaire d'inscription et de contact sur forum-fic.com",
+          "signaler": "Sans objet ; événement de rencontre et de réflexion, pas un organisme de signalement."
+        }
+      ]
+    }
+  ]
+}

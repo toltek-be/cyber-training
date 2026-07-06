@@ -47,8 +47,12 @@ Aucune installation complexe n'est requise. L'application est composée de fichi
 
 - `index.html` : Point d'entrée de l'application (gère le versioning des ressources).
 - `app.js` : Logique de l'application (moteur de quiz, gestion d'état, chargement asynchrone des données).
-- `questions.json` : Base de données des questions (format JSON strict).
-- `extra-content.json` : Modes de test et synthèses pédagogiques (format JSON strict).
+- `data/` : Dossier centralisant les ressources de données JSON :
+    - `questions.json` : Base de données des questions (format JSON strict).
+    - `test-modes.json` : Configuration des différents modes de test.
+    - `syntheses.json` : Fiches pédagogiques et synthèses de cours.
+    - `organismes.json` : Liste des autorités et organismes de cybersécurité.
+    - `tools.json` : Catalogue d'outils et de ressources recommandés.
 - `styles/` : Dossier contenant les feuilles de style (SecOps, Neobrutalism, Corpo).
 - `favicon/` : Ressources graphiques et manifest de l'application.
 
@@ -66,7 +70,7 @@ Aucune installation complexe n'est requise. L'application est composée de fichi
 
 ### Format des Questions (JSON)
 
-Chaque question dans `questions.json` peut inclure un champ `media` optionnel pour afficher une image ou une vidéo :
+Chaque question dans `data/questions.json` peut inclure un champ `media` optionnel pour afficher une image ou une vidéo :
 
 ```json
 "media": {

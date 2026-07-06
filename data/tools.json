@@ -1,0 +1,726 @@
+{
+  "tools": [
+    {
+      "id": "gestionnaires-mdp",
+      "title": "Gestionnaires de mots de passe",
+      "items": [
+        {
+          "name": "Bitwarden",
+          "description": "Gestionnaire de mots de passe open-source, gratuit pour un usage personnel, avec synchronisation multiplateforme et coffre chiffré.",
+          "url": "https://bitwarden.com/"
+        },
+        {
+          "name": "KeePassXC",
+          "description": "Gestionnaire de mots de passe local et open-source, sans dépendance à un cloud tiers ; la base de données reste sous contrôle total de l'utilisateur.",
+          "url": "https://keepassxc.org/"
+        },
+        {
+          "name": "1Password",
+          "description": "Gestionnaire de mots de passe payant orienté grand public et entreprises, avec partage sécurisé et surveillance des fuites intégrée.",
+          "url": "https://1password.com/"
+        },
+        {
+          "name": "Dashlane",
+          "description": "Gestionnaire de mots de passe avec VPN intégré et surveillance du dark web sur les offres payantes.",
+          "url": "https://www.dashlane.com/"
+        }
+      ]
+    },
+    {
+      "id": "verification-mdp",
+      "title": "Vérification de la robustesse des mots de passe",
+      "items": [
+        {
+          "name": "Kaspersky Password Checker",
+          "description": "Estime le temps théorique nécessaire pour deviner un mot de passe par force brute, sans jamais l'envoyer sur un serveur.",
+          "url": "https://password.kaspersky.com/"
+        },
+        {
+          "name": "Have I Been Pwned — Passwords",
+          "description": "Vérifie si un mot de passe (ou son empreinte) est déjà apparu dans des fuites connues, via un mécanisme préservant la confidentialité (k-anonymity).",
+          "url": "https://haveibeenpwned.com/Passwords"
+        }
+      ]
+    },
+    {
+      "id": "authentification-mfa",
+      "title": "Applications d'authentification multifacteur",
+      "items": [
+        {
+          "name": "Aegis Authenticator",
+          "description": "Application MFA open-source pour Android, avec sauvegarde chiffrée des secrets et export possible.",
+          "url": "https://getaegis.app/"
+        },
+        {
+          "name": "Google Authenticator",
+          "description": "Application MFA simple générant des codes temporaires (TOTP), avec option de synchronisation via compte Google.",
+          "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2"
+        },
+        {
+          "name": "Authy",
+          "description": "Application MFA avec sauvegarde cloud chiffrée et multi-appareils, pratique pour retrouver ses codes après changement de téléphone.",
+          "url": "https://authy.com/"
+        },
+        {
+          "name": "Clé de sécurité physique (YubiKey)",
+          "description": "Dispositif matériel U2F/FIDO2 servant de second facteur physique, considéré comme l'une des protections MFA les plus robustes contre le phishing.",
+          "url": "https://www.yubico.com/"
+        }
+      ]
+    },
+    {
+      "id": "prise-de-notes",
+      "title": "Prise de notes",
+      "items": [
+        {
+          "name": "Obsidian",
+          "description": "Éditeur de notes en Markdown avec liens bidirectionnels et graphe de connaissances — très utilisé en OSINT pour relier sources, hypothèses et pistes d'investigation. Stockage 100% local.",
+          "url": "https://obsidian.md/"
+        },
+        {
+          "name": "Templates OSINT pour Obsidian",
+          "description": "Modèles de prise de notes prêts à l'emploi pour structurer une investigation OSINT dans Obsidian.",
+          "url": "https://github.com/WebBreacher/obsidian-osint-templates"
+        },
+        {
+          "name": "Joplin",
+          "description": "Alternative open source et gratuite à Evernote, avec chiffrement de bout en bout et synchronisation sur son propre stockage (Nextcloud, Dropbox...).",
+          "url": "https://joplinapp.org/"
+        },
+        {
+          "name": "CherryTree",
+          "description": "Éditeur de notes hiérarchique (arborescence de nœuds) très apprécié en cybersécurité et pentest pour structurer une investigation étape par étape.",
+          "url": "https://www.giuspen.net/cherrytree/"
+        },
+        {
+          "name": "Notion",
+          "description": "Espace de travail tout-en-un (notes, bases de données, tableaux) pour centraliser une investigation ou un projet en équipe.",
+          "url": "https://www.notion.com/"
+        }
+      ]
+    },
+    {
+      "id": "vpn-grand-public",
+      "title": "VPN grand public",
+      "items": [
+        {
+          "name": "Proton VPN",
+          "description": "VPN opéré par Proton (Suisse), avec une offre gratuite limitée et un positionnement axé confidentialité.",
+          "url": "https://protonvpn.com/"
+        },
+        {
+          "name": "Mullvad",
+          "description": "VPN suédois reconnu pour son anonymat renforcé : compte identifié par un simple numéro, sans email requis.",
+          "url": "https://mullvad.net/"
+        },
+        {
+          "name": "NordVPN",
+          "description": "VPN commercial très répandu, avec large réseau de serveurs et fonctionnalités additionnelles (blocage de trackers, double VPN).",
+          "url": "https://nordvpn.com/"
+        }
+      ]
+    },
+    {
+      "id": "chiffrement",
+      "title": "Outils de chiffrement",
+      "items": [
+        {
+          "name": "VeraCrypt",
+          "description": "Création de conteneurs ou de disques entièrement chiffrés (succession de TrueCrypt), multiplateforme.",
+          "url": "https://www.veracrypt.fr/"
+        },
+        {
+          "name": "Cryptomator",
+          "description": "Chiffrement transparent de fichiers destinés au cloud (Nextcloud, OneDrive, Google Drive...), côté client avant synchronisation.",
+          "url": "https://cryptomator.org/"
+        },
+        {
+          "name": "7-Zip",
+          "description": "Compression d'archives avec chiffrement AES-256 intégré (format .7z), simple et largement répandu.",
+          "url": "https://www.7-zip.org/"
+        },
+        {
+          "name": "GPG / OpenPGP",
+          "description": "Standard de chiffrement et de signature pour les emails et fichiers, garantissant confidentialité et authenticité.",
+          "url": "https://gnupg.org/"
+        },
+        {
+          "name": "BitLocker / FileVault",
+          "description": "Chiffrement intégral de disque natif à Windows (BitLocker) et macOS (FileVault).",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": "partage-secrets",
+      "title": "Partage sécurisé de secrets & messages éphémères",
+      "items": [
+        {
+          "name": "kpaste (Infomaniak)",
+          "description": "Instance de PrivateBin opérée par Infomaniak (Suisse) : colle un texte ou un secret chiffré côté client, avec lien à usage unique qui s'autodétruit après lecture ou expiration.",
+          "url": "https://kpaste.infomaniak.com/"
+        },
+        {
+          "name": "Privnote",
+          "description": "Service simple de notes autodestructrices : le message disparaît définitivement après sa première lecture.",
+          "url": "https://privnote.com/"
+        },
+        {
+          "name": "OnionShare",
+          "description": "Partage de fichiers, messages ou hébergement d'un site éphémère via un service caché Tor, sans dépendre d'un serveur tiers.",
+          "url": "https://onionshare.org/"
+        },
+        {
+          "name": "PrivateBin",
+          "description": "Logiciel open-source de pastebin chiffré côté client (le serveur ne voit jamais le contenu en clair), auto-hébergeable, à la base de nombreuses instances publiques comme kpaste.",
+          "url": "https://privatebin.info/"
+        },
+        {
+          "name": "Yopass",
+          "description": "Outil open-source pensé pour les équipes techniques : partage de secrets (mots de passe, clés API) via un lien à usage unique et une durée de vie limitée.",
+          "url": "https://github.com/jhaals/yopass"
+        }
+      ]
+    },
+    {
+      "id": "backup-local",
+      "title": "Sauvegarde — local / hybride",
+      "items": [
+        {
+          "name": "Resilio Sync",
+          "description": "Synchronisation pair-à-pair (sans serveur central) entre plusieurs appareils, utile comme sauvegarde miroir.",
+          "url": "https://www.resilio.com/sync"
+        },
+        {
+          "name": "Time Machine",
+          "description": "Solution de sauvegarde native de macOS, avec versionning automatique et restauration simplifiée.",
+          "url": ""
+        },
+        {
+          "name": "Historique des fichiers (Windows 11)",
+          "description": "Fonction native Windows de sauvegarde incrémentale des fichiers personnels sur disque externe ou réseau.",
+          "url": "https://www.asus.com/ca-fr/support/faq/1013067/"
+        },
+        {
+          "name": "cron",
+          "description": "Planificateur de tâches sous Linux/macOS permettant d'automatiser des scripts de sauvegarde récurrents.",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": "backup-cloud",
+      "title": "Sauvegarde — cloud",
+      "items": [
+        {
+          "name": "Nextcloud",
+          "description": "Solution cloud auto-hébergée, alternative open-source à Google Drive/Dropbox, maîtrise totale des données.",
+          "url": "https://nextcloud.com/"
+        },
+        {
+          "name": "kDrive",
+          "description": "Cloud souverain proposé par Infomaniak, avec hébergement en Suisse.",
+          "url": "https://www.infomaniak.com/fr/kdrive"
+        },
+        {
+          "name": "iCloud",
+          "description": "Cloud Apple, intégré à l'écosystème macOS/iOS (Photos, Fichiers, sauvegardes d'appareils).",
+          "url": "https://www.icloud.com/"
+        },
+        {
+          "name": "Proton Drive",
+          "description": "Stockage cloud chiffré de bout en bout, opéré par Proton (Suisse), axé confidentialité.",
+          "url": "https://proton.me/drive"
+        },
+        {
+          "name": "pCloud",
+          "description": "Stockage cloud avec option de chiffrement renforcé et paiement à vie.",
+          "url": "https://www.pcloud.com/"
+        },
+        {
+          "name": "Tresorit",
+          "description": "Cloud chiffré de bout en bout orienté entreprises, avec contrôles d'administration avancés.",
+          "url": "https://tresorit.com/"
+        },
+        {
+          "name": "OneDrive",
+          "description": "Cloud Microsoft, intégré à l'écosystème Office 365.",
+          "url": "https://onedrive.live.com/"
+        },
+        {
+          "name": "Google Drive",
+          "description": "Cloud Google, intégré à l'écosystème Workspace (Docs, Sheets, Gmail), avec édition collaborative en temps réel.",
+          "url": "https://drive.google.com/"
+        },
+        {
+          "name": "Dropbox",
+          "description": "Un des pionniers du stockage cloud, reconnu pour sa synchronisation fiable entre appareils et ses intégrations tierces nombreuses.",
+          "url": "https://www.dropbox.com/"
+        }
+      ]
+    },
+    {
+      "id": "referentiels",
+      "title": "Référentiels & catalogues de sécurité",
+      "items": [
+        {
+          "name": "OWASP",
+          "description": "Référence mondiale des bonnes pratiques et des risques (OWASP Top 10). Indispensable pour sécuriser le code et comprendre les failles courantes.",
+          "url": "https://owasp.org/"
+        },
+        {
+          "name": "CVE",
+          "description": "Dictionnaire public et standardisé de toutes les failles de sécurité connues, chacune avec un identifiant unique pour suivre correctifs et menaces.",
+          "url": "https://cve.mitre.org/"
+        },
+        {
+          "name": "CERT-FR",
+          "description": "CERT national et gouvernemental français.",
+          "url": "https://www.cert.ssi.gouv.fr/"
+        }
+      ]
+    },
+    {
+      "id": "web-domaines",
+      "title": "Web, domaines & URL",
+      "items": [
+        {
+          "name": "Whois / RDAP",
+          "description": "Identifie le propriétaire enregistré d'un nom de domaine pour tracer l'origine d'un site frauduleux.",
+          "url": "https://whois.domaintools.com/"
+        },
+        {
+          "name": "Whoxy",
+          "description": "Service Whois/RDAP avec historique des changements de propriétaire et API de recherche inversée par email/personne.",
+          "url": "https://www.whoxy.com/"
+        },
+        {
+          "name": "Wayback Machine",
+          "description": "Archive d'Internet permettant de consulter les versions passées d'un site, même supprimé.",
+          "url": "https://web.archive.org/"
+        },
+        {
+          "name": "MXToolbox",
+          "description": "Vérifie la configuration et la santé d'un domaine email (MX, SPF, DKIM, DMARC, blacklists).",
+          "url": "https://mxtoolbox.com/emailhealth"
+        },
+        {
+          "name": "Unshortlink",
+          "description": "Révèle la destination réelle d'une URL raccourcie avant de cliquer, pour éviter le phishing.",
+          "url": "https://unshortlink.com/"
+        },
+        {
+          "name": "VirusTotal",
+          "description": "Scanne fichiers et URL suspects avec plus de 70 moteurs antivirus avant ouverture.",
+          "url": "https://www.virustotal.com/"
+        },
+        {
+          "name": "Any.Run",
+          "description": "Bac à sable interactif en ligne pour exécuter et observer le comportement d'un fichier/URL suspecte en temps réel.",
+          "url": "https://any.run/"
+        },
+        {
+          "name": "Hybrid Analysis",
+          "description": "Plateforme d'analyse dynamique de malwares (sandbox) gratuite, opérée par CrowdStrike.",
+          "url": "https://hybrid-analysis.com/"
+        },
+        {
+          "name": "Shodan",
+          "description": "Moteur de recherche pour trouver les appareils connectés (caméras, serveurs, IoT) exposés sur Internet.",
+          "url": "https://www.shodan.io/"
+        },
+        {
+          "name": "Quad9",
+          "description": "Résolveur DNS public gratuit et axé confidentialité, qui bloque automatiquement l'accès aux domaines malveillants connus (phishing, malware) au niveau du réseau.",
+          "url": "https://quad9.net/fr/"
+        }
+      ]
+    },
+    {
+      "id": "telephonie",
+      "title": "Téléphonie",
+      "items": [
+        {
+          "name": "Free Carrier Lookup",
+          "description": "Identifie l'opérateur d'origine et le type de ligne. Utile pour les numéros internationaux hors Belgique.",
+          "url": "https://www.freecarrierlookup.com/"
+        },
+        {
+          "name": "CRDC",
+          "description": "Système central de gestion des portabilités en Belgique. Donne l'opérateur actuel réel d'une ligne, indispensable pour vérifier la légitimité d'un SMS ou d'un appel suspect.",
+          "url": "https://www.crdc.be/"
+        }
+      ]
+    },
+    {
+      "id": "images-medias",
+      "title": "Images & médias",
+      "items": [
+        {
+          "name": "Jimpl",
+          "description": "Visualiseur de métadonnées EXIF en ligne : date, modèle d'appareil, coordonnées GPS. Permet aussi de les supprimer avant publication.",
+          "url": "https://jimpl.com/"
+        },
+        {
+          "name": "Recherche inversée",
+          "description": "Retrouve l'origine d'une image pour vérifier les fake news ou les profils usurpés.",
+          "url": "https://tineye.com/",
+          "links": [
+            {
+              "label": "TinEye",
+              "url": "https://tineye.com/"
+            },
+            {
+              "label": "PimEyes",
+              "url": "https://pimeyes.com/en"
+            },
+            {
+              "label": "Google Images",
+              "url": "https://images.google.com/"
+            },
+            {
+              "label": "Yandex Images",
+              "url": "https://yandex.com/images/"
+            }
+          ]
+        },
+        {
+          "name": "ExifRemover",
+          "description": "Supprime en un clic toutes les métadonnées EXIF d'une photo (GPS, date, modèle d'appareil) avant publication, directement dans le navigateur.",
+          "url": "https://exifremover.com/fr/"
+        }
+      ]
+    },
+    {
+      "id": "investigation-multi",
+      "title": "Investigation multi-sources (emails, pseudos, téléphones)",
+      "items": [
+        {
+          "name": "Mosint",
+          "description": "Outil OSINT en ligne de commande pour croiser une adresse email (fuites, réseaux sociaux, validité du compte) en une seule requête.",
+          "url": "https://github.com/alpkeskin/mosint"
+        },
+        {
+          "name": "Epieos",
+          "description": "Moteur de recherche OSINT pour le reverse lookup d'email/téléphone. Interroge plus de 140 services sans notifier la cible, croisé avec Have I Been Pwned.",
+          "url": "https://epieos.com/"
+        },
+        {
+          "name": "Osint Industries",
+          "description": "Plateforme de reverse lookup avancée (email, téléphone, pseudo) agrégeant des centaines de sources, alternative plus large qu'Epieos.",
+          "url": "https://www.osint.industries/"
+        },
+        {
+          "name": "WhatsMyName",
+          "description": "Recherche un pseudo sur plusieurs centaines de plateformes simultanément pour cartographier l'empreinte numérique d'une identité.",
+          "url": "https://whatsmyname.app/"
+        },
+        {
+          "name": "Sherlock",
+          "description": "Outil en ligne de commande (Python) qui recherche un nom d'utilisateur sur des centaines de réseaux sociaux.",
+          "url": "https://github.com/sherlock-project/sherlock"
+        },
+        {
+          "name": "Maigret",
+          "description": "Alternative à Sherlock, plus exhaustive : recherche de pseudo avec rapport détaillé (HTML, PDF, JSON).",
+          "url": "https://github.com/soxoj/maigret"
+        },
+        {
+          "name": "Holehe",
+          "description": "Vérifie si une adresse email est utilisée pour créer un compte sur une multitude de sites, sans authentification ni alerte à la cible.",
+          "url": "https://github.com/megadose/holehe"
+        },
+        {
+          "name": "Have I Been Pwned",
+          "description": "Vérifie instantanément si un email ou un mot de passe a été compromis dans une fuite de données connue.",
+          "url": "https://haveibeenpwned.com/"
+        },
+        {
+          "name": "Hunter.io",
+          "description": "Outil orienté prospection mais très utilisé en OSINT pour trouver/vérifier les adresses email d'un nom de domaine donné.",
+          "url": "https://hunter.io/dashboard"
+        },
+        {
+          "name": "IntelX (Intelligence X)",
+          "description": "Moteur de recherche indexant des données de fuites, du dark web, de documents publics et de versions archivées du web.",
+          "url": "https://intelx.io/"
+        },
+        {
+          "name": "DeHashed",
+          "description": "Moteur de recherche dans des bases de données de fuites (emails, mots de passe, identifiants).",
+          "url": "https://dehashed.com/search#searchPricing"
+        },
+        {
+          "name": "Breach.vip",
+          "description": "Service de recherche dans des fuites de données, pour vérifier rapidement l'exposition d'un email ou d'un identifiant.",
+          "url": "https://breach.vip/"
+        }
+      ]
+    },
+    {
+      "id": "investigation-visu",
+      "title": "Investigation, visualisation & automatisation",
+      "items": [
+        {
+          "name": "Maltego",
+          "description": "Logiciel de visualisation d'investigation sous forme de graphes, avec de nombreux connecteurs vers des sources OSINT tierces.",
+          "url": "https://www.maltego.com/"
+        },
+        {
+          "name": "OsinTracker",
+          "description": "Outil de prise de notes et de structuration d'investigation OSINT (sources, hypothèses, schémas mentaux).",
+          "url": "https://www.osintracker.com/"
+        },
+        {
+          "name": "n8n",
+          "description": "Plateforme d'automatisation de workflows (no-code/low-code) pour chaîner plusieurs outils OSINT.",
+          "url": "https://n8n.io/"
+        },
+        {
+          "name": "Kasm",
+          "description": "Lance un navigateur dans un conteneur Docker isolé ; tout disparaît à la fermeture. Pratique pour consulter des sites suspects en sécurité.",
+          "url": "https://kasm.com/community-edition"
+        },
+        {
+          "name": "Tails OS",
+          "description": "Système live (clé USB) axé anonymat : tout le trafic passe par Tor, aucune trace laissée sur la machine.",
+          "url": "https://tails.net/"
+        },
+        {
+          "name": "Exegol",
+          "description": "Environnements de hacking conteneurisés prêts à l'emploi (pentest, OSINT, CTF).",
+          "url": "https://exegol.com/"
+        },
+        {
+          "name": "IT-Tools",
+          "description": "Collection d'utilitaires techniques en ligne (encodage Base64, générateurs de hash, décodeur JWT, calculs réseau, etc.), pratique pour dépanner rapidement sans installer d'outil dédié.",
+          "url": "https://it-tools.tech/"
+        }
+      ]
+    },
+    {
+      "id": "geoint",
+      "title": "GEOINT (géolocalisation)",
+      "items": [
+        {
+          "name": "Overpass Turbo",
+          "description": "Interface de requête avancée sur OpenStreetMap pour extraire et visualiser des objets géographiques précis.",
+          "url": "https://overpass-turbo.eu/"
+        },
+        {
+          "name": "SunCalc",
+          "description": "Calcule la position du soleil à un endroit et une date donnés ; utile pour estimer l'heure d'une photo à partir des ombres.",
+          "url": "https://www.suncalc.org/"
+        }
+      ]
+    },
+    {
+      "id": "sock-puppet",
+      "title": "Puppet sock (identités de couverture)",
+      "items": [
+        {
+          "name": "Fake Name Generator",
+          "description": "Génère une identité fictive complète, utile pour créer un compte de couverture destiné à des investigations OSINT.",
+          "url": "https://www.fakenamegenerator.com/"
+        },
+        {
+          "name": "This Person Does Not Exist",
+          "description": "Générateur de visages humains synthétiques via IA : aucune photo ne correspond à une personne réelle.",
+          "url": "https://this-person-does-not-exist.com/"
+        }
+      ]
+    },
+    {
+      "id": "detection-ia",
+      "title": "Détection de contenu généré par IA",
+      "items": [
+        {
+          "name": "ZeroGPT",
+          "description": "Détecteur multi-usage (texte et images IA), gratuit, sans inscription, précision variable selon les modèles testés.",
+          "url": "https://www.zerogpt.com/"
+        },
+        {
+          "name": "GPTZero",
+          "description": "L'un des détecteurs de texte IA les plus connus, conçu pour le milieu académique. Extension Chrome et intégration LMS.",
+          "url": "https://gptzero.me/"
+        },
+        {
+          "name": "Originality.ai",
+          "description": "Détecteur orienté professionnels du contenu web, combinant détection IA et vérification de plagiat.",
+          "url": "https://originality.ai/"
+        },
+        {
+          "name": "Copyleaks",
+          "description": "Détecteur de texte IA multilingue, intégrable aux LMS, conforme RGPD/SOC2.",
+          "url": "https://copyleaks.com/"
+        },
+        {
+          "name": "Pangram Labs",
+          "description": "Détecteur développé par des chercheurs, réputé pour un taux de faux positifs très bas, 20+ langues.",
+          "url": "https://www.pangram.com/"
+        },
+        {
+          "name": "Hive Moderation",
+          "description": "Détecteur multimodal (texte, image, vidéo, audio) capable d'identifier le moteur génératif probable.",
+          "url": "https://hivemoderation.com/ai-generated-content-detection/"
+        },
+        {
+          "name": "Hive Detect",
+          "description": "Version grand public de Hive : glisser-déposer une image/vidéo/audio pour obtenir un score de probabilité IA.",
+          "url": "https://hivedetect.ai/"
+        },
+        {
+          "name": "Isgen",
+          "description": "Outil français de détection de texte IA (ChatGPT, GPT-4, Gemini, Llama, Claude, Mistral) et contenus mixtes.",
+          "url": "https://isgen.ai/"
+        }
+      ]
+    },
+    {
+      "id": "suppression-donnees",
+      "title": "Suppression de données personnelles & droit à l'oubli",
+      "items": [
+        {
+          "name": "Just Delete Me",
+          "description": "Annuaire de liens directs pour supprimer son compte sur des centaines de services, avec niveau de difficulté indiqué.",
+          "url": "https://backgroundchecks.org/justdeleteme/"
+        },
+        {
+          "name": "JustDeleteAccount.com",
+          "description": "Alternative à Just Delete Me, avec sa propre base de liens de suppression de comptes classés par catégorie.",
+          "url": "https://justdeleteaccount.com/"
+        },
+        {
+          "name": "Deseat.me",
+          "description": "Après connexion à sa boîte mail, repère les comptes créés via cette adresse et propose des liens directs de suppression.",
+          "url": "https://www.deseat.me/"
+        },
+        {
+          "name": "Formulaire Google — Droit à l'oubli",
+          "description": "Demande à Google le déréférencement d'une page dans les résultats associés à son nom (le contenu reste en ligne sur le site source).",
+          "url": "https://support.google.com/legal/answer/10769224?hl=fr"
+        },
+        {
+          "name": "Formulaire Google — Retrait de contenu",
+          "description": "Signaler des contenus spécifiques à retirer des résultats Google (données sensibles, usurpation d'identité).",
+          "url": "https://support.google.com/websearch/troubleshooter/9584951"
+        },
+        {
+          "name": "CNIL — Droit au déréférencement",
+          "description": "Procédure officielle pour demander le déréférencement d'un contenu auprès des moteurs de recherche (France).",
+          "url": "https://www.cnil.fr/fr/comprendre-mes-droits/droit-au-dereferencement"
+        },
+        {
+          "name": "CNIL — Faire supprimer des informations",
+          "description": "Procédure CNIL pour exercer le droit à l'effacement (article 17 RGPD) auprès du responsable d'un site.",
+          "url": "https://www.cnil.fr/fr/cnil-direct/question/comment-faire-supprimer-des-informations-me-concernant-diffusees-sur-internet"
+        },
+        {
+          "name": "APD — Droit à l'effacement (Belgique)",
+          "description": "Conditions d'exercice du droit à l'effacement (article 17 RGPD) et procédure de plainte ou médiation.",
+          "url": "https://www.autoriteprotectiondonnees.be/professionnel/rgpd-/droits-des-citoyens/droit-a-l-effacement"
+        },
+        {
+          "name": "APD — Désindexation (Belgique)",
+          "description": "Guide pour demander la désindexation d'un contenu auprès d'un moteur de recherche, avec procédure de recours.",
+          "url": "https://www.autoriteprotectiondonnees.be/citoyen/desindexation"
+        },
+        {
+          "name": "Modèle de lettre — Droit à l'effacement (APD)",
+          "description": "Modèle de courrier officiel pour formuler une demande d'effacement de données auprès d'un responsable de traitement.",
+          "url": "https://www.autoriteprotectiondonnees.be/publications/modele-de-lettre-droit-a-l-effacement.docx"
+        }
+      ]
+    },
+    {
+      "id": "crypto",
+      "title": "Cryptomonnaies",
+      "items": [
+        {
+          "name": "Blockchain Explorer",
+          "description": "Permet de consulter publiquement les transactions et soldes d'une adresse de cryptomonnaie, utile pour tracer des flux suspects.",
+          "url": "https://www.blockchain.com/explorer"
+        }
+      ]
+    },
+    {
+      "id": "ctf-communautes",
+      "title": "Communautés CTF / entraînement OSINT",
+      "items": [
+        {
+          "name": "CTF & challenges OSINT",
+          "description": "IsFred, OSINT-FR, Osintopia, OSINT4Fun — communautés et challenges pour s'entraîner aux techniques OSINT en conditions ludiques.",
+          "url": "https://osintfr.com/",
+          "links": [
+            {
+              "label": "IsFred",
+              "url": "https://isfred.fr/"
+            },
+            {
+              "label": "OSINT-FR",
+              "url": "https://osintfr.com/"
+            },
+            {
+              "label": "Osintopia",
+              "url": "https://osintopia.fr/"
+            },
+            {
+              "label": "OSINT4Fun",
+              "url": "https://osint4fun.eu/"
+            }
+          ]
+        },
+        {
+          "name": "OSINT-FR — MOOC",
+          "description": "Formation en ligne gratuite sur les fondamentaux de l'OSINT.",
+          "url": "https://mooc.osintfr.com/course/view.php?id=4"
+        }
+      ]
+    },
+    {
+      "id": "veille-lecture",
+      "title": "Veille & lecture",
+      "items": [
+        {
+          "name": "Sites de veille",
+          "description": "Bellingcat (investigation open source de référence), EFF (défense des libertés numériques), RadioCSIRT (actualité et podcasts cybersécurité), Project Fox, Osint Newsletter, Osint Field Notes, Osint Ambition.",
+          "url": "https://www.bellingcat.com/",
+          "links": [
+            {
+              "label": "Bellingcat",
+              "url": "https://www.bellingcat.com/"
+            },
+            {
+              "label": "EFF",
+              "url": "https://www.eff.org/"
+            },
+            {
+              "label": "RadioCSIRT",
+              "url": "https://www.radiocsirt.org/"
+            }
+          ]
+        },
+        {
+          "name": "OSINT France",
+          "description": "Portail francophone regroupant des centaines d'outils gratuits classés par catégorie.",
+          "url": "https://osintfr.com/outils/"
+        },
+        {
+          "name": "Osintopia",
+          "description": "Annuaire et hub d'outils OSINT, avec ressources et exercices pratiques.",
+          "url": "https://osintopia.fr/"
+        },
+        {
+          "name": "OSINT Newsletter — Tools",
+          "description": "Bibliothèque d'outils OSINT documentés et mis à jour régulièrement par la communauté.",
+          "url": "https://tools.osintnewsletter.com/"
+        },
+        {
+          "name": "Livre — OSINT Techniques (Michael Bazzell)",
+          "description": "Référence pour approfondir les méthodes et outils OSINT.",
+          "url": ""
+        }
+      ]
+    }
+  ]
+}

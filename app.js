@@ -4,13 +4,15 @@
   async function init() {
     let DATA;
     try {
-      const [resQ, resE] = await Promise.all([
-        fetch('questions.json?v=2026-06-29-3'),
-        fetch('extra-content.json?v=2026-06-29-3')
+      const v = '2026-07-06-1';
+      const [q, tm, s, o, t] = await Promise.all([
+        fetch(`data/questions.json?v=${v}`).then(r => r.json()),
+        fetch(`data/test-modes.json?v=${v}`).then(r => r.json()),
+        fetch(`data/syntheses.json?v=${v}`).then(r => r.json()),
+        fetch(`data/organismes.json?v=${v}`).then(r => r.json()),
+        fetch(`data/tools.json?v=${v}`).then(r => r.json())
       ]);
-      const questionsData = await resQ.json();
-      const extraData = await resE.json();
-      DATA = { ...questionsData, ...extraData };
+      DATA = { ...q, ...tm, ...s, ...o, ...t };
     } catch (e) {
       console.error('Failed to load data', e);
       document.getElementById('app').innerHTML = '<div class="nb-card empty-state"><h2>Erreur</h2><p>Les fichiers de données sont introuvables ou invalides.</p></div>';

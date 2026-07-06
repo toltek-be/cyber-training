@@ -49,6 +49,12 @@
       "description": "Traces publiques, croisement d’informations, confidentialité et réputation numérique.",
       "emoji": "🔎",
       "accent": "orange"
+    },
+    "cryptography": {
+      "name": "Cryptographie et hachage",
+      "description": "Principes du chiffrement (symétrique/asymétrique), algorithmes de hachage, certificats et intégrité.",
+      "emoji": "🔑",
+      "accent": "green"
     }
   },
   "questions": [
@@ -5950,6 +5956,136 @@
       "visual": "🔌",
       "certification": true,
       "scenario": true
+    },
+    {
+      "id": "hash-fixed-length",
+      "theme": "cryptography",
+      "subtheme": "hachage",
+      "difficulty": "easy",
+      "type": "single",
+      "prompt": "Pourquoi est-il utile que l'empreinte (hash) d'une donnée ou d'un fichier soit de longueur fixe, quelle que soit la taille du contenu original ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Pour permettre une comparaison rapide et constante entre deux fichiers lors d'une vérification d'intégrité."
+        },
+        {
+          "id": "b",
+          "label": "Pour réduire la taille totale du fichier stocké sur le serveur."
+        },
+        {
+          "id": "c",
+          "label": "Parce que les algorithmes de hachage ne peuvent techniquement pas traiter des données de tailles différentes."
+        }
+      ],
+      "correct": "a",
+      "explanation": "Une longueur fixe permet d'utiliser le hash comme un identifiant unique et constant pour vérifier que le fichier n'a pas été modifié, sans avoir à comparer les fichiers entiers.",
+      "visual": "📏",
+      "certification": false
+    },
+    {
+      "id": "hash-integrity",
+      "theme": "cryptography",
+      "subtheme": "hachage",
+      "difficulty": "medium",
+      "type": "single",
+      "prompt": "Si le contenu d'un fichier est modifié, même d'un seul caractère (ou un seul bit), quel impact cela a-t-il sur son empreinte (hash) ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "L'empreinte reste identique tant que la modification est mineure."
+        },
+        {
+          "id": "b",
+          "label": "L'empreinte change radicalement, rendant le nouveau hash différent du précédent."
+        },
+        {
+          "id": "c",
+          "label": "La longueur de l'empreinte augmente pour refléter l'ajout de données."
+        }
+      ],
+      "correct": "b",
+      "explanation": "C'est la propriété d'effet avalanche : une modification infime du contenu original doit produire un hash radicalement différent pour garantir l'intégrité des données.",
+      "visual": "🔄",
+      "certification": false
+    },
+    {
+      "id": "crypto-symmetric-vs-asymmetric",
+      "theme": "cryptography",
+      "subtheme": "base",
+      "difficulty": "medium",
+      "type": "single",
+      "prompt": "Quelle est la différence fondamentale entre le chiffrement symétrique et le chiffrement asymétrique ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Le chiffrement symétrique utilise une seule clé pour chiffrer et déchiffrer, tandis que l'asymétrique utilise une paire de clés (publique et privée)."
+        },
+        {
+          "id": "b",
+          "label": "Le chiffrement symétrique est beaucoup plus rapide que le chiffrement asymétrique."
+        },
+        {
+          "id": "c",
+          "label": "Le chiffrement asymétrique ne peut être utilisé que pour les fichiers de moins de 1 Ko."
+        }
+      ],
+      "correct": "a",
+      "explanation": "La distinction majeure réside dans le nombre de clés : une seule (symétrique) ou un couple public/privé (asymétrique).",
+      "visual": "🔑",
+      "certification": false
+    },
+    {
+      "id": "crypto-public-key-role",
+      "theme": "cryptography",
+      "subtheme": "asymétrique",
+      "difficulty": "medium",
+      "type": "single",
+      "prompt": "Dans un système à clé publique, quel est le rôle principal de la clé privée ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Elle sert à chiffrer le message pour que tout le monde puisse le lire."
+        },
+        {
+          "id": "b",
+          "label": "Elle permet au détenteur de déchiffrer un message envoyé avec sa clé publique correspondante ou de créer une signature numérique."
+        },
+        {
+          "id": "c",
+          "label": "Elle est partagée sur le réseau pour identifier l'utilisateur auprès des autres machines."
+        }
+      ],
+      "correct": "b",
+      "explanation": "La clé publique permet de chiffrer (ou vérifier une signature), tandis que la clé privée reste secrète et sert à déchiffrer (ou créer une signature).",
+      "visual": "🔐",
+      "certification": false
+    },
+    {
+      "id": "hash-salt-purpose",
+      "theme": "cryptography",
+      "subtheme": "hachage",
+      "difficulty": "medium",
+      "type": "single",
+      "prompt": "Quel rôle joue le 'sel' (salt) dans les processus de hachage des mots de passe ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Ajouter une donnée aléatoire avant le hachage pour empêcher l'utilisation de tables arc-en-ciel (rainbow tables)."
+        },
+        {
+          "id": "b",
+          "label": "Permettre au système de réintégrer le mot de passe original en cas d'oubli."
+        },
+        {
+          "id": "c",
+          "label": "Augmenter la vitesse de calcul lors des tentatives de connexion légitimes."
+        }
+      ],
+      "correct": "a",
+      "explanation": "Le sel garantit que deux utilisateurs ayant le même mot de passe n'auront pas le même hash, rendant les attaques par tables précalculées inefficaces.",
+      "visual": "🧂",
+      "certification": false
     }
   ]
 }
