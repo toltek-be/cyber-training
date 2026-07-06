@@ -4,7 +4,7 @@
   async function init() {
     let DATA;
     try {
-      const v = '2026-07-06-1';
+      const v = '2026-07-06-1845';
       const [q, tm, s, o, t] = await Promise.all([
         fetch(`data/questions.json?v=${v}`).then(r => r.json()),
         fetch(`data/test-modes.json?v=${v}`).then(r => r.json()),

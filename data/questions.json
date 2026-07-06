@@ -4566,35 +4566,6 @@
       "certification": false
     },
     {
-      "id": "prep-net-ddos-det",
-      "theme": "network",
-      "type": "single",
-      "prompt": "Quel indicateur est le plus pertinent pour détecter une attaque DDoS ?",
-      "options": [
-        {
-          "id": "a",
-          "label": "Connexions répétées depuis une seule IP"
-        },
-        {
-          "id": "b",
-          "label": "Pics de trafic provenant de nombreuses IP différentes"
-        },
-        {
-          "id": "c",
-          "label": "Création d’un nouvel utilisateur admin"
-        },
-        {
-          "id": "d",
-          "label": "Modification de fichiers système"
-        }
-      ],
-      "correct": "b",
-      "explanation": "Les attaques DDoS (Distributed Denial of Service) se caractérisent par des volumes massifs d’attaques provenant de multiples sources distinctes visant à saturer la bande passante.",
-      "visual": "🌪️",
-      "certification": false,
-      "difficulty": "medium"
-    },
-    {
       "id": "prep-net-ddos-mit",
       "theme": "network",
       "type": "single",
@@ -4624,60 +4595,36 @@
       "difficulty": "medium"
     },
     {
+      "id": "prep-net-ddos-det",
+      "theme": "network",
+      "type": "single",
+      "prompt": "Quel indicateur est le plus pertinent pour détecter une attaque DDoS ?",
+      "options": [
+        { "id": "a", "label": "Connexions répétées depuis une seule IP" },
+        { "id": "b", "label": "Pics de trafic provenant de nombreuses IP différentes" },
+        { "id": "c", "label": "Création d'un nouvel utilisateur admin" },
+        { "id": "d", "label": "Modification de fichiers système" }
+      ],
+      "correct": "b",
+      "explanation": "Les attaques DDoS se caractérisent par des volumes massifs de trafic provenant de multiples sources pour saturer le service.",
+      "visual": "🌪️",
+      "certification": false,
+      "difficulty": "medium"
+    },
+    {
       "id": "prep-m-aptp",
       "theme": "malware",
       "type": "single",
       "prompt": "Quelle caractéristique correspond à une APT (Advanced Persistent Threat) ?",
       "options": [
-        {
-          "id": "a",
-          "label": "Attaque rapide et visible"
-        },
-        {
-          "id": "b",
-          "label": "Attaque longue et discrète"
-        },
-        {
-          "id": "c",
-          "label": "Attaque uniquement automatisée"
-        },
-        {
-          "id": "d",
-          "label": "Attaque sans objectif précis"
-        }
+        { "id": "a", "label": "Attaque rapide et visible" },
+        { "id": "b", "label": "Attaque longue et discrète" },
+        { "id": "c", "label": "Attaque uniquement automatisée" },
+        { "id": "d", "label": "Attaque sans objectif précis" }
       ],
       "correct": "b",
-      "explanation": "Une APT vise à maintenir un accès prolongé à une cible pour espionner ou exfiltrer des données, souvent de manière furtive et sur une longue période.",
+      "explanation": "Une APT vise à maintenir un accès prolongé et discret pour espionner ou voler des données sur la durée.",
       "visual": "🕵️‍♂️",
-      "certification": false,
-      "difficulty": "medium"
-    },
-    {
-      "id": "prep-m-zero",
-      "theme": "malware",
-      "type": "single",
-      "prompt": "Qu’est-ce qu’une vulnérabilité zero-day ?",
-      "options": [
-        {
-          "id": "a",
-          "label": "Une faille déjà corrigée"
-        },
-        {
-          "id": "b",
-          "label": "Une faille inconnue du fournisseur"
-        },
-        {
-          "id": "c",
-          "label": "Une attaque basée sur phishing"
-        },
-        {
-          "id": "d",
-          "label": "Une sauvegarde corrompue"
-        }
-      ],
-      "correct": "b",
-      "explanation": "Le terme « zero-day » désigne une vulnérabilité encore non connue ou non corrigée par l'éditeur du logiciel, rendant la protection difficile.",
-      "visual": "🕰️",
       "certification": false,
       "difficulty": "medium"
     },
@@ -4685,30 +4632,124 @@
       "id": "prep-n-siem",
       "theme": "network",
       "type": "single",
-      "prompt": "Quel est le rôle principal d’un SIEM (Security Information and Event Management) ?",
+      "prompt": "Quel est le rôle principal d'un SIEM (Security Information and Event Management) ?",
       "options": [
-        {
-          "id": "a",
-          "label": "Supprimer les virus"
-        },
-        {
-          "id": "b",
-          "label": "Centraliser et analyser les logs"
-        },
-        {
-          "id": "c",
-          "label": "Crypter les fichiers"
-        },
-        {
-          "id": "d",
-          "label": "Remplacer un firewall"
-        }
+        { "id": "a", "label": "Supprimer les virus" },
+        { "id": "b", "label": "Centraliser et analyser les logs de sécurité" },
+        { "id": "c", "label": "Crypter les fichiers" },
+        { "id": "d", "label": "Remplacer un firewall" }
       ],
       "correct": "b",
-      "explanation": "Le SIEM agrège les logs de sécurité depuis différents équipements pour les corrélater et détecter des modèles d’attaques en temps réel.",
+      "explanation": "Le SIEM est un outil utilisé par les équipes de sécurité pour agréger et analyser les journaux d'événements.",
       "visual": "📊",
-      "certification": true,
+      "certification": false,
       "difficulty": "medium"
+    },
+    {
+      "id": "hard-web-hsts",
+      "theme": "web",
+      "subtheme": "en-tetes-securite",
+      "difficulty": "medium",
+      "type": "single",
+      "prompt": "Quel est le rôle principal de l'en-tête HTTP Strict-Transport-Security (HSTS) ?",
+      "options": [
+        { "id": "a", "label": "Chiffrer automatiquement le contenu affiché côté serveur" },
+        { "id": "b", "label": "Forcer le navigateur à toujours utiliser HTTPS pour ce domaine" },
+        { "id": "c", "label": "Bloquer automatiquement tous les scripts tiers" },
+        { "id": "d", "label": "Remplacer temporairement un certificat expiré" }
+      ],
+      "correct": "b",
+      "explanation": "HSTS indique au navigateur de mémoriser qu'un domaine doit toujours être contacté en HTTPS, protégeant contre les attaques de rétrogradation.",
+      "visual": "🔐",
+      "certification": false
+    },
+    {
+      "id": "hard-pwd-kerberoasting",
+      "theme": "passwords",
+      "subtheme": "active-directory",
+      "difficulty": "hard",
+      "type": "single",
+      "prompt": "Dans un environnement Active Directory, qu'est-ce que le « Kerberoasting » ?",
+      "options": [
+        { "id": "a", "label": "Une technique de sauvegarde automatique des mots de passe" },
+        { "id": "b", "label": "Une attaque visant à casser hors ligne le mot de passe de comptes de service via leurs tickets Kerberos" },
+        { "id": "c", "label": "Un protocole de chiffrement des emails" },
+        { "id": "d", "label": "Une méthode de mise à jour des politiques de mot de passe" }
+      ],
+      "correct": "b",
+      "explanation": "Le Kerberoasting est une technique avancée ciblant les comptes de service Active Directory. Elle est rarement abordée dans le TOSA Citizen.",
+      "visual": "🗝️",
+      "certification": false
+    },
+    {
+      "id": "hard-mal-fileless",
+      "theme": "malware",
+      "subtheme": "techniques-avancees",
+      "difficulty": "hard",
+      "type": "single",
+      "prompt": "Qu'est-ce qu'un malware « fileless » (sans fichier) ?",
+      "options": [
+        { "id": "a", "label": "Un malware qui opère en mémoire sans écrire de fichier sur le disque" },
+        { "id": "b", "label": "Un malware distribué uniquement par clé USB" },
+        { "id": "c", "label": "Un malware qui ne peut infecter que des fichiers PDF" },
+        { "id": "d", "label": "Un malware nécessitant une connexion Bluetooth" }
+      ],
+      "correct": "a",
+      "explanation": "Les malwares fileless s'exécutent en mémoire (souvent via PowerShell) pour éviter la détection par les antivirus classiques.",
+      "visual": "👻",
+      "certification": false
+    },
+    {
+      "id": "hard-net-ids-ips",
+      "theme": "network",
+      "subtheme": "detection",
+      "difficulty": "medium",
+      "type": "single",
+      "prompt": "Quelle est la différence principale entre un IDS et un IPS ?",
+      "options": [
+        { "id": "a", "label": "L'IDS détecte et alerte, l'IPS peut bloquer activement le trafic" },
+        { "id": "b", "label": "L'IPS ne fonctionne que sur les réseaux sans fil" },
+        { "id": "c", "label": "L'IDS chiffre l'ensemble du trafic réseau" },
+        { "id": "d", "label": "Il n'existe aucune différence fonctionnelle" }
+      ],
+      "correct": "a",
+      "explanation": "L'IDS (Détection) surveille et alerte, tandis que l'IPS (Prévention) agit activement pour bloquer les menaces.",
+      "visual": "🚨",
+      "certification": false
+    },
+    {
+      "id": "hash-fixed-length",
+      "theme": "cryptography",
+      "subtheme": "hachage",
+      "difficulty": "easy",
+      "type": "single",
+      "prompt": "Pourquoi est-il utile que l'empreinte (hash) d'une donnée soit de longueur fixe ?",
+      "options": [
+        { "id": "a", "label": "Pour permettre une comparaison rapide et constante lors d'une vérification d'intégrité." },
+        { "id": "b", "label": "Pour réduire la taille totale du fichier stocké." },
+        { "id": "c", "label": "Parce que les algorithmes ne peuvent pas traiter des tailles différentes." }
+      ],
+      "correct": "a",
+      "explanation": "Une longueur fixe permet d'utiliser le hash comme un identifiant unique et constant pour vérifier l'intégrité sans comparer les fichiers entiers.",
+      "visual": "📏",
+      "certification": true
+    },
+    {
+      "id": "hash-integrity",
+      "theme": "cryptography",
+      "subtheme": "hachage",
+      "difficulty": "medium",
+      "type": "single",
+      "prompt": "Si le contenu d'un fichier est modifié, même d'un seul bit, quel impact sur son empreinte (hash) ?",
+      "options": [
+        { "id": "a", "label": "L'empreinte reste identique tant que la modification est mineure." },
+        { "id": "b", "label": "L'empreinte change radicalement (effet avalanche)." },
+        { "id": "c", "label": "La longueur de l'empreinte augmente." }
+      ],
+      "correct": "b",
+      "explanation": "C'est la propriété d'effet avalanche : une modification infime produit un hash radicalement différent, garantissant l'intégrité.",
+      "visual": "🔄",
+      "certification": true
     },
     {
       "id": "prep-d-cloud-conf",
@@ -4891,36 +4932,6 @@
       "difficulty": "medium"
     },
     {
-      "id": "hard-web-hsts",
-      "theme": "web",
-      "subtheme": "en-tetes-securite",
-      "difficulty": "hard",
-      "type": "single",
-      "prompt": "Quel est le rôle principal de l’en-tête HTTP Strict-Transport-Security (HSTS) ?",
-      "options": [
-        {
-          "id": "a",
-          "label": "Chiffrer automatiquement le contenu affiché côté serveur avant tout envoi vers le navigateur"
-        },
-        {
-          "id": "b",
-          "label": "Forcer le navigateur à toujours utiliser HTTPS pour ce domaine, même si l’utilisateur tape http://"
-        },
-        {
-          "id": "c",
-          "label": "Bloquer automatiquement tous les scripts tiers chargés depuis des domaines externes au site"
-        },
-        {
-          "id": "d",
-          "label": "Remplacer temporairement un certificat expiré par un certificat auto-signé généré localement"
-        }
-      ],
-      "correct": "b",
-      "explanation": "HSTS indique au navigateur de mémoriser qu’un domaine doit toujours être contacté en HTTPS, ce qui limite les attaques de rétrogradation (downgrade) vers HTTP, notamment lors de la première visite sur un réseau non fiable.",
-      "visual": "🔐",
-      "certification": true
-    },
-    {
       "id": "hard-web-csp",
       "theme": "web",
       "subtheme": "en-tetes-securite",
@@ -4984,6 +4995,35 @@
       "visual": "🔤",
       "certification": true,
       "scenario": true
+    },
+    {
+      "id": "prep-m-zero",
+      "theme": "malware",
+      "type": "single",
+      "prompt": "Qu’est-ce qu’une vulnérabilité zero-day ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Une faille déjà corrigée"
+        },
+        {
+          "id": "b",
+          "label": "Une faille inconnue du fournisseur"
+        },
+        {
+          "id": "c",
+          "label": "Une attaque basée sur phishing"
+        },
+        {
+          "id": "d",
+          "label": "Une sauvegarde corrompue"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Le terme « zero-day » désigne une vulnérabilité encore non connue ou non corrigée par l'éditeur du logiciel, rendant la protection difficile.",
+      "visual": "🕰️",
+      "certification": false,
+      "difficulty": "medium"
     },
     {
       "id": "hard-ph-spf-dkim-dmarc",
@@ -5116,36 +5156,6 @@
       "certification": true
     },
     {
-      "id": "hard-pwd-kerberoasting",
-      "theme": "passwords",
-      "subtheme": "active-directory",
-      "difficulty": "hard",
-      "type": "single",
-      "prompt": "Dans un environnement Active Directory, qu’est-ce que le « Kerberoasting » ?",
-      "options": [
-        {
-          "id": "a",
-          "label": "Une technique consistant à sauvegarder automatiquement les mots de passe dans un coffre-fort chiffré du domaine"
-        },
-        {
-          "id": "b",
-          "label": "Une attaque consistant à demander des tickets de service Kerberos pour ensuite tenter de casser hors ligne le hash du mot de passe du compte de service associé"
-        },
-        {
-          "id": "c",
-          "label": "Un protocole de chiffrement des emails échangés entre les contrôleurs de domaine et les postes clients"
-        },
-        {
-          "id": "d",
-          "label": "Une méthode de mise à jour automatique et centralisée des politiques de mot de passe du domaine"
-        }
-      ],
-      "correct": "b",
-      "explanation": "Le Kerberoasting exploite le fait que tout utilisateur authentifié peut demander un ticket de service (TGS) chiffré avec le hash du mot de passe du compte de service ciblé, puis tenter de le casser hors ligne, souvent sans déclencher d’alerte immédiate.",
-      "visual": "🗝️",
-      "certification": false
-    },
-    {
       "id": "hard-pwd-credential-stuffing",
       "theme": "passwords",
       "subtheme": "attaques",
@@ -5179,7 +5189,7 @@
       "id": "hard-dev-edr-vs-av",
       "theme": "devices",
       "subtheme": "protection-poste",
-      "difficulty": "hard",
+      "difficulty": "medium",
       "type": "single",
       "prompt": "Quelle est la principale différence entre un antivirus classique et une solution EDR (Endpoint Detection and Response) ?",
       "options": [
@@ -5295,7 +5305,7 @@
       "correct": "b",
       "explanation": "Un CTF est un format d’entraînement ludique et pédagogique très répandu en cybersécurité (et en OSINT) : les participants résolvent des défis variés pour retrouver un « flag » (chaîne de caractères prouvant la réussite), individuellement ou en équipe.",
       "visual": "🚩",
-      "certification": false
+      "certification": true
     },
     {
       "id": "network-pentest-authorization",
@@ -5425,36 +5435,6 @@
       "explanation": "Un MDM bien conçu isole les données professionnelles, permet un effacement ciblé du conteneur pro sans toucher aux données personnelles, et impose des règles de chiffrement et de verrouillage. L’accès total aux données personnelles n’est ni nécessaire ni conforme.",
       "visual": "📱",
       "certification": false
-    },
-    {
-      "id": "hard-mal-fileless",
-      "theme": "malware",
-      "subtheme": "techniques-avancees",
-      "difficulty": "hard",
-      "type": "single",
-      "prompt": "Qu’est-ce qu’un malware « fileless » (sans fichier) ?",
-      "options": [
-        {
-          "id": "a",
-          "label": "Un malware qui ne dépose aucun exécutable sur le disque et opère principalement en mémoire, souvent via des outils système légitimes"
-        },
-        {
-          "id": "b",
-          "label": "Un malware distribué uniquement par clé USB et incapable de se propager par tout autre moyen"
-        },
-        {
-          "id": "c",
-          "label": "Un malware qui ne peut infecter que des fichiers PDF ouverts avec un lecteur non mis à jour"
-        },
-        {
-          "id": "d",
-          "label": "Un malware qui nécessite obligatoirement une connexion Bluetooth active pour pouvoir s’exécuter"
-        }
-      ],
-      "correct": "a",
-      "explanation": "Les malwares « fileless » évitent d’écrire des fichiers détectables sur le disque, s’exécutant en mémoire et détournant des outils légitimes (PowerShell, WMI), ce qui complique leur détection par les antivirus traditionnels basés sur les signatures de fichiers.",
-      "visual": "👻",
-      "certification": true
     },
     {
       "id": "hard-mal-lotl",
@@ -5702,36 +5682,6 @@
       "certification": true
     },
     {
-      "id": "hard-net-ids-ips",
-      "theme": "network",
-      "subtheme": "detection",
-      "difficulty": "hard",
-      "type": "single",
-      "prompt": "Quelle est la différence principale entre un IDS (Intrusion Detection System) et un IPS (Intrusion Prevention System) ?",
-      "options": [
-        {
-          "id": "a",
-          "label": "L’IDS détecte et alerte sans bloquer le trafic, tandis que l’IPS peut bloquer activement le trafic identifié comme malveillant"
-        },
-        {
-          "id": "b",
-          "label": "L’IPS ne fonctionne que sur les réseaux sans fil, contrairement à l’IDS qui couvre tous les réseaux"
-        },
-        {
-          "id": "c",
-          "label": "L’IDS chiffre l’ensemble du trafic réseau qu’il analyse, contrairement à l’IPS qui le laisse en clair"
-        },
-        {
-          "id": "d",
-          "label": "Il n’existe aucune différence fonctionnelle mesurable entre un IDS et un IPS correctement configurés"
-        }
-      ],
-      "correct": "a",
-      "explanation": "Un IDS est un système de détection passif qui génère des alertes, alors qu’un IPS est positionné en ligne sur le flux de trafic et peut bloquer activement les paquets ou connexions jugés malveillants.",
-      "visual": "🚨",
-      "certification": true
-    },
-    {
       "id": "hard-net-segmentation",
       "theme": "network",
       "subtheme": "architecture",
@@ -5956,58 +5906,6 @@
       "visual": "🔌",
       "certification": true,
       "scenario": true
-    },
-    {
-      "id": "hash-fixed-length",
-      "theme": "cryptography",
-      "subtheme": "hachage",
-      "difficulty": "easy",
-      "type": "single",
-      "prompt": "Pourquoi est-il utile que l'empreinte (hash) d'une donnée ou d'un fichier soit de longueur fixe, quelle que soit la taille du contenu original ?",
-      "options": [
-        {
-          "id": "a",
-          "label": "Pour permettre une comparaison rapide et constante entre deux fichiers lors d'une vérification d'intégrité."
-        },
-        {
-          "id": "b",
-          "label": "Pour réduire la taille totale du fichier stocké sur le serveur."
-        },
-        {
-          "id": "c",
-          "label": "Parce que les algorithmes de hachage ne peuvent techniquement pas traiter des données de tailles différentes."
-        }
-      ],
-      "correct": "a",
-      "explanation": "Une longueur fixe permet d'utiliser le hash comme un identifiant unique et constant pour vérifier que le fichier n'a pas été modifié, sans avoir à comparer les fichiers entiers.",
-      "visual": "📏",
-      "certification": false
-    },
-    {
-      "id": "hash-integrity",
-      "theme": "cryptography",
-      "subtheme": "hachage",
-      "difficulty": "medium",
-      "type": "single",
-      "prompt": "Si le contenu d'un fichier est modifié, même d'un seul caractère (ou un seul bit), quel impact cela a-t-il sur son empreinte (hash) ?",
-      "options": [
-        {
-          "id": "a",
-          "label": "L'empreinte reste identique tant que la modification est mineure."
-        },
-        {
-          "id": "b",
-          "label": "L'empreinte change radicalement, rendant le nouveau hash différent du précédent."
-        },
-        {
-          "id": "c",
-          "label": "La longueur de l'empreinte augmente pour refléter l'ajout de données."
-        }
-      ],
-      "correct": "b",
-      "explanation": "C'est la propriété d'effet avalanche : une modification infime du contenu original doit produire un hash radicalement différent pour garantir l'intégrité des données.",
-      "visual": "🔄",
-      "certification": false
     },
     {
       "id": "crypto-symmetric-vs-asymmetric",
