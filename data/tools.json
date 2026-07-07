@@ -683,8 +683,8 @@
       "items": [
         {
           "name": "Sites de veille",
-          "description": "Bellingcat (investigation open source de référence), EFF (défense des libertés numériques), RadioCSIRT (actualité et podcasts cybersécurité), Project Fox, Osint Newsletter, Osint Field Notes, Osint Ambition.",
-          "url": "https://www.bellingcat.com/",
+          "description": "Investigation open source et défense des libertés numériques.",
+          "url": "",
           "links": [
             {
               "label": "Bellingcat",
@@ -695,8 +695,25 @@
               "url": "https://www.eff.org/"
             },
             {
+              "label": "Project Fox",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "name": "Podcasts Cybersécurité & OSINT",
+          "description": "Ressources audio pour suivre l'actualité et les techniques d'investigation.",
+          "url": "",
+          "links": [
+            {
               "label": "RadioCSIRT",
-              "url": "https://www.radiocsirt.org/"
+              "url": "https://www.radiocsirt.org/",
+              "description": "Actualité et podcasts cybersécurité"
+            },
+            {
+              "label": "Backslash Podcast",
+              "url": "https://www.backslash-podcast.fr/",
+              "description": "Podcast francophone sur la cybersécurité"
             }
           ]
         },
