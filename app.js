@@ -962,7 +962,16 @@
     }
 
     function synthesisForTheme(themeId) {
-      return (DATA.syntheses || []).find(s => (s.themeIds || []).includes(themeId)) || (DATA.syntheses || [])[0] || null;
+      const chapters = DATA.syntheses || [];
+      const candidates = chapters.filter(s => (s.themeIds || []).includes(themeId));
+      if (candidates.length === 0) return chapters[0] || null;
+
+      // Priorité 1 : Le thème est le sujet principal (en première position)
+      const primaryMatch = candidates.find(s => (s.themeIds || [])[0] === themeId);
+      if (primaryMatch) return primaryMatch;
+
+      // Par défaut : la première synthèse qui mentionne le thème
+      return candidates[0];
     }
 
     function synthesesIndexMarkup() {

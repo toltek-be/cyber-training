@@ -3,11 +3,7 @@
     {
       "id": "bases-acteurs",
       "title": "Bases et acteurs de la cybersécurité",
-      "themeIds": [
-        "web",
-        "network",
-        "data"
-      ],
+      "themeIds": [],
       "intro": "La cybersécurité consiste à protéger les usages numériques du quotidien: navigation, emails, comptes, fichiers, appareils, données professionnelles et vie privée. L’objectif de la formation est surtout de construire des réflexes simples face aux risques rencontrés sur Internet et au travail.",
       "definitions": [
         "Cybersécurité: ensemble des pratiques qui protègent les systèmes, les comptes, les données et les services numériques.",
@@ -72,10 +68,7 @@
     {
       "id": "attaques-motivations",
       "title": "Cyberattaques et motivations",
-      "themeIds": [
-        "osint",
-        "malware"
-      ],
+      "themeIds": [],
       "intro": "Les cyberattaques peuvent viser des particuliers, des associations, des entreprises ou des administrations. Les attaquants ne cherchent pas toujours la même chose: argent, données, espionnage, sabotage, revendication, notoriété ou simple opportunité.",
       "definitions": [
         "Cyberattaque: action volontaire visant à compromettre un compte, un appareil, un service ou des données.",
@@ -472,9 +465,9 @@
       "id": "bases-cryptographie",
       "title": "Bases de la cryptographie",
       "themeIds": [
+        "cryptography",
         "data",
-        "network",
-        "cryptography"
+        "network"
       ],
       "intro": "Le chiffrement, le hachage et la signature électronique protègent la confidentialité, l'intégrité et l'authenticité des données, sans nécessiter de comprendre les mathématiques sous-jacentes.",
       "definitions": [
@@ -950,58 +943,64 @@
       ]
     },
     {
-      "id": "ia-confidentialite",
-      "title": "Intelligence artificielle et confidentialité",
+      "id": "rgpd-donnees",
+      "title": "RGPD et données personnelles",
       "themeIds": [
         "data"
       ],
-      "intro": "Les outils d’intelligence artificielle peuvent aider à rédiger, reformuler ou analyser, mais ils posent un risque si l’on y copie des données personnelles, professionnelles, confidentielles ou inutiles.",
+      "intro": "Le RGPD encadre la collecte et l’utilisation des données personnelles. Il n’interdit pas tout traitement, mais impose une finalité claire, des données nécessaires, de la transparence, des droits et des mesures de sécurité.",
       "definitions": [
-        "Anonymisation: transformation qui empêche raisonnablement de réidentifier une personne.",
-        "Pseudonymisation: remplacement d’identifiants directs par des codes, sans supprimer tout risque.",
-        "Minimisation: retrait des informations inutiles avant utilisation.",
-        "Donnée client: information liée à une personne ou organisation cliente.",
-        "Règle interne: consigne de l’organisation sur les outils IA autorisés ou interdits.",
-        "Validation humaine: contrôle de la réponse produite avant usage."
+        "Donnée personnelle: information qui identifie directement ou indirectement une personne.",
+        "Donnée sensible: donnée nécessitant une protection renforcée, comme une donnée de santé.",
+        "Traitement: collecte, consultation, stockage, partage, modification ou suppression de données.",
+        "Finalité: objectif précis pour lequel les données sont utilisées.",
+        "Minimisation: collecter uniquement ce qui est nécessaire.",
+        "Durée de conservation: période pendant laquelle les données peuvent être gardées.",
+        "Base légale: justification permettant le traitement.",
+        "Droit à l’effacement: droit de demander la suppression, avec certaines limites."
       ],
       "keyPoints": [
-        "On ne peut pas transmettre n’importe quelle information à un outil d’IA.",
-        "Une réclamation client peut contenir nom, adresse, email, numéro de commande et détails sensibles.",
-        "Certaines données peuvent être supprimées, remplacées par des variables ou généralisées sans nuire à la demande.",
-        "Les outils d’IA peuvent conserver, traiter ou réutiliser des informations selon leurs conditions.",
-        "Les règles de l’organisation déterminent quels outils sont autorisés et pour quels types de données.",
-        "Il ne faut jamais copier d’identifiants, mots de passe, secrets professionnels ou données médicales dans un outil non prévu pour cela.",
-        "Une réponse IA peut être fausse, incomplète ou inadaptée: elle doit être relue."
+        "Une liste de participants avec noms, emails, téléphones, présences et résultats ne doit pas être visible par tout le groupe sans raison.",
+        "Une newsletter commerciale ne peut pas être envoyée simplement parce qu’une personne a créé un compte si elle n’a pas été clairement informée ou si la base légale n’est pas adaptée.",
+        "Une photo permettant d’identifier une personne est une donnée personnelle; la publication doit être encadrée.",
+        "Des CV non retenus ne doivent pas être conservés indéfiniment sans information et justification.",
+        "Les données médicales des employés sont particulièrement sensibles et doivent être strictement limitées et protégées.",
+        "Un formulaire d’événement qui demande situation familiale, copie d’identité ou données inutiles pose un problème de minimisation.",
+        "Le droit à l’effacement existe, mais certaines obligations légales peuvent imposer de conserver des informations."
       ],
       "goodPractices": [
-        "Supprimer les noms, emails, adresses, numéros de commande et détails non nécessaires.",
-        "Utiliser des exemples fictifs ou des variables: Client A, commande X, date approximative.",
-        "Vérifier les règles internes avant d’utiliser un outil IA.",
-        "Limiter la demande à ce qui est strictement utile.",
-        "Relire et corriger la réponse générée.",
-        "Ne pas transmettre de secret professionnel, d’identifiants ou de données sensibles.",
-        "Choisir un outil validé par l’organisation si le contenu est professionnel."
+        "Toujours se demander quelles données personnelles sont concernées.",
+        "Vérifier si la pratique est autorisée, interdite ou autorisée sous conditions.",
+        "Limiter l’accès aux seules personnes qui en ont besoin.",
+        "Informer les personnes au moment de la collecte.",
+        "Prévoir une désinscription simple pour une newsletter.",
+        "Définir une durée de conservation proportionnée.",
+        "Protéger davantage les données sensibles.",
+        "Utiliser des sources officielles pour répondre à une question RGPD."
       ],
       "commonMistakes": [
-        "Coller une réclamation client complète pour obtenir une réponse plus précise.",
-        "Penser que pseudonymiser un nom suffit toujours.",
-        "Oublier qu’un numéro de commande ou un contexte précis peut réidentifier une personne.",
-        "Copier un fichier interne entier dans une IA publique.",
-        "Utiliser un outil non autorisé parce qu’il est pratique.",
-        "Faire confiance à la réponse sans vérification humaine."
+        "Collecter des données “au cas où”.",
+        "Rendre visibles des résultats ou présences individuelles à tout un groupe.",
+        "Publier des photos de formation sans information préalable.",
+        "Conserver des CV pendant des années sans cadre.",
+        "Donner accès à des données médicales à trop de personnes.",
+        "Répondre “nous ne supprimons jamais les données” à une demande d’effacement.",
+        "Confondre consentement, information et base légale."
       ],
-      "scenario": "Un employé veut rédiger une réponse à un client. Au lieu de copier le nom, l’adresse, l’email, le numéro de commande et tout le détail de la réclamation, il peut résumer le problème avec des données fictives ou anonymisées et vérifier la réponse avant de l’envoyer.",
-      "remember": "Moins l’IA reçoit de données réelles, plus le risque de fuite ou de réutilisation non maîtrisée diminue.",
-      "trap": "Une donnée apparemment anodine, comme un numéro de commande ou une combinaison de détails, peut suffire à réidentifier une personne.",
+      "scenario": "Un document partagé avec tous les stagiaires contient téléphones, emails, présences et résultats d’exercices. Il faut se demander quelles informations sont réellement nécessaires au groupe et réserver les données sensibles ou individuelles aux personnes autorisées.",
+      "remember": "La question centrale est toujours: quelles données, pour quelle finalité, visibles par qui, pendant combien de temps et avec quelles protections ?",
+      "trap": "Le RGPD n’est pas seulement une question de consentement: d’autres bases légales existent, mais elles doivent être justifiées.",
       "vocabulary": [
-        "IA générative",
-        "Anonymisation",
-        "Pseudonymisation",
+        "Donnée personnelle",
+        "Donnée sensible",
+        "Finalité",
         "Minimisation",
-        "Données client",
-        "Secret professionnel",
-        "Outil autorisé",
-        "Validation humaine"
+        "Base légale",
+        "Transparence",
+        "Durée de conservation",
+        "Droit d’accès",
+        "Rectification",
+        "Effacement"
       ]
     },
     {
@@ -1082,64 +1081,58 @@
       ]
     },
     {
-      "id": "rgpd-donnees",
-      "title": "RGPD et données personnelles",
+      "id": "ia-confidentialite",
+      "title": "Intelligence artificielle et confidentialité",
       "themeIds": [
         "data"
       ],
-      "intro": "Le RGPD encadre la collecte et l’utilisation des données personnelles. Il n’interdit pas tout traitement, mais impose une finalité claire, des données nécessaires, de la transparence, des droits et des mesures de sécurité.",
+      "intro": "Les outils d’intelligence artificielle peuvent aider à rédiger, reformuler ou analyser, mais ils posent un risque si l’on y copie des données personnelles, professionnelles, confidentielles ou inutiles.",
       "definitions": [
-        "Donnée personnelle: information qui identifie directement ou indirectement une personne.",
-        "Donnée sensible: donnée nécessitant une protection renforcée, comme une donnée de santé.",
-        "Traitement: collecte, consultation, stockage, partage, modification ou suppression de données.",
-        "Finalité: objectif précis pour lequel les données sont utilisées.",
-        "Minimisation: collecter uniquement ce qui est nécessaire.",
-        "Durée de conservation: période pendant laquelle les données peuvent être gardées.",
-        "Base légale: justification permettant le traitement.",
-        "Droit à l’effacement: droit de demander la suppression, avec certaines limites."
+        "Anonymisation: transformation qui empêche raisonnablement de réidentifier une personne.",
+        "Pseudonymisation: remplacement d’identifiants directs par des codes, sans supprimer tout risque.",
+        "Minimisation: retrait des informations inutiles avant utilisation.",
+        "Donnée client: information liée à une personne ou organisation cliente.",
+        "Règle interne: consigne de l’organisation sur les outils IA autorisés ou interdits.",
+        "Validation humaine: contrôle de la réponse produite avant usage."
       ],
       "keyPoints": [
-        "Une liste de participants avec noms, emails, téléphones, présences et résultats ne doit pas être visible par tout le groupe sans raison.",
-        "Une newsletter commerciale ne peut pas être envoyée simplement parce qu’une personne a créé un compte si elle n’a pas été clairement informée ou si la base légale n’est pas adaptée.",
-        "Une photo permettant d’identifier une personne est une donnée personnelle; la publication doit être encadrée.",
-        "Des CV non retenus ne doivent pas être conservés indéfiniment sans information et justification.",
-        "Les données médicales des employés sont particulièrement sensibles et doivent être strictement limitées et protégées.",
-        "Un formulaire d’événement qui demande situation familiale, copie d’identité ou données inutiles pose un problème de minimisation.",
-        "Le droit à l’effacement existe, mais certaines obligations légales peuvent imposer de conserver des informations."
+        "On ne peut pas transmettre n’importe quelle information à un outil d’IA.",
+        "Une réclamation client peut contenir nom, adresse, email, numéro de commande et détails sensibles.",
+        "Certaines données peuvent être supprimées, remplacées par des variables ou généralisées sans nuire à la demande.",
+        "Les outils d’IA peuvent conserver, traiter ou réutiliser des informations selon leurs conditions.",
+        "Les règles de l’organisation déterminent quels outils sont autorisés et pour quels types de données.",
+        "Il ne faut jamais copier d’identifiants, mots de passe, secrets professionnels ou données médicales dans un outil non prévu pour cela.",
+        "Une réponse IA peut être fausse, incomplète ou inadaptée: elle doit être relue."
       ],
       "goodPractices": [
-        "Toujours se demander quelles données personnelles sont concernées.",
-        "Vérifier si la pratique est autorisée, interdite ou autorisée sous conditions.",
-        "Limiter l’accès aux seules personnes qui en ont besoin.",
-        "Informer les personnes au moment de la collecte.",
-        "Prévoir une désinscription simple pour une newsletter.",
-        "Définir une durée de conservation proportionnée.",
-        "Protéger davantage les données sensibles.",
-        "Utiliser des sources officielles pour répondre à une question RGPD."
+        "Supprimer les noms, emails, adresses, numéros de commande et détails non nécessaires.",
+        "Utiliser des exemples fictifs ou des variables: Client A, commande X, date approximative.",
+        "Vérifier les règles internes avant d’utiliser un outil IA.",
+        "Limiter la demande à ce qui est strictement utile.",
+        "Relire et corriger la réponse générée.",
+        "Ne pas transmettre de secret professionnel, d’identifiants ou de données sensibles.",
+        "Choisir un outil validé par l’organisation si le contenu est professionnel."
       ],
       "commonMistakes": [
-        "Collecter des données “au cas où”.",
-        "Rendre visibles des résultats ou présences individuelles à tout un groupe.",
-        "Publier des photos de formation sans information préalable.",
-        "Conserver des CV pendant des années sans cadre.",
-        "Donner accès à des données médicales à trop de personnes.",
-        "Répondre “nous ne supprimons jamais les données” à une demande d’effacement.",
-        "Confondre consentement, information et base légale."
+        "Coller une réclamation client complète pour obtenir une réponse plus précise.",
+        "Penser que pseudonymiser un nom suffit toujours.",
+        "Oublier qu’un numéro de commande ou un contexte précis peut réidentifier une personne.",
+        "Copier un fichier interne entier dans une IA publique.",
+        "Utiliser un outil non autorisé parce qu’il est pratique.",
+        "Faire confiance à la réponse sans vérification humaine."
       ],
-      "scenario": "Un document partagé avec tous les stagiaires contient téléphones, emails, présences et résultats d’exercices. Il faut se demander quelles informations sont réellement nécessaires au groupe et réserver les données sensibles ou individuelles aux personnes autorisées.",
-      "remember": "La question centrale est toujours: quelles données, pour quelle finalité, visibles par qui, pendant combien de temps et avec quelles protections ?",
-      "trap": "Le RGPD n’est pas seulement une question de consentement: d’autres bases légales existent, mais elles doivent être justifiées.",
+      "scenario": "Un employé veut rédiger une réponse à un client. Au lieu de copier le nom, l’adresse, l’email, le numéro de commande et tout le détail de la réclamation, il peut résumer le problème avec des données fictives ou anonymisées et vérifier la réponse avant de l’envoyer.",
+      "remember": "Moins l’IA reçoit de données réelles, plus le risque de fuite ou de réutilisation non maîtrisée diminue.",
+      "trap": "Une donnée apparemment anodine, comme un numéro de commande ou une combinaison de détails, peut suffire à réidentifier une personne.",
       "vocabulary": [
-        "Donnée personnelle",
-        "Donnée sensible",
-        "Finalité",
+        "IA générative",
+        "Anonymisation",
+        "Pseudonymisation",
         "Minimisation",
-        "Base légale",
-        "Transparence",
-        "Durée de conservation",
-        "Droit d’accès",
-        "Rectification",
-        "Effacement"
+        "Données client",
+        "Secret professionnel",
+        "Outil autorisé",
+        "Validation humaine"
       ]
     },
     {
