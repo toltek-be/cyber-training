@@ -21,7 +21,7 @@ Une application web de quiz interactive pour s'entraîner à la cybersécurité 
   - **Révision Express** : Session rapide de 20 questions aléatoires.
   - **Niveaux de difficulté** : Facile, Moyen ou Difficile pour une progression adaptée.
 - **Entraînement par Thème** : 8 thèmes spécifiques (Web, Phishing, Mots de passe, RGPD, OSINT, etc.).
-- **Synthèses de cours** : Plus de 50 fiches récapitulatives interactives sur des sujets variés (RGPD, IA, IoT, Cryptographie, etc.).
+- **Synthèses de cours** : Plus de 20 fiches récapitulatives interactives sur des sujets variés (RGPD, IA, IoT, Cryptographie, etc.).
 - **Personnalisation** : 3 thèmes graphiques au choix (**SecOps**, **Neobrutalism**, **Corpo**) pour une expérience adaptée à vos préférences.
 - **Support Multimédia** : Intégration d'images et de vidéos pour illustrer les questions, avec fonction de zoom (modale) pour les visuels.
 - **Types de Questions Variés** :
@@ -35,18 +35,28 @@ Une application web de quiz interactive pour s'entraîner à la cybersécurité 
 - **Progression Persistante** : Sauvegarde automatique de l'avancement dans le navigateur (`LocalStorage`).
 - **Zéro Data** : Fonctionne entièrement côté client, aucune donnée personnelle n'est collectée ou envoyée à un serveur.
 - **Expérience Dynamique** : Mélange aléatoire des réponses à chaque session pour éviter le par cœur visuel.
+- **PWA Ready** : Installation possible sur smartphone et tablette (Manifest et icônes inclus) pour un accès rapide.
 - **Ergonomie & Visuels** : 
   - **Courbes de Bézier** : Rendu fluide et esthétique des lignes de liaison (Matching).
   - **Gestion des doublons** : Plusieurs réponses à droite peuvent avoir le même libellé.
   - **Flexibilité** : Possibilité de modifier ou d'annuler une liaison par simple clic ou glissement tactile.
 - **Support des Questions d'Examen** : Adaptations spécifiques pour les questions complexes du TOSA (catégorisations RGPD, etc.).
 
-## 🛠 Installation
+## 🛠 Installation & Développement
 
+### Usage Simple (Utilisateur)
 Aucune installation complexe n'est requise. L'application est composée de fichiers statiques (HTML, CSS, JS).
 
 1. Clonez ou téléchargez le dépôt.
 2. Ouvrez le fichier `index.html` dans n'importe quel navigateur moderne.
+
+### Développement (Avancé)
+Si vous souhaitez modifier les styles ou minifier le code, le projet utilise **Node.js** et **npm**.
+
+1. Installez les dépendances : `npm install`
+2. Lancez le build : `npm run build`
+
+Le dossier `dist/` contiendra la version optimisée prête pour la mise en ligne.
 
 ## 📂 Structure du projet
 
@@ -136,6 +146,18 @@ Chaque question dans `data/questions.json` peut inclure un champ `media` optionn
 
 - **Statistiques globales** : Visualisation de la progression globale par thème.
 - **Mode sombre automatique** : Bascule basée sur les préférences système.
+- **Support Multilingue** : Préparation du moteur pour l'anglais/espagnol.
+
+## 📈 Dernières Évolutions
+
+- **Juillet 2026** : 
+    - Implémentation du **Minuteur (Timer)** pour les modes de test.
+    - Ajout des **Courbes de Bézier** pour les lignes de liaison en Matching.
+    - Optimisation des **interactions tactiles** (Drag & Drop).
+    - Passage sous licence **MIT**.
+- **Juin 2026** :
+    - Refonte du moteur de mélange aléatoire.
+    - Amélioration de la navigation vers les synthèses par thème.
 
 
 
