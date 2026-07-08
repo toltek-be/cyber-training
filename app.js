@@ -89,7 +89,7 @@
           .forEach(k => localStorage.removeItem(k));
     }
 
-    function createQuiz(id, title, questionIds, subtitle = '') {
+    function createQuiz(id, title, questionIds, subtitle = '', timer = null) {
       return {
         id,
         title,
@@ -100,6 +100,7 @@
         drafts: {},
         shuffled: {},
         streak: 0,
+        timer,
         startedAt: Date.now(),
         updatedAt: Date.now(),
         completedAt: null,
@@ -115,7 +116,7 @@
       return arr;
     }
 
-    function launchQuiz(id, title, questionIds, subtitle = '') {
+    function launchQuiz(id, title, questionIds, subtitle = '', timer = null) {
       const existing = readQuiz(id);
       if (existing && !existing.completedAt) {
         ui.modal = {
@@ -124,12 +125,13 @@
           title,
           questionIds,
           subtitle,
+          timer,
           existing,
         };
         render();
         return;
       }
-      ui.quiz = createQuiz(id, title, questionIds, subtitle);
+      ui.quiz = createQuiz(id, title, questionIds, subtitle, timer);
       ui.view = 'quiz';
       ui.modal = null;
       ui.activeMatchLeft = null;
@@ -242,6 +244,41 @@
       return quiz ? quiz.questionIds.length - completedCount(quiz) : 0;
     }
 
+    function goToNextOrFinish() {
+      if (ui.quiz.currentIndex < ui.quiz.questionIds.length - 1) {
+        ui.quiz.currentIndex += 1;
+        ui.activeMatchLeft = null;
+        saveQuiz();
+        render(true);
+      } else {
+        finishQuiz();
+      }
+    }
+
+    function updateTimer() {
+      const timerEl = document.getElementById('quiz-timer');
+      if (!timerEl || !ui.quiz || !ui.quiz.timer || ui.quiz.completedAt) return;
+
+      const totalMs = ui.quiz.timer * 60 * 1000;
+      const elapsed = Date.now() - ui.quiz.startedAt;
+      const remaining = totalMs - elapsed;
+
+      if (remaining <= 0) {
+        timerEl.textContent = "00:00";
+        timerEl.classList.add('is-expired');
+        finishQuiz(true);
+        return;
+      }
+
+      const mins = Math.floor(remaining / 60000);
+      const secs = Math.floor((remaining % 60000) / 1000);
+      timerEl.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+
+      if (remaining < 60000) {
+        timerEl.classList.add('is-urgent');
+      }
+    }
+
     function currentQuestion() {
       if (!ui.quiz) return null;
       return QUESTION_BY_ID.get(ui.quiz.questionIds[ui.quiz.currentIndex]);
@@ -327,7 +364,7 @@
           <p>${safe(mode.description)}</p>
           <div class="action-card__meta">
             <span class="badge">${count} questions</span>
-            <span class="badge">${safe(mode.meta || 'Aléatoire sauvegardé')}</span>
+            ${mode.timer ? `<span class="badge" title="Mode rapide : corrections masquées + limite de temps">⏱️ ${safe(mode.timer)} min</span>` : ''}
           </div>
           <button class="btn" data-action="start-mode" data-mode="${safe(mode.id)}">${safe(buttonText)}</button>
         </article>`;
@@ -390,6 +427,7 @@
       <div class="section-title">
         <div><h2>Modes de test</h2></div>
       </div>
+      <p>Les modes avec chronomètre ⏱️ masquent les corrections pour privilégier la rapidité. Si le temps s'écoule avant la fin, toute question restée sans réponse est automatiquement marquée comme passée.</p>
       
       <section class="home-actions">
         <article class="action-card action-card--general nb-card">
@@ -720,7 +758,10 @@
       <header class="topbar">
         <button class="btn btn--small" data-action="home">← Accueil</button>
         <div class="topbar__title"><strong>${safe(ui.quiz.title)}</strong><span>Sauvegarde automatique activée</span></div>
-        <div class="streak" title="Série de bonnes réponses">🔥 Série ${ui.quiz.streak || 0}</div>
+        <div class="topbar__actions">
+          ${ui.quiz.timer ? `<div class="quiz-timer" id="quiz-timer" title="Temps restant">--:--</div>` : ''}
+          <div class="streak" title="Série de bonnes réponses">🔥 Série ${ui.quiz.streak || 0}</div>
+        </div>
       </header>
 
       <div class="quiz-layout">
@@ -842,6 +883,12 @@
       };
       ui.quiz.streak = correct ? (ui.quiz.streak || 0) + 1 : 0;
       saveQuiz();
+
+      if (ui.quiz.timer) {
+        goToNextOrFinish();
+        return;
+      }
+
       if (correct) {
         showToast(ui.quiz.streak >= 3 ? `🔥 Série de ${ui.quiz.streak} bonnes réponses !` : 'Bonne réponse !');
         if (ui.quiz.streak > 0 && ui.quiz.streak % 5 === 0) launchConfetti(35);
@@ -861,15 +908,35 @@
       };
       ui.quiz.streak = 0;
       saveQuiz();
+
+      if (ui.quiz.timer) {
+        goToNextOrFinish();
+        return;
+      }
+
       showToast('Pas de réponse au hasard : la correction est affichée.');
       renderPreserveScroll();
     }
 
-    function finishQuiz() {
-      if (remainingCount() > 0) {
+    function finishQuiz(force = false) {
+      if (!force && remainingCount() > 0) {
         showToast(`Il reste ${remainingCount()} question(s). Utilise la grille pour les retrouver.`);
         return;
       }
+
+      if (force) {
+        ui.quiz.questionIds.forEach(id => {
+          if (!ui.quiz.answers[id]) {
+            const q = QUESTION_BY_ID.get(id);
+            ui.quiz.answers[id] = {
+              status: 'skipped',
+              value: structuredClone(getDraft(q)),
+              completedAt: Date.now(),
+            };
+          }
+        });
+      }
+
       ui.quiz.completedAt = Date.now();
       saveQuiz();
       ui.view = 'results';
@@ -1505,7 +1572,7 @@
       }
       if (action === 'start-mode') {
         const mode = (DATA.testModes || []).find(item => item.id === button.dataset.mode);
-        if (mode) launchQuiz(mode.id, mode.title, modeQuestionIds(mode), mode.description);
+        if (mode) launchQuiz(mode.id, mode.title, modeQuestionIds(mode), mode.description, mode.timer);
         return;
       }
       if (action === 'organismes') {
@@ -1543,9 +1610,6 @@
         return;
       }
 
-      if (action === 'start-general') {
-        launchQuiz('general', 'Grand test Cyber Training', DATA.questions.map(q => q.id), 'Tous les thèmes');
-      }
       if (action === 'start-theme') {
         const id = button.dataset.theme;
         const theme = DATA.themes[id];
@@ -1601,9 +1665,9 @@
         render();
       }
       if (action === 'confirm-reset-current') {
-        const { id, title, subtitle, questionIds } = ui.quiz;
+        const { id, title, subtitle, questionIds, timer } = ui.quiz;
         deleteQuiz(id);
-        ui.quiz = createQuiz(id, title, questionIds, subtitle);
+        ui.quiz = createQuiz(id, title, questionIds, subtitle, timer);
         ui.modal = null;
         saveQuiz();
         render(true);
@@ -1632,16 +1696,16 @@
       if (action === 'confirm-restart-launch') {
         const modal = ui.modal;
         deleteQuiz(modal.id);
-        ui.quiz = createQuiz(modal.id, modal.title, modal.questionIds, modal.subtitle);
+        ui.quiz = createQuiz(modal.id, modal.title, modal.questionIds, modal.subtitle, modal.timer);
         ui.view = 'quiz';
         ui.modal = null;
         saveQuiz();
         render(true);
       }
       if (action === 'restart-finished') {
-        const { id, title, subtitle, questionIds } = ui.quiz;
+        const { id, title, subtitle, questionIds, timer } = ui.quiz;
         deleteQuiz(id);
-        ui.quiz = createQuiz(id, title, questionIds, subtitle);
+        ui.quiz = createQuiz(id, title, questionIds, subtitle, timer);
         ui.view = 'quiz';
         saveQuiz();
         render(true);
@@ -1661,6 +1725,10 @@
         renderPreserveScroll();
       }
     });
+
+    setInterval(() => {
+      if (ui.view === 'quiz') updateTimer();
+    }, 1000);
 
     render(true);
   }

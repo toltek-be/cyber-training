@@ -94,7 +94,7 @@
 .btn--pink { background: var(--pink); }
 .btn--red { background: var(--red); }
 
-.streak {
+.streak, .quiz-timer {
   background: var(--yellow);
   border: 3px solid var(--ink);
 }

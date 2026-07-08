@@ -1,10 +1,10 @@
 # Cyber Training - Révision TOSA
 
-![GitHub last commit](https://img.shields.io/github/last-commit/toltek-be/cyber-training)  
-![GitHub repo size](https://img.shields.io/github/repo-size/toltek-be/cyber-training)  
-[![Issues Welcome](https://img.shields.io/badge/issues-welcome-brightgreen)](https://github.com/toltek-be/cyber-training/issues)  
-![GitHub license](https://img.shields.io/github/license/toltek-be/cyber-training)  
-![No backend](https://img.shields.io/badge/backend-none-blue)  
+![GitHub last commit](https://img.shields.io/github/last-commit/toltek-be/cyber-training)
+![GitHub repo size](https://img.shields.io/github/repo-size/toltek-be/cyber-training)
+[![Issues Welcome](https://img.shields.io/badge/issues-welcome-brightgreen)](https://github.com/toltek-be/cyber-training/issues)
+![GitHub license](https://img.shields.io/github/license/toltek-be/cyber-training)
+![No backend](https://img.shields.io/badge/backend-none-blue)
 ![Made with JavaScript](https://img.shields.io/badge/made%20with-JavaScript-yellow)
   
 ---  
@@ -16,6 +16,7 @@ Une application web de quiz interactive pour s'entraîner à la cybersécurité 
 - **Modes de Test Variés** :
   - **Grand Test Complet** : 189 questions couvrant l'ensemble du programme.
   - **Test Blanc TOSA** : 50 questions équilibrées pour simuler l'examen.
+  - **Modes Chronométrés** : Limite de temps ajustable (badge ⏱️) avec fin automatique du quiz.
   - **Mises en situation** : Focus sur les scénarios concrets (emails, phishing, incidents).
   - **Révision Express** : Session rapide de 20 questions aléatoires.
   - **Niveaux de difficulté** : Facile, Moyen ou Difficile pour une progression adaptée.
@@ -29,11 +30,15 @@ Une application web de quiz interactive pour s'entraîner à la cybersécurité 
   - Texte à trous.
   - Éléments à relier (Matching).
   - Remise en ordre.
-- **Correction Immédiate** : Explications détaillées pour chaque question après validation.
+- **Correction Immédiate** : Explications détaillées pour chaque question après validation (désactivé en mode chronométré pour favoriser la rapidité).
+- **Navigation Optimisée** : Passage automatique à la question suivante en mode timer et marquage des questions non répondues comme "Passées" à l'expiration du temps.
 - **Progression Persistante** : Sauvegarde automatique de l'avancement dans le navigateur (`LocalStorage`).
 - **Zéro Data** : Fonctionne entièrement côté client, aucune donnée personnelle n'est collectée ou envoyée à un serveur.
 - **Expérience Dynamique** : Mélange aléatoire des réponses à chaque session pour éviter le par cœur visuel.
-- **Ergonomie Matching** : Gestion intelligente des doublons (plusieurs réponses à droite peuvent avoir le même libellé) et possibilité de modifier ou d'annuler une liaison par simple clic.
+- **Ergonomie & Visuels** : 
+  - **Courbes de Bézier** : Rendu fluide et esthétique des lignes de liaison (Matching).
+  - **Gestion des doublons** : Plusieurs réponses à droite peuvent avoir le même libellé.
+  - **Flexibilité** : Possibilité de modifier ou d'annuler une liaison par simple clic ou glissement tactile.
 - **Support des Questions d'Examen** : Adaptations spécifiques pour les questions complexes du TOSA (catégorisations RGPD, etc.).
 
 ## 🛠 Installation
@@ -99,6 +104,8 @@ graph TD
 | **Ordre matching (droite)** | ❌ Juste inversé | ✅ Aléatoire pour chaque question |  
 | **Ordre initial "remise en ordre"** | ❌ Toujours inversé | ✅ Complètement mélangé |  
 | **Doublons en matching** | ❌ Identifiants uniques stricts | ✅ Validation par libellé textuel |
+| **Lignes de liaison** | ❌ Lignes droites rigides | ✅ Courbes de Bézier fluides |
+| **Modes de test** | ❌ Sans limite de temps | ✅ Support du minuteur (Timer) |
 
 - **Optimisation mobile** : Amélioration des interactions tactiles sur les types Matching/Order (Drag & Drop tactile et zones de clic élargies).
 

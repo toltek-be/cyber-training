@@ -7,9 +7,10 @@
       "button": "Lancer le test blanc",
       "kind": "balanced",
       "count": 50,
+      "timer": 45,
       "emoji": "🧪",
       "accent": "purple",
-      "meta": "40 à 50 min"
+      "meta": "45 min"
     },
     {
       "id": "revision-express",
@@ -18,6 +19,7 @@
       "button": "Lancer 20 questions",
       "kind": "random",
       "count": 20,
+      "timer": 15,
       "emoji": "⚡",
       "accent": "blue",
       "meta": "Rapide"
@@ -29,6 +31,7 @@
       "button": "Lancer les situations",
       "kind": "scenario",
       "count": 25,
+      "timer": 20,
       "emoji": "🎯",
       "accent": "orange",
       "meta": "Cas pratiques"
@@ -40,6 +43,7 @@
       "title": "Niveau Facile",
       "description": "Les questions les plus abordables pour se mettre en jambe.",
       "count": 25,
+      "timer": 15,
       "emoji": "🟢",
       "accent": "mint",
       "button": "Lancer le mode facile"
@@ -51,6 +55,7 @@
       "title": "Niveau Moyen",
       "description": "Un bon test intermédiaire de vos connaissances.",
       "count": 25,
+      "timer": 20,
       "emoji": "🟠",
       "accent": "yellow",
       "button": "Lancer le mode moyen"
@@ -62,6 +67,7 @@
       "title": "Niveau Difficile",
       "description": "Pour les questions les plus pointues, style certification.",
       "count": 25,
+      "timer": 20,
       "emoji": "🔴",
       "accent": "red",
       "button": "Lancer le mode difficile"

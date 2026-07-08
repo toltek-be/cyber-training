@@ -137,7 +137,7 @@
 .btn--red { background: var(--red); }
 
 .topbar__title strong { font-weight: 800; }
-.streak {
+.streak, .quiz-timer {
     background: var(--yellow);
     border: 1px solid var(--line);
 }

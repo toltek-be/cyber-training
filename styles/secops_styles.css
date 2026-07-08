@@ -48,7 +48,7 @@
 
 /* Reset specific to SecOps to avoid pollution from base_styles.css */
 * { border-radius: 0 !important; }
-.nb-card, .hero, .btn, .stat-pill, .badge, .streak, .question-card, .option, .feedback, .q-nav, .modal, .results-hero, .action-card, .mode-card, .theme-card, .synthesis-card, .org-card, .tool-item, .home-actions, .home-actions--equal {
+.nb-card, .hero, .btn, .stat-pill, .badge, .streak, .quiz-timer, .question-card, .option, .feedback, .q-nav, .modal, .results-hero, .action-card, .mode-card, .theme-card, .synthesis-card, .org-card, .tool-item, .home-actions, .home-actions--equal {
     border: none;
 }
 
@@ -107,7 +107,7 @@ a { color: var(--info); }
             0 100%, 0 var(--cut)
     );
 }
-.btn, .stat-pill, .badge, .streak, .question-visual, .q-nav {
+.btn, .stat-pill, .badge, .streak, .quiz-timer, .question-visual, .q-nav {
     clip-path: polygon(
             var(--cut-sm) 0, 100% 0,
             100% calc(100% - var(--cut-sm)), calc(100% - var(--cut-sm)) 100%,
@@ -264,7 +264,7 @@ a { color: var(--info); }
 
 .topbar__title strong { color: var(--primary); }
 .topbar__title span { font-weight: 500; color: var(--ink-dim); }
-.streak {
+.streak, .quiz-timer {
     background: rgba(255,180,0,.09); box-shadow: inset 0 0 0 1px var(--warning); color: var(--warning);
     font-weight: 800;
 }
