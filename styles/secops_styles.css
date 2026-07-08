@@ -395,8 +395,13 @@ a { color: var(--info); }
 .confetti { width: 3px; height: 14px; background: var(--primary); box-shadow: 0 0 6px rgba(34,230,200,.75); border: none; animation: confetti-fall 1.6s linear forwards; }
 @keyframes confetti-fall { 0% { transform: translateY(-30px); opacity: 1; } 100% { transform: translateY(105vh); opacity: 0; } }
 
+hr {
+    border-top: 3px double var(--primary);
+    opacity: 0.3;
+    margin: 40px auto 20px;
+}
+
 .footer-note { font-weight: 500; color: rgba(223,246,255,.4); }
-.footer-note::before { content: "// "; }
 .empty-state h2 { color: var(--primary); }
 
 .term-cursor { display: inline-block; width: .55em; height: 1em; background: var(--primary); box-shadow: var(--glow-sm); vertical-align: text-bottom; animation: cursor-blink 1s steps(1) infinite; }

@@ -569,7 +569,15 @@ a { color: inherit; }
     }
 }
 
-.footer-note { margin-top: 34px; text-align: center; font-size: .9rem; font-weight: 650; }
+hr {
+    border: none;
+    border-top: 1px solid currentColor;
+    opacity: 0.15;
+    margin: 40px auto 20px;
+    width: 100%;
+}
+
+.footer-note { margin-top: 10px; text-align: center; font-size: .9rem; font-weight: 650; }
 .empty-state { padding: 28px; text-align: center; }
 .empty-state h2 { font-family: var(--font-display); text-transform: uppercase; }
 

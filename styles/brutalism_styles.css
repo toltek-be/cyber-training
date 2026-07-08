@@ -218,4 +218,10 @@
   border: 2px solid var(--ink);
 }
 
+hr {
+  border-top: 3px solid var(--ink);
+  opacity: 1;
+  margin: 40px auto 20px;
+}
+
 .match-item { box-shadow: 2px 2px 0 var(--ink); }

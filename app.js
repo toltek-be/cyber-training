@@ -466,7 +466,6 @@
         <div><h2>Réinitialisation</h2></div>
       </div>
       <button class="btn btn--red" data-action="ask-reset-all">Réinitialiser toute la progression</button>
-      <p class="footer-note">Cyber Training fonctionne sans compte, sans serveur et sans collecte de données personnelles.</p>
     `;
 
     }
@@ -1225,6 +1224,14 @@
       return '';
     }
 
+    function globalFooterMarkup() {
+      const year = new Date().getFullYear();
+      return `<hr><p class="footer-note">
+        Cyber Training fonctionne sans compte, sans serveur et sans collecte de données personnelles.
+        <br>${year} — Lancé par Damicell, boosté en collab par TolteK
+      </p>`;
+    }
+
     function render(scrollTop = false) {
       const viewMarkup = ui.view === 'home'
           ? homeMarkup()
@@ -1241,7 +1248,7 @@
                               : ui.view === 'tools'
                                   ? toolsMarkup()
                                   : homeMarkup();
-      app.innerHTML = viewMarkup + modalMarkup();
+      app.innerHTML = viewMarkup + globalFooterMarkup() + modalMarkup();
       attachDynamicEvents();
       if (ui.view === 'quiz' && currentQuestion()?.type === 'matching') requestAnimationFrame(drawMatchLines);
       if (scrollTop) window.scrollTo({ top: 0, behavior: 'smooth' });
