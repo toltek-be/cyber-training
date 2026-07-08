@@ -1,13 +1,13 @@
 # Cyber Training - Révision TOSA
 
-![GitHub last commit](https://img.shields.io/github/last-commit/toltek-be/cyber-training)
-![GitHub repo size](https://img.shields.io/github/repo-size/toltek-be/cyber-training)
-[![Issues Welcome](https://img.shields.io/badge/issues-welcome-brightgreen)](https://github.com/toltek-be/cyber-training/issues)
-![GitHub license](https://img.shields.io/github/license/toltek-be/cyber-training)
-![No backend](https://img.shields.io/badge/backend-none-blue)
+![GitHub last commit](https://img.shields.io/github/last-commit/toltek-be/cyber-training)  
+![GitHub repo size](https://img.shields.io/github/repo-size/toltek-be/cyber-training)  
+[![Issues Welcome](https://img.shields.io/badge/issues-welcome-brightgreen)](https://github.com/toltek-be/cyber-training/issues)  
+![GitHub license](https://img.shields.io/github/license/toltek-be/cyber-training)  
+![No backend](https://img.shields.io/badge/backend-none-blue)  
 ![Made with JavaScript](https://img.shields.io/badge/made%20with-JavaScript-yellow)
-
----
+  
+---  
 
 Une application web de quiz interactive pour s'entraîner à la cybersécurité et préparer la certification TOSA.
 
@@ -48,23 +48,57 @@ Aucune installation complexe n'est requise. L'application est composée de fichi
 - `index.html` : Point d'entrée de l'application (gère le versioning des ressources).
 - `app.js` : Logique de l'application (moteur de quiz, gestion d'état, chargement asynchrone des données).
 - `data/` : Dossier centralisant les ressources de données JSON :
-    - `questions.json` : Base de données des questions (format JSON strict).
-    - `test-modes.json` : Configuration des différents modes de test.
-    - `syntheses.json` : Fiches pédagogiques et synthèses de cours.
-    - `organismes.json` : Liste des autorités et organismes de cybersécurité.
-    - `tools.json` : Catalogue d'outils et de ressources recommandés.
+  - `questions.json` : Base de données des questions (format JSON strict).
+  - `test-modes.json` : Configuration des différents modes de test.
+  - `syntheses.json` : Fiches pédagogiques et synthèses de cours.
+  - `organismes.json` : Liste des autorités et organismes de cybersécurité.
+  - `tools.json` : Catalogue d'outils et de ressources recommandés.
 - `styles/` : Dossier contenant les feuilles de style (SecOps, Neobrutalism, Corpo).
 - `favicon/` : Ressources graphiques et manifest de l'application.
 
+```mermaid  
+graph TD
+    %% Moteur Central
+    App["**app.js**<br/>*Moteur central et gestion d'état*"]
+    subgraph Configuration ["⚙️ CONFIGURATION"]
+        TM["**test-modes.json**<br/>*Types de quiz, timers,<br/>et paramètres d'affichage*"]
+    end
+    subgraph Contenu ["📝 CONTENU PRINCIPAL"]
+        Q["**questions.json**<br/>*Base de données des questions<br/>(id, texte, options, media)*"]
+        S["**syntheses.json**<br/>*Fiches pédagogiques,<br/>conseils et rappels*"]
+    end
+    subgraph Referentiel ["📚 RÉFÉRENTIELS"]
+        O["**organismes.json**<br/>*Liste des autorités/organismes*"]
+        T["**tools.json**<br/>*Catalogue d'outils et ressources*"]
+    end
+    %% Flux de fonctionnement
+    App -->|Consomme| TM
+    App -->|Génère les quiz via| Q
+    App -->|Génère| S
+    App -->|Génère| O
+    App -->|Génère| T
+    %% Liens logiques entre données
+    Q <-.->|Lié par thème| S
+    
+    
+    %% Style visuel avec contraste renforcé (fond foncé / texte clair)
+    style App fill:#d84315,stroke:#3e2723,stroke-width:2px,color:#ffffff
+    style Q fill:#1565c0,stroke:#0d47a1,stroke-width:1px,color:#ffffff
+    style S fill:#1565c0,stroke:#0d47a1,stroke-width:1px,color:#ffffff
+    style TM fill:#2e7d32,stroke:#1b5e20,stroke-width:1px,color:#ffffff
+    style O fill:#546e7a,stroke:#37474f,stroke-width:1px,color:#ffffff
+    style T fill:#546e7a,stroke:#37474f,stroke-width:1px,color:#ffffff
+```  
+
 ## 🔄 Résumé des améliorations du mélange aléatoire
 
-| Élément | Avant | Après |
-| :--- | :--- | :--- |
-| **Ordre des questions** | ❌ Toujours le même | ✅ Mélangé par quiz |
-| **Ordre des réponses** | ❌ Toujours le même | ✅ Aléatoire pour chaque question |
-| **Ordre matching (droite)** | ❌ Juste inversé | ✅ Aléatoire pour chaque question |
-| **Ordre initial "remise en ordre"** | ❌ Toujours inversé | ✅ Complètement mélangé |
-| **Doublons en matching** | ❌ Identifiants uniques stricts | ✅ Validation par libellé textuel |
+| Élément | Avant | Après |  
+| :--- | :--- | :--- |  
+| **Ordre des questions** | ❌ Toujours le même | ✅ Mélangé par quiz |  
+| **Ordre des réponses** | ❌ Toujours le même | ✅ Aléatoire pour chaque question |  
+| **Ordre matching (droite)** | ❌ Juste inversé | ✅ Aléatoire pour chaque question |  
+| **Ordre initial "remise en ordre"** | ❌ Toujours inversé | ✅ Complètement mélangé |  
+| **Doublons en matching** | ❌ Identifiants uniques stricts | ✅ Validation par libellé textuel |  
 
 ## ⚙️ Maintenance & Fiabilisation
 
@@ -72,14 +106,10 @@ Aucune installation complexe n'est requise. L'application est composée de fichi
 
 Chaque question dans `data/questions.json` peut inclure un champ `media` optionnel pour afficher une image ou une vidéo :
 
-```json
-"media": {
-  "type": "image",
-  "src": "media/nom-du-fichier.png",
-  "alt": "Texte alternatif pour l'accessibilité",
-  "caption": "Légende affichée sous le média"
-}
-```
+```json  
+"media": {  
+  "type": "image",  "src": "media/nom-du-fichier.png",  "alt": "Texte alternatif pour l'accessibilité",  "caption": "Légende affichée sous le média"}  
+```  
 
 *Note : Pour une vidéo, utilisez `"type": "video"`. Les formats supportés dépendent des capacités du navigateur (généralement MP4/WebM).*
 
@@ -104,4 +134,4 @@ Chaque question dans `data/questions.json` peut inclure un champ `media` optionn
 
 Ce projet est distribué sous licence **MIT** — libre à vous de l'utiliser, le modifier et le redistribuer, y compris à des fins commerciales, en conservant la mention de copyright.
 
-Développé initialement par [Celio Miceli](https://www.linkedin.com/in/celio-miceli-57285a1b5) pour la formation CyberCitizen, puis repris et poursuivi par Toltek après la formation. 
+Développé initialement par [Celio Miceli](https://www.linkedin.com/in/celio-miceli-57285a1b5) pour la formation CyberCitizen, puis repris et poursuivi par Toltek après la formation.

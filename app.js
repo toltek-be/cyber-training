@@ -1012,7 +1012,7 @@
 
       return `
       <header class="topbar">
-        <button class="btn btn--small" data-action="syntheses">← Index</button>
+        <button class="btn btn--small" data-action="syntheses">← Synthèses</button>
         <div class="topbar__title"><strong>${safe(chapter.title)}</strong><span>Chapitre ${index + 1} / ${chapters.length}</span></div>
         <button class="btn btn--small" data-action="home">Accueil</button>
       </header>
