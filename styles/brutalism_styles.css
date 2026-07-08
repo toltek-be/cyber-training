@@ -186,7 +186,7 @@
 .match-item.is-linked { background: var(--cyan); }
 .match-item.is-correct { background: var(--mint); }
 .match-item.is-wrong { background: var(--red); }
-.match-lines line { stroke: var(--ink); }
+.match-lines line, .match-lines path { stroke: var(--ink); }
 
 .order-item {
   border: 3px solid var(--ink);

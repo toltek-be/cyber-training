@@ -98,7 +98,10 @@ graph TD
 | **Ordre des réponses** | ❌ Toujours le même | ✅ Aléatoire pour chaque question |  
 | **Ordre matching (droite)** | ❌ Juste inversé | ✅ Aléatoire pour chaque question |  
 | **Ordre initial "remise en ordre"** | ❌ Toujours inversé | ✅ Complètement mélangé |  
-| **Doublons en matching** | ❌ Identifiants uniques stricts | ✅ Validation par libellé textuel |  
+| **Doublons en matching** | ❌ Identifiants uniques stricts | ✅ Validation par libellé textuel |
+
+- **Optimisation mobile** : Amélioration des interactions tactiles sur les types Matching/Order (Drag & Drop tactile et zones de clic élargies).
+
 
 ## ⚙️ Maintenance & Fiabilisation
 
@@ -126,7 +129,6 @@ Chaque question dans `data/questions.json` peut inclure un champ `media` optionn
 
 - **Statistiques globales** : Visualisation de la progression globale par thème.
 - **Mode sombre automatique** : Bascule basée sur les préférences système.
-- **Optimisation mobile** : Améliorer les interactions tactiles sur les types Matching/Order.
 
 
 

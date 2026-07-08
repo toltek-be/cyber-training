@@ -32,6 +32,7 @@
       quiz: null,
       modal: null,
       activeMatchLeft: null,
+      touchDraggingId: null,
       reviewFilter: 'errors',
       synthesisId: null,
     };
@@ -154,18 +155,36 @@
 
     function launchConfetti(amount = 70) {
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      if (!confettiLayer) return;
+
       const colors = ['#ffd84d', '#ff6b9d', '#65dfff', '#7ee8b7', '#b69cff', '#ff7070'];
+      const fragment = document.createDocumentFragment();
+
       for (let i = 0; i < amount; i += 1) {
         const piece = document.createElement('span');
         piece.className = 'confetti';
+
+        const delay = Math.random() * 0.45;
+        const duration = 1.35 + Math.random() * 1.2;
+        const rotation = Math.random() * 360;
+        const drift = (Math.random() - 0.5) * 80; // dérive horizontale en px
+
         piece.style.left = `${Math.random() * 100}%`;
         piece.style.top = `${-10 - Math.random() * 30}px`;
-        piece.style.background = colors[i % colors.length];
-        piece.style.animationDelay = `${Math.random() * .45}s`;
-        piece.style.animationDuration = `${1.35 + Math.random() * 1.2}s`;
-        confettiLayer.appendChild(piece);
-        setTimeout(() => piece.remove(), 3000);
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.animationDelay = `${delay}s`;
+        piece.style.animationDuration = `${duration}s`;
+        piece.style.setProperty('--rotate', `${rotation}deg`);
+        piece.style.setProperty('--drift', `${drift}px`);
+
+        const cleanup = () => piece.remove();
+        piece.addEventListener('animationend', cleanup, { once: true });
+        setTimeout(cleanup, (delay + duration) * 1000 + 200);
+
+        fragment.appendChild(piece);
       }
+
+      confettiLayer.appendChild(fragment);
     }
 
     function themeQuestionIds(themeId) {
@@ -559,8 +578,9 @@
       const itemMap = new Map(q.items.map(([id, label]) => [id, label]));
       return `<div class="order-list" data-order-list="${safe(q.id)}">${(value || []).map((id, index) => {
         const correctAtPosition = q.correctOrder[index] === id;
+        const isDragging = ui.touchDraggingId === id;
         return `
-        <div class="order-item ${locked ? (correctAtPosition ? 'is-correct' : 'is-wrong') : ''}" draggable="${locked ? 'false' : 'true'}" data-order-id="${safe(id)}">
+        <div class="order-item ${isDragging ? 'is-dragging' : ''} ${locked ? (correctAtPosition ? 'is-correct' : 'is-wrong') : ''}" draggable="${locked ? 'false' : 'true'}" data-order-id="${safe(id)}">
           <span class="order-handle" aria-hidden="true">☰</span>
           <span><strong>${index + 1}.</strong> ${safe(itemMap.get(id))}</span>
           ${locked ? '' : `<span class="order-controls"><button type="button" aria-label="Monter" data-action="move-order" data-direction="up" data-id="${safe(id)}">↑</button><button type="button" aria-label="Descendre" data-action="move-order" data-direction="down" data-id="${safe(id)}">↓</button></span>`}
@@ -1224,26 +1244,87 @@
     function drawMatchLines() {
       const q = currentQuestion();
       if (!q || q.type !== 'matching') return;
+      
       const board = document.querySelector(`[data-match-board="${CSS.escape(q.id)}"]`);
       const svg = board?.querySelector('.match-lines');
       if (!board || !svg) return;
+
       const value = effectiveValue(q) || {};
       const rect = board.getBoundingClientRect();
+      
+      // Mise à jour de la viewBox pour correspondre exactement au conteneur
       svg.setAttribute('viewBox', `0 0 ${rect.width} ${rect.height}`);
       svg.innerHTML = '';
+
       Object.entries(value).forEach(([leftId, rightId]) => {
-        const left = board.querySelector(`[data-match-left="${CSS.escape(leftId)}"]`);
-        const right = board.querySelector(`[data-match-right="${CSS.escape(rightId)}"]`);
-        if (!left || !right) return;
-        const lr = left.getBoundingClientRect();
-        const rr = right.getBoundingClientRect();
-        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        line.setAttribute('x1', lr.right - rect.left + 9);
-        line.setAttribute('y1', lr.top - rect.top + lr.height / 2);
-        line.setAttribute('x2', rr.left - rect.left - 9);
-        line.setAttribute('y2', rr.top - rect.top + rr.height / 2);
-        svg.appendChild(line);
+        const leftEl = board.querySelector(`[data-match-left="${CSS.escape(leftId)}"]`);
+        const rightEl = board.querySelector(`[data-match-right="${CSS.escape(rightId)}"]`);
+        
+        if (!leftEl || !rightEl) return;
+
+        const lr = leftEl.getBoundingClientRect();
+        const rr = rightEl.getBoundingClientRect();
+
+        // Calcul des points de départ et d'arrivée (relatifs au board)
+        // On part du bord droit de l'élément gauche
+        const x1 = lr.right - rect.left;
+        const y1 = lr.top - rect.top + (lr.height / 2);
+        
+        // On arrive au bord gauche de l'élément droit
+        const x2 = rr.left - rect.left;
+        const y2 = rr.top - rect.top + (rr.height / 2);
+
+        // Calcul des points de contrôle pour la courbe de Bézier
+        // On crée une courbe en "S" doux. 
+        // La distance horizontale influence la "pente" de la courbe.
+        const deltaX = x2 - x1;
+        const controlOffset = Math.max(Math.abs(deltaX) * 0.5, 50); // Minimum 50px pour éviter les courbes trop serrées
+
+        const cp1x = x1 + controlOffset; // Point de contrôle 1 (sortie gauche)
+        const cp1y = y1;
+        const cp2x = x2 - controlOffset; // Point de contrôle 2 (entrée droite)
+        const cp2y = y2;
+
+        // Création du chemin SVG
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        
+        // Commande : M (Move to) -> C (Curve to with 2 control points)
+        const d = `M ${x1} ${y1} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${x2} ${y2}`;
+        
+        path.setAttribute('d', d);
+        path.setAttribute('fill', 'none');
+        path.setAttribute('stroke', '#65dfff'); // Couleur cohérente avec votre thème
+        path.setAttribute('stroke-width', '3');
+        path.setAttribute('stroke-linecap', 'round');
+        
+        // Optionnel : Ajouter une ombre ou un effet de lueur
+        path.style.filter = 'drop-shadow(0 0 2px rgba(101, 223, 255, 0.6))';
+
+        svg.appendChild(path);
       });
+    }
+
+    // Gestionnaire de redimensionnement optimisé
+    let matchResizeObserver = null;
+
+    function setupMatchResizeObserver() {
+      // Nettoyer l'observateur précédent s'il existe
+      if (matchResizeObserver) {
+        matchResizeObserver.disconnect();
+      }
+
+      const q = currentQuestion();
+      if (!q || q.type !== 'matching') return;
+
+      const board = document.querySelector(`[data-match-board="${CSS.escape(q.id)}"]`);
+      if (!board) return;
+
+      matchResizeObserver = new ResizeObserver(() => {
+        // On utilise requestAnimationFrame pour éviter de dessiner trop souvent pendant le redimensionnement
+        requestAnimationFrame(drawMatchLines);
+      });
+
+      matchResizeObserver.observe(board);
     }
 
     function moveOrder(id, direction) {
@@ -1262,6 +1343,8 @@
       const list = document.querySelector('.order-list');
       if (!list) return;
       let draggedId = null;
+      
+      // Gestion Souris (Desktop)
       list.querySelectorAll('.order-item[draggable="true"]').forEach(item => {
         item.addEventListener('dragstart', () => {
           draggedId = item.dataset.orderId;
@@ -1282,11 +1365,86 @@
           renderPreserveScroll();
         });
       });
+
+      // Gestion Tactile (Mobile) - Plus fluide via manipulation directe du DOM
+      let touchDraggedEl = null;
+
+      list.addEventListener('touchstart', e => {
+        const item = e.target.closest('.order-item');
+        if (item && !e.target.closest('button')) {
+          touchDraggedEl = item;
+          item.classList.add('is-dragging');
+          ui.touchDraggingId = item.dataset.orderId;
+        }
+      }, { passive: true });
+
+      list.addEventListener('touchmove', e => {
+        if (!touchDraggedEl) return;
+        if (e.cancelable) e.preventDefault();
+        
+        const touch = e.touches[0];
+        const target = document.elementFromPoint(touch.clientX, touch.clientY)?.closest('.order-item');
+        
+        if (target && target !== touchDraggedEl) {
+          const rect = target.getBoundingClientRect();
+          const next = (touch.clientY - rect.top) / (rect.height) > 0.5;
+          list.insertBefore(touchDraggedEl, next ? target.nextSibling : target);
+          
+          // Mise à jour visuelle immédiate des numéros
+          list.querySelectorAll('.order-item').forEach((it, idx) => {
+            const num = it.querySelector('strong');
+            if (num) num.textContent = `${idx + 1}.`;
+          });
+        }
+      }, { passive: false });
+
+      list.addEventListener('touchend', () => {
+        if (touchDraggedEl) {
+          const q = currentQuestion();
+          if (q) {
+            ui.quiz.drafts[q.id] = [...list.querySelectorAll('.order-item')].map(it => it.dataset.orderId);
+            saveQuiz();
+          }
+          touchDraggedEl.classList.remove('is-dragging');
+          renderPreserveScroll();
+        }
+        touchDraggedEl = null;
+        ui.touchDraggingId = null;
+      }, { passive: true });
+    }
+
+    function attachMatchTouch() {
+      const board = document.querySelector('.match-board');
+      if (!board) return;
+
+      let startLeftId = null;
+
+      board.addEventListener('touchstart', e => {
+        const item = e.target.closest('[data-match-left]');
+        if (item) {
+          startLeftId = item.dataset.matchLeft;
+          ui.activeMatchLeft = startLeftId;
+          renderPreserveScroll();
+        }
+      }, { passive: true });
+
+      board.addEventListener('touchend', e => {
+        if (!startLeftId) return;
+        const touch = e.changedTouches[0];
+        const target = document.elementFromPoint(touch.clientX, touch.clientY)?.closest('[data-match-right]');
+        
+        if (target) {
+          handleMatchClick(target);
+        }
+        startLeftId = null;
+      }, { passive: true });
     }
 
     function attachDynamicEvents() {
       attachOrderDrag();
+      attachMatchTouch();
       initThemeSelector();
+      setupMatchResizeObserver(); // Ajout de l'observateur
     }
 
     const THEME_STORAGE_KEY = 'cyberTraining:v1:theme';
@@ -1502,10 +1660,6 @@
         ui.reviewFilter = button.dataset.filter;
         renderPreserveScroll();
       }
-    });
-
-    window.addEventListener('resize', () => {
-      if (ui.view === 'quiz' && currentQuestion()?.type === 'matching') drawMatchLines();
     });
 
     render(true);

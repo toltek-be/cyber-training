@@ -226,7 +226,7 @@
 .match-item.is-linked { background: var(--cyan-soft); border-color: var(--cyan); }
 .match-item.is-correct { background: var(--mint-soft); border-color: var(--mint); }
 .match-item.is-wrong { background: var(--red-soft); border-color: var(--red); }
-.match-lines line { stroke: var(--ink); }
+.match-lines line, .match-lines path { stroke: var(--ink); }
 
 .order-item {
     border: 1px solid var(--line);

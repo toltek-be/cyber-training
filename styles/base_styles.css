@@ -434,8 +434,17 @@ a { color: inherit; }
 .match-item[data-side="left"]::after { right: -12px; }
 .match-item[data-side="right"]::before { left: -12px; }
 .match-item.is-active { transform: translate(-2px,-2px); }
-.match-lines { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; overflow: visible; }
-.match-lines line { stroke-width: 4; }
+.match-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+.match-lines line, .match-lines path { stroke-width: 4; }
 
 .order-list { display: grid; gap: 12px; }
 .order-item {
@@ -448,8 +457,17 @@ a { color: inherit; }
 }
 .order-item.is-dragging { opacity: .5; }
 .order-handle { font-size: 1.4rem; cursor: grab; }
-.order-controls { display: flex; gap: 6px; }
-.order-controls button { cursor: pointer; font-weight: 950; }
+.order-controls { display: flex; gap: 8px; }
+.order-controls button { 
+    cursor: pointer; 
+    font-weight: 950; 
+    min-width: 44px; 
+    min-height: 44px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-size: 1.2rem;
+}
 
 .modal-backdrop {
     position: fixed;
@@ -517,8 +535,14 @@ a { color: inherit; }
     animation: confetti-fall 1.8s ease-out forwards;
 }
 @keyframes confetti-fall {
-    0% { transform: translateY(-30px) rotate(0); opacity: 1; }
-    100% { transform: translateY(105vh) rotate(740deg); opacity: 0; }
+    from {
+        transform: translateY(0) translateX(0) rotate(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100vh) translateX(var(--drift)) rotate(var(--rotate));
+        opacity: 0;
+    }
 }
 
 .footer-note { margin-top: 34px; text-align: center; font-size: .9rem; font-weight: 650; }
@@ -545,7 +569,8 @@ a { color: inherit; }
     .question-visual { width: 60px; height: 60px; font-size: 2rem; }
     .question-grid { grid-template-columns: repeat(7, 1fr); }
     .match-board { grid-template-columns: minmax(105px,.8fr) minmax(150px,1.2fr); gap: 38px; padding: 0; }
-    .match-item { padding: 9px; min-height: 74px; font-size: .84rem; }
+    .match-item { padding: 12px; min-height: 80px; font-size: .88rem; }
+    .order-controls button { min-width: 48px; min-height: 48px; }
     .tf-table { font-size: .86rem; }
     .tf-table th, .tf-table td { padding: 8px 5px; }
     .tf-table th:not(:first-child), .tf-table td:not(:first-child) { width: 58px; }
