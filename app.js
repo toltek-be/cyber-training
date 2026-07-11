@@ -1,6 +1,72 @@
 (() => {
   'use strict';
 
+  const safe = (value) => String(value ?? '')
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
+
+  function shuffle(array) {
+    const arr = [...array];
+    for (let i = arr.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+  function hashCode(str) {
+    if (!str) return 0;
+    let h = 0;
+    for (let i = 0; i < str.length; i += 1) h = ((h << 5) - h) + str.charCodeAt(i) | 0;
+    return h;
+  }
+
+  function equalSets(a, b) {
+    if (a.length !== b.length) return false;
+    const bs = new Set(b);
+    return a.every(x => bs.has(x));
+  }
+
+  function evaluate(q, value) {
+    if (q.type === 'single') return value === q.correct;
+    if (q.type === 'multiple') return equalSets(value || [], q.correct || []);
+    if (q.type === 'tf-grid') return q.statements.every(s => value?.[s.id] === s.correct);
+    if (q.type === 'fill') return q.blanks.every(b => value?.[b.id] === b.correct);
+    if (q.type === 'matching') {
+      const rightMap = new Map(q.pairs.map(p => [p.rightId, p.right]));
+      return q.pairs.every(p => {
+        const chosenRightId = value?.[p.leftId];
+        if (!chosenRightId) return false;
+        if (chosenRightId === p.rightId) return true;
+        // Si l'ID est différent mais que le texte affiché est exactement le même, on accepte
+        return rightMap.get(chosenRightId) === p.right;
+      });
+    }
+    if (q.type === 'order') return q.correctOrder.every((id, i) => value?.[i] === id);
+    return false;
+  }
+
+  function createQuiz(id, title, questionIds, subtitle = '', timer = null) {
+    return {
+      id,
+      title,
+      subtitle,
+      questionIds: shuffle(questionIds),
+      currentIndex: 0,
+      answers: {},
+      drafts: {},
+      shuffled: {},
+      streak: 0,
+      timer,
+      startedAt: Date.now(),
+      updatedAt: Date.now(),
+      completedAt: null,
+    };
+  }
+
   async function init() {
     let DATA;
     try {
@@ -37,12 +103,6 @@
       synthesisId: null,
     };
 
-    const safe = (value) => String(value ?? '')
-        .replaceAll('&', '&amp;')
-        .replaceAll('<', '&lt;')
-        .replaceAll('>', '&gt;')
-        .replaceAll('"', '&quot;')
-        .replaceAll("'", '&#039;');
 
     function quizKey(id) {
       return `${STORAGE_PREFIX}${id}`;
@@ -89,32 +149,7 @@
           .forEach(k => localStorage.removeItem(k));
     }
 
-    function createQuiz(id, title, questionIds, subtitle = '', timer = null) {
-      return {
-        id,
-        title,
-        subtitle,
-        questionIds: shuffle(questionIds),
-        currentIndex: 0,
-        answers: {},
-        drafts: {},
-        shuffled: {},
-        streak: 0,
-        timer,
-        startedAt: Date.now(),
-        updatedAt: Date.now(),
-        completedAt: null,
-      };
-    }
 
-    function shuffle(array) {
-      const arr = [...array];
-      for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-      }
-      return arr;
-    }
 
     function launchQuiz(id, title, questionIds, subtitle = '', timer = null) {
       const existing = readQuiz(id);
@@ -724,12 +759,6 @@
       </section>`;
     }
 
-    function hashCode(str) {
-      if (!str) return 0;
-      let h = 0;
-      for (let i = 0; i < str.length; i += 1) h = ((h << 5) - h) + str.charCodeAt(i) | 0;
-      return h;
-    }
 
     function quizMarkup() {
       const q = currentQuestion();
@@ -841,30 +870,7 @@
       return false;
     }
 
-    function equalSets(a, b) {
-      if (a.length !== b.length) return false;
-      const bs = new Set(b);
-      return a.every(x => bs.has(x));
-    }
 
-    function evaluate(q, value) {
-      if (q.type === 'single') return value === q.correct;
-      if (q.type === 'multiple') return equalSets(value || [], q.correct || []);
-      if (q.type === 'tf-grid') return q.statements.every(s => value?.[s.id] === s.correct);
-      if (q.type === 'fill') return q.blanks.every(b => value?.[b.id] === b.correct);
-      if (q.type === 'matching') {
-        const rightMap = new Map(q.pairs.map(p => [p.rightId, p.right]));
-        return q.pairs.every(p => {
-          const chosenRightId = value?.[p.leftId];
-          if (!chosenRightId) return false;
-          if (chosenRightId === p.rightId) return true;
-          // Si l'ID est différent mais que le texte affiché est exactement le même, on accepte
-          return rightMap.get(chosenRightId) === p.right;
-        });
-      }
-      if (q.type === 'order') return q.correctOrder.every((id, i) => value?.[i] === id);
-      return false;
-    }
 
     function validateCurrent() {
       const q = currentQuestion();
@@ -1740,5 +1746,10 @@
     render(true);
   }
 
-  init();
+  if (typeof process === 'undefined' || process.env.NODE_ENV !== 'test') {
+    init();
+  }
+  if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { safe, shuffle, hashCode, equalSets, evaluate, createQuiz, init };
+  }
 })();

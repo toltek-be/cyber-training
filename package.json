@@ -9,13 +9,20 @@
     "build:html": "cp index.html dist/",
     "build:data": "node -e \"require('fs').readdirSync('data').forEach(f => { if (f.endsWith('.json')) { const c = require('./data/' + f); require('fs').mkdirSync('dist/data', {recursive:true}); require('fs').writeFileSync('dist/data/' + f, JSON.stringify(c)); } })\"",
     "build:assets": "npm run build:data && cp -r media dist/ && cp -r favicon dist/",
-    "build": "mkdir -p dist/styles && npm run build:js && npm run build:css && npm run build:html && npm run build:assets"
+    "build": "mkdir -p dist/styles && npm run build:js && npm run build:css && npm run build:html && npm run build:assets",
+    "lint": "eslint .",
+    "test": "jest"
   },
   "keywords": [],
   "author": "TolteK-Damicell",
   "license": "MIT",
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "cssnano": "^7.1.9",
+    "eslint": "^10.7.0",
+    "globals": "^17.7.0",
+    "jest": "^30.4.2",
+    "jest-environment-jsdom": "^30.4.1",
     "postcss": "^8.5.16",
     "postcss-cli": "^11.0.1",
     "terser": "^5.48.0"
