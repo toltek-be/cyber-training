@@ -22,7 +22,7 @@ Une application web de quiz interactive pour s'entraîner à la cybersécurité 
   - **Niveaux de difficulté** : Facile, Moyen ou Difficile pour une progression adaptée.
 - **Entraînement par Thème** : 8 thèmes spécifiques (Web, Phishing, Mots de passe, RGPD, OSINT, etc.).
 - **Synthèses de cours** : Plus de 20 fiches récapitulatives interactives sur des sujets variés (RGPD, IA, IoT, Cryptographie, etc.).
-- **Personnalisation** : 3 thèmes graphiques au choix (**SecOps**, **Neobrutalism**, **Corpo**) pour une expérience adaptée à vos préférences.
+- **Personnalisation** : Thème graphique unique (**SecOps**).
 - **Support Multimédia** : Intégration d'images et de vidéos pour illustrer les questions, avec fonction de zoom (modale) pour les visuels.
 - **Types de Questions Variés** :
   - Choix unique et multiple.
@@ -68,7 +68,7 @@ Le dossier `dist/` contiendra la version optimisée prête pour la mise en ligne
   - `syntheses.json` : Fiches pédagogiques et synthèses de cours.
   - `organismes.json` : Liste des autorités et organismes de cybersécurité.
   - `tools.json` : Catalogue d'outils et de ressources recommandés.
-- `styles/` : Dossier contenant les feuilles de style (SecOps, Neobrutalism, Corpo).
+- `styles/` : Dossier contenant les feuilles de style (base et SecOps).
 - `favicon/` : Ressources graphiques et manifest de l'application.
 
 ```mermaid  

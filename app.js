@@ -369,24 +369,6 @@
       const generalCompleted = generalSaved ? completedCount(generalSaved) : 0;
       const totalCertification = ACTIVE_QUESTIONS.filter(q => q.certification).length;
 
-      // Ajout du sélecteur de thème
-      const themes = [
-        { id: 'secops', name: 'Mode SecOps', file: 'styles/secops_styles.css' },
-        { id: 'brutalism', name: 'Mode Neobrutalism', file: 'styles/brutalism_styles.css' },
-        { id: 'classic', name: 'Mode Classique', file: 'styles/corpo_styles.css' }
-      ];
-
-      const themeSelect = `
-        <div class="theme-switcher" aria-label="Choix du style">
-            <br>
-            <p>Apparence : 
-            <select id="style-selector" aria-label="Sélecteur de thème">
-                ${themes.map(t => `<option value="${safe(t.file)}" data-theme-id="${t.id}">${safe(t.name)}</option>`).join('')}
-            </select>
-            </p>
-        </div>
-    `;
-
       const modeCards = (DATA.testModes || []).map(mode => {
         const existing = readQuiz(mode.id);
         const count = modeCount(mode);
@@ -426,7 +408,6 @@
         <span class="hero__eyebrow">Formation CyberCitizen · Révision TOSA</span>
         <h1>Cyber<br>Training</h1>
         <p>Un grand quiz complet et des entraînements par thème. Les corrections apparaissent immédiatement et chaque erreur devient une mini-fiche de révision.</p>
-        <span>${themeSelect}</span> 
         <div class="hero__stats">
           <span class="stat-pill">${ACTIVE_QUESTIONS.length} questions</span>
           <span class="stat-pill">${Object.keys(DATA.themes).length} thèmes</span>
@@ -1523,35 +1504,13 @@
     function attachDynamicEvents() {
       attachOrderDrag();
       attachMatchTouch();
-      initThemeSelector();
       setupMatchResizeObserver(); // Ajout de l'observateur
     }
 
-    const THEME_STORAGE_KEY = 'cyberTraining:v1:theme';
-
-    function applyTheme(file) {
-      const link = document.getElementById('theme-stylesheet');
-      if (!link || !file) return;
-      link.href = file;
-      localStorage.setItem(THEME_STORAGE_KEY, file);
-    }
-
-    function initThemeSelector() {
-      const select = document.getElementById('style-selector');
-      if (!select) return;
-      const saved = localStorage.getItem(THEME_STORAGE_KEY);
-      if (saved && [...select.options].some(o => o.value === saved)) {
-        select.value = saved;
-        applyTheme(saved);
-      }
-    }
 
     app.addEventListener('change', event => {
       const target = event.target.closest('[data-question-input]');
       if (target) updateDraftFromInput(target);
-
-      const themeTarget = event.target.closest('#style-selector');
-      if (themeTarget) applyTheme(themeTarget.value);
     });
 
     app.addEventListener('input', event => {
