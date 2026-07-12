@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Cyber Training" />
   <link rel="manifest" href="favicon/site.webmanifest" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://api.websitecarbon.com; connect-src 'self' https://api.websitecarbon.com; manifest-src 'self';">
   <title>Cyber Training</title>
   <link id="theme-stylesheet" rel="stylesheet" href="styles/secops_styles.css?v=2026-07-12-2300">
 </head>
@@ -20,8 +20,14 @@
 <div class="bg-shape bg-shape--one" aria-hidden="true"></div>
 <div class="bg-shape bg-shape--two" aria-hidden="true"></div>
 <main id="app" class="app-shell" tabindex="-1"></main>
+<footer id="global-footer" class="app-shell">
+  <hr>
+  <div id="wcb" class="carbonbadge wcb-d"></div>
+  <p id="footer-note" class="footer-note"></p>
+</footer>
 <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
 <div id="confetti-layer" class="confetti-layer" aria-hidden="true"></div>
 <script src="app.js?v=2026-07-12-2300"></script>
+<script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
 </body>
 </html>

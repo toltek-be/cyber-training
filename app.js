@@ -1235,12 +1235,12 @@
       return '';
     }
 
-    function globalFooterMarkup() {
-      const year = new Date().getFullYear();
-      return `<hr><p class="footer-note">
-        ${t('footer.text')}
-        <br>${t('footer.credits', { year })}
-      </p>`;
+    function updateFooter() {
+      const footerNote = document.getElementById('footer-note');
+      if (footerNote) {
+        const year = new Date().getFullYear();
+        footerNote.innerHTML = `${t('footer.text')}<br>${t('footer.credits', { year })}`;
+      }
     }
 
     function render(scrollTop = false) {
@@ -1259,8 +1259,10 @@
                               : ui.view === 'tools'
                                   ? toolsMarkup()
                                   : homeMarkup();
-      app.innerHTML = viewMarkup + globalFooterMarkup() + modalMarkup();
+      app.innerHTML = viewMarkup + modalMarkup();
+      updateFooter();
       attachDynamicEvents();
+
       if (ui.view === 'quiz' && currentQuestion()?.type === 'matching') requestAnimationFrame(drawMatchLines);
       if (scrollTop) window.scrollTo({ top: 0, behavior: 'smooth' });
     }

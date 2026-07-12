@@ -6,6 +6,10 @@ describe('Test d\'intégration Quiz', () => {
     // Initialisation du DOM
     document.body.innerHTML = `
       <main id="app"></main>
+      <footer id="global-footer">
+        <div id="wcb"></div>
+        <p id="footer-note"></p>
+      </footer>
       <div id="toast-region"></div>
       <div id="confetti-layer"></div>
     `;

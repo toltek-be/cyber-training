@@ -57,6 +57,13 @@ a { color: inherit; }
     margin: 0 auto;
     padding: 28px 0 64px;
 }
+.global-footer {
+    padding-top: 0;
+    padding-bottom: 32px;
+}
+.global-footer hr {
+    margin-top: 10px;
+}
 
 .nb-card {
     background: var(--white);
@@ -580,6 +587,7 @@ hr {
 }
 
 .footer-note { margin-top: 10px; text-align: center; font-size: .9rem; font-weight: 650; }
+#wcb.carbonbadge { margin: 24px auto 16px; justify-content: center; }
 .empty-state { padding: 28px; text-align: center; }
 .empty-state h2 { font-family: var(--font-display); text-transform: uppercase; }
 
