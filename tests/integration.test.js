@@ -27,7 +27,7 @@ describe('Test d\'intégration Quiz', () => {
     })();
     Object.defineProperty(window, 'localStorage', { value: localStorageMock });
 
-    // Mock de fetch pour les 5 appels de données
+    // Mock de fetch pour les 6 appels de données
     global.fetch = jest.fn((url) => {
       let data = {};
       if (url.includes('questions.json')) {
@@ -43,6 +43,20 @@ describe('Test d\'intégration Quiz', () => {
         data = { organismes: [] };
       } else if (url.includes('tools.json')) {
         data = { tools: [] };
+      } else if (url.includes('ui.json')) {
+        data = {
+          common: { questions: 'questions', themes: 'thèmes' },
+          home: {
+            hero: { title: 'Cyber<br>Training', eyebrow: 'eyebrow', description: 'description', stats: { certification: 'certification' } },
+            resources: { title: 'title', syntheses: { badge: 'badge', title: 'title', description: 'description', button: 'button' }, organismes: { title: 'title', description: 'description', button: 'button' }, tools: { title: 'title', description: 'description', button: 'button' } },
+            test_modes: { title: 'title', description: 'description' },
+            grand_test: { title: 'title', description: 'description', start: 'start', correction_directe: 'correction_directe' },
+            local_progression: { title: 'title', description: 'description', badge: 'badge' },
+            themes: { title: 'title', subtitle: 'subtitle', read_synthesis: 'read_synthesis', launch_count: 'launch_count' },
+            reset: { title: 'title', button: 'button' }
+          },
+          footer: { text: 'text', credits: 'credits' }
+        };
       }
 
       return Promise.resolve({

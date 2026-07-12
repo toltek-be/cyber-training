@@ -1,0 +1,335 @@
+{
+  "common": {
+    "error": "Erreur",
+    "loading_error": "Les fichiers de données sont introuvables ou invalides.",
+    "questions": "questions",
+    "themes": "thèmes",
+    "minutes_short": "min",
+    "resume": "Reprendre",
+    "home": "Accueil",
+    "chapters": "Chapitre",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "close": "Fermer",
+    "back": "Retour",
+    "cancel": "Annuler",
+    "restart": "Recommencer"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Formation CyberCitizen · Révision TOSA",
+      "title": "Cyber<br>Training",
+      "description": "Un grand quiz complet et des entraînements par thème. Les corrections apparaissent immédiatement et chaque erreur devient une mini-fiche de révision.",
+      "stats": {
+        "certification": "questions style certification"
+      }
+    },
+    "resources": {
+      "title": "Ressources",
+      "syntheses": {
+        "badge": "Cours",
+        "title": "Synthèses de cours",
+        "description": "Réviser les notions clés, les pièges fréquents et les bons réflexes avant de passer aux quiz.",
+        "button": "Ouvrir les synthèses"
+      },
+      "organismes": {
+        "title": "Organismes officiels",
+        "description": "Qui contacter en France et en Belgique : autorités nationales, protection des données, enquête, CERT, associations.",
+        "button": "Voir les organismes"
+      },
+      "tools": {
+        "title": "Boîte à outils",
+        "description": "80 outils OSINT, veille, sauvegarde et chiffrement classés par catégorie, avec recherche.",
+        "button": "Voir la boîte à outils"
+      }
+    },
+    "test_modes": {
+      "title": "Modes de test",
+      "description": "Les modes avec chronomètre ⏱️ masquent les corrections pour privilégier la rapidité. Si le temps s'écoule avant la fin, toute question restée sans réponse est automatiquement marquée comme passée."
+    },
+    "grand_test": {
+      "title": "Le grand test",
+      "description": "Toutes les questions, tous les thèmes, toutes les questions inspirées des captures de certification. La progression est sauvegardée automatiquement sur cet appareil.",
+      "correction_directe": "Correction directe",
+      "progression": "Progression : {done}/{total}",
+      "resume": "Reprendre le grand test",
+      "start": "Commencer le grand test",
+      "launch_title": "Grand test Cyber Training",
+      "launch_subtitle": "Tous les thèmes"
+    },
+    "continue": {
+      "title": "Continuer",
+      "status": "{done} question(s) terminée(s) sur {total}.",
+      "button": "Reprendre le Quizz"
+    },
+    "local_progression": {
+      "title": "Progression locale",
+      "description": "Aucun compte et aucune donnée envoyée : les réponses restent uniquement dans le navigateur.",
+      "badge": "100 % local"
+    },
+    "themes": {
+      "title": "Quiz par thème",
+      "subtitle": "Idéal pour revoir une matière spécifique.",
+      "read_synthesis": "Lire la synthèse",
+      "launch_count": "Lancer {count} questions"
+    },
+    "reset": {
+      "title": "Réinitialisation",
+      "button": "Réinitialiser toute la progression"
+    }
+  },
+  "quiz": {
+    "navigation": {
+      "home": "← Accueil",
+      "automatic_save": "Sauvegarde automatique activée",
+      "time_remaining": "Temps restant",
+      "streak": "🔥 Série {count}"
+    },
+    "status": {
+      "completed": "{done} question(s) terminée(s)",
+      "not_found": "Question introuvable",
+      "remaining_count": "Encore {count} à terminer",
+      "see_result": "Voir mon résultat",
+      "view_result_btn": "Voir le résultat"
+    },
+    "question": {
+      "header": {
+        "number": "Question {index} / {total}",
+        "certification": "Style certification"
+      },
+      "scenario_detection_regex": "^(vous|un|une|après|des collègues|dans|avant de|sur un)",
+      "multiple_notice": "Plusieurs réponses peuvent être correctes.",
+      "difficulty_labels": {
+        "easy": "Facile",
+        "medium": "Moyen",
+        "hard": "Difficile"
+      }
+    },
+    "controls": {
+      "validate": "Valider ma réponse",
+      "skip": "Je ne sais pas",
+      "next": "Suivante →",
+      "previous": "← Précédente",
+      "restart": "Recommencer ce quiz"
+    },
+    "sidebar": {
+      "title": "Vue d'ensemble",
+      "description": "Cliquez sur un numéro pour accéder directement à la question.",
+      "legend": {
+        "correct": "Correcte",
+        "wrong": "Incorrecte",
+        "skipped": "Passée",
+        "current": "Actuelle"
+      }
+    },
+    "feedback": {
+      "correct": ["Bien joué !", "Pare-feu mental activé !", "Bonne réponse !"],
+      "skipped": "Langue donnée au chat",
+      "wrong": ["Pas tout à fait...", "Le piège était bien caché.", "À retenir pour la prochaine fois !"],
+      "details": {
+        "correct_selected": "Bonnes réponses sélectionnées",
+        "correct_missed": "Bonnes réponses oubliées",
+        "wrong_selected": "Mauvaises réponses sélectionnées",
+        "none": "Aucune",
+        "expected": "Réponse attendue :",
+        "your_choice": "Votre choix :",
+        "your_link": "Votre liaison :",
+        "correct_answer": "Réponse correcte :",
+        "correct_link": "Bonne liaison :",
+        "correct_order": "Ordre correct"
+      }
+    },
+    "types": {
+      "labels": {
+        "single": "Choix unique",
+        "multiple": "Choix multiples",
+        "matching": "Éléments à relier",
+        "tf-grid": "Vrai / Faux",
+        "order": "Remise en ordre",
+        "fill": "Texte à compléter",
+        "default": "Question"
+      },
+      "choice": {
+        "correct_mark": "Bonne réponse",
+        "wrong_mark": "Mauvaise réponse"
+      },
+      "tf": {
+        "vrai": "Vrai",
+        "faux": "Faux",
+        "statement": "Affirmation"
+      },
+      "fill": {
+        "choose": "Choisir...",
+        "aria_label": "Mot à sélectionner"
+      },
+      "matching": {
+        "instructions": "Mode d'emploi : Cliquez sur un élément à gauche, puis sur sa description à droite. Recliquez pour modifier ou annuler une liaison."
+      },
+      "order": {
+        "aria_up": "Monter",
+        "aria_down": "Descendre"
+      },
+      "unknown": "Type de question inconnu."
+    },
+    "retry_errors": {
+      "title": "Révision des {count} erreur(s)",
+      "subtitle": "Questions incorrectes ou passées"
+    }
+  },
+  "results": {
+    "hero": {
+      "eyebrow": "Résultat final",
+      "status": "· {total} questions terminées.",
+      "home": "Retour à l'accueil",
+      "syntheses": "Revenir aux synthèses",
+      "restart": "Refaire tout le quiz",
+      "retry_errors": "Refaire mes {count} erreur(s)"
+    },
+    "stats": {
+      "correct": "Correctes",
+      "incorrect": "Incorrectes",
+      "skipped": "Passées",
+      "total": "Total"
+    },
+    "themes": {
+      "title": "Résultat par thème",
+      "description": "Commence par retravailler les thèmes où le pourcentage est le plus faible."
+    },
+    "review": {
+      "title": "Récapitulatif",
+      "description": "Ouvre une question pour relire la réponse et son explication détaillée.",
+      "filters": {
+        "errors_and_skipped": "Erreurs et questions passées",
+        "all": "Toutes",
+        "correct": "Correctes",
+        "incorrect": "Incorrectes",
+        "skipped": "Passées"
+      },
+      "item": {
+        "question": "Question {index} — {label} : {prompt}",
+        "label_correct": "Correcte",
+        "label_skipped": "Passée",
+        "label_incorrect": "Incorrecte",
+        "your_answer": "Votre réponse :",
+        "your_answer_none": "Aucune réponse",
+        "not_answered": "Non répondu",
+        "not_linked": "Non relié",
+        "answer_saved": "Réponse enregistrée",
+        "expected_answer": "Réponse attendue :"
+      },
+      "empty": "Rien à afficher ici 🎉"
+    },
+    "score_messages": {
+      "top": "Le cybercriminel a quitté la conversation.",
+      "high": "Très solide : quelques révisions ciblées et c'est carré.",
+      "medium": "Bonne base. Les erreurs ci-dessous vont faire gagner les derniers points.",
+      "low": "Ça progresse : refais d'abord les thèmes les plus faibles.",
+      "default": "Pas de panique : le récapitulatif est justement là pour transformer les erreurs en réflexes."
+    },
+    "footer_note": "Les résultats restent enregistrés uniquement dans ce navigateur."
+  },
+  "syntheses": {
+    "index": {
+      "header": {
+        "title": "Synthèses de cours",
+        "subtitle": "Réviser avant les tests",
+        "grand_test": "Grand test"
+      },
+      "hero": {
+        "eyebrow": "Cours CyberCitizen",
+        "title": "Synthèses",
+        "description": "Des rappels courts, structurés et orientés bons réflexes. Chaque chapitre renvoie vers un quiz lié."
+      },
+      "card": {
+        "badge": "Chapitre {index}",
+        "button": "Lire"
+      }
+    },
+    "detail": {
+      "header": {
+        "syntheses": "← Synthèses",
+        "status": "Chapitre {index} / {total}"
+      },
+      "badge": "Synthèse",
+      "sections": {
+        "definitions": "Définitions principales",
+        "key_points": "Notions importantes",
+        "good_practices": "Bonnes pratiques",
+        "common_mistakes": "Erreurs fréquentes",
+        "scenario": "Situation concrète",
+        "vocabulary": "Vocabulaire"
+      },
+      "boxes": {
+        "remember": "À retenir",
+        "trap": "Attention au piège"
+      },
+      "actions": {
+        "previous": "← Chapitre précédent",
+        "test": "Tester mes connaissances",
+        "next": "Chapitre suivant →"
+      },
+      "empty": "Aucune synthèse disponible"
+    }
+  },
+  "organismes": {
+    "header": {
+      "subtitle": "France 🇫🇷 vs Belgique 🇧🇪",
+      "tools": "Boîte à outils"
+    },
+    "hero": {
+      "eyebrow": "Ressources",
+      "title": "Organismes de cybersécurité",
+      "description": "Qui contacter en France et en Belgique selon la situation : autorités nationales, protection des données, enquête, réponse à incident, associations et sensibilisation."
+    },
+    "card": {
+      "role": "Rôle :",
+      "public": "Public :",
+      "situations": "Quand les contacter :",
+      "contact": "Contact :",
+      "signaler": "Que signaler :"
+    }
+  },
+  "tools": {
+    "header": {
+      "subtitle": "OSINT, veille, sauvegarde, chiffrement",
+      "organismes": "Organismes officiels"
+    },
+    "hero": {
+      "eyebrow": "Ressources",
+      "title": "Boîte à outils opérationnelle",
+      "description": "{count} outils classés par catégorie. Utilisez la recherche pour filtrer, ou les raccourcis ci-dessous pour naviguer.",
+      "search_placeholder": "Rechercher un outil (ex : email, EXIF, sauvegarde...)",
+      "search_aria_label": "Rechercher un outil"
+    }
+  },
+  "modals": {
+    "resume": {
+      "title": "Quiz déjà commencé",
+      "description": "Tu as déjà terminé {done} question(s) sur {total}. Tu peux reprendre ou recommencer à zéro."
+    },
+    "reset_current": {
+      "title": "Recommencer ce quiz ?",
+      "description": "Toutes les réponses enregistrées pour ce quiz seront effacées.",
+      "confirm": "Oui, recommencer"
+    },
+    "reset_all": {
+      "title": "Tout réinitialiser ?",
+      "description": "La progression de tous les quiz sera supprimée de ce navigateur.",
+      "confirm": "Oui, tout effacer"
+    }
+  },
+  "toasts": {
+    "complete_question": "Complète la question ou donne ta langue au chat.",
+    "feedback_correction": "Correction affichée : prends le temps de lire l'explication.",
+    "streak": "🔥 Série de {count} bonnes réponses !",
+    "streak_simple": "Bonne réponse !",
+    "skip_feedback": "Pas de réponse au hasard : la correction est affichée.",
+    "reset_all_success": "Toute la progression a été supprimée.",
+    "match_instructions": "Choisis d'abord un élément dans la colonne de gauche.",
+    "remaining_questions": "Il reste {count} question(s). Utilise la grille pour les retrouver."
+  },
+  "footer": {
+    "text": "Cyber Training fonctionne sans compte, sans serveur et sans collecte de données personnelles.",
+    "credits": "{year} — Lancé par Damicell, boosté en collab par TolteK"
+  }
+}

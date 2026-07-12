@@ -60,16 +60,22 @@ Le dossier `dist/` contiendra la version optimisée prête pour la mise en ligne
 
 ## 📂 Structure du projet
 
-- `index.html` : Point d'entrée de l'application (gère le versioning des ressources).
-- `app.js` : Logique de l'application (moteur de quiz, gestion d'état, chargement asynchrone des données).
-- `data/` : Dossier centralisant les ressources de données JSON :
-  - `questions.json` : Base de données des questions (format JSON strict).
-  - `test-modes.json` : Configuration des différents modes de test.
-  - `syntheses.json` : Fiches pédagogiques et synthèses de cours.
-  - `organismes.json` : Liste des autorités et organismes de cybersécurité.
-  - `tools.json` : Catalogue d'outils et de ressources recommandés.
-- `styles/` : Dossier contenant les feuilles de style (base et SecOps).
-- `favicon/` : Ressources graphiques et manifest de l'application.
+```text
+.
+├── index.html          # Point d'entrée (gestion du versioning)
+├── app.js              # Logique, moteur de quiz et gestion d'état
+├── data/               # Ressources JSON
+│   └── lang/           # Sous-répertoires par langue
+│       └── fr/        
+│           ├── questions.json    # Base de données des questions
+│           ├── test-modes.json   # Configuration des modes
+│           ├── syntheses.json    # Fiches pédagogiques
+│           ├── organismes.json   # Autorités et organismes
+│           ├── tools.json        # Catalogue d'outils
+│           └── ui.json           # Traductions UI
+├── styles/            # Feuilles de style (base & SecOps)
+└── favicon/           # Ressources graphiques et manifest
+````
 
 ```mermaid  
 graph TD
@@ -146,7 +152,7 @@ Chaque question dans `data/questions.json` peut inclure un champ `media` optionn
 
 - **Statistiques globales** : Visualisation de la progression globale par thème.
 - **Mode sombre automatique** : Bascule basée sur les préférences système.
-- **Support Multilingue** : Préparation du moteur pour l'anglais/espagnol.
+- **Support Multilingue** : Préparation du moteur pour l'anglais/néerlandais.
 
 ## 📈 Dernières Évolutions
 
