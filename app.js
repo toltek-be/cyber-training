@@ -795,7 +795,7 @@
         </div>
       </header>
 
-      <div class="quiz-layout">
+      <div class="quiz-layout ${ui.quiz.timer ? 'has-no-sidebar' : ''}">
         <section class="quiz-main">
           <div class="progress-card nb-card">
             <div class="progress-meta"><span>${t('quiz.status.completed', { done })}</span><span>${percent} %</span></div>
@@ -822,17 +822,19 @@
 
             <div class="question-actions">
               <div class="question-actions__main">
-                <button class="btn" data-action="previous" ${ui.quiz.currentIndex === 0 ? 'disabled' : ''}>${t('quiz.controls.previous')}</button>
+                ${ui.quiz.timer ? '' : `<button class="btn" data-action="previous" ${ui.quiz.currentIndex === 0 ? 'disabled' : ''}>${t('quiz.controls.previous')}</button>`}
                 ${locked ? '' : `<button class="btn btn--pink" data-action="skip">${t('quiz.controls.skip')}</button>`}
               </div>
               <div class="question-actions__main">
                 ${locked ? '' : `<button class="btn btn--dark" data-action="validate">${t('quiz.controls.validate')}</button>`}
-                ${ui.quiz.currentIndex < total - 1 ? `<button class="btn btn--yellow" data-action="next">${t('quiz.controls.next')}</button>` : `<button class="btn btn--yellow" data-action="finish">${remaining === 0 ? t('quiz.status.see_result') : t('quiz.status.remaining_count', { count: remaining })}</button>`}
+                ${!ui.quiz.timer && ui.quiz.currentIndex < total - 1 ? `<button class="btn btn--yellow" data-action="next">${t('quiz.controls.next')}</button>` : ''}
+                ${ui.quiz.currentIndex === total - 1 ? `<button class="btn btn--yellow" data-action="finish">${remaining === 0 ? t('quiz.status.see_result') : t('quiz.status.remaining_count', { count: remaining })}</button>` : ''}
               </div>
             </div>
           </article>
         </section>
 
+        ${ui.quiz.timer ? '' : `
         <aside class="quiz-sidebar">
           <div class="nav-card nb-card">
             <h3>${t('quiz.sidebar.title')}</h3>
@@ -850,6 +852,7 @@
             </div>
           </div>
         </aside>
+        ` }
       </div>`;
     }
 

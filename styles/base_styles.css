@@ -321,6 +321,9 @@ a { color: inherit; }
     gap: 24px;
     align-items: start;
 }
+.quiz-layout.has-no-sidebar {
+    grid-template-columns: 1fr;
+}
 .quiz-main { min-width: 0; }
 .quiz-sidebar { position: sticky; top: 16px; }
 
