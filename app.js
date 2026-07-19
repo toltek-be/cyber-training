@@ -679,10 +679,10 @@
       const caption = m.caption ? `<figcaption>${safe(m.caption)}</figcaption>` : '';
 
       if (type === 'image') {
-        return `<figure class="question-media"><img src="${src}" alt="${alt}" data-action="zoom-image" data-caption="${safe(m.caption || '')}">${caption}</figure>`;
+        return `<figure class="question-media"><img src="${src}" alt="${alt}" loading="lazy" decoding="async" data-action="zoom-image" data-caption="${safe(m.caption || '')}">${caption}</figure>`;
       }
       if (type === 'video') {
-        return `<figure class="question-media"><video src="${src}" controls></video>${caption}</figure>`;
+        return `<figure class="question-media"><video src="${src}" controls preload="metadata"></video>${caption}</figure>`;
       }
       return '';
     }
